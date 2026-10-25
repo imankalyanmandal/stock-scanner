@@ -104,3 +104,39 @@ def send_failure(error: str) -> None:
     if run_url:
         text += f'\n<a href="{html.escape(run_url)}">View logs</a>'
     _call("sendMessage", {"text": text, "parse_mode": "HTML"})
+
+
+def check() -> dict:
+    """Diagnose Telegram setup without revealing secrets: which vars exist and what the API says."""
+    token = os.getenv("TELEGRAM_BOT_TOKEN", "").strip()
+    chat = os.getenv("TELEGRAM_CHAT_ID", "").strip()
+    out = {"token_set": bool(token), "chat_id_set": bool(chat),
+           "token_looks_valid": bool(token) and ":" in token,
+           "chat_id_looks_numeric": chat.lstrip("-").isdigit() if chat else False}
+    if not token:
+        return out
+    try:
+        r = requests.get(API.format(token=token, method="getMe"), timeout=20)
+        j = r.json()
+        out["getMe"] = "ok @" + j["result"].get("username", "?") if j.get("ok") \
+            else f"error {r.status_code}: {j.get('description')}"
+        if chat:
+            r = requests.post(API.format(token=token, method="sendMessage"),
+                              data={"chat_id": chat, "text": "✅ Stock scanner: Telegram test message"},
+                              timeout=20)
+            j = r.json()
+            out["sendMessage"] = "ok" if j.get("ok") else f"error {r.status_code}: {j.get('description')}"
+    except (requests.RequestException, ValueError) as e:
+        out["error"] = type(e).__name__
+    return out
+
+
+if __name__ == "__main__":
+    import json
+    import sys
+    res = check()
+    text = json.dumps(res, indent=2)
+    print(text)
+    if len(sys.argv) > 1:
+        Path(sys.argv[1]).parent.mkdir(parents=True, exist_ok=True)
+        Path(sys.argv[1]).write_text(text + "\n")
