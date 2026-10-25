@@ -10,7 +10,7 @@ permissions:
   contents: write         # needed to commit reports back to the repo
 
 concurrency:
-  group: daily-scan
+  group: repo-commits
   cancel-in-progress: false
 
 jobs:
@@ -55,4 +55,5 @@ jobs:
           git config user.email "41898294+github-actions[bot]@users.noreply.github.com"
           git add reports data
           git diff --cached --quiet || git commit -m "Scan report $(date -u +%F)"
+          git pull --rebase origin main
           git push
