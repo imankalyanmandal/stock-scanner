@@ -1,0 +1,8 @@
+{
+  "token_set": true,
+  "chat_id_set": true,
+  "token_looks_valid": true,
+  "chat_id_looks_numeric": true,
+  "getMe": "ok @swing_trader_helper_bot",
+  "sendMessage": "ok"
+}
