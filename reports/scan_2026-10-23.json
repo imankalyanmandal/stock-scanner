@@ -2,579 +2,811 @@
   "session": "2026-10-23",
   "regime": {
     "regime": "weak",
-    "breadth_pct": 12.4,
+    "breadth_pct": 9.8,
+    "vix": 16.860000610351562,
     "benchmarks": {
       "nifty50": {
         "close": 22600.0,
-        "above_20": false,
-        "above_50": false,
         "sma20": 22713.45224609375,
-        "sma50": 23403.7229296875
+        "sma50": 23403.7229296875,
+        "above_20": false,
+        "above_50": false
       },
       "nifty500": {
         "close": 21427.599609375,
-        "above_20": false,
-        "above_50": false,
         "sma20": 22027.07509765625,
-        "sma50": 22745.63
+        "sma50": 22745.63,
+        "above_20": false,
+        "above_50": false
       }
     },
+    "size_mult": 0.0,
+    "allow_new_longs": false,
+    "block_reason": "weak market",
     "sectors": {
       "Automobile and Auto Components": {
-        "breadth_pct": 5.555555555555555,
-        "ret5_med": -0.04174927813114149,
-        "ret20_med": -0.09912868844228312,
+        "breadth_pct": 0.0,
         "count": 18
       },
       "Capital Goods": {
         "breadth_pct": 0.0,
-        "ret5_med": -0.06354813638445789,
-        "ret20_med": -0.11607461090649873,
         "count": 27
       },
       "Chemicals": {
         "breadth_pct": 0.0,
-        "ret5_med": -0.06125205592105265,
-        "ret20_med": -0.08948456888323253,
         "count": 9
       },
       "Construction": {
         "breadth_pct": 0.0,
-        "ret5_med": -0.03714923241514301,
-        "ret20_med": -0.10791093164558746,
         "count": 2
       },
       "Construction Materials": {
-        "breadth_pct": 33.33333333333333,
-        "ret5_med": 0.010057415197505137,
-        "ret20_med": -0.06580744305091663,
+        "breadth_pct": 0.0,
         "count": 6
       },
       "Consumer Durables": {
-        "breadth_pct": 11.11111111111111,
-        "ret5_med": -0.07008834716540835,
-        "ret20_med": -0.060285132382892015,
+        "breadth_pct": 0.0,
         "count": 9
       },
       "Consumer Services": {
-        "breadth_pct": 7.6923076923076925,
-        "ret5_med": -0.044465440718447935,
-        "ret20_med": -0.0851966075558982,
-        "count": 13
+        "breadth_pct": 8.333333333333332,
+        "count": 12
       },
       "Diversified": {
         "breadth_pct": 0.0,
-        "ret5_med": -0.10169819290923698,
-        "ret20_med": -0.16301988046380533,
         "count": 1
       },
       "Fast Moving Consumer Goods": {
         "breadth_pct": 0.0,
-        "ret5_med": -0.05296109689399042,
-        "ret20_med": -0.08025442270266003,
         "count": 15
       },
       "Financial Services": {
-        "breadth_pct": 15.0,
-        "ret5_med": -0.05655261773536818,
-        "ret20_med": -0.10410786763140556,
-        "count": 60
+        "breadth_pct": 11.864406779661017,
+        "count": 59
       },
       "Healthcare": {
-        "breadth_pct": 8.333333333333332,
-        "ret5_med": -0.03433868189917899,
-        "ret20_med": -0.08693267089281514,
+        "breadth_pct": 12.5,
         "count": 24
       },
       "Information Technology": {
-        "breadth_pct": 91.66666666666666,
-        "ret5_med": 0.032755108026917834,
-        "ret20_med": 0.13619540961052345,
+        "breadth_pct": 83.33333333333334,
         "count": 12
       },
       "Metals & Mining": {
         "breadth_pct": 0.0,
-        "ret5_med": -0.0504469489042213,
-        "ret20_med": -0.14160110426707223,
-        "count": 14
+        "count": 13
       },
       "Oil Gas & Consumable Fuels": {
-        "breadth_pct": 10.0,
-        "ret5_med": -0.02970873032876803,
-        "ret20_med": -0.0561290486387227,
+        "breadth_pct": 0.0,
         "count": 10
       },
       "Power": {
         "breadth_pct": 0.0,
-        "ret5_med": -0.06347222808070785,
-        "ret20_med": -0.08991401769554297,
         "count": 11
       },
       "Realty": {
         "breadth_pct": 0.0,
-        "ret5_med": -0.06031668137217294,
-        "ret20_med": -0.09453001428279251,
         "count": 6
       },
       "Services": {
         "breadth_pct": 0.0,
-        "ret5_med": -0.04798773916667132,
-        "ret20_med": -0.1172925873580053,
         "count": 5
       },
       "Telecommunication": {
         "breadth_pct": 60.0,
-        "ret5_med": -0.007634035495872493,
-        "ret20_med": -0.012473981146671087,
         "count": 5
       },
       "Textiles": {
         "breadth_pct": 0.0,
-        "ret5_med": -0.07025457132270485,
-        "ret20_med": -0.09630993141405969,
         "count": 2
       }
     }
   },
-  "min_score": 65,
   "picks": [],
+  "watchlist": [],
   "rejected": [
     {
       "symbol": "360ONE",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "ABB",
       "reasons": [
-        "not_2_green_days",
-        "reward_risk_below_min",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_not_rising",
+        "no_setup:pb_no_pullback",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "ABBOTINDIA",
       "reasons": [
         "low_volume",
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "ABCAPITAL",
       "reasons": [
-        "not_2_green_days",
-        "reward_risk_below_min",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "ADANIENSOL",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_not_rising",
+        "far_from_52w_high",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "ADANIENT",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_not_rising",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "ADANIGREEN",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_not_rising",
+        "far_from_52w_high",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "ADANIPORTS",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "ADANIPOWER",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_not_rising",
+        "far_from_52w_high",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "AIAENG",
       "reasons": [
         "low_volume",
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "AIIL",
       "reasons": [
         "low_turnover",
-        "not_2_green_days",
-        "reward_risk_below_min",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "AJANTPHARM",
       "reasons": [
         "low_volume",
-        "reward_risk_below_min",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_not_rising",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "ALKEM",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "AMBUJACEM",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_no_pullback",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "ANTHEM",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "APARINDS",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "far_from_52w_high",
+        "no_setup:pb_too_deep",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "APLAPOLLO",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "too_close_to_52w_low",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "APOLLOHOSP",
       "reasons": [
-        "reward_risk_below_min",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "ASHOKLEY",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "ASIANPAINT",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "ASTERDM",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "ASTRAL",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "ATGL",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "AUBANK",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "AUROPHARMA",
       "reasons": [
-        "not_2_green_days",
-        "reward_risk_below_min",
-        "weak_market_no_setup"
+        "below_50dma",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "AXISBANK",
       "reasons": [
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "BAJAJ-AUTO",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_not_rising",
+        "too_close_to_52w_low",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "BAJAJFINSV",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "BAJAJHFL",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "BAJAJHLDNG",
       "reasons": [
         "low_volume",
-        "not_2_green_days",
-        "reward_risk_below_min",
-        "weak_market_no_setup"
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "no_setup:pb_no_pullback",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "BAJFINANCE",
       "reasons": [
-        "not_2_green_days",
-        "reward_risk_below_min",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "BALKRISIND",
       "reasons": [
-        "not_2_green_days",
-        "reward_risk_below_min",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_no_pullback",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "BANKBARODA",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_no_pullback",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "BANKINDIA",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_no_pullback",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "BDL",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "BEL",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "BERGEPAINT",
       "reasons": [
-        "not_2_green_days",
-        "reward_risk_below_min"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_no_reversal_day",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "BHARATFORG",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_not_rising",
+        "far_from_52w_high",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "BHARTIARTL",
       "reasons": [
-        "not_2_green_days",
-        "reward_risk_below_min",
-        "weak_market_no_setup"
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "no_setup:pb_no_20dma_touch",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "BHARTIHEXA",
       "reasons": [
-        "stretched_from_20dma",
-        "reward_risk_below_min",
-        "weak_market_no_setup"
+        "50dma_below_200dma",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "no_setup:pb_no_pullback",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "BHEL",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "no_setup:pb_too_deep",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "BIOCON",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "BLUESTARCO",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "BOSCHLTD",
       "reasons": [
         "low_volume",
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "BPCL",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "BRITANNIA",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "BSE",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "far_from_52w_high",
+        "no_setup:pb_no_reversal_day",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "CANBK",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "CGPOWER",
       "reasons": [
-        "not_2_green_days",
-        "reward_risk_below_min",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_not_rising",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "CHOLAFIN",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "CIPLA",
       "reasons": [
-        "reward_risk_below_min",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "COALINDIA",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "COCHINSHIP",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "COFORGE",
       "reasons": [
-        "not_2_green_days",
-        "reward_risk_below_min",
-        "weak_market_no_setup"
+        "no_setup:pb_no_pullback",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "COLPAL",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_too_deep",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "CONCOR",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "COROMANDEL",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_no_pullback",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "CRISIL",
       "reasons": [
         "low_volume",
-        "not_2_green_days",
-        "reward_risk_below_min"
+        "too_close_to_52w_low",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "CUMMINSIND",
       "reasons": [
-        "not_2_green_days",
-        "reward_risk_below_min",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_too_deep",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "DABUR",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
@@ -582,422 +814,662 @@
       "reasons": [
         "low_turnover",
         "low_volume",
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "DIVISLAB",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "DIXON",
       "reasons": [
-        "not_2_green_days",
-        "reward_risk_below_min",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_too_deep",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "DLF",
       "reasons": [
-        "not_2_green_days",
-        "reward_risk_below_min",
-        "weak_market_no_setup"
+        "below_50dma",
+        "200dma_not_rising",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "DMART",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_too_deep",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "DRREDDY",
       "reasons": [
-        "not_2_green_days",
-        "reward_risk_below_min"
+        "50dma_below_200dma",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "no_setup:pb_no_pullback",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "EICHERMOT",
       "reasons": [
-        "not_2_green_days",
-        "reward_risk_below_min",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "ENDURANCE",
       "reasons": [
         "low_volume",
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "ENRIN",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_too_deep",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "ESCORTS",
       "reasons": [
         "low_volume",
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "ETERNAL",
       "reasons": [
-        "not_2_green_days",
-        "reward_risk_below_min",
-        "weak_market_no_setup"
+        "below_50dma",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "EXIDEIND",
       "reasons": [
-        "not_2_green_days",
-        "reward_risk_below_min",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_too_deep",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "FACT",
       "reasons": [
         "low_turnover",
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "FEDERALBNK",
       "reasons": [
-        "not_2_green_days",
-        "reward_risk_below_min"
+        "50dma_not_rising",
+        "no_setup:pb_no_20dma_touch",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "FLUOROCHEM",
       "reasons": [
         "low_volume",
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_not_rising",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "FORTIS",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "GAIL",
       "reasons": [
-        "not_2_green_days",
-        "reward_risk_below_min",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "GICRE",
       "reasons": [
-        "not_2_green_days",
-        "reward_risk_below_min",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_no_pullback",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "GLAXO",
       "reasons": [
         "low_volume",
-        "not_2_green_days",
-        "reward_risk_below_min",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "GLENMARK",
       "reasons": [
-        "not_2_green_days",
-        "reward_risk_below_min",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_not_rising",
+        "too_close_to_52w_low",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "GMRAIRPORT",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "GODFRYPHLP",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "GODREJCP",
       "reasons": [
-        "not_2_green_days",
-        "reward_risk_below_min",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "GODREJIND",
       "reasons": [
         "low_turnover",
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_too_deep",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "GODREJPROP",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "GRASIM",
       "reasons": [
-        "not_2_green_days",
-        "reward_risk_below_min",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_not_rising",
+        "too_close_to_52w_low",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "GROWW",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "GVT&D",
       "reasons": [
-        "not_2_green_days",
-        "reward_risk_below_min",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_not_rising",
+        "far_from_52w_high",
+        "no_setup:pb_too_deep",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "HAL",
       "reasons": [
-        "not_2_green_days",
-        "reward_risk_below_min",
-        "weak_market_no_setup"
+        "below_50dma",
+        "no_setup:pb_no_reversal_day",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "HAVELLS",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "HCLTECH",
       "reasons": [
-        "not_2_green_days",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "no_setup:pb_no_pullback",
         "stretched_from_20dma",
-        "weak_market_no_setup"
+        "stop_too_wide",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "HDBFS",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_too_deep",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "HDFCAMC",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "HDFCBANK",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "HDFCLIFE",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "HEROMOTOCO",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_no_pullback",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "HEXT",
       "reasons": [
-        "not_2_green_days",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "no_setup:pb_no_pullback",
         "stretched_from_20dma",
-        "reward_risk_below_min",
-        "weak_market_no_setup"
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "HINDALCO",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "HINDCOPPER",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "far_from_52w_high",
+        "weak_rs_rank",
+        "no_setup:pb_too_deep",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "HINDPETRO",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_no_pullback",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "HINDUNILVR",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "HINDZINC",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_no_pullback",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "HUDCO",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "HYUNDAI",
       "reasons": [
-        "not_2_green_days",
-        "reward_risk_below_min",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "ICICIAMC",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "no_data_or_short_history"
       ]
     },
     {
       "symbol": "ICICIBANK",
       "reasons": [
-        "not_2_green_days",
-        "reward_risk_below_min",
-        "weak_market_no_setup"
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "no_setup:pb_no_20dma_touch",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "ICICIGI",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "50dma_below_200dma",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_no_reversal_day",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "ICICILIFE",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "IDEA",
       "reasons": [
         "price<50",
-        "not_2_green_days",
-        "reward_risk_below_min",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_not_rising",
+        "far_from_52w_high",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "IDFCFIRSTB",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "INDHOTEL",
       "reasons": [
-        "not_2_green_days",
-        "stretched_from_20dma"
+        "breakout_weak_close"
       ]
     },
     {
       "symbol": "INDIANB",
       "reasons": [
-        "not_2_green_days",
-        "reward_risk_below_min"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "too_close_to_52w_low",
+        "no_setup:pb_no_pullback",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "INDIGO",
       "reasons": [
-        "not_2_green_days",
-        "reward_risk_below_min",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "INDUSINDBK",
       "reasons": [
-        "not_2_green_days",
-        "reward_risk_below_min",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "INDUSTOWER",
       "reasons": [
-        "not_2_green_days",
-        "reward_risk_below_min"
+        "50dma_below_200dma",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "no_setup:pb_no_reversal_day",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "INFY",
       "reasons": [
-        "not_2_green_days",
-        "stretched_from_20dma",
-        "reward_risk_below_min"
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_no_pullback",
+        "stop_too_wide",
+        "resistance_too_close"
       ]
     },
     {
@@ -1005,182 +1477,291 @@
       "reasons": [
         "price<50",
         "low_turnover",
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "IOC",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_no_pullback",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "IPCALAB",
       "reasons": [
-        "not_2_green_days",
-        "reward_risk_below_min",
-        "weak_market_no_setup"
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "IRCTC",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "IREDA",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "IRFC",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "ITC",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "ITCHOTELS",
       "reasons": [
-        "not_2_green_days",
-        "reward_risk_below_min",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "JINDALSTEL",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "JIOFIN",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "JKCEMENT",
       "reasons": [
         "low_volume",
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_no_pullback",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "JSL",
       "reasons": [
-        "not_2_green_days",
-        "reward_risk_below_min",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "JSWENERGY",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "JSWINFRA",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "JSWSTEEL",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_no_pullback",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "JUBLFOOD",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "KALYANKJIL",
       "reasons": [
-        "not_2_green_days",
-        "reward_risk_below_min",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_not_rising",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "KEI",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_too_deep",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "KOTAKBANK",
       "reasons": [
-        "not_2_green_days",
-        "reward_risk_below_min"
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "no_setup:pb_no_reversal_day",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "KPRMILL",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "too_close_to_52w_low",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "LAURUSLABS",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "LENSKART",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "LGEINDIA",
       "reasons": [
-        "not_2_green_days",
-        "reward_risk_below_min",
-        "weak_market_no_setup"
+        "below_50dma",
+        "too_close_to_52w_low",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "LICHSGFIN",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "LICI",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
@@ -1188,797 +1769,1297 @@
       "reasons": [
         "low_turnover",
         "low_volume",
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "LLOYDSME",
       "reasons": [
-        "not_2_green_days",
-        "reward_risk_below_min",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_not_rising",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "LODHA",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_not_rising",
+        "far_from_52w_high",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "LT",
       "reasons": [
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "LTF",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "LTM",
       "reasons": [
-        "not_2_green_days",
-        "reward_risk_below_min"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_no_reversal_day",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "LTTS",
       "reasons": [
-        "not_2_green_days",
+        "50dma_below_200dma",
+        "200dma_not_rising",
+        "no_setup:pb_no_pullback",
         "stretched_from_20dma",
-        "weak_market_no_setup"
+        "stop_too_wide",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "LUPIN",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "M&M",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "M&MFIN",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "MAHABANK",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "MANKIND",
       "reasons": [
-        "not_2_green_days",
-        "reward_risk_below_min",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "MARICO",
       "reasons": [
-        "not_2_green_days",
-        "reward_risk_below_min",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "MARUTI",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "MAXHEALTH",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "MAZDOCK",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "MCX",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "MEDANTA",
       "reasons": [
-        "not_2_green_days",
-        "reward_risk_below_min",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "MEESHO",
       "reasons": [
-        "not_2_green_days",
-        "reward_risk_below_min",
-        "weak_market_no_setup"
+        "no_data_or_short_history"
       ]
     },
     {
       "symbol": "MFSL",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "MOTHERSON",
       "reasons": [
-        "not_2_green_days",
-        "reward_risk_below_min",
-        "weak_market_no_setup"
+        "below_50dma",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "MOTILALOFS",
       "reasons": [
-        "not_2_green_days",
-        "reward_risk_below_min",
-        "weak_market_no_setup"
+        "below_50dma",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "MPHASIS",
       "reasons": [
-        "not_2_green_days",
-        "reward_risk_below_min",
-        "weak_market_no_setup"
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "no_setup:pb_no_pullback",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "MRF",
       "reasons": [
         "low_volume",
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "MUTHOOTFIN",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "NAM-INDIA",
       "reasons": [
-        "not_2_green_days",
-        "reward_risk_below_min",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_too_deep",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "NATIONALUM",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "far_from_52w_high",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "NAUKRI",
       "reasons": [
-        "not_2_green_days",
-        "reward_risk_below_min",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "NESTLEIND",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_too_deep",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "NH",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_no_pullback",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "NHPC",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "NLCINDIA",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "NMDC",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "NTPC",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "NTPCGREEN",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_too_deep",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "NYKAA",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "OBEROIRLTY",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "OFSS",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_not_rising",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "OIL",
       "reasons": [
-        "not_2_green_days",
-        "reward_risk_below_min",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_not_rising",
+        "too_close_to_52w_low",
+        "no_setup:pb_no_pullback",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "ONGC",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_no_pullback",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "PAGEIND",
       "reasons": [
         "low_volume",
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_too_deep",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "PATANJALI",
       "reasons": [
-        "not_2_green_days",
-        "reward_risk_below_min",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "PAYTM",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "PERSISTENT",
       "reasons": [
-        "not_2_green_days",
-        "reward_risk_below_min"
+        "200dma_not_rising",
+        "no_setup:pb_no_reversal_day",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "PETRONET",
       "reasons": [
-        "not_2_green_days",
-        "reward_risk_below_min",
-        "weak_market_no_setup"
+        "below_50dma",
+        "too_close_to_52w_low",
+        "no_setup:pb_no_pullback",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "PFC",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "PHOENIXLTD",
       "reasons": [
-        "not_2_green_days",
-        "reward_risk_below_min",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_not_rising",
+        "too_close_to_52w_low",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "PIDILITIND",
       "reasons": [
-        "not_2_green_days",
-        "reward_risk_below_min",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_not_rising",
+        "too_close_to_52w_low",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "PIIND",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "PIRAMALFIN",
       "reasons": [
-        "not_2_green_days",
-        "reward_risk_below_min",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_not_rising",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "PNB",
       "reasons": [
-        "not_2_green_days",
-        "reward_risk_below_min"
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "no_setup:pb_no_20dma_touch",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "POLICYBZR",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "POLYCAB",
       "reasons": [
-        "not_2_green_days",
-        "reward_risk_below_min",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "POWERGRID",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "POWERINDIA",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_not_rising",
+        "far_from_52w_high",
+        "no_setup:pb_too_deep",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "PREMIERENE",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "PRESTIGE",
       "reasons": [
-        "not_2_green_days",
-        "reward_risk_below_min",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "RADICO",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_not_rising",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "RECLTD",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "RELIANCE",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_no_pullback",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "RVNL",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "SAIL",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_not_rising",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "SBICARD",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "SBILIFE",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "SBIN",
       "reasons": [
-        "not_2_green_days",
-        "reward_risk_below_min",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_20dma_not_rising",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "SCHAEFFLER",
       "reasons": [
         "low_volume",
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "SHREECEM",
       "reasons": [
-        "low_volume"
+        "low_volume",
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "SHRIRAMFIN",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_not_rising",
+        "far_from_52w_high",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "SIEMENS",
       "reasons": [
-        "not_2_green_days",
-        "reward_risk_below_min",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_too_deep",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "SOLARINDS",
       "reasons": [
-        "not_2_green_days",
-        "reward_risk_below_min",
-        "weak_market_no_setup"
+        "below_50dma",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "SRF",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "stop_too_wide",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "SUNDARMFIN",
       "reasons": [
         "low_volume",
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "SUNPHARMA",
       "reasons": [
-        "not_2_green_days",
-        "reward_risk_below_min",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "SUPREMEIND",
       "reasons": [
-        "not_2_green_days",
-        "reward_risk_below_min",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_no_pullback",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "SUZLON",
       "reasons": [
         "price<50",
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "SWIGGY",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_too_deep",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "TATACAP",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "TATACOMM",
       "reasons": [
-        "not_2_green_days",
-        "reward_risk_below_min",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "TATACONSUM",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "TATAINVEST",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "TATAPOWER",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "TATASTEEL",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "TCS",
       "reasons": [
-        "not_2_green_days",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "no_setup:pb_no_pullback",
         "stretched_from_20dma",
-        "weak_market_no_setup"
+        "stop_too_wide",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "TECHM",
       "reasons": [
-        "not_2_green_days",
+        "no_setup:pb_no_pullback",
         "stretched_from_20dma",
-        "reward_risk_below_min",
-        "weak_market_no_setup"
+        "stop_too_wide"
       ]
     },
     {
       "symbol": "THERMAX",
       "reasons": [
-        "not_2_green_days",
-        "reward_risk_below_min",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "TIINDIA",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "TITAN",
       "reasons": [
-        "not_2_green_days",
-        "reward_risk_below_min",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_not_rising",
+        "too_close_to_52w_low",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "TMCV",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_not_rising",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "TMPV",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "TORNTPHARM",
       "reasons": [
-        "not_2_green_days",
-        "reward_risk_below_min",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_not_rising",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "TORNTPOWER",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "TRENT",
       "reasons": [
-        "not_2_green_days",
-        "reward_risk_below_min",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "TVSMOTOR",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_not_rising",
+        "too_close_to_52w_low",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "UBL",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "ULTRACEMCO",
       "reasons": [
-        "reward_risk_below_min",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_20dma_not_rising",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "UNIONBANK",
       "reasons": [
-        "not_2_green_days",
-        "reward_risk_below_min"
+        "below_50dma",
+        "50dma_not_rising",
+        "no_setup:pb_no_pullback",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "UNITDSPR",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "UNOMINDA",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "UPL",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "VAML",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "no_data_or_short_history"
       ]
     },
     {
       "symbol": "VBL",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_too_deep",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "VEDL",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "VMM",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "VOLTAS",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "WAAREEENER",
       "reasons": [
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "WIPRO",
       "reasons": [
-        "not_2_green_days",
-        "stretched_from_20dma"
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_no_pullback",
+        "stretched_from_20dma",
+        "stop_too_wide",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "YESBANK",
       "reasons": [
         "price<50",
-        "not_2_green_days",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pb_too_deep",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "ZYDUSLIFE",
       "reasons": [
-        "not_2_green_days",
-        "reward_risk_below_min",
-        "weak_market_no_setup"
+        "below_50dma",
+        "50dma_not_rising",
+        "no_setup:pb_broke_20dma",
+        "resistance_too_close"
       ]
     }
   ],
   "universe_size": 249,
-  "evaluated": 249
+  "evaluated": 246,
+  "passed_gates": 0,
+  "min_score": 40,
+  "duplicate": false,
+  "note": "No new longs today (weak market). Setups shown as a watchlist only.",
+  "journal": {
+    "overall": {
+      "trades": 0
+    },
+    "by_setup": {},
+    "counts": {}
+  }
 }

@@ -1,1 +1,1 @@
-symbol,company,industry,setup,score,close,entry,stop,target,reward_risk,gain_2d_pct,vol_ratio,close_location,delivery_pct,rsi,rs5_idx,rs20_idx,rs5_sec,flags,events,has_news,fresh_news
+symbol,company,industry,setup,score,close,trigger,max_entry,stop,t1,risk_per_share,stop_atr,room_r,qty,position_value,risk_amount,rs_rank,setup_vol_ratio,setup_close_loc,below_high_pct,rsi,delivery_pct,flags,events,exit_plan
