@@ -4,7 +4,12 @@ on:
   schedule:
     # 21:30 UTC Mon-Fri = 3:00 AM IST Tue-Sat (scans the previous trading session)
     - cron: "30 21 * * 1-5"
-  workflow_dispatch: {}   # adds a "Run workflow" button for manual runs
+  workflow_dispatch:      # adds a "Run workflow" button for manual runs
+    inputs:
+      force:
+        description: "Resend the alert even if this session was already scanned"
+        type: boolean
+        default: false
 
 permissions:
   contents: write         # needed to commit reports back to the repo
@@ -36,7 +41,7 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
-        run: python run_scan.py
+        run: python run_scan.py ${{ inputs.force && '--force' || '' }}
 
       - name: Upload report as artifact
         if: always()

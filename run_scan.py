@@ -1,6 +1,8 @@
 """Run one scan now.  Usage: python run_scan.py [--config config.yaml] [--no-news] [--limit N] [--no-notify] [--force]"""
 import argparse
+import json
 import logging
+from datetime import datetime
 import traceback
 from pathlib import Path
 
@@ -30,10 +32,17 @@ def scan_and_notify(cfg: dict, with_news: bool = True, limit: int | None = None,
     if res.get("duplicate"):
         logging.getLogger("run_scan").info("Session %s already scanned; no alert sent "
                                            "(use --force to resend)", res["session"])
-        send = False
-    if send:
+        status = {"sendMessage": "skipped: session already alerted (run with --force to resend)"}
+    elif not send:
+        status = {"sendMessage": "skipped: --no-notify"}
+    else:
         html_path = Path(cfg["output"]["dir"]) / f"scan_{res['session']}.html"
-        notify.send_scan(res, cfg, html_path)
+        status = notify.send_scan(res, cfg, html_path)
+    res["notify"] = status
+    out = Path(cfg["output"]["dir"]) / "last_notify.json"
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(json.dumps({"session": res["session"], "at": datetime.now().isoformat(timespec="seconds"),
+                               **status}, indent=2) + "\n")
     return res
 
 
