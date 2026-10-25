@@ -424,14 +424,26 @@ def test_telegram_message_and_send(monkeypatch, tmp_path):
 
     class R:
         ok = True
+        status_code = 200
+        def json(self): return {"ok": True}
     monkeypatch.setenv("TELEGRAM_BOT_TOKEN", "t")
     monkeypatch.setenv("TELEGRAM_CHAT_ID", "1")
     monkeypatch.setattr(notify.requests, "post",
                         lambda url, **k: calls.append(url.rsplit("/", 1)[1]) or R())
     report = tmp_path / "scan.html"
     report.write_text("<html></html>")
-    notify.send_scan(result, {"notify": {"telegram": {}}}, report)
+    status = notify.send_scan(result, {"notify": {"telegram": {}}}, report)
     assert calls == ["sendMessage", "sendDocument"]
+    assert status == {"sendMessage": "ok", "sendDocument": "ok"}
+
+    class Bad:
+        ok = False
+        status_code = 400
+        text = "{}"
+        def json(self): return {"ok": False, "description": "Bad Request: chat not found"}
+    monkeypatch.setattr(notify.requests, "post", lambda url, **k: Bad())
+    status = notify.send_scan(result, {"notify": {"telegram": {"send_report_file": False}}})
+    assert status == {"sendMessage": "error 400: Bad Request: chat not found"}
 
 
 def test_telegram_skipped_without_creds(monkeypatch):

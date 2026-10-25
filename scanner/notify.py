@@ -14,6 +14,7 @@ import requests
 
 log = logging.getLogger(__name__)
 API = "https://api.telegram.org/bot{token}/{method}"
+LAST: dict[str, str] = {}  # method -> "ok" / error text from the most recent calls
 MAX_LEN = 4000  # Telegram limit is 4096 characters
 
 
@@ -27,6 +28,7 @@ def _call(method: str, data: dict, files: dict | None = None) -> bool:
     creds = _creds()
     if not creds:
         log.info("Telegram not configured; skipping %s", method)
+        LAST[method] = "skipped: TELEGRAM_BOT_TOKEN or TELEGRAM_CHAT_ID not set"
         return False
     token, chat = creds
     try:
@@ -34,9 +36,15 @@ def _call(method: str, data: dict, files: dict | None = None) -> bool:
                           data={"chat_id": chat, **data}, files=files, timeout=30)
         if not r.ok:
             log.warning("Telegram %s failed: %s %s", method, r.status_code, r.text[:200])
+        try:
+            desc = r.json().get("description", "")
+        except ValueError:
+            desc = r.text[:200]
+        LAST[method] = "ok" if r.ok else f"error {r.status_code}: {desc}"
         return r.ok
     except requests.RequestException as e:
         log.warning("Telegram %s error: %s", method, e)
+        LAST[method] = f"error: {type(e).__name__}"
         return False
 
 
@@ -85,10 +93,12 @@ def format_summary(result: dict, max_picks: int = 5, report_url: str | None = No
     return text if len(text) <= MAX_LEN else text[:MAX_LEN - 20] + "\n…(truncated)"
 
 
-def send_scan(result: dict, cfg: dict, report_html: Path | None = None) -> None:
+def send_scan(result: dict, cfg: dict, report_html: Path | None = None) -> dict:
+    """Returns {method: "ok" | error} so the outcome can be saved with the report."""
+    LAST.clear()
     tcfg = cfg.get("notify", {}).get("telegram", {})
     if not tcfg.get("enabled", True):
-        return
+        return {"sendMessage": "skipped: notify.telegram.enabled is false"}
     text = format_summary(result, tcfg.get("max_picks", 5), os.getenv("REPORT_URL"))
     _call("sendMessage", {"text": text, "parse_mode": "HTML",
                           "disable_web_page_preview": "true"})
@@ -96,6 +106,7 @@ def send_scan(result: dict, cfg: dict, report_html: Path | None = None) -> None:
         with open(report_html, "rb") as fh:
             _call("sendDocument", {"caption": "Full report (open in browser)"},
                   files={"document": (report_html.name, fh, "text/html")})
+    return dict(LAST)
 
 
 def send_failure(error: str) -> None:
