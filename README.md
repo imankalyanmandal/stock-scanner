@@ -81,6 +81,21 @@ they show which rules actually make money.
   win/loss and expectancy in the report and Telegram message use exactly the backtest's rules.
   Re-running the same session doesn't add duplicates or resend the alert (`--force` overrides).
 
+## Experiments: compare variants
+
+`experiments.yaml` lists rule variants as overrides of `config.yaml`. `python experiments.py` (or the
+**Experiments** workflow) downloads prices once, runs every variant on the same data and writes
+`reports/experiments_<date>.md` (also shown on the workflow run page). It covers:
+
+- **Swing variants:** expectancy, win rate and drawdown per variant, plus expectancy for each half of
+  the period. Trust a change only if it helps in both halves.
+- **Monthly momentum rotation** (`scanner/momentum.py`): top 30 by NSE-style momentum score
+  (6- and 12-month return / volatility), rebalanced monthly at the next open, optional cash when
+  Nifty 50 is under its 200 DMA, costs and liquid-fund yield on cash included, compared with
+  Nifty 50 / Nifty 500 buy-and-hold.
+
+Pullbacks are switched off (`setups.pullback.enabled: false`) after losing money in the backtest.
+
 ## Rules
 
 | Step | Rule | Where |

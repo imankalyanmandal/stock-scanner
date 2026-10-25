@@ -1,0 +1,30 @@
+# Variants compared by `python experiments.py` (and the Experiments workflow).
+# Each variant is a set of overrides deep-merged into config.yaml. {} = config.yaml as is.
+
+period: 10y                   # longer than the daily backtest to get more trades
+
+breakout_variants:
+  A_old_with_pullbacks:
+    setups: {pullback: {enabled: true}}
+  B_breakouts_only: {}
+  C_undercut_filter:
+    setups: {breakout: {reject_undercut_base: true}}
+  D_momentum_top40:
+    rs: {momentum_top_n: 40}
+  E_time_stop_12:
+    exits: {time_stop_days: 12}
+  F_no_time_stop:
+    exits: {time_stop_days: 999}
+  G_partial_1_5R:
+    exits: {partial_r: 1.5}
+  H_C_D_E_combined:
+    setups: {breakout: {reject_undercut_base: true}}
+    rs: {momentum_top_n: 40}
+    exits: {time_stop_days: 12}
+
+momentum_variants:
+  M1_top30_always_invested:
+    momentum: {regime_filter: false}
+  M2_top30_200dma_filter: {}
+  M3_top20_200dma_filter:
+    momentum: {top_n: 20, exit_rank: 30}
