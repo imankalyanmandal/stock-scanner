@@ -1,0 +1,222 @@
+signal_date,symbol,industry,setup,score,regime,size_mult,trigger,stop,stop_atr,status,fill_date,fill_price,exit_date,exit_price,exit_reason,partial_taken,r_multiple,pct_return,bars_held
+2022-11-16,HAL,Capital Goods,breakout,79.5,strong,1.0,1290.8,1196.87,2.3,closed,2022-11-17,1290.8,2022-11-28,1324.68,time_stop,False,0.326,2.63,7.0
+2022-12-01,BANKBARODA,Financial Services,pullback,80.7,strong,1.0,152.83,145.06,1.87,closed,2022-12-02,152.83,2022-12-21,157.06,trail,True,1.223,6.47,13.0
+2022-12-02,INDIANB,Financial Services,breakout,82.8,strong,1.0,258.05,247.02,1.29,closed,2022-12-05,258.05,2022-12-09,247.02,stop,False,-1.058,-4.27,4.0
+2022-12-02,APLAPOLLO,Capital Goods,breakout,70.0,strong,1.0,1177.41,1112.97,1.76,not_triggered,,,,,,,,,
+2022-12-05,EXIDEIND,Automobile and Auto Components,breakout,61.2,strong,1.0,188.5,182.85,1.35,not_triggered,,,,,,,,,
+2022-12-13,APARINDS,Capital Goods,breakout,79.8,strong,1.0,1683.52,1558.96,1.77,not_triggered,,,,,,,,,
+2022-12-13,MCX,Financial Services,breakout,60.5,strong,1.0,324.31,310.1,1.96,closed,2022-12-14,324.37,2022-12-21,310.1,stop,False,-1.057,-4.4,5.0
+2022-12-14,APARINDS,Capital Goods,breakout,79.8,strong,1.0,1683.52,1558.99,1.78,closed,2022-12-15,1683.52,2022-12-22,1558.99,stop,False,-1.034,-7.4,5.0
+2022-12-15,IDFCFIRSTB,Financial Services,breakout,71.6,neutral,0.5,63.97,59.47,2.86,not_triggered,,,,,,,,,
+2022-12-19,ADANIENT,Metals & Mining,pullback,84.0,neutral,0.5,4100.64,3927.54,1.85,closed,2022-12-20,4100.64,2022-12-21,3927.54,stop,False,-1.059,-4.22,1.0
+2022-12-20,TIINDIA,Automobile and Auto Components,pullback,76.1,neutral,0.5,3034.65,2709.1,2.52,not_triggered,,,,,,,,,
+2023-04-17,ABCAPITAL,Financial Services,breakout,76.0,strong,1.0,166.17,156.26,2.01,closed,2023-04-18,166.17,2023-04-27,161.85,time_stop,False,-0.477,-2.6,7.0
+2023-04-21,GODREJCP,Fast Moving Consumer Goods,breakout,47.5,strong,1.0,942.07,921.83,1.28,closed,2023-04-24,942.07,2023-04-25,921.83,stop,False,-1.116,-2.15,1.0
+2023-04-26,SIEMENS,Capital Goods,breakout,68.3,strong,1.0,2005.91,1929.88,2.05,closed,2023-04-27,2005.91,2023-05-22,2005.91,breakeven,True,0.937,3.8,16.0
+2023-04-28,ABCAPITAL,Financial Services,pullback,79.4,strong,1.0,168.37,156.65,2.6,closed,2023-05-02,168.37,2023-05-11,163.95,time_stop,False,-0.413,-2.62,7.0
+2023-05-02,ONGC,Oil Gas & Consumable Fuels,breakout,64.8,strong,1.0,141.21,136.14,1.9,not_triggered,,,,,,,,,
+2023-05-03,BDL,Capital Goods,breakout,62.6,strong,1.0,517.14,485.84,2.09,closed,2023-05-04,517.14,2023-05-15,501.72,time_stop,False,-0.534,-2.98,7.0
+2023-05-08,DALBHARAT,Construction Materials,breakout,61.5,strong,1.0,2058.46,1971.28,1.96,closed,2023-05-09,2058.46,2023-05-18,2029.45,time_stop,False,-0.392,-1.41,7.0
+2023-05-15,POLYCAB,Capital Goods,breakout,77.2,strong,1.0,3334.11,3162.38,2.38,closed,2023-05-16,3334.11,2023-05-25,3344.2,time_stop,False,0.01,0.3,7.0
+2023-05-16,AUROPHARMA,Healthcare,breakout,78.8,strong,1.0,643.57,605.4,2.36,not_triggered,,,,,,,,,
+2023-05-25,BAJAJ-AUTO,Automobile and Auto Components,breakout,73.7,strong,1.0,4309.99,4162.53,2.03,closed,2023-05-26,4309.99,2023-06-06,4374.97,time_stop,False,0.368,1.51,7.0
+2023-05-29,CUMMINSIND,Capital Goods,breakout,72.8,strong,1.0,1675.91,1567.75,2.35,closed,2023-05-30,1675.91,2023-06-08,1684.68,time_stop,False,0.042,0.52,7.0
+2023-05-29,COALINDIA,Oil Gas & Consumable Fuels,breakout,50.8,strong,1.0,197.31,191.33,1.83,not_triggered,,,,,,,,,
+2023-05-30,POLYCAB,Capital Goods,pullback,79.2,strong,1.0,3427.27,3285.01,2.1,closed,2023-05-31,3427.27,2023-06-09,3475.28,time_stop,False,0.277,1.4,7.0
+2023-05-30,PFC,Financial Services,breakout,72.6,strong,1.0,125.1,119.18,1.68,closed,2023-05-31,125.1,2023-07-13,158.09,max_hold,True,3.738,17.91,30.0
+2023-05-30,AUROPHARMA,Healthcare,breakout,70.9,strong,1.0,650.32,605.67,2.13,closed,2023-05-31,650.32,2023-06-09,663.95,time_stop,False,0.269,2.1,7.0
+2023-06-06,NLCINDIA,Power,breakout,69.7,strong,1.0,94.07,87.59,2.0,closed,2023-06-07,94.07,2023-06-16,93.32,time_stop,False,-0.153,-0.8,7.0
+2023-06-14,KEI,Capital Goods,breakout,74.9,strong,1.0,2228.19,2101.15,1.8,closed,2023-06-15,2228.19,2023-06-26,2341.69,time_stop,False,0.85,5.09,7.0
+2023-06-14,ZYDUSLIFE,Healthcare,breakout,63.6,strong,1.0,521.39,502.26,1.76,closed,2023-06-15,522.28,2023-07-28,631.1,max_hold,True,3.652,14.25,30.0
+2023-06-20,EXIDEIND,Automobile and Auto Components,breakout,53.5,strong,1.0,217.39,207.92,1.92,closed,2023-06-21,218.2,2023-08-03,253.4,max_hold,True,2.659,12.78,30.0
+2023-06-27,INDIGO,Services,breakout,65.0,strong,1.0,2542.7,2459.81,1.65,closed,2023-06-28,2542.7,2023-07-25,2580.04,trail,True,1.154,4.01,18.0
+2023-06-28,ABB,Capital Goods,pullback,83.0,strong,1.0,4317.08,4082.34,2.48,not_triggered,,,,,,,,,
+2023-06-28,POLYCAB,Capital Goods,breakout,69.8,strong,1.0,3586.42,3446.13,1.68,not_triggered,,,,,,,,,
+2023-06-30,AUROPHARMA,Healthcare,breakout,65.5,strong,1.0,736.55,706.92,1.68,not_triggered,,,,,,,,,
+2023-07-07,AUROPHARMA,Healthcare,breakout,69.0,strong,1.0,759.53,717.14,2.16,not_triggered,,,,,,,,,
+2023-07-07,GLENMARK,Healthcare,breakout,68.7,strong,1.0,689.1,657.23,1.81,not_triggered,,,,,,,,,
+2023-07-11,BEL,Capital Goods,breakout,61.2,strong,1.0,125.21,119.65,1.7,not_triggered,,,,,,,,,
+2023-07-12,BEL,Capital Goods,breakout,59.4,strong,1.0,125.21,119.66,1.75,closed,2023-07-13,125.21,2023-07-24,122.51,time_stop,False,-0.543,-2.16,7.0
+2023-07-14,SUPREMEIND,Capital Goods,breakout,75.0,strong,1.0,3414.95,3141.68,2.79,not_triggered,,,,,,,,,
+2023-07-17,COFORGE,Information Technology,breakout,63.2,strong,1.0,977.75,921.09,2.39,not_triggered,,,,,,,,,
+2023-07-21,JSL,Metals & Mining,pullback,77.8,strong,1.0,368.49,336.35,2.56,closed,2023-07-24,368.49,2023-08-02,387.78,time_stop,False,0.571,5.23,7.0
+2023-07-25,TVSMOTOR,Automobile and Auto Components,breakout,60.8,strong,1.0,1373.85,1295.2,2.36,closed,2023-07-26,1376.97,2023-08-04,1343.16,time_stop,False,-0.456,-2.46,7.0
+2023-07-26,GODREJPROP,Realty,pullback,66.7,strong,1.0,1673.59,1581.04,2.32,closed,2023-07-27,1673.59,2023-08-03,1581.04,stop,False,-1.045,-5.53,5.0
+2023-07-28,HAL,Capital Goods,pullback,89.8,strong,1.0,1909.14,1844.87,1.63,closed,2023-07-31,1909.14,2023-08-02,1844.87,stop,False,-1.074,-3.37,2.0
+2023-08-03,ETERNAL,Consumer Services,pullback,81.1,neutral,0.5,88.49,81.29,2.3,closed,2023-08-04,89.0,2023-08-16,91.9,time_stop,False,0.347,3.26,7.0
+2023-08-08,APARINDS,Capital Goods,pullback,76.0,neutral,0.5,3893.15,3435.89,2.76,closed,2023-08-09,3893.15,2023-09-22,5194.92,max_hold,True,2.402,28.46,30.0
+2023-08-18,CGPOWER,Capital Goods,breakout,70.7,neutral,0.5,429.37,410.0,1.81,closed,2023-08-21,431.92,2023-08-24,410.0,stop,False,-1.049,-5.08,3.0
+2023-08-23,HAL,Capital Goods,breakout,68.3,neutral,0.5,1957.92,1876.95,1.84,skipped_gap,2023-08-24,,,,,,,,
+2023-08-24,APLAPOLLO,Capital Goods,breakout,61.3,neutral,0.5,1642.16,1564.74,1.44,closed,2023-08-25,1644.51,2023-09-07,1708.03,time_stop,False,0.745,3.86,9.0
+2023-09-01,NLCINDIA,Power,pullback,81.3,strong,1.0,132.7,119.66,2.62,closed,2023-09-04,132.7,2023-09-12,119.66,stop,False,-1.025,-9.82,6.0
+2023-09-01,PNB,Financial Services,breakout,66.4,strong,1.0,61.85,58.18,2.4,closed,2023-09-04,61.85,2023-10-09,68.46,trail,True,1.859,11.28,23.0
+2023-09-01,BEL,Capital Goods,pullback,59.3,strong,1.0,135.32,128.83,2.15,closed,2023-09-04,136.26,2023-09-13,132.69,time_stop,False,-0.526,-2.62,7.0
+2023-09-13,AUROPHARMA,Healthcare,breakout,69.8,strong,1.0,901.21,861.76,1.83,not_triggered,,,,,,,,,
+2023-09-14,AUROPHARMA,Healthcare,breakout,69.5,strong,1.0,901.21,861.78,1.85,not_triggered,,,,,,,,,
+2023-09-18,GICRE,Financial Services,breakout,70.2,strong,1.0,218.96,199.84,2.64,not_triggered,,,,,,,,,
+2023-09-25,TRENT,Consumer Services,breakout,67.2,neutral,0.5,2170.22,2030.51,2.56,closed,2023-09-26,2170.22,2023-09-29,2030.51,stop,False,-1.039,-6.44,3.0
+2023-09-26,VBL,Fast Moving Consumer Goods,breakout,74.4,neutral,0.5,387.3,367.09,2.32,not_triggered,,,,,,,,,
+2023-09-27,VBL,Fast Moving Consumer Goods,breakout,73.6,neutral,0.5,387.3,367.11,2.37,not_triggered,,,,,,,,,
+2023-10-06,LT,Construction,breakout,61.1,neutral,0.5,3035.51,2946.57,1.56,not_triggered,,,,,,,,,
+2023-10-06,DLF,Realty,breakout,52.6,neutral,0.5,537.2,510.74,2.02,not_triggered,,,,,,,,,
+2023-10-10,ESCORTS,Capital Goods,breakout,73.9,neutral,0.5,3319.44,3128.51,1.86,closed,2023-10-11,3330.78,2023-10-20,3143.17,time_stop,False,-0.969,-5.63,7.0
+2023-10-10,COALINDIA,Oil Gas & Consumable Fuels,breakout,65.0,neutral,0.5,246.37,232.49,2.33,closed,2023-10-11,246.65,2023-10-20,253.01,time_stop,False,0.405,2.58,7.0
+2023-10-10,DLF,Realty,breakout,59.7,neutral,0.5,551.1,528.02,1.68,closed,2023-10-11,551.1,2023-10-20,538.32,time_stop,False,-0.614,-2.32,7.0
+2023-10-13,MOTILALOFS,Financial Services,breakout,57.0,strong,1.0,1002.45,908.59,2.75,not_triggered,,,,,,,,,
+2023-10-13,PHOENIXLTD,Realty,breakout,54.1,strong,1.0,1026.54,923.42,2.94,not_triggered,,,,,,,,,
+2023-10-16,POLYCAB,Capital Goods,pullback,73.8,strong,1.0,5373.74,5051.85,2.63,closed,2023-10-17,5384.09,2023-10-25,5051.85,stop,False,-1.041,-6.17,5.0
+2023-10-17,LTF,Financial Services,breakout,65.6,strong,1.0,134.55,129.98,1.15,closed,2023-10-18,134.55,2023-10-19,129.98,stop,False,-1.074,-3.39,1.0
+2023-11-16,AJANTPHARM,Healthcare,breakout,60.1,strong,1.0,1897.71,1773.12,2.22,not_triggered,,,,,,,,,
+2023-11-24,LUPIN,Healthcare,breakout,71.2,strong,1.0,1224.26,1187.3,1.26,closed,2023-11-28,1224.26,2023-12-07,1226.97,time_stop,False,-0.01,0.22,7.0
+2023-11-30,AJANTPHARM,Healthcare,pullback,63.0,strong,1.0,1917.88,1821.81,1.76,closed,2023-12-01,1917.88,2023-12-11,1821.81,stop,False,-1.05,-5.01,6.0
+2023-12-04,SHRIRAMFIN,Financial Services,breakout,59.7,strong,1.0,406.55,385.79,2.2,not_triggered,,,,,,,,,
+2023-12-05,BLUESTARCO,Consumer Durables,pullback,74.1,strong,1.0,1016.83,960.69,1.68,closed,2023-12-06,1016.83,2023-12-15,960.69,stop,False,-1.045,-5.52,7.0
+2023-12-05,SHRIRAMFIN,Financial Services,breakout,45.8,strong,1.0,406.55,385.78,2.18,not_triggered,,,,,,,,,
+2023-12-07,BANKINDIA,Financial Services,breakout,57.7,strong,1.0,108.15,100.26,2.37,not_triggered,,,,,,,,,
+2023-12-14,LODHA,Realty,pullback,78.6,strong,1.0,939.78,871.61,1.99,not_triggered,,,,,,,,,
+2023-12-14,LTF,Financial Services,breakout,57.4,strong,1.0,154.17,149.37,1.16,closed,2023-12-15,155.65,2023-12-20,149.37,stop,False,-1.062,-4.03,3.0
+2023-12-14,SHRIRAMFIN,Financial Services,breakout,49.2,strong,1.0,410.79,385.26,2.4,not_triggered,,,,,,,,,
+2023-12-19,COALINDIA,Oil Gas & Consumable Fuels,breakout,74.7,strong,1.0,313.5,292.72,2.67,closed,2023-12-20,313.5,2024-01-01,323.39,time_stop,False,0.438,3.16,7.0
+2023-12-19,MOTILALOFS,Financial Services,pullback,74.2,strong,1.0,1261.91,1165.88,1.93,closed,2023-12-20,1261.91,2023-12-27,1165.88,stop,False,-1.033,-7.61,4.0
+2023-12-19,HDFCAMC,Financial Services,breakout,55.4,strong,1.0,1479.59,1418.33,1.97,closed,2023-12-20,1479.59,2024-01-01,1520.16,time_stop,False,0.602,2.74,7.0
+2023-12-28,LUPIN,Healthcare,breakout,59.6,strong,1.0,1323.33,1268.98,1.71,not_triggered,,,,,,,,,
+2023-12-29,KEI,Capital Goods,breakout,64.4,strong,1.0,3300.65,3105.46,1.84,not_triggered,,,,,,,,,
+2023-12-29,LUPIN,Healthcare,breakout,55.7,strong,1.0,1324.41,1269.01,1.76,not_triggered,,,,,,,,,
+2024-01-02,JSL,Metals & Mining,breakout,64.8,strong,1.0,593.26,564.31,1.33,closed,2024-01-03,593.26,2024-01-12,603.38,time_stop,False,0.299,1.71,7.0
+2024-01-04,OBEROIRLTY,Realty,breakout,59.9,strong,1.0,1525.21,1429.88,2.35,closed,2024-01-05,1532.21,2024-01-16,1504.09,time_stop,False,-0.312,-1.83,7.0
+2024-01-09,NAM-INDIA,Financial Services,breakout,62.9,strong,1.0,468.72,442.73,1.69,closed,2024-01-10,470.13,2024-01-19,467.17,time_stop,False,-0.151,-0.63,7.0
+2024-01-15,AUROPHARMA,Healthcare,breakout,71.3,strong,1.0,1158.74,1088.37,2.13,not_triggered,,,,,,,,,
+2024-01-15,GLENMARK,Healthcare,pullback,69.3,strong,1.0,912.8,856.85,2.16,not_triggered,,,,,,,,,
+2024-01-24,TRENT,Consumer Services,pullback,85.6,neutral,0.5,3236.4,3074.94,2.21,closed,2024-01-25,3236.4,2024-01-30,3074.94,stop,False,-1.05,-4.99,2.0
+2024-01-29,PFC,Financial Services,breakout,76.7,strong,1.0,400.5,374.47,1.55,closed,2024-01-30,401.49,2024-02-08,418.04,time_stop,False,0.576,4.12,7.0
+2024-01-29,COALINDIA,Oil Gas & Consumable Fuels,breakout,62.7,strong,1.0,351.61,330.59,2.06,closed,2024-01-30,352.15,2024-02-21,370.94,trail,True,1.395,8.79,16.0
+2024-02-02,NTPC,Power,breakout,58.9,strong,1.0,311.99,300.89,1.26,closed,2024-02-05,315.69,2024-02-12,300.89,stop,False,-1.053,-4.69,5.0
+2024-02-08,HAL,Capital Goods,breakout,65.6,strong,1.0,3039.63,2857.25,2.08,not_triggered,,,,,,,,,
+2024-02-15,ASTERDM,Healthcare,breakout,61.8,strong,1.0,361.6,335.52,2.17,closed,2024-02-16,361.6,2024-02-27,358.06,time_stop,False,-0.17,-0.98,7.0
+2024-02-19,GMRAIRPORT,Services,pullback,75.1,strong,1.0,92.94,83.8,2.3,closed,2024-02-20,92.94,2024-02-29,83.8,stop,False,-1.025,-9.83,7.0
+2024-02-22,BEL,Capital Goods,breakout,43.0,strong,1.0,192.37,184.46,1.42,closed,2024-02-23,192.47,2024-03-13,192.47,breakeven,True,0.94,4.16,12.0
+2024-02-26,HDFCAMC,Financial Services,pullback,65.4,strong,1.0,1846.99,1748.31,2.03,closed,2024-02-27,1846.99,2024-03-07,1767.68,time_stop,False,-0.851,-4.29,7.0
+2024-02-27,HAL,Capital Goods,pullback,69.9,strong,1.0,3055.81,2857.84,2.27,closed,2024-02-28,3055.81,2024-03-12,3191.25,time_stop,False,0.646,4.43,8.0
+2024-02-29,ETERNAL,Consumer Services,pullback,82.7,strong,1.0,169.02,154.69,2.17,closed,2024-03-01,169.02,2024-03-11,154.69,stop,False,-1.029,-8.48,5.0
+2024-03-05,UNIONBANK,Financial Services,breakout,76.4,strong,1.0,145.4,134.74,1.82,not_triggered,,,,,,,,,
+2024-03-06,UNIONBANK,Financial Services,breakout,74.9,strong,1.0,145.4,134.75,1.83,closed,2024-03-07,145.4,2024-03-13,134.75,stop,False,-1.034,-7.33,3.0
+2024-03-11,TATAPOWER,Power,breakout,55.1,strong,1.0,426.56,388.11,2.86,not_triggered,,,,,,,,,
+2024-03-18,OFSS,Information Technology,pullback,84.5,neutral,0.5,7829.51,7077.19,2.4,not_triggered,,,,,,,,,
+2024-04-24,DIXON,Consumer Durables,breakout,63.8,strong,1.0,8195.31,7738.95,1.91,not_triggered,,,,,,,,,
+2024-04-25,DIXON,Consumer Durables,breakout,62.5,strong,1.0,8195.31,7739.34,1.94,closed,2024-04-26,8195.31,2024-05-08,8398.94,time_stop,False,0.402,2.48,7.0
+2024-05-16,KEI,Capital Goods,breakout,56.7,strong,0.5,4258.21,3947.99,1.92,not_triggered,,,,,,,,,
+2024-05-17,BEL,Capital Goods,breakout,68.2,strong,1.0,245.9,233.29,1.67,skipped_gap,2024-05-21,,,,,,,,
+2024-05-17,ZYDUSLIFE,Healthcare,breakout,61.7,strong,1.0,1042.63,991.2,1.61,skipped_gap,2024-05-21,,,,,,,,
+2024-05-17,KEI,Capital Goods,breakout,52.3,strong,1.0,4258.21,3948.46,1.98,not_triggered,,,,,,,,,
+2024-05-21,COALINDIA,Oil Gas & Consumable Fuels,breakout,60.6,strong,0.5,423.59,401.13,1.73,closed,2024-05-22,423.68,2024-05-31,420.85,time_stop,False,-0.172,-0.67,7.0
+2024-06-03,INDUSTOWER,Telecommunication,breakout,64.6,strong,0.5,356.84,328.18,2.54,not_triggered,,,,,,,,,
+2024-06-10,INDIGO,Services,breakout,54.9,strong,1.0,4606.62,4361.77,1.5,not_triggered,,,,,,,,,
+2024-06-11,PHOENIXLTD,Realty,pullback,59.3,strong,1.0,1711.09,1475.01,2.78,closed,2024-06-12,1711.09,2024-06-24,1791.99,time_stop,False,0.325,4.73,7.0
+2024-07-08,NAM-INDIA,Financial Services,pullback,78.7,strong,1.0,646.04,612.52,1.44,closed,2024-07-09,646.04,2024-07-19,612.52,stop,False,-1.048,-5.19,7.0
+2024-07-11,TRENT,Consumer Services,pullback,79.6,strong,1.0,5657.03,5444.38,1.47,closed,2024-07-12,5657.03,2024-07-18,5444.38,stop,False,-1.067,-3.76,3.0
+2024-07-16,PHOENIXLTD,Realty,pullback,74.3,strong,1.0,2042.62,1889.21,1.91,closed,2024-07-18,2042.62,2024-07-22,1889.21,stop,False,-1.033,-7.51,2.0
+2024-07-23,SUZLON,Capital Goods,breakout,86.2,neutral,0.5,57.89,53.8,2.07,skipped_gap,2024-07-24,,,,,,,,
+2024-07-29,360ONE,Financial Services,breakout,61.5,strong,1.0,1051.64,977.15,1.71,closed,2024-07-30,1051.64,2024-08-06,977.15,stop,False,-1.035,-7.08,5.0
+2024-07-29,COROMANDEL,Chemicals,breakout,50.3,strong,1.0,1670.4,1607.62,1.19,closed,2024-07-30,1670.4,2024-08-01,1607.62,stop,False,-1.067,-3.76,2.0
+2024-08-07,ZYDUSLIFE,Healthcare,breakout,63.4,neutral,0.5,1263.85,1221.38,1.22,closed,2024-08-08,1265.35,2024-08-12,1221.38,stop,False,-1.072,-3.48,2.0
+2024-08-07,AUROPHARMA,Healthcare,breakout,57.1,neutral,0.5,1468.06,1405.23,1.68,closed,2024-08-08,1468.06,2024-08-21,1505.85,time_stop,False,0.543,2.57,8.0
+2024-08-09,MCX,Financial Services,pullback,64.1,neutral,0.5,880.81,816.38,1.9,closed,2024-08-12,880.81,2024-09-24,1168.53,max_hold,True,3.199,23.65,30.0
+2024-08-09,COROMANDEL,Chemicals,pullback,60.6,neutral,0.5,1685.53,1561.33,2.27,closed,2024-08-12,1688.79,2024-08-22,1760.48,time_stop,False,0.529,4.25,7.0
+2024-08-13,TVSMOTOR,Automobile and Auto Components,breakout,55.4,neutral,0.5,2637.46,2528.63,1.46,not_triggered,,,,,,,,,
+2024-08-16,NAM-INDIA,Financial Services,breakout,69.7,neutral,0.5,661.54,614.76,1.67,skipped_gap,2024-08-19,,,,,,,,
+2024-08-19,VOLTAS,Consumer Durables,breakout,69.3,neutral,0.5,1599.33,1529.43,1.34,closed,2024-08-20,1607.5,2024-09-30,1829.11,trail,True,2.368,11.75,29.0
+2024-08-21,GLAXO,Healthcare,breakout,77.6,neutral,0.5,2961.98,2758.54,2.09,not_triggered,,,,,,,,,
+2024-08-29,COLPAL,Fast Moving Consumer Goods,pullback,63.8,strong,1.0,3494.87,3363.62,1.91,closed,2024-08-30,3494.87,2024-09-10,3522.81,time_stop,False,0.146,0.8,7.0
+2024-09-11,INDHOTEL,Consumer Services,breakout,65.8,neutral,0.5,692.27,660.55,1.92,closed,2024-09-12,692.27,2024-09-23,709.54,time_stop,False,0.49,2.5,7.0
+2024-09-12,ETERNAL,Consumer Services,breakout,68.8,strong,1.0,286.29,273.25,1.24,closed,2024-09-13,286.29,2024-09-13,273.25,stop,False,-1.055,-4.55,0.0
+2024-09-18,HEROMOTOCO,Automobile and Auto Components,breakout,63.1,strong,1.0,5715.02,5341.14,2.88,not_triggered,,,,,,,,,
+2024-09-20,TRENT,Consumer Services,pullback,90.8,strong,1.0,7500.09,7150.35,1.89,closed,2024-09-23,7505.52,2024-10-03,7472.54,time_stop,False,-0.146,-0.44,7.0
+2024-09-20,JSWENERGY,Power,breakout,61.0,strong,1.0,784.51,737.32,1.76,closed,2024-09-23,784.51,2024-09-27,737.32,stop,False,-1.042,-6.01,4.0
+2024-09-26,PERSISTENT,Information Technology,pullback,76.3,strong,1.0,5382.46,5198.35,1.37,closed,2024-09-27,5438.57,2024-10-03,5198.35,stop,False,-1.057,-4.42,3.0
+2024-09-30,BPCL,Oil Gas & Consumable Fuels,breakout,75.3,strong,1.0,346.42,317.83,2.99,not_triggered,,,,,,,,,
+2024-10-14,OBEROIRLTY,Realty,breakout,57.1,neutral,0.5,1993.7,1898.7,1.57,closed,2024-10-15,1993.7,2024-10-17,1898.7,stop,False,-1.052,-4.77,2.0
+2024-12-05,OBEROIRLTY,Realty,breakout,59.7,neutral,0.5,2173.3,2059.56,1.45,not_triggered,,,,,,,,,
+2024-12-11,360ONE,Financial Services,breakout,80.9,strong,1.0,1197.87,1108.61,2.14,not_triggered,,,,,,,,,
+2024-12-12,TECHM,Information Technology,pullback,63.0,strong,1.0,1700.02,1640.74,1.73,not_triggered,,,,,,,,,
+2025-04-21,BAJFINANCE,Financial Services,pullback,74.1,strong,1.0,921.05,881.89,1.65,closed,2025-04-22,921.05,2025-04-30,873.21,gap_stop,False,-1.281,-5.19,6.0
+2025-04-24,JKCEMENT,Construction Materials,breakout,68.7,strong,1.0,5270.25,5058.81,1.29,closed,2025-04-25,5270.25,2025-04-28,5058.81,stop,False,-1.062,-4.01,1.0
+2025-05-07,MARICO,Fast Moving Consumer Goods,breakout,72.7,strong,1.0,727.63,694.96,1.73,closed,2025-05-08,729.37,2025-05-19,706.3,time_stop,False,-0.723,-3.16,7.0
+2025-05-07,SRF,Chemicals,pullback,61.2,strong,1.0,3074.52,2881.08,2.08,not_triggered,,,,,,,,,
+2025-05-15,ICICIBANK,Financial Services,pullback,73.6,strong,1.0,1434.7,1390.06,1.56,closed,2025-05-16,1434.7,2025-05-27,1423.33,time_stop,False,-0.335,-0.79,7.0
+2025-05-20,MFSL,Financial Services,breakout,70.2,strong,1.0,1399.9,1352.72,1.4,closed,2025-05-21,1399.9,2025-07-02,1644.0,max_hold,True,3.513,12.09,30.0
+2025-05-26,HDFCLIFE,Financial Services,breakout,61.6,strong,1.0,781.98,745.74,2.3,not_triggered,,,,,,,,,
+2025-05-27,GLAXO,Healthcare,breakout,68.9,strong,1.0,3031.16,2833.3,1.7,closed,2025-05-28,3031.16,2025-06-19,3119.78,trail,True,1.186,7.99,16.0
+2025-05-30,INDIANB,Financial Services,pullback,52.9,strong,1.0,601.08,558.03,2.57,closed,2025-06-02,601.08,2025-06-11,611.96,time_stop,False,0.218,1.81,7.0
+2025-06-04,FORTIS,Healthcare,pullback,72.1,neutral,0.5,744.02,694.76,2.08,closed,2025-06-05,744.02,2025-06-16,763.14,time_stop,False,0.35,2.57,7.0
+2025-06-04,SBICARD,Financial Services,breakout,62.1,neutral,0.5,944.14,907.32,1.72,not_triggered,,,,,,,,,
+2025-06-05,SBICARD,Financial Services,breakout,56.1,strong,1.0,944.14,907.41,1.79,closed,2025-06-06,944.14,2025-06-19,944.14,breakeven,True,0.936,3.89,9.0
+2025-06-18,AIIL,Financial Services,pullback,89.3,neutral,0.5,518.52,478.17,2.21,not_triggered,,,,,,,,,
+2025-06-20,BEL,Capital Goods,breakout,76.9,strong,1.0,407.17,393.68,1.45,closed,2025-06-23,407.76,2025-07-07,413.81,time_stop,False,0.358,1.48,10.0
+2025-06-20,BHARTIARTL,Telecommunication,breakout,61.8,strong,1.0,1910.73,1832.13,2.43,not_triggered,,,,,,,,,
+2025-06-23,BHARTIARTL,Telecommunication,breakout,63.2,strong,1.0,1910.73,1832.21,2.49,closed,2025-06-24,1910.73,2025-07-03,1977.67,time_stop,False,0.792,3.5,7.0
+2025-06-24,LTF,Financial Services,breakout,78.3,strong,1.0,199.65,191.1,1.45,closed,2025-06-25,201.92,2025-07-04,203.53,time_stop,False,0.102,0.8,7.0
+2025-06-25,FORTIS,Healthcare,pullback,83.1,strong,1.0,781.03,738.57,2.16,closed,2025-06-26,784.24,2025-07-07,804.19,time_stop,False,0.394,2.54,7.0
+2025-07-15,NAM-INDIA,Financial Services,breakout,78.2,neutral,0.5,833.9,792.26,1.68,closed,2025-07-16,833.9,2025-07-25,792.26,stop,False,-1.05,-4.99,7.0
+2025-07-15,AIIL,Financial Services,breakout,77.8,neutral,0.5,566.57,498.89,2.91,not_triggered,,,,,,,,,
+2025-07-16,HDFCAMC,Financial Services,breakout,70.5,neutral,0.5,2627.71,2494.62,2.24,closed,2025-07-17,2633.65,2025-07-28,2722.21,time_stop,False,0.59,3.36,7.0
+2025-07-21,DALBHARAT,Construction Materials,breakout,73.3,neutral,0.5,2278.62,2172.48,2.19,closed,2025-07-22,2278.62,2025-07-29,2172.48,stop,False,-1.054,-4.66,5.0
+2025-07-21,MUTHOOTFIN,Financial Services,pullback,70.8,neutral,0.5,2682.92,2561.2,2.3,not_triggered,,,,,,,,,
+2025-07-23,LTF,Financial Services,breakout,67.6,neutral,0.5,212.82,205.74,1.22,not_triggered,,,,,,,,,
+2025-09-15,RADICO,Fast Moving Consumer Goods,breakout,74.0,neutral,0.5,2983.17,2889.36,1.14,closed,2025-09-16,2983.17,2025-09-25,2956.24,time_stop,False,-0.367,-0.9,7.0
+2025-10-03,HEROMOTOCO,Automobile and Auto Components,breakout,66.3,neutral,0.5,5403.24,5179.06,1.81,closed,2025-10-06,5403.24,2025-10-15,5352.89,time_stop,False,-0.285,-0.93,7.0
+2025-10-06,NYKAA,Consumer Services,breakout,79.0,neutral,0.5,257.21,238.82,2.7,closed,2025-10-07,257.21,2025-10-16,263.31,time_stop,False,0.297,2.37,7.0
+2025-10-06,ASTERDM,Healthcare,breakout,75.2,neutral,0.5,674.27,638.86,1.88,closed,2025-10-07,674.27,2025-10-16,696.3,time_stop,False,0.574,3.27,7.0
+2025-10-07,UNOMINDA,Automobile and Auto Components,breakout,74.5,neutral,0.5,1380.23,1306.29,2.16,not_triggered,,,,,,,,,
+2025-10-09,NMDC,Metals & Mining,breakout,58.3,neutral,0.5,75.95,73.08,1.77,not_triggered,,,,,,,,,
+2025-10-10,SBIN,Financial Services,breakout,61.5,strong,1.0,868.97,844.82,1.96,closed,2025-10-13,868.97,2025-10-24,888.48,time_stop,False,0.718,2.25,8.0
+2025-10-10,PNB,Financial Services,breakout,58.9,strong,1.0,114.63,110.7,1.7,not_triggered,,,,,,,,,
+2025-10-13,ADANIPOWER,Power,pullback,74.1,strong,1.0,155.91,146.74,1.31,closed,2025-10-14,155.91,2025-10-31,157.85,trail,True,1.064,6.5,12.0
+2025-10-17,RADICO,Fast Moving Consumer Goods,breakout,74.4,strong,1.0,3126.19,2982.71,2.0,closed,2025-10-20,3126.19,2025-10-30,3126.19,breakeven,True,0.946,4.59,7.0
+2025-10-20,BANKINDIA,Financial Services,breakout,77.7,strong,1.0,126.45,119.68,2.22,closed,2025-10-21,126.45,2025-12-03,135.86,trail,True,1.648,9.08,29.0
+2025-10-20,PNB,Financial Services,breakout,65.7,strong,1.0,115.91,110.77,2.03,not_triggered,,,,,,,,,
+2025-10-28,PNB,Financial Services,breakout,71.8,strong,1.0,118.18,115.58,1.04,closed,2025-10-29,118.18,2025-11-07,115.58,stop,False,-1.114,-2.2,6.0
+2025-10-28,JSWSTEEL,Metals & Mining,breakout,57.6,strong,1.0,1180.8,1136.18,1.96,closed,2025-10-29,1182.41,2025-11-10,1172.56,time_stop,False,-0.277,-0.83,7.0
+2025-10-30,CANBK,Financial Services,breakout,77.0,strong,1.0,130.09,123.41,2.2,closed,2025-10-31,130.09,2025-12-08,138.28,trail,True,1.564,8.28,25.0
+2025-10-31,ABCAPITAL,Financial Services,breakout,83.9,strong,1.0,333.63,308.77,2.99,closed,2025-11-03,333.63,2025-11-13,331.8,time_stop,False,-0.107,-0.55,7.0
+2025-11-07,PAYTM,Financial Services,breakout,79.2,neutral,0.5,1353.05,1299.45,1.6,closed,2025-11-10,1353.05,2025-11-13,1299.45,stop,False,-1.063,-3.96,3.0
+2025-11-11,HINDPETRO,Oil Gas & Consumable Fuels,breakout,67.0,neutral,0.5,465.98,445.82,1.74,closed,2025-11-12,465.99,2025-11-21,448.78,time_stop,False,-0.911,-3.69,7.0
+2025-11-14,ASHOKLEY,Capital Goods,breakout,76.3,neutral,0.5,149.51,139.9,2.58,not_triggered,,,,,,,,,
+2025-11-17,NYKAA,Consumer Services,breakout,72.4,neutral,0.5,270.17,256.91,1.69,closed,2025-11-18,271.8,2025-11-27,264.85,time_stop,False,-0.512,-2.56,7.0
+2025-11-17,HEROMOTOCO,Automobile and Auto Components,breakout,71.6,neutral,0.5,5621.92,5372.65,1.97,closed,2025-11-18,5625.97,2025-12-09,5800.94,trail,True,1.29,6.06,15.0
+2025-11-21,EICHERMOT,Automobile and Auto Components,breakout,72.6,neutral,0.5,7137.46,6801.18,2.41,closed,2025-11-24,7137.46,2025-12-03,7008.11,time_stop,False,-0.438,-1.81,7.0
+2025-11-28,LAURUSLABS,Healthcare,pullback,81.0,neutral,0.5,1032.75,967.0,2.87,closed,2025-12-01,1033.97,2025-12-10,1017.39,time_stop,False,-0.286,-1.6,7.0
+2025-12-11,MOTHERSON,Automobile and Auto Components,breakout,70.7,neutral,0.5,119.7,115.43,1.47,closed,2025-12-12,119.91,2025-12-18,115.43,stop,False,-1.067,-3.74,4.0
+2025-12-12,NATIONALUM,Metals & Mining,breakout,74.9,neutral,0.5,274.5,260.38,1.99,not_triggered,,,,,,,,,
+2025-12-15,NATIONALUM,Metals & Mining,breakout,75.3,neutral,0.5,274.74,260.4,2.09,not_triggered,,,,,,,,,
+2025-12-15,IDFCFIRSTB,Financial Services,breakout,60.9,neutral,0.5,84.27,81.32,1.62,not_triggered,,,,,,,,,
+2025-12-16,IDFCFIRSTB,Financial Services,breakout,61.4,neutral,0.5,84.27,81.32,1.67,not_triggered,,,,,,,,,
+2025-12-19,SHRIRAMFIN,Financial Services,breakout,76.2,neutral,0.5,909.27,843.43,2.88,closed,2025-12-22,913.83,2026-01-09,969.91,time_stop,False,0.764,6.14,13.0
+2025-12-19,IDFCFIRSTB,Financial Services,breakout,69.1,neutral,0.5,84.84,83.17,1.0,closed,2025-12-22,84.84,2026-01-01,85.36,time_stop,False,0.186,0.62,7.0
+2025-12-22,UPL,Chemicals,breakout,59.7,neutral,0.5,772.3,743.26,1.79,closed,2025-12-23,772.42,2026-01-02,796.94,time_stop,False,0.774,3.17,7.0
+2025-12-31,BPCL,Oil Gas & Consumable Fuels,breakout,70.3,neutral,0.5,375.79,358.09,2.24,closed,2026-01-01,375.8,2026-01-06,358.09,stop,False,-1.053,-4.71,3.0
+2026-01-01,MOTHERSON,Automobile and Auto Components,pullback,80.0,neutral,0.5,122.28,117.58,1.89,closed,2026-01-02,122.31,2026-01-08,117.43,gap_stop,False,-1.096,-3.99,4.0
+2026-01-01,INDUSTOWER,Telecommunication,breakout,66.7,neutral,0.5,424.32,404.71,1.84,closed,2026-01-02,424.32,2026-01-13,412.38,time_stop,False,-0.663,-2.81,7.0
+2026-02-18,MAHABANK,Financial Services,breakout,70.7,neutral,0.5,68.24,66.19,1.06,closed,2026-02-19,68.29,2026-03-04,68.29,breakeven,True,0.918,3.07,8.0
+2026-05-04,LAURUSLABS,Healthcare,breakout,87.1,strong,1.0,1171.01,1097.37,2.08,closed,2026-05-05,1171.33,2026-06-17,1369.8,max_hold,True,2.302,14.79,30.0
+2026-05-06,LUPIN,Healthcare,breakout,59.2,strong,1.0,2443.74,2327.91,2.08,closed,2026-05-07,2443.74,2026-05-11,2313.62,gap_stop,False,-1.176,-5.32,2.0
+2026-05-25,ADANIPOWER,Power,pullback,86.1,strong,1.0,234.83,215.33,2.26,closed,2026-05-26,234.83,2026-06-05,232.6,time_stop,False,-0.145,-0.95,7.0
+2026-06-18,ADANIPORTS,Services,pullback,73.5,strong,1.0,1851.35,1770.15,1.99,not_triggered,,,,,,,,,
+2026-06-24,AUROPHARMA,Healthcare,breakout,58.7,neutral,0.5,1552.45,1488.43,1.7,closed,2026-06-25,1552.45,2026-07-07,1583.1,time_stop,False,0.418,1.97,7.0
+2026-06-25,MOTHERSON,Automobile and Auto Components,pullback,74.1,neutral,0.5,155.14,141.03,2.91,not_triggered,,,,,,,,,
+2026-07-02,ADANIGREEN,Power,pullback,84.1,strong,1.0,1565.16,1464.32,2.03,closed,2026-07-03,1565.16,2026-07-14,1604.5,time_stop,False,0.351,2.51,7.0
+2026-07-03,INDUSINDBK,Financial Services,breakout,60.2,strong,1.0,979.38,939.74,1.68,closed,2026-07-06,979.38,2026-07-15,1009.7,time_stop,False,0.703,3.1,7.0
+2026-07-15,FLUOROCHEM,Chemicals,breakout,72.6,neutral,0.5,4150.3,3909.28,2.0,not_triggered,,,,,,,,,
+2026-07-16,BHEL,Capital Goods,breakout,80.0,neutral,0.5,440.02,404.17,2.28,closed,2026-07-17,445.0,2026-07-24,404.17,stop,False,-1.027,-9.18,5.0
+2026-07-16,FLUOROCHEM,Chemicals,breakout,74.2,neutral,0.5,4151.4,3909.64,2.07,closed,2026-07-17,4151.4,2026-08-28,4768.04,max_hold,True,2.232,13.25,30.0
+2026-07-21,AJANTPHARM,Healthcare,breakout,73.3,strong,1.0,3569.7,3412.08,1.49,not_triggered,,,,,,,,,
+2026-07-28,RADICO,Fast Moving Consumer Goods,breakout,85.4,neutral,0.5,4354.35,4069.57,2.7,closed,2026-07-29,4354.35,2026-08-07,4499.0,time_stop,False,0.47,3.32,7.0
+2026-07-28,LLOYDSME,Metals & Mining,breakout,78.0,neutral,0.5,2039.04,1921.43,1.79,closed,2026-07-29,2039.04,2026-08-07,2101.2,time_stop,False,0.485,3.05,7.0
+2026-07-30,APOLLOHOSP,Healthcare,pullback,67.5,neutral,0.5,9007.52,8721.19,2.26,closed,2026-07-31,9014.51,2026-08-11,8721.19,stop,False,-1.077,-3.25,7.0
+2026-07-31,TORNTPHARM,Healthcare,breakout,72.9,neutral,0.5,5145.84,4880.36,1.89,skipped_gap,2026-08-03,,,,,,,,
+2026-08-04,EXIDEIND,Automobile and Auto Components,pullback,66.6,strong,1.0,461.41,438.45,1.48,closed,2026-08-05,461.41,2026-08-14,476.1,time_stop,False,0.59,3.18,7.0
+2026-08-07,AUROPHARMA,Healthcare,breakout,66.8,strong,1.0,1664.06,1575.52,2.02,closed,2026-08-10,1668.0,2026-08-19,1624.5,time_stop,False,-0.515,-2.61,7.0
+2026-08-12,PIDILITIND,Chemicals,breakout,59.1,strong,1.0,1703.2,1669.52,1.0,not_triggered,,,,,,,,,
+2026-08-13,PIDILITIND,Chemicals,breakout,57.2,neutral,0.5,1704.6,1671.84,1.0,closed,2026-08-14,1704.6,2026-08-17,1671.84,stop,False,-1.13,-1.92,1.0
+2026-08-20,NAM-INDIA,Financial Services,breakout,77.8,neutral,0.5,1267.47,1171.55,2.78,not_triggered,,,,,,,,,
+2026-08-24,SIEMENS,Capital Goods,breakout,80.0,neutral,0.5,4122.32,3892.77,2.18,closed,2026-08-25,4122.32,2026-09-03,4030.0,time_stop,False,-0.447,-2.24,7.0
+2026-08-25,LAURUSLABS,Healthcare,pullback,80.9,neutral,0.5,1871.27,1765.32,2.6,closed,2026-08-26,1871.27,2026-09-04,1840.0,time_stop,False,-0.339,-1.67,7.0
