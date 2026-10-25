@@ -1,0 +1,36 @@
+name: Telegram check
+
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: repo-commits
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Check Telegram (prints only whether secrets exist and the API's answer)
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python -m scanner.notify reports/telegram_check.json
+      - name: Commit result
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898294+github-actions[bot]@users.noreply.github.com"
+          git add reports/telegram_check.json
+          git diff --cached --quiet || git commit -m "Telegram check $(date -u +%F)"
+          git pull --rebase origin main
+          git push
