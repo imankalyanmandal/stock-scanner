@@ -1,0 +1,1984 @@
+{
+  "session": "2026-10-23",
+  "regime": {
+    "regime": "weak",
+    "breadth_pct": 12.4,
+    "benchmarks": {
+      "nifty50": {
+        "close": 22600.0,
+        "above_20": false,
+        "above_50": false,
+        "sma20": 22713.45224609375,
+        "sma50": 23403.7229296875
+      },
+      "nifty500": {
+        "close": 21427.599609375,
+        "above_20": false,
+        "above_50": false,
+        "sma20": 22027.07509765625,
+        "sma50": 22745.63
+      }
+    },
+    "sectors": {
+      "Automobile and Auto Components": {
+        "breadth_pct": 5.555555555555555,
+        "ret5_med": -0.04174927813114149,
+        "ret20_med": -0.09912868844228312,
+        "count": 18
+      },
+      "Capital Goods": {
+        "breadth_pct": 0.0,
+        "ret5_med": -0.06354813638445789,
+        "ret20_med": -0.11607461090649873,
+        "count": 27
+      },
+      "Chemicals": {
+        "breadth_pct": 0.0,
+        "ret5_med": -0.06125205592105265,
+        "ret20_med": -0.08948456888323253,
+        "count": 9
+      },
+      "Construction": {
+        "breadth_pct": 0.0,
+        "ret5_med": -0.03714923241514301,
+        "ret20_med": -0.10791093164558746,
+        "count": 2
+      },
+      "Construction Materials": {
+        "breadth_pct": 33.33333333333333,
+        "ret5_med": 0.010057415197505137,
+        "ret20_med": -0.06580744305091663,
+        "count": 6
+      },
+      "Consumer Durables": {
+        "breadth_pct": 11.11111111111111,
+        "ret5_med": -0.07008834716540835,
+        "ret20_med": -0.060285132382892015,
+        "count": 9
+      },
+      "Consumer Services": {
+        "breadth_pct": 7.6923076923076925,
+        "ret5_med": -0.044465440718447935,
+        "ret20_med": -0.0851966075558982,
+        "count": 13
+      },
+      "Diversified": {
+        "breadth_pct": 0.0,
+        "ret5_med": -0.10169819290923698,
+        "ret20_med": -0.16301988046380533,
+        "count": 1
+      },
+      "Fast Moving Consumer Goods": {
+        "breadth_pct": 0.0,
+        "ret5_med": -0.05296109689399042,
+        "ret20_med": -0.08025442270266003,
+        "count": 15
+      },
+      "Financial Services": {
+        "breadth_pct": 15.0,
+        "ret5_med": -0.05655261773536818,
+        "ret20_med": -0.10410786763140556,
+        "count": 60
+      },
+      "Healthcare": {
+        "breadth_pct": 8.333333333333332,
+        "ret5_med": -0.03433868189917899,
+        "ret20_med": -0.08693267089281514,
+        "count": 24
+      },
+      "Information Technology": {
+        "breadth_pct": 91.66666666666666,
+        "ret5_med": 0.032755108026917834,
+        "ret20_med": 0.13619540961052345,
+        "count": 12
+      },
+      "Metals & Mining": {
+        "breadth_pct": 0.0,
+        "ret5_med": -0.0504469489042213,
+        "ret20_med": -0.14160110426707223,
+        "count": 14
+      },
+      "Oil Gas & Consumable Fuels": {
+        "breadth_pct": 10.0,
+        "ret5_med": -0.02970873032876803,
+        "ret20_med": -0.0561290486387227,
+        "count": 10
+      },
+      "Power": {
+        "breadth_pct": 0.0,
+        "ret5_med": -0.06347222808070785,
+        "ret20_med": -0.08991401769554297,
+        "count": 11
+      },
+      "Realty": {
+        "breadth_pct": 0.0,
+        "ret5_med": -0.06031668137217294,
+        "ret20_med": -0.09453001428279251,
+        "count": 6
+      },
+      "Services": {
+        "breadth_pct": 0.0,
+        "ret5_med": -0.04798773916667132,
+        "ret20_med": -0.1172925873580053,
+        "count": 5
+      },
+      "Telecommunication": {
+        "breadth_pct": 60.0,
+        "ret5_med": -0.007634035495872493,
+        "ret20_med": -0.012473981146671087,
+        "count": 5
+      },
+      "Textiles": {
+        "breadth_pct": 0.0,
+        "ret5_med": -0.07025457132270485,
+        "ret20_med": -0.09630993141405969,
+        "count": 2
+      }
+    }
+  },
+  "min_score": 65,
+  "picks": [],
+  "rejected": [
+    {
+      "symbol": "360ONE",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "ABB",
+      "reasons": [
+        "not_2_green_days",
+        "reward_risk_below_min",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "ABBOTINDIA",
+      "reasons": [
+        "low_volume",
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "ABCAPITAL",
+      "reasons": [
+        "not_2_green_days",
+        "reward_risk_below_min",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "ADANIENSOL",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "ADANIENT",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "ADANIGREEN",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "ADANIPORTS",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "ADANIPOWER",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "AIAENG",
+      "reasons": [
+        "low_volume",
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "AIIL",
+      "reasons": [
+        "low_turnover",
+        "not_2_green_days",
+        "reward_risk_below_min",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "AJANTPHARM",
+      "reasons": [
+        "low_volume",
+        "reward_risk_below_min",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "ALKEM",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "AMBUJACEM",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "ANTHEM",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "APARINDS",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "APLAPOLLO",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "APOLLOHOSP",
+      "reasons": [
+        "reward_risk_below_min",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "ASHOKLEY",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "ASIANPAINT",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "ASTERDM",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "ASTRAL",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "ATGL",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "AUBANK",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "AUROPHARMA",
+      "reasons": [
+        "not_2_green_days",
+        "reward_risk_below_min",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "AXISBANK",
+      "reasons": [
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "BAJAJ-AUTO",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "BAJAJFINSV",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "BAJAJHFL",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "BAJAJHLDNG",
+      "reasons": [
+        "low_volume",
+        "not_2_green_days",
+        "reward_risk_below_min",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "BAJFINANCE",
+      "reasons": [
+        "not_2_green_days",
+        "reward_risk_below_min",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "BALKRISIND",
+      "reasons": [
+        "not_2_green_days",
+        "reward_risk_below_min",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "BANKBARODA",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "BANKINDIA",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "BDL",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "BEL",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "BERGEPAINT",
+      "reasons": [
+        "not_2_green_days",
+        "reward_risk_below_min"
+      ]
+    },
+    {
+      "symbol": "BHARATFORG",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "BHARTIARTL",
+      "reasons": [
+        "not_2_green_days",
+        "reward_risk_below_min",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "BHARTIHEXA",
+      "reasons": [
+        "stretched_from_20dma",
+        "reward_risk_below_min",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "BHEL",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "BIOCON",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "BLUESTARCO",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "BOSCHLTD",
+      "reasons": [
+        "low_volume",
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "BPCL",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "BRITANNIA",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "BSE",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "CANBK",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "CGPOWER",
+      "reasons": [
+        "not_2_green_days",
+        "reward_risk_below_min",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "CHOLAFIN",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "CIPLA",
+      "reasons": [
+        "reward_risk_below_min",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "COALINDIA",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "COCHINSHIP",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "COFORGE",
+      "reasons": [
+        "not_2_green_days",
+        "reward_risk_below_min",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "COLPAL",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "CONCOR",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "COROMANDEL",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "CRISIL",
+      "reasons": [
+        "low_volume",
+        "not_2_green_days",
+        "reward_risk_below_min"
+      ]
+    },
+    {
+      "symbol": "CUMMINSIND",
+      "reasons": [
+        "not_2_green_days",
+        "reward_risk_below_min",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "DABUR",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "DALBHARAT",
+      "reasons": [
+        "low_turnover",
+        "low_volume",
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "DIVISLAB",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "DIXON",
+      "reasons": [
+        "not_2_green_days",
+        "reward_risk_below_min",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "DLF",
+      "reasons": [
+        "not_2_green_days",
+        "reward_risk_below_min",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "DMART",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "DRREDDY",
+      "reasons": [
+        "not_2_green_days",
+        "reward_risk_below_min"
+      ]
+    },
+    {
+      "symbol": "EICHERMOT",
+      "reasons": [
+        "not_2_green_days",
+        "reward_risk_below_min",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "ENDURANCE",
+      "reasons": [
+        "low_volume",
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "ENRIN",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "ESCORTS",
+      "reasons": [
+        "low_volume",
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "ETERNAL",
+      "reasons": [
+        "not_2_green_days",
+        "reward_risk_below_min",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "EXIDEIND",
+      "reasons": [
+        "not_2_green_days",
+        "reward_risk_below_min",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "FACT",
+      "reasons": [
+        "low_turnover",
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "FEDERALBNK",
+      "reasons": [
+        "not_2_green_days",
+        "reward_risk_below_min"
+      ]
+    },
+    {
+      "symbol": "FLUOROCHEM",
+      "reasons": [
+        "low_volume",
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "FORTIS",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "GAIL",
+      "reasons": [
+        "not_2_green_days",
+        "reward_risk_below_min",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "GICRE",
+      "reasons": [
+        "not_2_green_days",
+        "reward_risk_below_min",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "GLAXO",
+      "reasons": [
+        "low_volume",
+        "not_2_green_days",
+        "reward_risk_below_min",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "GLENMARK",
+      "reasons": [
+        "not_2_green_days",
+        "reward_risk_below_min",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "GMRAIRPORT",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "GODFRYPHLP",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "GODREJCP",
+      "reasons": [
+        "not_2_green_days",
+        "reward_risk_below_min",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "GODREJIND",
+      "reasons": [
+        "low_turnover",
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "GODREJPROP",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "GRASIM",
+      "reasons": [
+        "not_2_green_days",
+        "reward_risk_below_min",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "GROWW",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "GVT&D",
+      "reasons": [
+        "not_2_green_days",
+        "reward_risk_below_min",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "HAL",
+      "reasons": [
+        "not_2_green_days",
+        "reward_risk_below_min",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "HAVELLS",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "HCLTECH",
+      "reasons": [
+        "not_2_green_days",
+        "stretched_from_20dma",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "HDBFS",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "HDFCAMC",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "HDFCBANK",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "HDFCLIFE",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "HEROMOTOCO",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "HEXT",
+      "reasons": [
+        "not_2_green_days",
+        "stretched_from_20dma",
+        "reward_risk_below_min",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "HINDALCO",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "HINDCOPPER",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "HINDPETRO",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "HINDUNILVR",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "HINDZINC",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "HUDCO",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "HYUNDAI",
+      "reasons": [
+        "not_2_green_days",
+        "reward_risk_below_min",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "ICICIAMC",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "ICICIBANK",
+      "reasons": [
+        "not_2_green_days",
+        "reward_risk_below_min",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "ICICIGI",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "ICICILIFE",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "IDEA",
+      "reasons": [
+        "price<50",
+        "not_2_green_days",
+        "reward_risk_below_min",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "IDFCFIRSTB",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "INDHOTEL",
+      "reasons": [
+        "not_2_green_days",
+        "stretched_from_20dma"
+      ]
+    },
+    {
+      "symbol": "INDIANB",
+      "reasons": [
+        "not_2_green_days",
+        "reward_risk_below_min"
+      ]
+    },
+    {
+      "symbol": "INDIGO",
+      "reasons": [
+        "not_2_green_days",
+        "reward_risk_below_min",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "INDUSINDBK",
+      "reasons": [
+        "not_2_green_days",
+        "reward_risk_below_min",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "INDUSTOWER",
+      "reasons": [
+        "not_2_green_days",
+        "reward_risk_below_min"
+      ]
+    },
+    {
+      "symbol": "INFY",
+      "reasons": [
+        "not_2_green_days",
+        "stretched_from_20dma",
+        "reward_risk_below_min"
+      ]
+    },
+    {
+      "symbol": "IOB",
+      "reasons": [
+        "price<50",
+        "low_turnover",
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "IOC",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "IPCALAB",
+      "reasons": [
+        "not_2_green_days",
+        "reward_risk_below_min",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "IRCTC",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "IREDA",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "IRFC",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "ITC",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "ITCHOTELS",
+      "reasons": [
+        "not_2_green_days",
+        "reward_risk_below_min",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "JINDALSTEL",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "JIOFIN",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "JKCEMENT",
+      "reasons": [
+        "low_volume",
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "JSL",
+      "reasons": [
+        "not_2_green_days",
+        "reward_risk_below_min",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "JSWENERGY",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "JSWINFRA",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "JSWSTEEL",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "JUBLFOOD",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "KALYANKJIL",
+      "reasons": [
+        "not_2_green_days",
+        "reward_risk_below_min",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "KEI",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "KOTAKBANK",
+      "reasons": [
+        "not_2_green_days",
+        "reward_risk_below_min"
+      ]
+    },
+    {
+      "symbol": "KPRMILL",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "LAURUSLABS",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "LENSKART",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "LGEINDIA",
+      "reasons": [
+        "not_2_green_days",
+        "reward_risk_below_min",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "LICHSGFIN",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "LICI",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "LINDEINDIA",
+      "reasons": [
+        "low_turnover",
+        "low_volume",
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "LLOYDSME",
+      "reasons": [
+        "not_2_green_days",
+        "reward_risk_below_min",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "LODHA",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "LT",
+      "reasons": [
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "LTF",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "LTM",
+      "reasons": [
+        "not_2_green_days",
+        "reward_risk_below_min"
+      ]
+    },
+    {
+      "symbol": "LTTS",
+      "reasons": [
+        "not_2_green_days",
+        "stretched_from_20dma",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "LUPIN",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "M&M",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "M&MFIN",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "MAHABANK",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "MANKIND",
+      "reasons": [
+        "not_2_green_days",
+        "reward_risk_below_min",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "MARICO",
+      "reasons": [
+        "not_2_green_days",
+        "reward_risk_below_min",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "MARUTI",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "MAXHEALTH",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "MAZDOCK",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "MCX",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "MEDANTA",
+      "reasons": [
+        "not_2_green_days",
+        "reward_risk_below_min",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "MEESHO",
+      "reasons": [
+        "not_2_green_days",
+        "reward_risk_below_min",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "MFSL",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "MOTHERSON",
+      "reasons": [
+        "not_2_green_days",
+        "reward_risk_below_min",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "MOTILALOFS",
+      "reasons": [
+        "not_2_green_days",
+        "reward_risk_below_min",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "MPHASIS",
+      "reasons": [
+        "not_2_green_days",
+        "reward_risk_below_min",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "MRF",
+      "reasons": [
+        "low_volume",
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "MUTHOOTFIN",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "NAM-INDIA",
+      "reasons": [
+        "not_2_green_days",
+        "reward_risk_below_min",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "NATIONALUM",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "NAUKRI",
+      "reasons": [
+        "not_2_green_days",
+        "reward_risk_below_min",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "NESTLEIND",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "NH",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "NHPC",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "NLCINDIA",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "NMDC",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "NTPC",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "NTPCGREEN",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "NYKAA",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "OBEROIRLTY",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "OFSS",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "OIL",
+      "reasons": [
+        "not_2_green_days",
+        "reward_risk_below_min",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "ONGC",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "PAGEIND",
+      "reasons": [
+        "low_volume",
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "PATANJALI",
+      "reasons": [
+        "not_2_green_days",
+        "reward_risk_below_min",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "PAYTM",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "PERSISTENT",
+      "reasons": [
+        "not_2_green_days",
+        "reward_risk_below_min"
+      ]
+    },
+    {
+      "symbol": "PETRONET",
+      "reasons": [
+        "not_2_green_days",
+        "reward_risk_below_min",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "PFC",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "PHOENIXLTD",
+      "reasons": [
+        "not_2_green_days",
+        "reward_risk_below_min",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "PIDILITIND",
+      "reasons": [
+        "not_2_green_days",
+        "reward_risk_below_min",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "PIIND",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "PIRAMALFIN",
+      "reasons": [
+        "not_2_green_days",
+        "reward_risk_below_min",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "PNB",
+      "reasons": [
+        "not_2_green_days",
+        "reward_risk_below_min"
+      ]
+    },
+    {
+      "symbol": "POLICYBZR",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "POLYCAB",
+      "reasons": [
+        "not_2_green_days",
+        "reward_risk_below_min",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "POWERGRID",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "POWERINDIA",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "PREMIERENE",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "PRESTIGE",
+      "reasons": [
+        "not_2_green_days",
+        "reward_risk_below_min",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "RADICO",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "RECLTD",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "RELIANCE",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "RVNL",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "SAIL",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "SBICARD",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "SBILIFE",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "SBIN",
+      "reasons": [
+        "not_2_green_days",
+        "reward_risk_below_min",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "SCHAEFFLER",
+      "reasons": [
+        "low_volume",
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "SHREECEM",
+      "reasons": [
+        "low_volume"
+      ]
+    },
+    {
+      "symbol": "SHRIRAMFIN",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "SIEMENS",
+      "reasons": [
+        "not_2_green_days",
+        "reward_risk_below_min",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "SOLARINDS",
+      "reasons": [
+        "not_2_green_days",
+        "reward_risk_below_min",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "SRF",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "SUNDARMFIN",
+      "reasons": [
+        "low_volume",
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "SUNPHARMA",
+      "reasons": [
+        "not_2_green_days",
+        "reward_risk_below_min",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "SUPREMEIND",
+      "reasons": [
+        "not_2_green_days",
+        "reward_risk_below_min",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "SUZLON",
+      "reasons": [
+        "price<50",
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "SWIGGY",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "TATACAP",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "TATACOMM",
+      "reasons": [
+        "not_2_green_days",
+        "reward_risk_below_min",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "TATACONSUM",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "TATAINVEST",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "TATAPOWER",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "TATASTEEL",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "TCS",
+      "reasons": [
+        "not_2_green_days",
+        "stretched_from_20dma",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "TECHM",
+      "reasons": [
+        "not_2_green_days",
+        "stretched_from_20dma",
+        "reward_risk_below_min",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "THERMAX",
+      "reasons": [
+        "not_2_green_days",
+        "reward_risk_below_min",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "TIINDIA",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "TITAN",
+      "reasons": [
+        "not_2_green_days",
+        "reward_risk_below_min",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "TMCV",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "TMPV",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "TORNTPHARM",
+      "reasons": [
+        "not_2_green_days",
+        "reward_risk_below_min",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "TORNTPOWER",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "TRENT",
+      "reasons": [
+        "not_2_green_days",
+        "reward_risk_below_min",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "TVSMOTOR",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "UBL",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "ULTRACEMCO",
+      "reasons": [
+        "reward_risk_below_min",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "UNIONBANK",
+      "reasons": [
+        "not_2_green_days",
+        "reward_risk_below_min"
+      ]
+    },
+    {
+      "symbol": "UNITDSPR",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "UNOMINDA",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "UPL",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "VAML",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "VBL",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "VEDL",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "VMM",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "VOLTAS",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "WAAREEENER",
+      "reasons": [
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "WIPRO",
+      "reasons": [
+        "not_2_green_days",
+        "stretched_from_20dma"
+      ]
+    },
+    {
+      "symbol": "YESBANK",
+      "reasons": [
+        "price<50",
+        "not_2_green_days",
+        "weak_market_no_setup"
+      ]
+    },
+    {
+      "symbol": "ZYDUSLIFE",
+      "reasons": [
+        "not_2_green_days",
+        "reward_risk_below_min",
+        "weak_market_no_setup"
+      ]
+    }
+  ],
+  "universe_size": 249,
+  "evaluated": 249
+}
