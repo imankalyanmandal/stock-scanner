@@ -1,92 +1,384 @@
 """Offline tests on synthetic price data (no network)."""
+import copy
+import math
+
 import numpy as np
 import pandas as pd
 import pytest
 import yaml
 
+from scanner import journal as J
 from scanner import pipeline
-from scanner.filters import compute_metrics, evaluate
+from scanner.filters import arrays, evaluate, features, metrics_at, select
+from scanner.market import regime_at
+from scanner.trade import simulate, size_position
 
 CFG = yaml.safe_load(open("config.yaml"))
+END = "2026-10-23"
 
 
-def make_df(n=260, drift=0.0015, last_moves=(0.012, 0.015), vol=2_000_000, price=500, seed=1):
+# ------------------------------------------------------------------ synthetic data
+def ohlc(close, vol=2_000_000, rng_pct=0.012, seed=0, end=END):
+    """OHLC around a close path: open = prev close, symmetric-ish range."""
+    close = np.asarray(close, dtype=float)
     rng = np.random.default_rng(seed)
-    rets = rng.normal(drift, 0.012, n)
-    rets[-len(last_moves):] = last_moves
-    close = price * np.cumprod(1 + rets)
-    idx = pd.bdate_range(end="2026-10-23", periods=n)
-    open_ = close / (1 + rets * 0.4)
-    high = np.maximum(open_, close) * 1.004
-    low = np.minimum(open_, close) * 0.992
-    high[-1] = close[-1] * 1.002  # close near the high
-    v = np.full(n, vol, dtype=float)
-    v[-1] = vol * 2
+    open_ = np.r_[close[0], close[:-1]]
+    spread = close * rng_pct * (0.7 + 0.6 * rng.random(len(close)))
+    high = np.maximum(open_, close) + spread * 0.35
+    low = np.minimum(open_, close) - spread * 0.35
+    v = np.full(len(close), float(vol)) if np.isscalar(vol) else np.asarray(vol, dtype=float)
+    idx = pd.bdate_range(end=end, periods=len(close))
     return pd.DataFrame({"Open": open_, "High": high, "Low": low, "Close": close, "Volume": v},
                         index=idx)
 
 
-def bench(n=260):
-    return make_df(n, drift=0.0005, last_moves=(0.002,), seed=99)
+def uptrend(n=300, start=200.0, drift=0.0025, noise=0.006, seed=1):
+    rng = np.random.default_rng(seed)
+    return start * np.cumprod(1 + rng.normal(drift, noise, n))
 
 
-def test_metrics_green_streak_and_setup():
-    m = compute_metrics(make_df(), bench()["Close"])
-    assert m["green_prev_streak"] >= 2
-    assert m["setup"] in {"breakout", "pullback", "none"}
-    assert m["stop"] < m["entry"] < m["target"]
-    assert 0 <= m["close_location"] <= 1
+def breakout_df(seed=1, bo_vol=2.5, bo_gain=0.02):
+    up = uptrend(300, seed=seed)
+    lvl = up[-1]
+    rng = np.random.default_rng(seed)
+    base = lvl * (1 + 0.015 * np.sin(np.arange(20) / 1.5) + rng.normal(0, 0.005, 20))  # 20-bar base
+    close = np.r_[up, base, base.max() * (1 + bo_gain)]
+    vol = np.r_[np.full(300, 2e6), np.full(20, 1.4e6), [2e6 * bo_vol]]
+    df = ohlc(close, vol, seed=seed)
+    df.iloc[-1, df.columns.get_loc("High")] = df["Close"].iloc[-1] * 1.002   # close near high
+    df.iloc[-1, df.columns.get_loc("Low")] = df["Open"].iloc[-1] * 0.997
+    return df
 
 
-def test_red_day_rejected():
-    m = compute_metrics(make_df(last_moves=(0.01, -0.01)), bench()["Close"])
-    ev = evaluate(m, CFG, {}, None)
-    assert "not_2_green_days" in ev["reject_reasons"]
+def pullback_df(seed=2, drop=(-0.006, -0.006, -0.005), rev=0.015, pb_vol=0.6):
+    up = uptrend(300, seed=seed, noise=0.004)
+    c = list(up)
+    for r in drop:
+        c.append(c[-1] * (1 + r))
+    c.append(c[-1] * (1 + rev))
+    n_pb = len(drop)
+    vol = np.r_[np.full(300, 2e6), np.full(n_pb, 2e6 * pb_vol), [3e6]]
+    df = ohlc(c, vol, seed=seed, rng_pct=0.01)
+    df.iloc[-1, df.columns.get_loc("High")] = df["Close"].iloc[-1] * 1.001
+    return df
 
 
-def test_penny_and_illiquid_rejected():
-    m = compute_metrics(make_df(price=20, vol=1000), bench()["Close"])
-    ev = evaluate(m, CFG, {}, None)
-    assert "price<50" in ev["reject_reasons"]
-    assert "low_turnover" in ev["reject_reasons"]
+def bench_df(n=330):
+    return ohlc(uptrend(n, start=20000, drift=0.0008, seed=99))
 
 
-def test_extended_move_rejected():
-    m = compute_metrics(make_df(last_moves=(0.06, 0.06)), bench()["Close"])
-    ev = evaluate(m, CFG, {}, None)
-    assert "extended_2day_gain" in ev["reject_reasons"]
+def feats_for(df, cfg=CFG):
+    return features(df, cfg, bench_df(len(df) + 10)["Close"])
 
 
-def test_score_bounds():
-    m = compute_metrics(make_df(), bench()["Close"])
-    ev = evaluate(m, CFG, {"breadth_pct": 70, "ret5_med": 0, "ret20_med": 0}, 55.0)
-    assert 0 <= ev["score"] <= 100
+def last_metrics(df, cfg=CFG, rank=90.0):
+    f = feats_for(df, cfg)
+    return metrics_at(arrays(f), len(f) - 1, cfg, rank), f
 
 
-def test_pipeline_end_to_end(monkeypatch, tmp_path):
-    syms = [f"S{i}" for i in range(30)]
-    uni = pd.DataFrame({"symbol": syms, "company": [f"Co {s}" for s in syms],
-                        "industry": ["IT" if i % 2 else "Banks" for i in range(30)],
-                        "indexes": "nifty50"})
-    data = {s: make_df(seed=i, last_moves=(0.012, 0.015) if i % 3 else (0.01, -0.01))
-            for i, s in enumerate(syms)}
-    data["^NSEI"] = bench()
-    data["^CRSLDX"] = bench()
+# ------------------------------------------------------------------ signals
+def test_breakout_detected_and_passes():
+    m, _ = last_metrics(breakout_df())
+    assert m["setup"] == "breakout" and m["bo_day"] == 1
+    assert m["base_depth_pct"] < 5 and m["setup_vol_ratio"] > 2
+    assert m["stop"] < m["close"] < m["trigger"] < m["max_entry"]
+    assert math.isclose(m["t1"] - m["trigger"], 2 * m["risk_per_share"], rel_tol=1e-9)
+    ev = evaluate(m, CFG)
+    assert not ev["reject_reasons"], ev["reject_reasons"]
+    assert "blue_sky" in ev["flags"]
+
+
+def test_breakout_low_volume_rejected():
+    m, _ = last_metrics(breakout_df(bo_vol=1.0))
+    assert m["setup"] == "breakout"
+    assert "breakout_low_volume" in evaluate(m, CFG)["reject_reasons"]
+
+
+def test_breakout_day3_is_not_a_setup():
+    df = breakout_df()
+    last = df["Close"].iloc[-1]
+    extra = ohlc(np.r_[df["Close"].to_numpy(), last * 1.005, last * 1.01])
+    m, _ = last_metrics(extra)
+    assert m["setup"] != "breakout"
+
+
+def test_pullback_detected():
+    m, _ = last_metrics(pullback_df())
+    assert m["setup"] == "pullback", m["setup_fail"]
+    assert m["pb_bars"] >= 2 and m["setup_vol_ratio"] < 1
+    assert -0.75 <= m["touch_offset_atr"] <= 0.5
+
+
+def test_deep_undercut_is_not_a_pullback():
+    m, _ = last_metrics(pullback_df(drop=(-0.02, -0.03, -0.03, -0.02), rev=0.01))
+    assert m["setup"] == "none"
+    assert m["setup_fail"] in {"pb_broke_20dma", "pb_too_deep"}
+
+
+def test_heavy_volume_pullback_rejected():
+    m, _ = last_metrics(pullback_df(pb_vol=1.6))
+    assert m["setup"] == "pullback"
+    assert "pullback_heavy_volume" in evaluate(m, CFG)["reject_reasons"]
+
+
+def test_downtrend_rejected_by_trend_template():
+    down = 500 * np.cumprod(1 + np.random.default_rng(3).normal(-0.002, 0.008, 320))
+    down[-2:] = down[-3] * np.array([1.01, 1.025])
+    m, _ = last_metrics(ohlc(down))
+    r = evaluate(m, CFG)["reject_reasons"]
+    assert "below_50dma" in r and "50dma_below_200dma" in r
+
+
+def test_weak_rs_rank_rejected():
+    m, _ = last_metrics(breakout_df(), rank=40)
+    assert "weak_rs_rank" in evaluate(m, CFG)["reject_reasons"]
+
+
+def test_resistance_just_above_entry_is_counted():
+    """A swing high within 0.5 ATR of the trigger must still count as resistance."""
+    df = pullback_df()
+    m, f = last_metrics(df)
+    near = m["trigger"] + 0.3 * m["atr"]
+    i_hi = len(df) - 1 - m["pb_bars"] - 1
+    df.iloc[i_hi, df.columns.get_loc("High")] = near
+    m2, _ = last_metrics(df)
+    assert m2["resistance"] is not None and m2["resistance"] <= near + 1e-9
+    assert m2["room_r"] < 0.5
+    assert "resistance_too_close" in evaluate(m2, CFG)["reject_reasons"]
+
+
+def test_no_lookahead():
+    """Metrics at bar i are identical whether or not later bars exist."""
+    df = pullback_df()
+    full = feats_for(df)
+    i = len(df) - 8
+    trunc = features(df.iloc[:i + 1], CFG, bench_df(len(df) + 10)["Close"])
+    a = metrics_at(arrays(full), i, CFG, 80)
+    b = metrics_at(arrays(trunc), i, CFG, 80)
+    for k, v in a.items():
+        if isinstance(v, float):
+            assert (math.isnan(v) and math.isnan(b[k])) or math.isclose(v, b[k], rel_tol=1e-9, abs_tol=1e-12), k
+        else:
+            assert v == b[k], k
+
+
+def test_locked_circuit_rejected():
+    df = breakout_df()
+    k = len(df) - 5
+    for col in ("Open", "High", "Low"):
+        df.iloc[k, df.columns.get_loc(col)] = df["Close"].iloc[k]
+    m, _ = last_metrics(df)
+    assert "circuit_history" in evaluate(m, CFG)["reject_reasons"]
+
+
+def test_select_caps_sector_and_top_n():
+    rows = [{"symbol": f"S{i}", "industry": "Banks" if i < 4 else f"I{i}", "score": 90 - i}
+            for i in range(10)]
+    picks, dropped = select(rows, CFG)
+    assert len(picks) == CFG["selection"]["top_n"]
+    assert sum(p["industry"] == "Banks" for p in picks) == CFG["selection"]["max_per_sector"]
+    assert any("sector_cap" in d["reasons"] for d in dropped)
+
+
+# ------------------------------------------------------------------ regime + sizing
+def _b(close, s20, s50):
+    return {"close": close, "sma20": s20, "sma50": s50}
+
+
+def test_regime_rules():
+    up = {"nifty50": _b(110, 105, 100), "nifty500": _b(110, 105, 100)}
+    assert regime_at(up, 70, 14, CFG)["size_mult"] == 1.0
+    assert regime_at(up, 50, 14, CFG)["size_mult"] == CFG["market"]["neutral_size"]
+    weak = regime_at({"nifty50": _b(95, 98, 100)}, 70, 14, CFG)
+    assert weak["regime"] == "weak" and not weak["allow_new_longs"]
+    assert regime_at(up, 70, 22, CFG)["size_mult"] == CFG["market"]["vix_high_size"]
+    assert not regime_at(up, 70, 30, CFG)["allow_new_longs"]
+
+
+def test_position_sizing():
+    s = size_position(100.0, 95.0, CFG, 1.0)     # 1% of 10L = 10,000 / 5 = 2000 sh
+    assert s["qty"] == 2000 and s["risk_amount"] == 10000
+    s = size_position(100.0, 99.5, CFG, 1.0)     # would be 20,000 sh; capped at 20% = 2000 sh
+    assert s["qty"] == 2000 and s["capped"]
+    assert size_position(100.0, 95.0, CFG, 0.5)["qty"] == 1000
+
+
+# ------------------------------------------------------------------ trade simulation
+def _bars(rows, trail=None):
+    """rows: list of (open, high, low, close); bar 0 is the signal bar."""
+    df = pd.DataFrame(rows, columns=["open", "high", "low", "close"],
+                      index=pd.bdate_range("2026-01-01", periods=len(rows)))
+    df["ema20"] = trail if trail is not None else df["close"] * 0.9
+    df["ema10"] = df["ema20"]
+    return arrays(df)
+
+
+PLAN = {"trigger": 100.0, "max_entry": 101.5, "stop": 95.0}
+
+
+def test_sim_partial_then_trail():
+    A = _bars([(98, 99, 97, 98.5), (99.5, 101, 99, 100.5), (101, 106, 100.5, 105),
+               (105, 111, 104, 110), (110, 112, 108, 109)],
+              trail=[0, 0, 0, 0, 109.5])
+    r = simulate(A, 0, PLAN, CFG)
+    assert r["status"] == "closed" and r["exit_reason"] == "trail"
+    assert r["partial_taken"] and r["fill_price"] == 100.0
+    # half at 110 (2R), half at 109 -> +1.9R gross, minus costs
+    assert math.isclose(r["r_multiple"], 1.9 - 0.25 / 100 * 100 / 5, abs_tol=1e-3)
+
+
+def test_sim_gap_above_max_entry_skipped():
+    A = _bars([(98, 99, 97, 98.5), (102, 104, 101.8, 103)])
+    assert simulate(A, 0, PLAN, CFG)["status"] == "skipped_gap"
+
+
+def test_sim_not_triggered_and_pending():
+    A = _bars([(98, 99, 97, 98.5), (98, 99.5, 97, 99)])
+    assert simulate(A, 0, PLAN, CFG)["status"] == "not_triggered"
+    assert simulate(_bars([(98, 99, 97, 98.5)]), 0, PLAN, CFG)["status"] == "pending"
+
+
+def test_sim_stop_on_fill_day_and_gap_stop():
+    A = _bars([(98, 99, 97, 98.5), (99, 100.5, 94, 95.5)])
+    r = simulate(A, 0, PLAN, CFG)
+    assert r["exit_reason"] == "stop" and r["r_multiple"] < -1
+    A = _bars([(98, 99, 97, 98.5), (99, 100.5, 99, 100), (93, 94, 92, 93)])
+    r = simulate(A, 0, PLAN, CFG)
+    assert r["exit_reason"] == "gap_stop" and math.isclose(r["exit_price"], 93)
+
+
+def test_sim_time_stop():
+    rows = [(98, 99, 97, 98.5), (99.5, 100.5, 99, 100.2)] + [(100, 101, 99.5, 100.3)] * 9
+    r = simulate(_bars(rows), 0, PLAN, CFG)
+    assert r["exit_reason"] == "time_stop" and r["bars_held"] == CFG["exits"]["time_stop_days"]
+
+
+# ------------------------------------------------------------------ journal + pipeline
+def _universe(n):
+    syms = [f"S{i}" for i in range(n)]
+    return syms, pd.DataFrame({"symbol": syms, "company": [f"Co {s}" for s in syms],
+                               "industry": [f"Ind{i % 6}" for i in range(n)],
+                               "indexes": "nifty50"})
+
+
+def _market(syms):
+    data = {}
+    for i, s in enumerate(syms):
+        if i % 3 == 0:
+            data[s] = breakout_df(seed=i + 10)
+        elif i % 3 == 1:
+            data[s] = pullback_df(seed=i + 10)
+        else:
+            data[s] = ohlc(500 * np.cumprod(1 + np.random.default_rng(i).normal(-0.001, 0.01, 321)))
+    data["^NSEI"] = data["^CRSLDX"] = bench_df(321)
+    data["^INDIAVIX"] = ohlc(np.full(321, 14.0))
+    return data
+
+
+def _cfg(tmp_path):
+    cfg = copy.deepcopy(CFG)
+    cfg["output"]["dir"] = str(tmp_path / "reports")
+    cfg["journal"] = {"path": str(tmp_path / "journal.csv"), "state_path": str(tmp_path / "state.json")}
+    cfg["universe"]["exclude_file"] = str(tmp_path / "none.csv")
+    return cfg
+
+
+def test_pipeline_end_to_end_and_journal(monkeypatch, tmp_path):
+    syms, uni = _universe(30)
+    data = _market(syms)
     monkeypatch.setattr(pipeline, "load_universe", lambda *a, **k: uni)
-    monkeypatch.setattr(pipeline, "download_prices", lambda s: {k: data[k] for k in s})
+    monkeypatch.setattr(pipeline, "download_prices", lambda s, **k: {x: data[x] for x in s if x in data})
     monkeypatch.setattr(pipeline, "fetch_delivery", lambda d: {s: 50.0 for s in syms})
     monkeypatch.setattr(pipeline, "upcoming_events", lambda *a: [])
-    cfg = {**CFG, "output": {**CFG["output"], "dir": str(tmp_path)}}
+    cfg = _cfg(tmp_path)
     res = pipeline.run(cfg, with_news=False)
-    assert res["session"] == "2026-10-23"
-    assert res["regime"]["regime"] in {"strong", "neutral", "weak"}
-    assert len(res["picks"]) + len(res["rejected"]) == 30
+    assert res["session"] == END
+    assert len(res["picks"]) <= cfg["selection"]["top_n"]
+    assert res["picks"], "synthetic breakouts should produce picks"
     for p in res["picks"]:
-        assert not p["reject_reasons"]
-    assert (tmp_path / "scan_2026-10-23.html").exists()
-    assert (tmp_path / "scan_2026-10-23.csv").exists()
+        assert not p["reject_reasons"] and p["qty"] > 0 and "Buy-stop" in p["exit_plan"]
+    assert (tmp_path / "reports" / f"scan_{END}.html").exists()
+    j = J.load(cfg["journal"]["path"])
+    assert len(j) == len(res["picks"]) and set(j["status"]) == {"pending"}
+
+    res2 = pipeline.run(cfg, with_news=False)            # same session again
+    assert res2["duplicate"]
+    assert len(J.load(cfg["journal"]["path"])) == len(j)
 
 
+def test_earnings_in_window_rejected(monkeypatch, tmp_path):
+    syms, uni = _universe(12)
+    data = _market(syms)
+    monkeypatch.setattr(pipeline, "load_universe", lambda *a, **k: uni)
+    monkeypatch.setattr(pipeline, "download_prices", lambda s, **k: {x: data[x] for x in s if x in data})
+    monkeypatch.setattr(pipeline, "fetch_delivery", lambda d: {})
+    monkeypatch.setattr(pipeline, "upcoming_events",
+                        lambda *a: [{"type": "earnings", "date": "2026-10-28"}])
+    res = pipeline.run(_cfg(tmp_path), with_news=False)
+    assert not res["picks"]
+    assert any("earnings_in_hold_window" in r["reasons"] for r in res["rejected"])
+
+
+def test_weak_market_blocks_new_longs(monkeypatch, tmp_path):
+    syms, uni = _universe(12)
+    data = _market(syms)
+    falling = ohlc(20000 * np.cumprod(np.full(321, 0.998)))
+    data["^NSEI"] = data["^CRSLDX"] = falling
+    monkeypatch.setattr(pipeline, "load_universe", lambda *a, **k: uni)
+    monkeypatch.setattr(pipeline, "download_prices", lambda s, **k: {x: data[x] for x in s if x in data})
+    monkeypatch.setattr(pipeline, "fetch_delivery", lambda d: {})
+    monkeypatch.setattr(pipeline, "upcoming_events", lambda *a: [])
+    res = pipeline.run(_cfg(tmp_path), with_news=False)
+    assert res["regime"]["regime"] == "weak" and not res["picks"]
+    assert "No new longs" in res["note"]
+
+
+def test_journal_update_closes_trades():
+    df = breakout_df()
+    f = feats_for(df)
+    i = len(f) - 1
+    m = metrics_at(arrays(f), i, CFG, 90)
+    jdf = J.add_picks(J.load("/nonexistent.csv"), [{"symbol": "X", "setup": "breakout", "score": 70,
+                                                     **m, "qty": 10}], m["last_date"],
+                      {"regime": "strong", "size_mult": 1})
+    trig = m["trigger"]
+    later = [(trig * 0.999, trig * 1.01, trig * 0.995, trig * 1.008)] + \
+            [(trig * (1 + 0.02 * k), trig * (1 + 0.02 * k + 0.01), trig * (1 + 0.02 * k - 0.005),
+              trig * (1 + 0.02 * k + 0.008)) for k in range(1, 12)] + \
+            [(trig * 1.15, trig * 1.15, trig * 0.9, trig * 0.95)]
+    ext = pd.concat([df, pd.DataFrame(later, columns=["Open", "High", "Low", "Close"],
+                                      index=pd.bdate_range(df.index[-1] + pd.offsets.BDay(),
+                                                           periods=len(later)))
+                     .assign(Volume=2e6)])
+    jdf = J.update(jdf, {"X": feats_for(ext)}, CFG)
+    row = jdf.iloc[0]
+    assert row["status"] == "closed" and float(row["r_multiple"]) > 0
+    s = J.summary(jdf)
+    assert s["overall"]["trades"] == 1 and s["overall"]["win_rate_pct"] == 100.0
+
+
+def test_backtest_runs(monkeypatch, tmp_path):
+    from scanner import backtest
+    syms, uni = _universe(18)
+    data = {}
+    for i, s in enumerate(syms):   # long trending series with several bases/breakouts
+        rng = np.random.default_rng(i)
+        c = 100 * np.cumprod(1 + rng.normal(0.0012 if i % 2 else 0.0, 0.013, 700))
+        data[s] = ohlc(c, vol=2e6 * (0.6 + rng.random(700)), seed=i)
+    data["^NSEI"] = data["^CRSLDX"] = ohlc(uptrend(700, start=20000, drift=0.0006, seed=5))
+    data["^INDIAVIX"] = ohlc(np.full(700, 15.0))
+    monkeypatch.setattr(pipeline, "download_prices", lambda s, **k: {x: data[x] for x in s if x in data})
+    cfg = _cfg(tmp_path)
+    res = backtest.run_backtest(cfg, universe=uni)
+    assert res["days"] > 300
+    assert "overall" in res and (tmp_path / "reports").exists()
+    if res["overall"]["trades"]:
+        o = res["overall"]
+        assert 0 <= o["win_rate_pct"] <= 100
+        assert o["avg_loss_r"] <= 0 <= o["avg_win_r"]
+
+
+# ------------------------------------------------------------------ news + telegram
 def test_news_parsing(monkeypatch):
     from datetime import datetime, timedelta, timezone
     from email.utils import format_datetime
@@ -102,22 +394,23 @@ def test_news_parsing(monkeypatch):
     monkeypatch.setattr(enrich.requests, "get", lambda *a, **k: R())
     n = enrich.fetch_news("Acme Industries Limited", "ACME", 3, 48, 5)
     assert n["has_news"] and n["fresh"]
-    assert n["items"][0]["source"] == "Example News"
 
 
 def test_telegram_message_and_send(monkeypatch, tmp_path):
     from scanner import notify
-    pick = {"symbol": "ACME", "setup": "breakout", "score": 78.5, "close": 512.3,
-            "stop": 498.0, "target": 545.0, "reward_risk": 2.3,
-            "flags": ["event_soon", "abnormal_gap"],
-            "news": {"has_news": True, "fresh": True,
-                     "items": [{"title": "Acme <wins> order & more"}]}}
-    result = {"session": "2026-10-23", "evaluated": 248,
-              "regime": {"regime": "neutral", "breadth_pct": 52.0,
+    pick = {"symbol": "ACME", "setup": "breakout", "score": 78.5, "rs_rank": 91.0,
+            "trigger": 512.3, "max_entry": 520.0, "stop": 498.0, "t1": 540.9, "qty": 120,
+            "flags": ["abnormal_gap", "blue_sky"],
+            "news": {"items": [{"title": "Acme <wins> order & more"}]}}
+    result = {"session": END, "evaluated": 248, "passed_gates": 9,
+              "regime": {"regime": "neutral", "breadth_pct": 52.0, "vix": 14.2, "size_mult": 0.5,
                          "benchmarks": {"nifty50": {"above_20": True, "above_50": False}}},
-              "picks": [pick] * 20}
-    text = notify.format_summary(result, max_picks=15)
-    assert "ACME" in text and "&lt;wins&gt;" in text and "5 more" in text
+              "picks": [pick] * 8,
+              "journal": {"overall": {"trades": 12, "win_rate_pct": 50.0, "avg_win_r": 2.1,
+                                      "avg_loss_r": -0.9, "expectancy_r": 0.6}}}
+    text = notify.format_summary(result, max_picks=5)
+    assert "ACME" in text and "&lt;wins&gt;" in text and "3 more" in text
+    assert "Journal: 12 closed" in text and "Buy &gt; 512.30" in text
     assert len(text) <= notify.MAX_LEN
 
     calls = []

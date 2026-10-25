@@ -1,76 +1,148 @@
-# Stock scanner configuration. Every threshold from the design list lives here.
+# Stock scanner configuration. Every rule threshold lives here; the scan, the backtest
+# and the trade journal all read the same values, so a change here is tested by
+# `python backtest.py` before you trust it live.
 
 universe:
   # Keys map to NSE constituent CSVs (see scanner/universe.py)
   indexes: [nifty50, niftynext50, niftymidcap150]
+  # Manually maintained exclusions (ASM/GSM, F&O ban, anything you won't trade).
+  # CSV with columns: symbol,reason. Missing file = no exclusions.
+  exclude_file: data/exclude.csv
 
 schedule:
   timezone: Asia/Kolkata
   hour: 3
   minute: 0
-  # Tue-Sat at 3 AM scans the previous day's Mon-Fri session.
-  # Use "*" to run literally every day (Sun/Mon runs would re-scan Friday).
-  day_of_week: tue-sat
+  day_of_week: tue-sat        # 3 AM Tue-Sat scans the previous Mon-Fri session
+
+data:
+  period: 2y                  # 200 DMA, 52-week high and 12-month RS need > 1 year
 
 market:
   benchmarks:
     nifty50: "^NSEI"
     nifty500: "^CRSLDX"
-  breadth_strong_pct: 60      # % of universe above 20 DMA for a "strong" market
-  breadth_weak_pct: 40        # below this = "weak"
-  sector_weak_pct: 40         # sector breadth below this -> stock flagged weak_sector
-  weak_market_action: tighten # tighten | skip
-  tighten_min_score_add: 10   # added to min_score in a weak market
+  rs_benchmark: nifty500      # "beats the market" check; falls back to nifty50 if missing
+  vix_symbol: "^INDIAVIX"
+  breadth_strong_pct: 60      # % of universe above its 50 DMA for a "strong" market
+  breadth_weak_pct: 40        # below this (or Nifty 50 under its 50 DMA) = "weak"
+  weak_action: skip           # skip = no new longs in a weak market | half = trade at half size
+  neutral_size: 0.5           # position-size multiplier in a neutral market
+  vix_high: 20                # India VIX at/above this -> size multiplied by vix_high_size
+  vix_high_size: 0.5
+  vix_extreme: 28             # India VIX at/above this -> no new longs
+  sector_weak_pct: 40         # sector breadth (% above 50 DMA) below this -> weak_sector flag
+  sector_min_count: 5         # sectors with fewer stocks than this are too small to judge
 
 gates:                        # hard rejects
   min_price: 50
-  min_median_turnover_cr: 10  # 20-day MEDIAN turnover, in crore
-  min_avg_volume: 100000      # 20-day average shares traded
-  green_mode: prev_close      # prev_close | candle | both
-  green_days: 2
-  max_2day_gain_pct: 8
+  min_median_turnover_cr: 10  # 20-day median turnover before the signal day, in crore
+  min_avg_volume: 100000      # 20-day average shares traded before the signal day
+  max_locked_days_20: 0       # days with high == low (locked circuit) allowed in last 20
   rsi_hard_max: 75
-  max_extension_atr: 2.0      # (close - 20 DMA) / ATR
-  min_reward_risk: 2.0
-  max_stop_atr: 3.0           # stop further than this many ATRs = reject
-  reject_no_setup: false      # true = drop stocks that are neither breakout nor pullback
+  max_extension_atr: 2.5      # (close - 20 DMA) / ATR
+  max_2day_gain_pct: 8
+  min_room_r: 2.0             # nearest overhead resistance must be >= this many R above entry
+  max_stop_atr: 3.0           # stop further than this many ATRs below the trigger = reject
 
-risk:                         # how entry/stop/target are estimated
-  resistance_pivot_window: 10 # a swing high must be the top of +/-10 bars to count as resistance
-  blue_sky_target_atr: 4.0    # target when no overhead resistance (fresh highs)
+trend:                        # stage-2 uptrend template, all hard gates
+  require_close_above_sma50: true
+  require_sma50_above_sma200: true
+  sma50_rising_bars: 10       # 50 DMA higher than N bars ago (0 = don't check)
+  sma200_rising_bars: 20      # 200 DMA higher than N bars ago (0 = don't check)
+  max_below_52w_high_pct: 25
+  min_above_52w_low_pct: 30
+
+rs:
+  min_rank: 70                # percentile vs the whole universe (0-100); keeps the top 30%
+  # composite = weighted returns over these trading-day lookbacks (IBD-style)
+  lookbacks: [63, 126, 189, 252]
+  weights: [0.4, 0.2, 0.2, 0.2]
+
+setups:
+  breakout:
+    base_len: 20              # base = the N bars before the breakout day
+    max_base_depth_pct: 15    # (base high - base low) / base high
+    max_day: 2                # only day 1 or day 2 of the breakout
+    min_vol_ratio: 1.5        # breakout-day volume vs 50-day average
+    min_close_location: 0.75  # breakout day closes in the top 25% of its range
+  pullback:
+    lookback: 10              # recent swing high = highest high of the last N bars
+    min_bars: 2               # at least N down/sideways bars between that high and today
+    min_depth_atr: 1.0        # pullback must be at least this deep (high -> pullback low)
+    max_depth_atr: 5.0
+    touch_above_atr: 0.5      # pullback low came within +0.5 ATR of the 20 DMA ...
+    touch_below_atr: 0.75     # ... and undercut it by no more than 0.75 ATR
+    max_vol_ratio: 1.0        # pullback bars' avg volume vs 50-day avg (volume dry-up)
+    min_close_location: 0.6   # reversal day closes in the top 40% of its range
+    min_room_r: null          # override gates.min_room_r for pullbacks (null = use the gate)
+
+entry:
+  trigger_buffer_pct: 0.1     # buy-stop at signal-day high + 0.1%
+  max_gap_above_trigger_pct: 1.5  # skip the trade if next day opens above trigger + 1.5%
+  trigger_valid_days: 1       # the buy-stop is valid for N sessions after the signal
+  stop_buffer_atr: 0.1        # stop sits this far under the setup low
+  min_stop_atr: 1.0           # stop is at least this many ATRs below the trigger
+  resistance_pivot_window: 5  # swing high = top of +/- N bars
+
+exits:                        # used by the backtest and journal; printed with every pick
+  partial_r: 2.0              # book part of the position at entry + 2R
+  partial_pct: 50
+  breakeven_after_partial: true
+  trail_ma: ema20             # trail the rest: exit on a close below this (ema10 | ema20)
+  time_stop_days: 7           # exit if not at least time_stop_min_r R up after N sessions
+  time_stop_min_r: 1.0
+  max_hold_days: 30
+  cost_pct: 0.25              # round-trip brokerage + STT + slippage, % of entry price
+
+sizing:
+  capital: 1000000            # rupees
+  risk_per_trade_pct: 1.0     # loss at the stop = 1% of capital (before regime multiplier)
+  max_position_pct: 20        # never put more than 20% of capital in one stock
+  max_open_positions: 5       # used by the backtest
+
+selection:
+  top_n: 5
+  max_per_sector: 2
+  min_score: 40               # score ranks survivors; the gates do the filtering
 
 scoring:
-  volume_ratio_target: 1.5
-  close_location_min: 0.70    # close in top 30% of day's range
-  delivery_min_pct: 40
-  rsi_band: [50, 70]
   high_atr_pct: 5.0           # ATR above this % of price -> high_volatility flag
   gap_flag_pct: 4.0
-  min_score: 55
   weights:                    # should sum to 100
-    volume: 15
+    rs_rank: 25
+    volume: 15                # breakout: volume expansion | pullback: volume dry-up
+    tightness: 15             # breakout: base contraction | pullback: clean 20 DMA touch
     close_location: 10
-    delivery: 10
-    structure: 10
-    trend: 15
-    rsi: 10
-    rel_strength: 20
-    reward_risk: 10
+    near_high: 10             # closeness to the 52-week high
+    beats_benchmark: 10       # 1- and 3-month returns vs the RS benchmark
+    room: 10                  # distance to overhead resistance in R
+    delivery: 5
 
 events:
-  lookahead_days: 5
+  earnings_window_days: 14    # calendar days; covers the expected holding period
+  reject_earnings: true       # earnings inside the window = reject (flag only if false)
+  dividend_flag_days: 7
 
 news:
-  enabled: true
+  enabled: false              # informational only; never affects selection
   lookback_days: 3
   fresh_hours: 48
-  max_items: 5
+  max_items: 3
+
+journal:
+  path: data/journal.csv
+  state_path: data/state.json # remembers the last scanned session to avoid duplicate alerts
+
+backtest:
+  period: 5y
+  warmup_bars: 260            # bars needed before the first tradeable signal
 
 notify:
   telegram:
     enabled: true             # also needs TELEGRAM_BOT_TOKEN + TELEGRAM_CHAT_ID env vars
-    max_picks: 15             # picks listed in the message
-    send_report_file: true    # attach the full HTML report
+    max_picks: 5
+    send_report_file: true
 
 output:
   dir: reports

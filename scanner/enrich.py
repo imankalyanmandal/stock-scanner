@@ -14,8 +14,11 @@ from .data import to_yf
 log = logging.getLogger(__name__)
 
 
-def upcoming_events(symbol: str, today: date, lookahead_days: int) -> list[str]:
-    """Earnings / ex-dividend dates within the lookahead window (best effort via yfinance)."""
+def upcoming_events(symbol: str, today: date, lookahead_days: int) -> list[dict]:
+    """Earnings / dividend dates within the window (best effort via yfinance).
+
+    Returns [{"type": "earnings" | "ex_dividend" | "dividend", "date": "YYYY-MM-DD"}].
+    """
     found = []
     try:
         cal = yf.Ticker(to_yf(symbol)).calendar or {}
@@ -23,14 +26,16 @@ def upcoming_events(symbol: str, today: date, lookahead_days: int) -> list[str]:
         log.debug("calendar %s failed: %s", symbol, e)
         return found
     horizon = today + timedelta(days=lookahead_days)
-    for key in ("Earnings Date", "Ex-Dividend Date", "Dividend Date"):
+    kinds = {"Earnings Date": "earnings", "Ex-Dividend Date": "ex_dividend",
+             "Dividend Date": "dividend"}
+    for key, kind in kinds.items():
         vals = cal.get(key) if isinstance(cal, dict) else None
         if vals is None:
             continue
         for d in vals if isinstance(vals, (list, tuple)) else [vals]:
             d = d.date() if isinstance(d, datetime) else d
             if isinstance(d, date) and today <= d <= horizon:
-                found.append(f"{key.lower().replace(' ', '_')}:{d.isoformat()}")
+                found.append({"type": kind, "date": d.isoformat()})
     return found
 
 

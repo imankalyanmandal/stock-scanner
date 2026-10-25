@@ -1,44 +1,78 @@
-"""Market regime gate: benchmark trends + universe breadth + sector breadth."""
+"""Market regime: benchmark trends + universe breadth + India VIX -> exposure.
+
+The regime decides how much to trade, not just how picky to be:
+  strong  -> full size
+  neutral -> neutral_size (default half)
+  weak    -> no new longs (weak_action: skip) or half size (weak_action: half)
+India VIX scales size further, and above vix_extreme blocks new longs.
+"""
+import math
+
 import pandas as pd
 
 from .indicators import sma
 
 
-def benchmark_trend(df: pd.DataFrame) -> dict:
+def bench_table(df: pd.DataFrame) -> pd.DataFrame:
     c = df["Close"].astype(float)
-    s20, s50 = sma(c, 20).iloc[-1], sma(c, 50).iloc[-1]
-    close = float(c.iloc[-1])
-    return {"close": close, "above_20": bool(close > s20), "above_50": bool(close > s50),
-            "sma20": float(s20), "sma50": float(s50)}
+    return pd.DataFrame({"close": c, "sma20": sma(c, 20), "sma50": sma(c, 50)})
 
 
-def market_regime(benchmarks: dict[str, pd.DataFrame], metrics: dict[str, dict],
-                  universe: pd.DataFrame, cfg: dict) -> dict:
+def breadth_series(feats: dict[str, pd.DataFrame]) -> pd.Series:
+    """% of universe closing above its 50 DMA, per date."""
+    above = pd.DataFrame({s: (f["close"] > f["sma50"]).where(f["sma50"].notna())
+                          for s, f in feats.items()})
+    return above.mean(axis=1, skipna=True) * 100
+
+
+def sector_stats(rows: list[dict]) -> dict:
+    """rows: [{industry, above50}] for one date."""
+    out = {}
+    if not rows:
+        return out
+    df = pd.DataFrame(rows)
+    for name, grp in df.groupby("industry"):
+        out[name] = {"breadth_pct": float(100 * grp["above50"].mean()), "count": int(len(grp))}
+    return out
+
+
+def regime_at(benches: dict[str, dict], breadth: float, vix: float | None, cfg: dict) -> dict:
+    """benches: {name: {close, sma20, sma50}} for one date."""
     mc = cfg["market"]
-    trends = {name: benchmark_trend(df) for name, df in benchmarks.items() if len(df) >= 50}
-    above = [m["above_sma20"] for m in metrics.values()]
-    breadth = 100 * sum(above) / len(above) if above else 0.0
-
-    ind = universe.set_index("symbol")["industry"]
-    rows = [{"industry": ind.get(s, "Unknown"), "above": m["above_sma20"],
-             "ret5": m["ret5"], "ret20": m["ret20"]} for s, m in metrics.items()]
-    sec = pd.DataFrame(rows)
-    sectors = {}
-    if not sec.empty:
-        for name, grp in sec.groupby("industry"):
-            sectors[name] = {"breadth_pct": 100 * grp["above"].mean(),
-                             "ret5_med": float(grp["ret5"].median()),
-                             "ret20_med": float(grp["ret20"].median()),
-                             "count": int(len(grp))}
-
-    all_above_50 = all(t["above_50"] for t in trends.values()) if trends else False
-    all_above_20 = all(t["above_20"] for t in trends.values()) if trends else False
+    trends = {}
+    for name, b in benches.items():
+        if b is None or any(not isinstance(b[k], (int, float)) or math.isnan(b[k])
+                            for k in ("close", "sma20", "sma50")):
+            continue
+        trends[name] = {"close": float(b["close"]), "sma20": float(b["sma20"]),
+                        "sma50": float(b["sma50"]), "above_20": bool(b["close"] > b["sma20"]),
+                        "above_50": bool(b["close"] > b["sma50"])}
+    breadth = 0.0 if breadth is None or math.isnan(breadth) else float(breadth)
     nifty_below_50 = not trends.get("nifty50", {}).get("above_50", True)
     if nifty_below_50 or breadth < mc["breadth_weak_pct"]:
         regime = "weak"
-    elif all_above_20 and all_above_50 and breadth >= mc["breadth_strong_pct"]:
+    elif trends and all(t["above_20"] and t["above_50"] for t in trends.values()) \
+            and breadth >= mc["breadth_strong_pct"]:
         regime = "strong"
     else:
         regime = "neutral"
-    return {"regime": regime, "breadth_pct": round(breadth, 1),
-            "benchmarks": trends, "sectors": sectors}
+
+    size, allow, why = 1.0, True, []
+    if regime == "neutral":
+        size *= mc["neutral_size"]
+    elif regime == "weak":
+        if mc.get("weak_action", "skip") == "skip":
+            allow = False
+            why.append("weak market")
+        else:
+            size *= 0.5
+    vix = None if vix is None or (isinstance(vix, float) and math.isnan(vix)) else float(vix)
+    if vix is not None:
+        if vix >= mc["vix_extreme"]:
+            allow = False
+            why.append(f"India VIX {vix:.1f} >= {mc['vix_extreme']}")
+        elif vix >= mc["vix_high"]:
+            size *= mc["vix_high_size"]
+    return {"regime": regime, "breadth_pct": round(breadth, 1), "vix": vix,
+            "benchmarks": trends, "size_mult": round(size if allow else 0.0, 3),
+            "allow_new_longs": allow, "block_reason": ", ".join(why)}

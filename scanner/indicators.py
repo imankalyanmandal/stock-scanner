@@ -6,6 +6,10 @@ def sma(s: pd.Series, n: int) -> pd.Series:
     return s.rolling(n).mean()
 
 
+def ema(s: pd.Series, n: int) -> pd.Series:
+    return s.ewm(span=n, adjust=False, min_periods=n).mean()
+
+
 def rsi(close: pd.Series, n: int = 14) -> pd.Series:
     d = close.diff()
     up = d.clip(lower=0)
@@ -23,7 +27,11 @@ def atr(high: pd.Series, low: pd.Series, close: pd.Series, n: int = 14) -> pd.Se
     return tr.ewm(alpha=1 / n, adjust=False, min_periods=n).mean()
 
 
-def swing_highs(high: pd.Series, window: int = 5) -> pd.Series:
-    """Confirmed local maxima: bar is the highest within +/- window bars."""
+def pivot_highs(high: pd.Series, window: int = 5) -> pd.Series:
+    """Boolean: bar is the highest within +/- window bars.
+
+    A pivot at bar j is only *known* at bar j + window, so callers must ignore
+    pivots newer than (current bar - window) to avoid look-ahead.
+    """
     roll = high.rolling(2 * window + 1, center=True).max()
-    return high[(high == roll)]
+    return (high == roll).fillna(False)
