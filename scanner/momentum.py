@@ -48,7 +48,7 @@ def run_momentum(feats: dict[str, pd.DataFrame], benchmarks: dict[str, pd.DataFr
 
     per = pd.Series(dates.to_period("M"), index=dates)
     is_end = per != per.shift(-1)
-    sig_dates = [d for d in dates[warmup:-1] if is_end[d] and scores.loc[d].notna().sum() >= 10]
+    sig_dates = [d for d in dates[warmup:-1] if is_end[d] and scores.loc[d].notna().sum() >= min(10, mc["top_n"])]
     if start:
         sig_dates = [d for d in sig_dates if d >= pd.Timestamp(start)]
     if not sig_dates:
