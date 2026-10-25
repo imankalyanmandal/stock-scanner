@@ -82,3 +82,14 @@ def load_universe(index_keys: list[str], data_dir: str = "data") -> pd.DataFrame
              indexes=("indexes", lambda s: ",".join(sorted(set(s)))))
     )
     return uni
+
+
+def load_exclusions(path: str | None) -> dict[str, str]:
+    """Manual do-not-trade list (ASM/GSM, F&O ban, ...). CSV: symbol,reason."""
+    if not path or not Path(path).exists():
+        return {}
+    df = pd.read_csv(path, comment="#")
+    df.columns = [c.strip().lower() for c in df.columns]
+    reasons = df["reason"] if "reason" in df else pd.Series(["manual"] * len(df))
+    return {str(s).strip().upper(): str(r).strip() or "manual"
+            for s, r in zip(df["symbol"], reasons.fillna("manual"))}

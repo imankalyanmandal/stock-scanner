@@ -40,12 +40,14 @@ def _call(method: str, data: dict, files: dict | None = None) -> bool:
         return False
 
 
-def format_summary(result: dict, max_picks: int = 15, report_url: str | None = None) -> str:
+def format_summary(result: dict, max_picks: int = 5, report_url: str | None = None) -> str:
     e = html.escape
     reg = result["regime"]
     icon = {"strong": "🟢", "neutral": "🟡", "weak": "🔴"}.get(reg["regime"], "⚪")
+    vix = f" · VIX {reg['vix']:.1f}" if reg.get("vix") is not None else ""
     lines = [f"📊 <b>Scan {e(result['session'])}</b>",
-             f"{icon} Market: <b>{reg['regime'].upper()}</b> · breadth {reg['breadth_pct']}%"]
+             f"{icon} Market: <b>{reg['regime'].upper()}</b> · breadth {reg['breadth_pct']}%{vix}"
+             f" · size ×{reg.get('size_mult', 1)}"]
     for name, b in reg.get("benchmarks", {}).items():
         lines.append(f"   {e(name)}: {'↑' if b['above_20'] else '↓'}20DMA "
                      f"{'↑' if b['above_50'] else '↓'}50DMA")
@@ -53,31 +55,29 @@ def format_summary(result: dict, max_picks: int = 15, report_url: str | None = N
         lines.append(f"\n⚠️ {e(result['note'])}")
 
     picks = result["picks"]
-    lines.append(f"\n<b>{len(picks)} picks</b> from {result.get('evaluated', '–')} stocks")
+    lines.append(f"\n<b>{len(picks)} picks</b> ({result.get('passed_gates', '–')} passed gates, "
+                 f"{result.get('evaluated', '–')} scanned)")
     for i, p in enumerate(picks[:max_picks], 1):
-        n = p.get("news", {})
-        tags = []
-        if n.get("fresh"):
-            tags.append("📰 fresh news")
-        elif n.get("has_news"):
-            tags.append("📰 news")
-        if "event_soon" in p["flags"]:
-            tags.append("⚠️ event soon")
-        other = [f for f in p["flags"] if f not in ("event_soon", "no_overhead_resistance")]
-        if other:
-            tags.append("🚩 " + ", ".join(other))
+        flags = [f for f in p.get("flags", []) if f != "blue_sky"]
         lines.append(
-            f"\n{i}. <b>{e(p['symbol'])}</b> · {p['setup']} · score {p['score']}\n"
-            f"   ₹{p['close']:.2f} | SL {p['stop']:.2f} | T {p['target']:.2f} | "
-            f"R:R {p['reward_risk']:.1f}"
-            + (f"\n   {' · '.join(tags)}" if tags else ""))
-        if n.get("items"):
-            top = n["items"][0]
-            lines.append(f"   ↳ <i>{e(top['title'][:110])}</i>")
+            f"\n{i}. <b>{e(p['symbol'])}</b> · {p['setup']} · score {p['score']} · RS {p.get('rs_rank', 0):.0f}\n"
+            f"   Buy &gt; {p['trigger']:.2f} (skip &gt; {p['max_entry']:.2f})\n"
+            f"   SL {p['stop']:.2f} | T1 {p['t1']:.2f} | Qty {p.get('qty', '–')}"
+            + (f"\n   🚩 {e(', '.join(flags))}" if flags else ""))
+        items = p.get("news", {}).get("items") or []
+        if items:
+            lines.append(f"   ↳ <i>{e(items[0]['title'][:110])}</i>")
     if len(picks) > max_picks:
         lines.append(f"\n…and {len(picks) - max_picks} more in the full report")
     if not picks:
-        lines.append("No stocks passed today.")
+        watch = result.get("watchlist") or []
+        lines.append("No trades today." + (
+            " Watchlist: " + ", ".join(e(w["symbol"]) for w in watch) if watch else ""))
+    o = (result.get("journal") or {}).get("overall", {})
+    if o.get("trades"):
+        lines.append(f"\n📒 Journal: {o['trades']} closed · win {o['win_rate_pct']}% · "
+                     f"avg win {o['avg_win_r']}R / loss {o['avg_loss_r']}R · "
+                     f"expectancy {o['expectancy_r']}R")
     if report_url:
         lines.append(f'\n<a href="{e(report_url)}">Full report</a>')
 
@@ -89,7 +89,7 @@ def send_scan(result: dict, cfg: dict, report_html: Path | None = None) -> None:
     tcfg = cfg.get("notify", {}).get("telegram", {})
     if not tcfg.get("enabled", True):
         return
-    text = format_summary(result, tcfg.get("max_picks", 15), os.getenv("REPORT_URL"))
+    text = format_summary(result, tcfg.get("max_picks", 5), os.getenv("REPORT_URL"))
     _call("sendMessage", {"text": text, "parse_mode": "HTML",
                           "disable_web_page_preview": "true"})
     if tcfg.get("send_report_file", True) and report_html and report_html.exists():
