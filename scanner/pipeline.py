@@ -9,7 +9,8 @@ from . import journal as J
 from . import report
 from .data import download_prices, fetch_delivery
 from .enrich import fetch_news, upcoming_events
-from .filters import arrays, evaluate, features, metrics_at, rs_rank_table, select
+from .filters import (arrays, evaluate, features, metrics_at, momentum_rank_table, rs_rank_table,
+                      select)
 from .market import bench_table, breadth_series, regime_at, sector_stats
 from .trade import size_position
 from .universe import load_exclusions, load_universe
@@ -17,13 +18,18 @@ from .universe import load_exclusions, load_universe
 log = logging.getLogger(__name__)
 
 
-def load_market_data(cfg: dict, symbols: list[str], period: str):
-    """Download prices and build features. Returns (feats, benchmarks, vix_close)."""
+def market_symbols(cfg: dict) -> list[str]:
+    mk = cfg["market"]
+    return list(mk["benchmarks"].values()) + ([mk["vix_symbol"]] if mk.get("vix_symbol") else [])
+
+
+def load_market_data(cfg: dict, symbols: list[str], period: str, prices: dict | None = None):
+    """Download prices (unless given) and build features. Returns (feats, benchmarks, vix_close)."""
     mk = cfg["market"]
     bench_syms = mk["benchmarks"]
     vix_sym = mk.get("vix_symbol")
-    extra = list(bench_syms.values()) + ([vix_sym] if vix_sym else [])
-    prices = download_prices(symbols + extra, period=period)
+    prices = dict(prices) if prices is not None else \
+        download_prices(symbols + market_symbols(cfg), period=period)
     benchmarks = {k: prices.pop(v) for k, v in bench_syms.items() if v in prices}
     vix_df = prices.pop(vix_sym, None) if vix_sym else None
     if "nifty50" not in benchmarks:
@@ -90,6 +96,8 @@ def run(cfg: dict, with_news: bool = True, limit: int | None = None, force: bool
 
     ranks = rs_rank_table(feats, cfg)
     rank_today = ranks.loc[last_ts] if last_ts in ranks.index else pd.Series(dtype=float)
+    moms = momentum_rank_table(feats, cfg)
+    mom_today = moms.loc[last_ts] if last_ts in moms.index else pd.Series(dtype=float)
     info = universe.set_index("symbol")
     current = {s: f for s, f in feats.items() if f.index[-1] == last_ts}
     regime["sectors"] = sector_stats([
@@ -106,7 +114,7 @@ def run(cfg: dict, with_news: bool = True, limit: int | None = None, force: bool
             rejected.append({"symbol": s, "reasons": ["stale_data"]})
             continue
         f = current[s]
-        m = metrics_at(arrays(f), len(f) - 1, cfg, rank_today.get(s))
+        m = metrics_at(arrays(f), len(f) - 1, cfg, rank_today.get(s), mom_today.get(s))
         if m is None:
             rejected.append({"symbol": s, "reasons": ["insufficient_history"]})
             continue

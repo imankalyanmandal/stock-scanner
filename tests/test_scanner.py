@@ -14,6 +14,8 @@ from scanner.market import regime_at
 from scanner.trade import simulate, size_position
 
 CFG = yaml.safe_load(open("config.yaml"))
+CFG_PB = copy.deepcopy(CFG)
+CFG_PB["setups"]["pullback"]["enabled"] = True
 END = "2026-10-23"
 
 
@@ -103,22 +105,27 @@ def test_breakout_day3_is_not_a_setup():
 
 
 def test_pullback_detected():
-    m, _ = last_metrics(pullback_df())
+    m, _ = last_metrics(pullback_df(), CFG_PB)
     assert m["setup"] == "pullback", m["setup_fail"]
     assert m["pb_bars"] >= 2 and m["setup_vol_ratio"] < 1
     assert -0.75 <= m["touch_offset_atr"] <= 0.5
 
 
 def test_deep_undercut_is_not_a_pullback():
-    m, _ = last_metrics(pullback_df(drop=(-0.02, -0.03, -0.03, -0.02), rev=0.01))
+    m, _ = last_metrics(pullback_df(drop=(-0.02, -0.03, -0.03, -0.02), rev=0.01), CFG_PB)
     assert m["setup"] == "none"
     assert m["setup_fail"] in {"pb_broke_20dma", "pb_too_deep"}
 
 
 def test_heavy_volume_pullback_rejected():
-    m, _ = last_metrics(pullback_df(pb_vol=1.6))
+    m, _ = last_metrics(pullback_df(pb_vol=1.6), CFG_PB)
     assert m["setup"] == "pullback"
-    assert "pullback_heavy_volume" in evaluate(m, CFG)["reject_reasons"]
+    assert "pullback_heavy_volume" in evaluate(m, CFG_PB)["reject_reasons"]
+
+
+def test_pullbacks_disabled_by_default():
+    m, _ = last_metrics(pullback_df())
+    assert m["setup"] == "none" and m["setup_fail"] == "pullbacks_disabled"
 
 
 def test_downtrend_rejected_by_trend_template():
@@ -137,14 +144,14 @@ def test_weak_rs_rank_rejected():
 def test_resistance_just_above_entry_is_counted():
     """A swing high within 0.5 ATR of the trigger must still count as resistance."""
     df = pullback_df()
-    m, f = last_metrics(df)
+    m, f = last_metrics(df, CFG_PB)
     near = m["trigger"] + 0.3 * m["atr"]
     i_hi = len(df) - 1 - m["pb_bars"] - 1
     df.iloc[i_hi, df.columns.get_loc("High")] = near
-    m2, _ = last_metrics(df)
+    m2, _ = last_metrics(df, CFG_PB)
     assert m2["resistance"] is not None and m2["resistance"] <= near + 1e-9
     assert m2["room_r"] < 0.5
-    assert "resistance_too_close" in evaluate(m2, CFG)["reject_reasons"]
+    assert "resistance_too_close" in evaluate(m2, CFG_PB)["reject_reasons"]
 
 
 def test_no_lookahead():
@@ -432,3 +439,83 @@ def test_telegram_skipped_without_creds(monkeypatch):
     monkeypatch.delenv("TELEGRAM_BOT_TOKEN", raising=False)
     monkeypatch.setattr(notify.requests, "post", lambda *a, **k: pytest.fail("should not post"))
     assert notify._call("sendMessage", {"text": "x"}) is False
+
+
+# ------------------------------------------------------------------ experiments + momentum
+def test_undercut_base_flag_and_gate():
+    df = breakout_df()
+    m, _ = last_metrics(df)
+    assert m["base_undercut"] in (True, False)
+    # force the second half of the base to undercut the first half's low
+    k = len(df) - 4
+    df.iloc[k, df.columns.get_loc("Low")] = df["Low"].iloc[-21:-1].min() * 0.97
+    m2, _ = last_metrics(df)
+    assert m2["base_undercut"]
+    cfg = copy.deepcopy(CFG)
+    cfg["setups"]["breakout"]["reject_undercut_base"] = True
+    assert "base_undercut" in evaluate(m2, cfg)["reject_reasons"]
+    assert "base_undercut" not in evaluate(m2, CFG)["reject_reasons"]
+
+
+def test_momentum_rank_and_leader_gate():
+    from scanner.filters import momentum_rank_table
+    feats = {}
+    for i in range(8):
+        c = 100 * np.cumprod(np.full(320, 1 + 0.0005 * i) * (1 + np.random.default_rng(i).normal(0, 0.005, 320)))
+        feats[f"S{i}"] = feats_for(ohlc(c, seed=i))
+    ranks = momentum_rank_table(feats, CFG).iloc[-1]
+    assert ranks["S7"] == 1 and ranks["S0"] == 8
+    m, _ = last_metrics(breakout_df())
+    cfg = copy.deepcopy(CFG)
+    cfg["rs"]["momentum_top_n"] = 3
+    m["mom_rank"] = 5
+    assert "not_momentum_leader" in evaluate(m, cfg)["reject_reasons"]
+    m["mom_rank"] = 2
+    assert "not_momentum_leader" not in evaluate(m, cfg)["reject_reasons"]
+
+
+def test_momentum_rotation_math():
+    """Strongest stock held; equity tracks it minus costs; regime filter moves to cash."""
+    from scanner.momentum import run_momentum
+    n = 700
+    feats = {}
+    for i in range(6):
+        g = 1 + 0.0002 * i
+        c = 100 * g ** np.arange(n) * (1 + np.random.default_rng(i).normal(0, 0.002, n))
+        feats[f"S{i}"] = feats_for(ohlc(c, seed=i, end=END))
+    bench = {"nifty50": ohlc(20000 * 1.0003 ** np.arange(n))}
+    cfg = copy.deepcopy(CFG)
+    cfg["momentum"].update({"top_n": 1, "exit_rank": 1, "cash_yield_pct": 0, "regime_filter": True})
+    res = run_momentum(feats, bench, cfg)
+    assert res["rebalances"] > 10 and res["months_in_cash_pct"] == 0
+    s5 = feats["S5"]["close"]
+    days = res["period"]
+    ref = s5.loc[days[1]] / s5.loc[:days[0]].iloc[-1] - 1
+    assert abs(res["strategy"]["total_return_pct"] / 100 - ref) < 0.03
+
+    falling = {"nifty50": ohlc(20000 * 0.9995 ** np.arange(n))}
+    cfg["momentum"]["cash_yield_pct"] = 6.0
+    res2 = run_momentum(feats, falling, cfg)
+    assert res2["months_in_cash_pct"] == 100
+    assert 5 < res2["strategy"]["cagr_pct"] < 7
+
+
+def test_experiments_end_to_end(tmp_path):
+    from scanner.experiments import deep_merge, run_experiments
+    assert deep_merge({"a": {"b": 1, "c": 2}}, {"a": {"b": 3}}) == {"a": {"b": 3, "c": 2}}
+    syms, uni = _universe(12)
+    data = {}
+    for i, s in enumerate(syms):
+        rng = np.random.default_rng(i)
+        c = 100 * np.cumprod(1 + rng.normal(0.0012 if i % 2 else 0.0, 0.013, 700))
+        data[s] = ohlc(c, vol=2e6 * (0.6 + rng.random(700)), seed=i)
+    data["^NSEI"] = data["^CRSLDX"] = ohlc(uptrend(700, start=20000, drift=0.0006, seed=5))
+    data["^INDIAVIX"] = ohlc(np.full(700, 15.0))
+    spec = {"period": "3y",
+            "breakout_variants": {"base": {}, "undercut": {"setups": {"breakout": {"reject_undercut_base": True}}}},
+            "momentum_variants": {"m": {"momentum": {"top_n": 3, "exit_rank": 5}}}}
+    res = run_experiments(_cfg(tmp_path), spec, universe=uni, prices=data, out_dir=str(tmp_path))
+    assert set(res["breakout"]) == {"base", "undercut"}
+    assert res["momentum"]["m"]["strategy"]["cagr_pct"] is not None
+    md = open(res["files"]["md"]).read()
+    assert "Swing variants" in md and "Monthly momentum rotation" in md and "nifty50 (buy & hold)" in md

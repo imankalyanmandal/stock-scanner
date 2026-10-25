@@ -66,10 +66,14 @@ def features(df: pd.DataFrame, cfg: dict, bench_close: pd.Series | None = None) 
     f["base_low"] = l.shift(1).rolling(L).min()
     f["base_rng10"] = h.shift(1).rolling(10).max() - l.shift(1).rolling(10).min()
     f["base_vol10"] = vprev.rolling(10).mean()
+    # "cascading lows": the second half of the base undercuts the first half's low
+    h1 = L // 2
+    f["base_undercut"] = (l.shift(1).rolling(L - h1).min() < l.shift(1 + L - h1).rolling(h1).min())
     f["pivot"] = pivot_highs(h, cfg["entry"]["resistance_pivot_window"])
 
-    for n in sorted(set(cfg["rs"]["lookbacks"]) | {21, 63}):
+    for n in sorted(set(cfg["rs"]["lookbacks"]) | {21, 63, 126, 252}):
         f[f"ret{n}"] = c / c.shift(n) - 1
+    f["vol252"] = np.log(c).diff().rolling(252, min_periods=200).std() * np.sqrt(252)
     if bench_close is not None and len(bench_close):
         b = bench_close.reindex(f.index).ffill()
         f["bench_ret21"] = b / b.shift(21) - 1
@@ -88,6 +92,29 @@ def rs_rank_table(feats: dict[str, pd.DataFrame], cfg: dict) -> pd.DataFrame:
     """dates x symbols percentile rank (0-100) of the RS composite, across the universe."""
     comp = pd.DataFrame({s: rs_composite(f, cfg) for s, f in feats.items()})
     return comp.rank(axis=1, pct=True) * 100
+
+
+def momentum_scores(feats: dict[str, pd.DataFrame], cfg: dict) -> pd.DataFrame:
+    """NSE-style momentum: z-scores of 6- and 12-month return / 1-year volatility, averaged.
+
+    dates x symbols; NaN where a stock lacks history or fails the liquidity gates.
+    """
+    g = cfg["gates"]
+    m6, m12, ok = {}, {}, {}
+    for s, f in feats.items():
+        m6[s] = f["ret126"] / f["vol252"]
+        m12[s] = f["ret252"] / f["vol252"]
+        ok[s] = (f["close"] >= g["min_price"]) & (f["turnover_med20_cr"] >= g["min_median_turnover_cr"])
+    m6, m12, ok = pd.DataFrame(m6), pd.DataFrame(m12), pd.DataFrame(ok).fillna(False).astype(bool)
+
+    def z(df):
+        return df.sub(df.mean(axis=1), axis=0).div(df.std(axis=1), axis=0)
+    return ((z(m6) + z(m12)) / 2).where(ok)
+
+
+def momentum_rank_table(feats: dict[str, pd.DataFrame], cfg: dict) -> pd.DataFrame:
+    """dates x symbols rank position by momentum score (1 = strongest)."""
+    return momentum_scores(feats, cfg).rank(axis=1, ascending=False, method="first")
 
 
 def prefilter(f: pd.DataFrame, cfg: dict) -> pd.Series:
@@ -148,7 +175,8 @@ def _f(x):
     return None if x is None or (isinstance(x, float) and math.isnan(x)) else float(x)
 
 
-def metrics_at(A: dict, i: int, cfg: dict, rs_rank: float | None = None) -> dict | None:
+def metrics_at(A: dict, i: int, cfg: dict, rs_rank: float | None = None,
+               mom_rank: float | None = None) -> dict | None:
     if i < 5:
         return None
     atr_v = A["atr"][i]
@@ -160,7 +188,7 @@ def metrics_at(A: dict, i: int, cfg: dict, rs_rank: float | None = None) -> dict
 
     setup, info, setup_fail = "none", {}, ""
     bo_day = int(A["bo_day"][i])
-    if bo_day and bo_day <= st["breakout"]["max_day"]:
+    if bo_day and bo_day <= st["breakout"]["max_day"] and st["breakout"].get("enabled", True):
         j = i - (bo_day - 1)  # the breakout bar
         bh, bl = A["base_high"][j], A["base_low"][j]
         setup = "breakout"
@@ -168,14 +196,17 @@ def metrics_at(A: dict, i: int, cfg: dict, rs_rank: float | None = None) -> dict
                 "base_depth_pct": float((bh - bl) / bh * 100),
                 "contraction": float(A["base_rng10"][j] / (bh - bl)) if bh > bl else 1.0,
                 "base_vol_ratio": float(A["base_vol10"][j] / A["vol_avg50"][j]),
+                "base_undercut": bool(A["base_undercut"][j]),
                 "setup_vol_ratio": float(A["vol_ratio"][j]),
                 "setup_close_loc": float(A["close_loc"][j]),
                 "setup_low": float(A["low"][j:i + 1].min()),
                 "trigger_base": float(A["high"][j:i + 1].max())}
-    else:
+    elif st["pullback"].get("enabled", True):
         pb, setup_fail = _pullback(A, i, st["pullback"], atr_v)
         if pb:
             setup, info = "pullback", pb
+    else:
+        setup_fail = "pullbacks_disabled"
     if setup == "none":
         info = {"setup_low": float(A["low"][i - 4:i + 1].min()), "trigger_base": float(A["high"][i])}
 
@@ -216,7 +247,7 @@ def metrics_at(A: dict, i: int, cfg: dict, rs_rank: float | None = None) -> dict
         "resistance": resistance, "room_r": float(room_r),
         "ret21": _f(A["ret21"][i]), "ret63": _f(A["ret63"][i]),
         "bench_ret21": _f(A["bench_ret21"][i]), "bench_ret63": _f(A["bench_ret63"][i]),
-        "rs_rank": _f(rs_rank),
+        "rs_rank": _f(rs_rank), "mom_rank": _f(mom_rank),
     }
 
 
@@ -260,6 +291,9 @@ def evaluate(m: dict, cfg: dict, sector_ctx: dict | None = None,
     # leadership
     if m["rs_rank"] is not None and m["rs_rank"] < cfg["rs"]["min_rank"]:
         R.append("weak_rs_rank")
+    top_n = cfg["rs"].get("momentum_top_n")
+    if top_n and (m.get("mom_rank") is None or m["mom_rank"] > top_n):
+        R.append("not_momentum_leader")
     # setup quality
     if m["setup"] == "none":
         R.append(f"no_setup{':' + m['setup_fail'] if m.get('setup_fail') else ''}")
@@ -271,6 +305,8 @@ def evaluate(m: dict, cfg: dict, sector_ctx: dict | None = None,
             R.append("breakout_low_volume")
         if m["setup_close_loc"] < b["min_close_location"]:
             R.append("breakout_weak_close")
+        if b.get("reject_undercut_base") and m.get("base_undercut"):
+            R.append("base_undercut")
     else:
         p = st["pullback"]
         if m["setup_vol_ratio"] > p["max_vol_ratio"]:

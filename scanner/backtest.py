@@ -16,7 +16,8 @@ from pathlib import Path
 
 import pandas as pd
 
-from .filters import arrays, evaluate, metrics_at, prefilter, rs_rank_table, select
+from .filters import (arrays, evaluate, metrics_at, momentum_rank_table, prefilter, rs_rank_table,
+                      select)
 from .market import bench_table, breadth_series, regime_at
 from .pipeline import load_market_data
 from .trade import simulate, trade_stats
@@ -31,26 +32,33 @@ LIMITS = ["Survivorship bias: uses today's index constituents for the whole peri
 
 def run_backtest(cfg: dict, limit: int | None = None, start: str | None = None,
                  end: str | None = None, universe: pd.DataFrame | None = None,
-                 write: bool = True) -> dict:
+                 write: bool = True, prices: dict | None = None) -> dict:
     if universe is None:
         universe = load_universe(cfg["universe"]["indexes"], cfg["output"]["data_dir"])
     if limit:
         universe = universe.head(limit)
     symbols = universe["symbol"].tolist()
     industry = universe.set_index("symbol")["industry"].to_dict()
-    feats, benchmarks, vix = load_market_data(cfg, symbols, cfg["backtest"]["period"])
+    feats, benchmarks, vix = load_market_data(cfg, symbols, cfg["backtest"]["period"], prices)
     if not feats:
         raise RuntimeError("No usable price data")
     log.info("Backtest on %d symbols", len(feats))
 
     ranks = rs_rank_table(feats, cfg)
+    top_n = cfg["rs"].get("momentum_top_n")
+    moms = momentum_rank_table(feats, cfg) if top_n else None
     breadth = breadth_series(feats)
     btabs = {k: bench_table(df) for k, df in benchmarks.items()}
     min_rank = cfg["rs"]["min_rank"]
     A = {s: arrays(f) for s, f in feats.items()}
     pos = {s: {ts: i for i, ts in enumerate(f.index)} for s, f in feats.items()}
-    pre = pd.DataFrame({s: prefilter(f, cfg) & (ranks[s].reindex(f.index) >= min_rank)
-                        for s, f in feats.items()}).fillna(False).astype(bool)
+    pre = {}
+    for s, f in feats.items():
+        m = prefilter(f, cfg) & (ranks[s].reindex(f.index) >= min_rank)
+        if moms is not None:
+            m &= moms[s].reindex(f.index) <= top_n
+        pre[s] = m
+    pre = pd.DataFrame(pre).fillna(False).astype(bool)
 
     dates = pre.index.sort_values()
     dates = dates[cfg["backtest"]["warmup_bars"]:]
@@ -82,7 +90,8 @@ def run_backtest(cfg: dict, limit: int | None = None, start: str | None = None,
             i = pos[s].get(d)
             if i is None:
                 continue
-            m = metrics_at(A[s], i, cfg, ranks.at[d, s])
+            m = metrics_at(A[s], i, cfg, ranks.at[d, s],
+                           moms.at[d, s] if moms is not None else None)
             if m is None:
                 continue
             ev = evaluate(m, cfg)
@@ -116,6 +125,7 @@ def run_backtest(cfg: dict, limit: int | None = None, start: str | None = None,
 
     tdf = pd.DataFrame(trades)
     result = summarize(tdf, cfg)
+    result["trades_df"] = tdf
     result.update({"period": [dates[0].date().isoformat(), dates[-1].date().isoformat()],
                    "symbols": len(feats), "days": len(dates), "signal_days": signal_days,
                    "signal_days_blocked_by_regime": days_blocked, "regime_days": regimes,
@@ -183,7 +193,7 @@ def _write(res: dict, tdf: pd.DataFrame, out_dir: str) -> dict:
     d.mkdir(parents=True, exist_ok=True)
     stem = f"backtest_{res['period'][0]}_{res['period'][1]}"
     paths = {"json": d / f"{stem}.json", "csv": d / f"{stem}_trades.csv", "html": d / f"{stem}.html"}
-    paths["json"].write_text(json.dumps({k: v for k, v in res.items() if k != "files"},
+    paths["json"].write_text(json.dumps({k: v for k, v in res.items() if k not in ("files", "trades_df")},
                                         indent=2, default=str))
     tdf.to_csv(paths["csv"], index=False)
     o = res["overall"]
