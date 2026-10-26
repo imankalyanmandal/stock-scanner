@@ -1,0 +1,21 @@
+# Does adding Nifty Smallcap 250 (with stricter liquidity) help?
+# Run: python experiments.py --spec experiments_smallcap.yaml (or the Experiments workflow).
+name: smallcap
+period: 10y
+
+breakout_variants:
+  A_large_mid_only:
+    universe: {indexes: [nifty50, niftynext50, niftymidcap150]}
+  B_with_smallcaps: {}
+  C_smallcaps_only:
+    universe: {indexes: [niftysmallcap250]}
+
+momentum_variants:
+  M_large_mid_only:
+    universe: {indexes: [nifty50, niftynext50, niftymidcap150]}
+  M_with_smallcaps: {}
+  M_smallcaps_only:
+    universe: {indexes: [niftysmallcap250]}
+  B2_blend_with_smallcaps:
+    momentum:
+      sleeves: [{score: momentum, weight: 0.5}, {score: low_vol, weight: 0.5, regime_filter: false}]

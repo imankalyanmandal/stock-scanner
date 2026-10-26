@@ -1,6 +1,6 @@
 # Swing-setup stock scanner (NSE)
 
-Scans **Nifty 50 + Nifty Next 50 + Nifty Midcap 150** (~250 stocks) every day at **3:00 AM IST**
+Scans **Nifty 50 + Nifty Next 50 + Nifty Midcap 150 + Nifty Smallcap 250** (~500 stocks; small caps need ≥ ₹25 Cr median daily turnover and ≥ 3 lakh shares/day) every day at **3:00 AM IST**
 and sends the top 3–5 swing setups (stage-2 uptrend leaders only) with a buy-stop trigger, stop,
 first target, position size and exit plan. Every pick is logged to a journal and replayed against
 real prices, and `backtest.py` runs the exact same rules over 5 years of history.

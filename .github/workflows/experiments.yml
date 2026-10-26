@@ -7,7 +7,7 @@ on:
         description: "Variant file to run"
         default: experiments.yaml
         type: choice
-        options: [experiments.yaml, experiments_blend.yaml]
+        options: [experiments.yaml, experiments_blend.yaml, experiments_smallcap.yaml]
 
 permissions:
   contents: write         # commits the experiments report to reports/
