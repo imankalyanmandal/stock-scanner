@@ -1,1 +1,1 @@
-session,symbol,industry,setup,score,regime,size_mult,trigger,max_entry,stop,t1,risk_per_share,qty,status,fill_date,fill_price,exit_date,exit_price,exit_reason,r_multiple,pct_return,bars_held,updated
+session,symbol,company,industry,setup,score,regime,size_mult,trigger,max_entry,stop,t1,risk_per_share,qty,status,fill_date,fill_price,exit_date,exit_price,exit_reason,r_multiple,pct_return,bars_held,updated,news_verdict,news_headline,vetoed,premarket_news
