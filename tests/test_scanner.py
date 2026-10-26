@@ -762,3 +762,39 @@ def test_pipeline_applies_global_risk(monkeypatch, tmp_path):
     from scanner import notify
     text = notify.format_summary(res)
     assert "Global: 🟠 <b>ELEVATED</b>" in text and f"Headwind: {hit}" in text
+
+
+
+# ------------------------------------------------------------------ low-vol / blend
+def test_score_tables_and_sleeves():
+    from scanner.momentum import score_tables, sleeves_from
+    feats = {}
+    for i in range(8):
+        rng = np.random.default_rng(i)
+        c = 100 * np.cumprod(1 + 0.0004 * i + rng.normal(0, 0.004 + 0.003 * i, 320))
+        feats[f"S{i}"] = feats_for(ohlc(c, seed=i))
+    t = score_tables(feats, CFG, {"momentum", "low_vol", "blend"})
+    last = {k: v.iloc[-1].dropna() for k, v in t.items()}
+    assert last["low_vol"].idxmax() == "S0"           # calmest stock ranks first on low-vol
+    assert set(last["blend"].index) == set(last["momentum"].index)
+    sl = sleeves_from({**CFG["momentum"], "sleeves": [{"score": "momentum", "weight": 3},
+                                                      {"score": "low_vol", "weight": 1, "regime_filter": False}]})
+    assert [round(x["weight"], 2) for x in sl] == [0.75, 0.25]
+    assert sl[1]["regime_filter"] is False and sl[0]["regime_filter"] is CFG["momentum"]["regime_filter"]
+
+
+def test_sleeves_portfolio_runs_and_lowvol_sleeve_stays_invested():
+    from scanner.momentum import run_momentum
+    n = 700
+    feats = {}
+    for i in range(12):
+        rng = np.random.default_rng(i)
+        c = 100 * np.cumprod(1 + 0.0003 * (i % 4) + rng.normal(0, 0.005 + 0.002 * i, n))
+        feats[f"S{i}"] = feats_for(ohlc(c, seed=i, end=END))
+    falling = {"nifty50": ohlc(20000 * 0.9995 ** np.arange(n))}   # always below 200 DMA
+    cfg = copy.deepcopy(CFG)
+    cfg["momentum"].update({"top_n": 4, "exit_rank": 6, "sleeves": [
+        {"score": "momentum", "weight": 0.5}, {"score": "low_vol", "weight": 0.5, "regime_filter": False}]})
+    res = run_momentum(feats, falling, cfg)
+    assert res["months_in_cash_pct"] == 0          # low-vol sleeve never goes to cash
+    assert res["strategy"]["cagr_pct"] is not None
