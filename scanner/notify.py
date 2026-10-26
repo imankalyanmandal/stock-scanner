@@ -72,15 +72,23 @@ def format_summary(result: dict, max_picks: int = 5, report_url: str | None = No
             f"   Buy &gt; {p['trigger']:.2f} (skip &gt; {p['max_entry']:.2f})\n"
             f"   SL {p['stop']:.2f} | T1 {p['t1']:.2f} | Qty {p.get('qty', '–')}"
             + (f"\n   🚩 {e(', '.join(flags))}" if flags else ""))
-        items = p.get("news", {}).get("items") or []
-        if items:
-            lines.append(f"   ↳ <i>{e(items[0]['title'][:110])}</i>")
+        nw = p.get("news") or {}
+        icon = {"positive": "🟢", "neutral": "⚪", "none": "⚪", "negative": "🔴"}.get(nw.get("verdict"), "")
+        if nw.get("verdict") in ("positive", "neutral", "negative"):
+            head = nw.get("key_headline") or (nw.get("items") or [{}])[0].get("title", "")
+            lines.append(f"   📰 {icon} {nw['verdict']}" + (f": <i>{e(head[:110])}</i>" if head else ""))
+        elif nw.get("verdict") == "none":
+            lines.append("   📰 no news in the last 3 days")
+        elif nw.get("verdict") == "unchecked":
+            lines.append("   📰 news not checked")
     if len(picks) > max_picks:
         lines.append(f"\n…and {len(picks) - max_picks} more in the full report")
     if not picks:
         watch = result.get("watchlist") or []
         lines.append("No trades today." + (
             " Watchlist: " + ", ".join(e(w["symbol"]) for w in watch) if watch else ""))
+    for v in result.get("news_vetoed") or []:
+        lines.append(f"🚫 <b>{e(v['symbol'])}</b> rejected on news: <i>{e((v.get('headline') or v.get('reason') or '')[:110])}</i>")
     o = (result.get("journal") or {}).get("overall", {})
     if o.get("trades"):
         lines.append(f"\n📒 Journal: {o['trades']} closed · win {o['win_rate_pct']}% · "

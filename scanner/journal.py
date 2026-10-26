@@ -15,10 +15,11 @@ from .trade import simulate, trade_stats
 
 log = logging.getLogger(__name__)
 
-COLUMNS = ["session", "symbol", "industry", "setup", "score", "regime", "size_mult",
+COLUMNS = ["session", "symbol", "company", "industry", "setup", "score", "regime", "size_mult",
            "trigger", "max_entry", "stop", "t1", "risk_per_share", "qty",
            "status", "fill_date", "fill_price", "exit_date", "exit_price", "exit_reason",
-           "r_multiple", "pct_return", "bars_held", "updated"]
+           "r_multiple", "pct_return", "bars_held", "updated",
+           "news_verdict", "news_headline", "vetoed", "premarket_news"]
 OPEN_STATES = {"pending", "open", ""}
 
 
@@ -38,9 +39,17 @@ def save(df: pd.DataFrame, path: str) -> None:
     df.to_csv(path, index=False)
 
 
-def add_picks(df: pd.DataFrame, picks: list[dict], session: str, regime: dict) -> pd.DataFrame:
+def _is_true(x) -> bool:
+    return str(x).strip().lower() == "true"
+
+
+def add_picks(df: pd.DataFrame, picks: list[dict], session: str, regime: dict,
+              vetoed: bool = False) -> pd.DataFrame:
     have = set(zip(df["session"].astype(str), df["symbol"].astype(str)))
-    rows = [{"session": session, "symbol": p["symbol"], "industry": p.get("industry"),
+    rows = [{"session": session, "symbol": p["symbol"], "company": p.get("company"),
+             "industry": p.get("industry"), "vetoed": vetoed,
+             "news_verdict": (p.get("news") or {}).get("verdict"),
+             "news_headline": ((p.get("news") or {}).get("key_headline") or "")[:200],
              "setup": p["setup"], "score": p["score"], "regime": regime["regime"],
              "size_mult": regime.get("size_mult"), "trigger": round(p["trigger"], 2),
              "max_entry": round(p["max_entry"], 2), "stop": round(p["stop"], 2),
@@ -85,13 +94,19 @@ def update(df: pd.DataFrame, feats: dict[str, pd.DataFrame], cfg: dict) -> pd.Da
 def summary(df: pd.DataFrame) -> dict:
     if df.empty:
         return {"overall": {"trades": 0}, "by_setup": {}, "counts": {}}
-    closed = df[df["status"] == "closed"].copy()
+    vet = df["vetoed"].map(_is_true)
+    live = df[~vet]
+    closed = live[live["status"] == "closed"].copy()
     closed["r_multiple"] = closed["r_multiple"].astype(float)
+    vclosed = df[vet & (df["status"] == "closed")].copy()
+    vclosed["r_multiple"] = vclosed["r_multiple"].astype(float)
     return {"overall": trade_stats(closed),
             "by_setup": {k: trade_stats(g) for k, g in closed.groupby("setup")},
-            "counts": df["status"].value_counts().to_dict(),
-            "open": df[df["status"] == "open"][["symbol", "session", "fill_price", "exit_price",
-                                                "r_multiple"]].to_dict("records")}
+            "counts": live["status"].value_counts().to_dict(),
+            # what the news veto avoided: would-be results of vetoed trades
+            "news_vetoed": trade_stats(vclosed),
+            "open": live[live["status"] == "open"][["symbol", "session", "fill_price", "exit_price",
+                                                    "r_multiple"]].to_dict("records")}
 
 
 def last_session(state_path: str) -> str | None:

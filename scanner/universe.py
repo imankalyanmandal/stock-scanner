@@ -43,7 +43,7 @@ def _fetch_csv(fname: str) -> pd.DataFrame | None:
 
 
 def load_universe(index_keys: list[str], data_dir: str = "data") -> pd.DataFrame:
-    """Returns DataFrame[symbol, company, industry, indexes]."""
+    """Returns DataFrame[symbol, company, industry, isin, indexes]."""
     cache = Path(data_dir)
     cache.mkdir(parents=True, exist_ok=True)
     frames = []
@@ -71,6 +71,8 @@ def load_universe(index_keys: list[str], data_dir: str = "data") -> pd.DataFrame
                     "symbol": df["Symbol"].astype(str).str.strip(),
                     "company": df["Company Name"].astype(str).str.strip(),
                     "industry": df["Industry"].astype(str).str.strip(),
+                    "isin": (df["ISIN Code"].astype(str).str.strip() if "ISIN Code" in df
+                             else ""),
                     "indexes": key,
                 }
             )
@@ -78,7 +80,7 @@ def load_universe(index_keys: list[str], data_dir: str = "data") -> pd.DataFrame
     uni = pd.concat(frames, ignore_index=True)
     uni = (
         uni.groupby("symbol", as_index=False)
-        .agg(company=("company", "first"), industry=("industry", "first"),
+        .agg(company=("company", "first"), industry=("industry", "first"), isin=("isin", "first"),
              indexes=("indexes", lambda s: ",".join(sorted(set(s)))))
     )
     return uni

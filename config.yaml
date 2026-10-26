@@ -128,11 +128,21 @@ events:
   reject_earnings: true       # earnings inside the window = reject (flag only if false)
   dividend_flag_days: 7
 
-news:
-  enabled: false              # informational only; never affects selection
+news:                         # news veto on the final candidates (see scanner/news.py)
+  enabled: true
   lookback_days: 3
-  fresh_hours: 48
-  max_items: 3
+  max_items: 8                # headlines per source passed to the classifier
+  max_stocks: 15              # most stocks checked per scan (picks + replacements for vetoed ones)
+  reject_negative: true       # negative material news = reject; positive never rescues a stock
+  premarket_lookback_hours: 8 # pre-market recheck only looks at news newer than this
+  sources:
+    bse: true                 # BSE corporate announcements (official filings)
+    google: true              # Google News RSS (media)
+  llm:                        # tried in order; keyword matching if all fail or no keys are set
+    order: [gemini, groq]
+    gemini_model: gemini-2.5-flash        # env GEMINI_API_KEY
+    groq_model: llama-3.3-70b-versatile   # env GROQ_API_KEY
+    timeout: 30
 
 journal:
   path: data/journal.csv

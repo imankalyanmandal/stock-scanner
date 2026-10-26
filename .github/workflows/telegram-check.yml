@@ -1,4 +1,4 @@
-name: Telegram check
+name: Setup check
 
 on:
   workflow_dispatch: {}
@@ -26,11 +26,16 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: python -m scanner.notify reports/telegram_check.json
+      - name: Check news sources and LLM keys (prints only status, never keys)
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+        run: python -m scanner.news reports/news_check.json
       - name: Commit result
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898294+github-actions[bot]@users.noreply.github.com"
-          git add reports/telegram_check.json
-          git diff --cached --quiet || git commit -m "Telegram check $(date -u +%F)"
+          git add -A reports data
+          git diff --cached --quiet || git commit -m "Setup check $(date -u +%F)"
           git pull --rebase origin main
           git push
