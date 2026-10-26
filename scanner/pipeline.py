@@ -8,7 +8,8 @@ import pandas as pd
 from . import journal as J
 from . import report
 from .data import download_prices, fetch_delivery
-from .enrich import fetch_news, upcoming_events
+from .enrich import upcoming_events
+from .news import bse_code_map, check_stock
 from .filters import (arrays, evaluate, features, metrics_at, momentum_rank_table, rs_rank_table,
                       select)
 from .market import bench_table, breadth_series, regime_at, sector_stats
@@ -144,29 +145,57 @@ def run(cfg: dict, with_news: bool = True, limit: int | None = None, force: bool
             p["flags"].append("ex_dividend_soon")
         survivors.append(p)
 
-    notes, watchlist = [], []
-    if not regime["allow_new_longs"]:
-        picks = []
-        watchlist = sorted(survivors, key=lambda r: -r["score"])[:cfg["selection"]["top_n"]]
+    notes = []
+    blocked = not regime["allow_new_longs"]
+    if blocked:
         rejected += [{"symbol": p["symbol"], "reasons": ["regime_block"]} for p in survivors]
         notes.append(f"No new longs today ({regime['block_reason']}). "
                      "Setups shown as a watchlist only.")
-    else:
-        picks, dropped = select(survivors, cfg)
-        rejected += dropped
 
-    for p in picks:
+    def choose(rows):
+        if blocked:
+            ranked = sorted(rows, key=lambda r: -r["score"])
+            return ranked[:cfg["selection"]["top_n"]], []
+        return select(rows, cfg)
+
+    # news veto: check the would-be picks, drop negatives, re-select until the list is clean
+    ncfg = cfg["news"]
+    news_on = with_news and ncfg.get("enabled", False)
+    vetoed, checked = [], set()
+    codes = bse_code_map(out_cfg["data_dir"]) if news_on and survivors else {}
+    while True:
+        gone = {id(v) for v in vetoed}
+        chosen, dropped = choose([p for p in survivors if id(p) not in gone])
+        todo = [p for p in chosen if p["symbol"] not in checked]
+        if not news_on or not todo or len(checked) >= ncfg.get("max_stocks", 15):
+            break
+        for p in todo:
+            checked.add(p["symbol"])
+            isin = info.at[p["symbol"], "isin"] if "isin" in info.columns else None
+            p["news"] = check_stock(p["symbol"], p["company"], isin, cfg, codes)
+            if p["news"]["keyword_alert"]:
+                p["flags"].append("news_keyword_alert")
+            if p["news"]["verdict"] == "positive":
+                p["flags"].append("positive_news")
+            if p["news"]["verdict"] == "negative" and ncfg.get("reject_negative", True):
+                vetoed.append(p)
+                rejected.append({"symbol": p["symbol"], "reasons": ["negative_news"]})
+    for p in chosen:
+        p.setdefault("news", {"verdict": "off" if not news_on else "unchecked", "items": []})
+        if p["news"]["verdict"] == "unchecked":
+            p["flags"].append("news_unchecked")
+    if not blocked:
+        rejected += dropped
+    picks, watchlist = ([], chosen) if blocked else (chosen, [])
+
+    for p in picks + vetoed:
         p.update(size_position(p["trigger"], p["stop"], cfg, regime["size_mult"]))
         p["exit_plan"] = exit_plan_text(p, cfg)
-        if with_news and cfg["news"]["enabled"]:
-            n = cfg["news"]
-            p["news"] = fetch_news(p["company"], p["symbol"], n["lookback_days"],
-                                   n["fresh_hours"], n["max_items"])
-        else:
-            p["news"] = {"has_news": None, "fresh": None, "items": []}
 
     if not duplicate:
         jdf = J.add_picks(jdf, picks, session, regime)
+        if not blocked:   # log vetoed trades too, to measure whether the veto saves money
+            jdf = J.add_picks(jdf, vetoed, session, regime, vetoed=True)
     J.save(jdf, jcfg["path"])
     J.mark_session(jcfg["state_path"], session)
 
@@ -181,6 +210,10 @@ def run(cfg: dict, with_news: bool = True, limit: int | None = None, force: bool
               "rejected": rejected, "universe_size": len(symbols), "evaluated": len(current),
               "passed_gates": len(passed), "min_score": cfg["selection"]["min_score"],
               "duplicate": duplicate, "note": " ".join(notes),
+              "news_vetoed": [{"symbol": p["symbol"], "company": p["company"],
+                               "reason": p["news"].get("reason"),
+                               "headline": p["news"].get("key_headline"),
+                               "method": p["news"].get("method")} for p in vetoed],
               "journal": J.summary(jdf)}
     report.write(result, out_cfg["dir"])
     log.info("Done: %d picks, %d passed gates, %d rejected", len(picks), len(passed), len(rejected))

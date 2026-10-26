@@ -1,6 +1,8 @@
 """Offline tests on synthetic price data (no network)."""
 import copy
+import json
 import math
+from datetime import datetime, timedelta
 
 import numpy as np
 import pandas as pd
@@ -408,16 +410,19 @@ def test_telegram_message_and_send(monkeypatch, tmp_path):
     pick = {"symbol": "ACME", "setup": "breakout", "score": 78.5, "rs_rank": 91.0,
             "trigger": 512.3, "max_entry": 520.0, "stop": 498.0, "t1": 540.9, "qty": 120,
             "flags": ["abnormal_gap", "blue_sky"],
-            "news": {"items": [{"title": "Acme <wins> order & more"}]}}
+            "news": {"verdict": "positive", "key_headline": "Acme <wins> order & more",
+                     "items": [{"title": "Acme <wins> order & more"}]}}
     result = {"session": END, "evaluated": 248, "passed_gates": 9,
               "regime": {"regime": "neutral", "breadth_pct": 52.0, "vix": 14.2, "size_mult": 0.5,
                          "benchmarks": {"nifty50": {"above_20": True, "above_50": False}}},
               "picks": [pick] * 8,
+              "news_vetoed": [{"symbol": "BADCO", "headline": "SEBI order against BadCo", "reason": "x"}],
               "journal": {"overall": {"trades": 12, "win_rate_pct": 50.0, "avg_win_r": 2.1,
                                       "avg_loss_r": -0.9, "expectancy_r": 0.6}}}
     text = notify.format_summary(result, max_picks=5)
     assert "ACME" in text and "&lt;wins&gt;" in text and "3 more" in text
     assert "Journal: 12 closed" in text and "Buy &gt; 512.30" in text
+    assert "BADCO</b> rejected on news" in text and "📰 🟢 positive" in text
     assert len(text) <= notify.MAX_LEN
 
     calls = []
@@ -566,3 +571,118 @@ def test_indicator_gates_only_when_enabled():
     m2 = {**m, "macd_bull": False, "supertrend_up": False, "bb_squeeze": False}
     r = evaluate(m2, cfg)["reject_reasons"]
     assert {"macd_not_bullish", "supertrend_down", "adx_too_low", "no_bb_squeeze"} <= set(r)
+
+
+# ------------------------------------------------------------------ news veto
+class _Resp:
+    def __init__(self, payload, ok=True, status=200, text=""):
+        self._p, self.ok, self.status_code, self.text = payload, ok, status, text
+    def json(self):
+        return self._p
+    def raise_for_status(self):
+        if not self.ok:
+            raise __import__("requests").HTTPError(str(self.status_code))
+
+
+def _news_cfg():
+    cfg = copy.deepcopy(CFG)
+    cfg["news"]["sources"] = {"bse": True, "google": False}
+    return cfg
+
+
+def test_bse_parsing_and_llm_chain(monkeypatch):
+    from scanner import news
+    now = datetime.now(news.IST).replace(microsecond=0)
+    bse = {"Table": [{"HEADLINE": "SEBI order imposing penalty on the company", "CATEGORYNAME": "Company Update",
+                      "NEWS_DT": (now - timedelta(hours=5)).isoformat()[:19], "ATTACHMENTNAME": "a.pdf"}]}
+    calls = []
+
+    def fake_get(url, **k):
+        calls.append(url)
+        return _Resp(bse)
+
+    def fake_post(url, **k):
+        calls.append(url)
+        if "googleapis" in url:
+            assert "key=" not in url and k["headers"]["x-goog-api-key"] == "g"
+            return _Resp({}, ok=False, status=429, text="quota")
+        return _Resp({"choices": [{"message": {"content": json.dumps(
+            {"verdict": "negative", "reason": "SEBI penalty", "key_headline": "SEBI order"})}}]})
+    monkeypatch.setattr(news.requests, "get", fake_get)
+    monkeypatch.setattr(news.requests, "post", fake_post)
+    monkeypatch.setenv("GEMINI_API_KEY", "g")
+    monkeypatch.setenv("GROQ_API_KEY", "q")
+    res = news.check_stock("ACME", "Acme Ltd", "INE000A01010", _news_cfg(), {"isin:INE000A01010": "500001"})
+    assert res["sources"]["bse"] == "ok (1)"
+    assert res["items"][0]["source"] == "BSE filing" and 4.5 < res["items"][0]["age_hours"] < 5.5
+    assert res["verdict"] == "negative" and res["method"] == "groq"      # Gemini failed -> Groq
+
+
+def test_keyword_fallback_without_keys(monkeypatch):
+    from scanner import news
+    monkeypatch.delenv("GEMINI_API_KEY", raising=False)
+    monkeypatch.delenv("GROQ_API_KEY", raising=False)
+    items = [{"title": "Board meeting intimation", "source": "BSE filing", "age_hours": 2.0},
+             {"title": "Promoter offloads stake via block deal", "source": "ET", "age_hours": 3.0}]
+    v = news.classify("Acme Ltd", "ACME", items, _news_cfg())
+    assert v["method"] == "keywords" and v["verdict"] == "negative"
+    assert len(v["llm_errors"]) == 2
+    assert news.classify("Acme", "ACME", [], _news_cfg())["verdict"] == "none"
+
+
+def test_pipeline_vetoes_negative_news_and_refills(monkeypatch, tmp_path):
+    syms, uni = _universe(30)
+    data = _market(syms)
+    monkeypatch.setattr(pipeline, "load_universe", lambda *a, **k: uni)
+    monkeypatch.setattr(pipeline, "download_prices", lambda s, **k: {x: data[x] for x in s if x in data})
+    monkeypatch.setattr(pipeline, "fetch_delivery", lambda d: {})
+    monkeypatch.setattr(pipeline, "upcoming_events", lambda *a: [])
+    monkeypatch.setattr(pipeline, "bse_code_map", lambda *a: {})
+    cfg = _cfg(tmp_path)
+    base = pipeline.run(copy.deepcopy(cfg), with_news=False)
+    assert base["picks"]
+    bad = base["picks"][0]["symbol"]
+
+    def fake_check(symbol, company, isin, cfg, codes, max_age_hours=None):
+        if symbol == bad:
+            return {"verdict": "negative", "reason": "fraud probe", "key_headline": f"{symbol} fraud probe",
+                    "method": "keywords", "items": [], "sources": {}, "keyword_alert": False}
+        return {"verdict": "neutral", "reason": "", "key_headline": "", "method": "keywords",
+                "items": [], "sources": {}, "keyword_alert": False}
+    monkeypatch.setattr(pipeline, "check_stock", fake_check)
+    cfg2 = _cfg(tmp_path / "second")
+    res = pipeline.run(cfg2, with_news=True)
+    syms_picked = [p["symbol"] for p in res["picks"]]
+    assert bad not in syms_picked
+    assert res["news_vetoed"][0]["symbol"] == bad
+    assert any("negative_news" in r["reasons"] for r in res["rejected"] if r["symbol"] == bad)
+    assert all(p["news"]["verdict"] == "neutral" for p in res["picks"])
+    j = J.load(cfg2["journal"]["path"])
+    assert set(j[j["vetoed"].map(J._is_true)]["symbol"]) == {bad}
+    assert J.summary(j)["counts"].get("pending") == len(res["picks"])
+
+
+def test_premarket_recheck(monkeypatch, tmp_path):
+    import premarket
+    cfg = _cfg(tmp_path)
+    jdf = J.add_picks(J.load("/nonexistent.csv"),
+                      [{"symbol": s, "company": f"{s} Ltd", "setup": "breakout", "score": 60, "trigger": 100.0,
+                        "max_entry": 101.5, "stop": 95.0, "t1": 110.0, "risk_per_share": 5.0, "qty": 10}
+                       for s in ("GOOD", "BAD")], "2026-10-23", {"regime": "strong", "size_mult": 1})
+    J.save(jdf, cfg["journal"]["path"])
+    monkeypatch.setattr(premarket, "bse_code_map", lambda *a: {})
+
+    def fake_check(symbol, company, isin, cfg, codes, max_age_hours=None):
+        assert max_age_hours == cfg["news"]["premarket_lookback_hours"]
+        neg = symbol == "BAD"
+        return {"verdict": "negative" if neg else "none", "reason": "", "method": "keywords",
+                "key_headline": "BAD Ltd faces SEBI probe" if neg else "", "items": [], "sources": {},
+                "keyword_alert": False}
+    monkeypatch.setattr(premarket, "check_stock", fake_check)
+    sent = []
+    monkeypatch.setattr(premarket.notify, "_call", lambda m, d, **k: sent.append(d["text"]) or True)
+    res = premarket.run(cfg)
+    assert {c["symbol"]: c["verdict"] for c in res["checked"]} == {"GOOD": "none", "BAD": "negative"}
+    assert "BAD: consider cancelling" in sent[0] and "GOOD" in sent[0]
+    j = J.load(cfg["journal"]["path"])
+    assert j.set_index("symbol").at["BAD", "premarket_news"].startswith("negative")

@@ -81,6 +81,36 @@ they show which rules actually make money.
   win/loss and expectancy in the report and Telegram message use exactly the backtest's rules.
   Re-running the same session doesn't add duplicates or resend the alert (`--force` overrides).
 
+## News check
+
+For the final candidates only (up to 15 per scan), `scanner/news.py` collects the last 3 days of
+**BSE corporate filings** (official, by ISIN → BSE scrip code) and **Google News** headlines, then
+classifies them with **Gemini**, falling back to **Groq**, then to keyword matching:
+
+- **negative** (SEBI/ED/tax action, fraud, default, results miss, downgrade, promoter selling or
+  pledging, block sale, management/auditor exit, plant shutdown, USFDA warning…) → **rejected**, and
+  the next-best stock takes its place. Vetoed trades are still logged in the journal (`vetoed=True`)
+  so you can see whether the veto saves money.
+- **positive** → flag only; news never rescues a stock that failed a technical rule.
+- If the LLM says non-negative but risk keywords appear, the pick gets a `news_keyword_alert` flag.
+
+**Pre-market recheck** (`premarket.py`, workflow at ~8:20 AM IST Mon–Fri): re-checks news from the
+last 8 hours for the pending picks and sends a Telegram message: all clear, or which buy-stop to
+cancel.
+
+### Secrets
+
+| GitHub secret | Used for | Required |
+|---|---|---|
+| `TELEGRAM_BOT_TOKEN` | Telegram bot | yes |
+| `TELEGRAM_CHAT_ID` | Your chat | yes |
+| `GEMINI_API_KEY` | News classification (first choice) | recommended |
+| `GROQ_API_KEY` | News classification (fallback) | recommended |
+
+Without either LLM key the news check still runs, on keyword matching only. After adding keys, run
+the **Setup check** workflow: `reports/news_check.json` shows which sources and models work (never
+the keys). Model names are in `config.yaml` under `news.llm`.
+
 ## Experiments: compare variants
 
 `experiments.yaml` lists rule variants as overrides of `config.yaml`. `python experiments.py` (or the

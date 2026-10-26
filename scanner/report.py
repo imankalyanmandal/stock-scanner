@@ -67,8 +67,17 @@ def _setup_line(p):
 def _card(p, watch=False):
     flags = " ".join(f"<span class=flag>{html.escape(f)}</span>" for f in p["flags"])
     comps = " · ".join(f"{k} {v}" for k, v in p["components"].items())
-    news = "".join(f"<li><a href='{html.escape(i['link'])}'>{html.escape(i['title'])}</a></li>"
-                   for i in p.get("news", {}).get("items", []))
+    nw = p.get("news") or {}
+    news = "".join(
+        f"<li><a href='{html.escape(i.get('link', ''))}'>{html.escape(i['title'])}</a> "
+        f"<span class=m>{html.escape(i.get('source', ''))} · {_fmt(i.get('age_hours'), 0)}h ago</span></li>"
+        for i in nw.get("items", [])[:6])
+    verdict = nw.get("verdict", "off")
+    news_line = (f"<div class=m><b>News: {html.escape(verdict)}</b>"
+                 + (f" ({html.escape(nw.get('method', ''))}) · {html.escape(nw.get('reason', ''))}"
+                    if verdict not in ("off", "unchecked") else "")
+                 + (f" · sources {html.escape(', '.join(f'{k} {v}' for k, v in nw.get('sources', {}).items()))}"
+                    if nw.get("sources") else "") + "</div>")
     size = "" if watch else (
         f"<td>{p.get('qty', 0)}</td><td>{_fmt(p.get('position_value'), 0)}</td>"
         f"<td>{_fmt(p.get('risk_amount'), 0)}</td>")
@@ -88,8 +97,18 @@ def _card(p, watch=False):
   {'' if watch else f"<div class=plan>{html.escape(p.get('exit_plan', ''))}</div>"}
   <div class=m>Score parts: {comps}</div>
   <div class=m>Events: {html.escape(_events(p)) or 'none in window'}</div>
+  {news_line}
   {f'<ul class=news>{news}</ul>' if news else ''}
 </div>"""
+
+
+def _vetoed(v):
+    if not v:
+        return ""
+    rows = "".join(f"<li><b>{html.escape(x['symbol'])}</b>: {html.escape(x.get('headline') or '')} "
+                   f"<span class=m>({html.escape(x.get('reason') or '')}; {html.escape(x.get('method') or '')})</span></li>"
+                   for x in v)
+    return f"<h2>Rejected on negative news</h2><ul>{rows}</ul>"
 
 
 def _journal(j):
@@ -106,7 +125,11 @@ def _journal(j):
         for k, v in {"all": o, **j.get("by_setup", {})}.items() if v.get("trades"))
     opens = "".join(f"<li>{html.escape(t['symbol'])} (from {t['session']}): "
                     f"{_fmt(t.get('r_multiple'))}R open</li>" for t in j.get("open", []))
-    return (f"<h2>Live journal</h2><table><tr><th></th><th>Trades</th><th>Win</th><th>Avg win R</th>"
+    v = j.get("news_vetoed", {})
+    veto = (f"<p class=m>Trades vetoed on news, had they been taken: {v['trades']} closed, "
+            f"expectancy {v['expectancy_r']}R (negative = the veto saved money).</p>"
+            if v.get("trades") else "")
+    return (veto + f"<h2>Live journal</h2><table><tr><th></th><th>Trades</th><th>Win</th><th>Avg win R</th>"
             f"<th>Avg loss R</th><th>Expectancy R</th><th>Total R</th></tr>{rows}</table>"
             f"{f'<ul>{opens}</ul>' if opens else ''}")
 
@@ -146,6 +169,7 @@ India VIX {_fmt(reg.get('vix'), 1)} · position size ×{reg['size_mult']}
 <ul>{bench}</ul>
 {cards or '<p>No trades today.</p>'}
 {f'<h2>Watchlist (not tradeable today)</h2>{watch}' if watch else ''}
+{_vetoed(r.get('news_vetoed'))}
 {_journal(r.get('journal'))}
 <details><summary>Why stocks were rejected</summary><ul>{rej_html}</ul></details>
 <p class=m>Screening output only, not investment advice. Levels are mechanical estimates.</p>
