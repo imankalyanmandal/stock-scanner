@@ -1,7 +1,8 @@
 {
   "GEMINI_API_KEY_set": false,
   "GROQ_API_KEY_set": false,
-  "bse_scrip_map": "unavailable",
+  "bse_scrip_map": "unavailable: HTTPError: HTTP 403: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"ht",
+  "bse_announcements_test": "error HTTPError: HTTP 403 '<HTML><HEAD>\\n<TITLE>Access Denied</TITLE>\\n</HEAD><BODY>\\n<H1>Access Denied</H1>\\n \\nYou don\\'t have permission to access \"ht'",
   "sources": {
     "bse": "no BSE code",
     "google": "ok (8)"
@@ -9,8 +10,8 @@
   "gemini": "error: GEMINI_API_KEY not set",
   "groq": "error: GROQ_API_KEY not set",
   "sample_headlines": [
-    "KeyBanc raises Reliance Steel stock price target on market share gains By Investing.com - Investing.com India",
+    "Buy, Sell Or Hold: Kalyan Jewellers, Biocon, Paytm, Reliance Industries, ITC And IDFC First Bank — Ask Profit - NDTV Pro",
     "Religare sets INR 1,696.00 target for Reliance stock - ad-hoc-news.de",
-    "ServiceNow To Rally Over 26%? Here Are 10 Top Analyst Forecasts For Monday - Benzinga"
+    "Jio Platforms IPO listing: Know how Reliance Industries turned ₹1,000 investment in 1977 into ₹53 lakh in 2026 - Upstox"
   ]
 }
