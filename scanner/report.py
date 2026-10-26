@@ -102,6 +102,23 @@ def _card(p, watch=False):
 </div>"""
 
 
+def _macro(gm):
+    if not gm:
+        return ""
+    mv = " · ".join(f"{html.escape(k)} {v['chg1_pct']:+.2f}% (5d {v['chg5_pct']:+.1f}%)"
+                    for k, v in (gm.get("moves") or {}).items())
+    sec = "".join(f"<li>{html.escape(x['direction'])}: <b>{html.escape(x['sector'])}</b>, "
+                  f"{html.escape(x.get('reason', ''))}</li>" for x in gm.get("sector_impacts", []))
+    heads = "".join(f"<li>{html.escape(h)}</li>" for h in gm.get("top_headlines", []))
+    return (f"<h2>Global risk: {html.escape(str(gm.get('risk', '?')).upper())}</h2>"
+            f"<p>{html.escape(gm.get('summary', ''))} <span class=m>(via {html.escape(gm.get('method', ''))}; "
+            f"rules said {html.escape(str(gm.get('rule_risk', '–')))}: "
+            f"{html.escape(', '.join(gm.get('rule_reasons', [])) or 'nothing unusual')})</span></p>"
+            f"<p class=m>{mv}</p>"
+            + (f"<ul>{sec}</ul>" if sec else "")
+            + (f"<details><summary>Top global headlines</summary><ul>{heads}</ul></details>" if heads else ""))
+
+
 def _vetoed(v):
     if not v:
         return ""
@@ -167,6 +184,7 @@ table{{border-collapse:collapse;margin:8px 0;font-size:12px}} th,td{{padding:3px
 India VIX {_fmt(reg.get('vix'), 1)} · position size ×{reg['size_mult']}
 · {len(r['picks'])} picks · {r.get('passed_gates', '–')} passed all gates of {r.get('evaluated', '–')} evaluated</p>
 <ul>{bench}</ul>
+{_macro(r.get('macro'))}
 {cards or '<p>No trades today.</p>'}
 {f'<h2>Watchlist (not tradeable today)</h2>{watch}' if watch else ''}
 {_vetoed(r.get('news_vetoed'))}

@@ -289,6 +289,7 @@ def _cfg(tmp_path):
     cfg["output"]["dir"] = str(tmp_path / "reports")
     cfg["journal"] = {"path": str(tmp_path / "journal.csv"), "state_path": str(tmp_path / "state.json")}
     cfg["universe"]["exclude_file"] = str(tmp_path / "none.csv")
+    cfg["macro"]["enabled"] = False      # network; tested separately with mocks
     return cfg
 
 
@@ -686,3 +687,78 @@ def test_premarket_recheck(monkeypatch, tmp_path):
     assert "BAD: consider cancelling" in sent[0] and "GOOD" in sent[0]
     j = J.load(cfg["journal"]["path"])
     assert j.set_index("symbol").at["BAD", "premarket_news"].startswith("negative")
+
+
+
+# ------------------------------------------------------------------ global (macro) check
+def _moves(**chg):
+    base = {k: 0.1 for k in ("sp500", "nasdaq", "brent", "usdinr", "nikkei", "hangseng")}
+    base.update(chg)
+    out = {k: {"close": 100.0, "chg1_pct": v, "chg5_pct": v, "chg1_abs": 0.0, "date": END}
+           for k, v in base.items()}
+    out["us10y"] = {"close": 4.2, "chg1_pct": 0.1, "chg5_pct": 0.1, "chg1_abs": 0.01, "date": END}
+    return out
+
+
+def test_macro_rule_levels():
+    from scanner import macro as M
+    assert M.rule_level(_moves(), [], CFG)[0] == "low"
+    lvl, why = M.rule_level(_moves(sp500=-1.8), [], CFG)
+    assert lvl == "elevated" and "S&P 500" in why[0]
+    assert M.rule_level(_moves(sp500=-3.5), [], CFG)[0] == "high"            # severe
+    assert M.rule_level(_moves(brent=7.0), [], CFG)[0] == "high"
+    shocks = [{"title": t, "age_hours": 2} for t in ("Missile strike on port", "Oil spikes 8%",
+                                                    "US slaps tariff on India", "Global selloff deepens")]
+    assert M.rule_level(_moves(), shocks, CFG)[0] == "elevated"
+
+
+def test_macro_assess_llm_with_rule_floor_and_apply(monkeypatch):
+    from scanner import macro as M
+    monkeypatch.setattr(M, "headlines", lambda cfg, h=None: ([{"title": "Fed holds rates", "age_hours": 3,
+                                                               "source": "X"}], {}))
+    reply = {"risk": "low", "summary": "calm", "sector_impacts": [
+        {"sector": "Information Technology", "direction": "negative", "reason": "US slowdown"},
+        {"sector": "Made Up Sector", "direction": "negative", "reason": "x"}]}
+    monkeypatch.setattr(M, "gemini_text", lambda p, c: json.dumps(reply))
+    sectors = ["Information Technology", "Oil Gas & Consumable Fuels"]
+    g = M.assess(CFG, sectors, moves=_moves())
+    assert g["risk"] == "low" and g["method"] == "gemini"
+    assert [x["sector"] for x in g["sector_impacts"]] == ["Information Technology"]   # unknown dropped
+    assert M.negative_sectors(g) == {"Information Technology": "US slowdown"}
+    # numbers say high; the LLM's "low" can't override that
+    g2 = M.assess(CFG, sectors, moves=_moves(sp500=-4.0))
+    assert g2["risk"] == "high" and g2["llm_risk"] == "low" and g2["rule_risk"] == "high"
+    reg = {"regime": "strong", "size_mult": 1.0, "allow_new_longs": True, "block_reason": ""}
+    assert not M.apply(reg, g2, CFG)["allow_new_longs"]
+    assert M.apply(reg, {**g, "risk": "elevated"}, CFG)["size_mult"] == CFG["macro"]["elevated_size"]
+    # both LLMs fail -> rules
+    monkeypatch.setattr(M, "gemini_text", lambda p, c: (_ for _ in ()).throw(RuntimeError("down")))
+    monkeypatch.setattr(M, "groq_text", lambda p, c: (_ for _ in ()).throw(RuntimeError("down")))
+    g3 = M.assess(CFG, sectors, moves=_moves(sp500=-1.8))
+    assert g3["method"] == "rules" and g3["risk"] == "elevated"
+
+
+def test_pipeline_applies_global_risk(monkeypatch, tmp_path):
+    from scanner import macro as M
+    syms, uni = _universe(30)
+    data = _market(syms)
+    monkeypatch.setattr(pipeline, "load_universe", lambda *a, **k: uni)
+    monkeypatch.setattr(pipeline, "download_prices", lambda s, **k: {x: data[x] for x in s if x in data})
+    monkeypatch.setattr(pipeline, "fetch_delivery", lambda d: {})
+    monkeypatch.setattr(pipeline, "upcoming_events", lambda *a: [])
+    cfg = _cfg(tmp_path)
+    base = pipeline.run(copy.deepcopy(cfg), with_news=False)
+    hit = base["picks"][0]["industry"]
+    cfg2 = _cfg(tmp_path / "g")
+    cfg2["macro"]["enabled"] = True
+    cfg2["news"]["enabled"] = False
+    gm = {"risk": "elevated", "summary": "crude spike", "method": "gemini", "moves": _moves(brent=4.0),
+          "sector_impacts": [{"sector": hit, "direction": "negative", "reason": "input costs"}]}
+    monkeypatch.setattr(M, "assess", lambda cfg, sectors, **k: gm)
+    res = pipeline.run(cfg2, with_news=True)
+    assert res["regime"]["size_mult"] == base["regime"]["size_mult"] * CFG["macro"]["elevated_size"]
+    assert all(p["industry"] != hit for p in res["picks"])
+    assert any("global_sector_headwind" in r["reasons"] for r in res["rejected"])
+    from scanner import notify
+    text = notify.format_summary(res)
+    assert "Global: 🟠 <b>ELEVATED</b>" in text and f"Headwind: {hit}" in text

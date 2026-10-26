@@ -59,6 +59,7 @@ def format_summary(result: dict, max_picks: int = 5, report_url: str | None = No
     for name, b in reg.get("benchmarks", {}).items():
         lines.append(f"   {e(name)}: {'↑' if b['above_20'] else '↓'}20DMA "
                      f"{'↑' if b['above_50'] else '↓'}50DMA")
+    lines += macro_lines(result.get("macro"))
     if result.get("note"):
         lines.append(f"\n⚠️ {e(result['note'])}")
 
@@ -99,6 +100,28 @@ def format_summary(result: dict, max_picks: int = 5, report_url: str | None = No
 
     text = "\n".join(lines)
     return text if len(text) <= MAX_LEN else text[:MAX_LEN - 20] + "\n…(truncated)"
+
+
+def macro_lines(gm: dict | None) -> list[str]:
+    """Global risk block shared by the scan and pre-market messages."""
+    if not gm:
+        return []
+    e = html.escape
+    icon = {"low": "🟢", "elevated": "🟠", "high": "🔴"}.get(gm.get("risk"), "⚪")
+    out = [f"🌍 Global: {icon} <b>{e(str(gm.get('risk', '?')).upper())}</b> ({e(gm.get('method', ''))})"
+           + (f" · {e(gm['summary'][:160])}" if gm.get("summary") else "")]
+    names = {"sp500": "S&P", "nasdaq": "Nasdaq", "brent": "Brent", "usdinr": "USD/INR",
+             "nikkei": "Nikkei", "hangseng": "HSI"}
+    mv = [f"{names[k]} {v['chg1_pct']:+.1f}%" for k, v in (gm.get("moves") or {}).items() if k in names]
+    if mv:
+        out.append("   " + " · ".join(mv))
+    neg = [x["sector"] for x in gm.get("sector_impacts", []) if x["direction"] == "negative"]
+    pos = [x["sector"] for x in gm.get("sector_impacts", []) if x["direction"] == "positive"]
+    if neg:
+        out.append(f"   Headwind: {e(', '.join(neg))}")
+    if pos:
+        out.append(f"   Tailwind: {e(', '.join(pos))}")
+    return out
 
 
 def send_scan(result: dict, cfg: dict, report_html: Path | None = None) -> dict:

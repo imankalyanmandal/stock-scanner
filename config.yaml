@@ -145,6 +145,46 @@ news:                         # news veto on the final candidates (see scanner/n
     groq_model: llama-3.3-70b-versatile   # env GROQ_API_KEY
     timeout: 30
 
+macro:                        # global / international risk check (see scanner/macro.py)
+  enabled: true
+  lookback_hours: 36          # global headlines this recent
+  max_headlines: 40
+  high_action: skip           # global risk "high": skip = no new longs | half = quarter size
+  elevated_size: 0.5          # global risk "elevated": position size x this
+  reject_negative_sectors: true  # stocks in sectors the check marks negative are rejected
+  queries:
+    - Federal Reserve interest rates
+    - Wall Street stocks
+    - crude oil prices
+    - US tariffs India
+    - war geopolitical tensions
+    - FII outflows India
+    - rupee dollar
+    - China economy
+    - global recession
+  markets:
+    sp500: "^GSPC"
+    nasdaq: "^IXIC"
+    brent: "BZ=F"
+    usdinr: "INR=X"
+    us10y: "^TNX"
+    dxy: "DX-Y.NYB"
+    nikkei: "^N225"
+    hangseng: "^HSI"
+  thresholds:                 # rule-based floor from overnight moves (1-session % change)
+    sp500_drop_pct: -1.5
+    sp500_severe_pct: -3.0
+    nasdaq_drop_pct: -2.0
+    nasdaq_severe_pct: -4.0
+    brent_jump_pct: 3.0
+    brent_severe_pct: 6.0
+    usdinr_jump_pct: 0.6      # rupee weakening
+    usdinr_severe_pct: 1.2
+    asia_drop_pct: -2.0
+    asia_severe_pct: -4.0
+    us10y_move_bp: 15
+    shock_headlines_elevated: 4
+
 journal:
   path: data/journal.csv
   state_path: data/state.json # remembers the last scanned session to avoid duplicate alerts

@@ -10,6 +10,7 @@ from . import report
 from .data import download_prices, fetch_delivery
 from .enrich import upcoming_events
 from .news import bse_code_map, check_stock
+from . import macro as M
 from .filters import (arrays, evaluate, features, metrics_at, momentum_rank_table, rs_rank_table,
                       select)
 from .market import bench_table, breadth_series, regime_at, sector_stats
@@ -95,6 +96,20 @@ def run(cfg: dict, with_news: bool = True, limit: int | None = None, force: bool
     log.info("Session %s | regime=%s breadth50=%.1f%% vix=%s size=%.2f", session,
              regime["regime"], regime["breadth_pct"], regime["vix"], regime["size_mult"])
 
+    # global (international) risk: can shrink size, block new longs, or reject whole sectors
+    gm = None
+    if with_news and cfg.get("macro", {}).get("enabled"):
+        try:
+            gm = M.assess(cfg, sorted(set(universe["industry"].astype(str))))
+            regime = M.apply(regime, gm, cfg)
+            log.info("Global risk %s (%s): %s", gm["risk"], gm["method"], gm.get("summary"))
+        except Exception as e:  # never let the global check break the scan
+            log.exception("global check failed")
+            gm = {"risk": "unknown", "summary": f"global check failed: {type(e).__name__}",
+                  "sector_impacts": [], "method": "-", "moves": {}}
+    neg_sectors = M.negative_sectors(gm)
+    pos_sectors = {x["sector"] for x in (gm or {}).get("sector_impacts", []) if x["direction"] == "positive"}
+
     ranks = rs_rank_table(feats, cfg)
     rank_today = ranks.loc[last_ts] if last_ts in ranks.index else pd.Series(dtype=float)
     moms = momentum_rank_table(feats, cfg)
@@ -121,6 +136,13 @@ def run(cfg: dict, with_news: bool = True, limit: int | None = None, force: bool
             continue
         ind = info.at[s, "industry"]
         ev = evaluate(m, cfg, regime["sectors"].get(ind), delivery.get(s), excluded.get(s.upper()))
+        if ind in neg_sectors:
+            if cfg["macro"].get("reject_negative_sectors", True):
+                ev["reject_reasons"].append("global_sector_headwind")
+            else:
+                ev["flags"].append("global_sector_headwind")
+        elif ind in pos_sectors:
+            ev["flags"].append("global_sector_tailwind")
         row = {"symbol": s, "company": info.at[s, "company"], "industry": ind,
                "indexes": info.at[s, "indexes"], **m, **ev}
         if ev["reject_reasons"]:
@@ -209,7 +231,7 @@ def run(cfg: dict, with_news: bool = True, limit: int | None = None, force: bool
     result = {"session": session, "regime": regime, "picks": picks, "watchlist": watchlist,
               "rejected": rejected, "universe_size": len(symbols), "evaluated": len(current),
               "passed_gates": len(passed), "min_score": cfg["selection"]["min_score"],
-              "duplicate": duplicate, "note": " ".join(notes),
+              "duplicate": duplicate, "note": " ".join(notes), "macro": gm,
               "news_vetoed": [{"symbol": p["symbol"], "company": p["company"],
                                "reason": p["news"].get("reason"),
                                "headline": p["news"].get("key_headline"),

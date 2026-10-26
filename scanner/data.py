@@ -14,7 +14,8 @@ log = logging.getLogger(__name__)
 
 
 def to_yf(symbol: str) -> str:
-    return symbol if symbol.startswith("^") else f"{symbol}.NS"
+    special = symbol.startswith("^") or "=" in symbol or "." in symbol
+    return symbol if special else f"{symbol}.NS"
 
 
 def download_prices(symbols: list[str], period: str = "1y", chunk: int = 50,

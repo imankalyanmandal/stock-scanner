@@ -14,6 +14,7 @@ from pathlib import Path
 import yaml
 
 from scanner import journal as J
+from scanner import macro as M
 from scanner import notify
 from scanner.news import bse_code_map, check_stock
 
@@ -48,10 +49,31 @@ def run(cfg: dict, send: bool = True) -> dict:
         jdf.at[ix, "premarket_news"] = f"{res['verdict']}: {(res.get('key_headline') or '')[:150]}"
     J.save(jdf, cfg["journal"]["path"])
 
+    gm = None
+    if cfg.get("macro", {}).get("enabled"):
+        try:
+            sectors = sorted(set(u["industry"].astype(str))) if isins else sorted(
+                set(rows["industry"].dropna().astype(str)))
+            gm = M.assess(cfg, sectors, max_age_hours=hours)
+        except Exception as ex:
+            log.warning("global check failed: %s", ex)
+    neg = M.negative_sectors(gm)
+
     e = html.escape
     bad = [c for c in checked if c["verdict"] == "negative" or c["keyword_alert"]]
     lines = [f"🌅 <b>Pre-market news check</b> · picks from session {e(session)}",
              f"News in the last {hours}h, before the 9:15 open."]
+    lines += notify.macro_lines(gm)
+    if gm and gm.get("risk") == "high":
+        lines.append("🔴 <b>Global risk is HIGH: consider not placing today's buy-stops.</b>")
+        bad.append({"symbol": "*global*"})
+    ind = dict(zip(rows["symbol"], rows["industry"]))
+    for c in checked:
+        if ind.get(c["symbol"]) in neg:
+            lines.append(f"🟠 <b>{e(c['symbol'])}</b>: sector headwind ({e(ind[c['symbol']])}): "
+                         f"{e(neg[ind[c['symbol']]])}")
+            bad.append(c)
+    lines.append("")
     for c in checked:
         if c["verdict"] == "negative":
             lines.append(f"🔴 <b>{e(c['symbol'])}: consider cancelling the buy-stop</b>\n"
@@ -71,7 +93,7 @@ def run(cfg: dict, send: bool = True) -> dict:
                                      "disable_web_page_preview": "true"})
         status = dict(notify.LAST)
     out = {"at": datetime.now().isoformat(timespec="seconds"), "session": session,
-           "checked": checked, "telegram": status}
+           "checked": checked, "global": gm, "telegram": status}
     p = Path(cfg["output"]["dir"]) / "premarket_last.json"
     p.parent.mkdir(parents=True, exist_ok=True)
     p.write_text(json.dumps(out, indent=2, ensure_ascii=False) + "\n")

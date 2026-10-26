@@ -188,33 +188,101 @@ def _parse(text: str) -> dict:
 
 
 def _gemini(prompt: str, cfg: dict) -> dict:
+    return _parse(gemini_text(prompt, cfg))
+
+
+def _groq(prompt: str, cfg: dict) -> dict:
+    return _parse(groq_text(prompt, cfg))
+
+
+_MODEL_CACHE: dict[str, str] = {}   # provider -> model that actually worked this run
+GEMINI_PREFS = ("flash", "pro")
+GROQ_PREFS = ("gpt-oss-120b", "llama-3.3-70b", "70b", "gpt-oss", "llama", "qwen", "kimi")
+GROQ_SKIP = ("whisper", "guard", "tts", "playai", "distil", "embed", "vision", "compound")
+
+
+def available_models(provider: str) -> list[str]:
+    """Model ids the key can use right now (used when the configured model is retired)."""
+    if provider == "gemini":
+        key = os.getenv("GEMINI_API_KEY", "").strip()
+        r = requests.get("https://generativelanguage.googleapis.com/v1beta/models",
+                         headers={"x-goog-api-key": key}, params={"pageSize": 200}, timeout=20)
+        r.raise_for_status()
+        return [m["name"].split("/", 1)[-1] for m in r.json().get("models", [])
+                if "generateContent" in m.get("supportedGenerationMethods", [])]
+    key = os.getenv("GROQ_API_KEY", "").strip()
+    r = requests.get("https://api.groq.com/openai/v1/models",
+                     headers={"Authorization": f"Bearer {key}"}, timeout=20)
+    r.raise_for_status()
+    return [m["id"] for m in r.json().get("data", []) if m.get("active", True)]
+
+
+def _pick(models: list[str], prefs: tuple, skip: tuple = ()) -> str | None:
+    usable = [m for m in models if not any(x in m.lower() for x in skip)]
+    for p in prefs:
+        hits = sorted((m for m in usable if p in m.lower()), reverse=True)
+        stable = [m for m in hits if not any(x in m for x in ("exp", "preview", "lite"))]
+        if stable or hits:
+            return (stable or hits)[0]
+    return usable[0] if usable else None
+
+
+def _with_model_fallback(provider: str, configured: str, call) -> str:
+    """Try the configured (or last working) model; if it's retired, switch to an available one."""
+    model = _MODEL_CACHE.get(provider, configured)
+    status, body = call(model)
+    if status in (400, 404) and ("not found" in body.lower() or "does not exist" in body.lower()
+                                  or "not supported" in body.lower() or "decommission" in body.lower()):
+        try:
+            alt = _pick(available_models(provider),
+                        GEMINI_PREFS if provider == "gemini" else GROQ_PREFS,
+                        () if provider == "gemini" else GROQ_SKIP)
+        except Exception as e:
+            raise RuntimeError(f"{provider} model {model} unavailable; model list failed: {e}") from e
+        if alt and alt != model:
+            log.warning("%s model %s unavailable, using %s", provider, model, alt)
+            model = alt
+            status, body = call(model)
+    if status != 200:
+        raise RuntimeError(f"{provider} HTTP {status} ({model}): {body[:150]}")
+    _MODEL_CACHE[provider] = model
+    return body
+
+
+def gemini_text(prompt: str, cfg: dict) -> str:
     key = os.getenv("GEMINI_API_KEY", "").strip()
     if not key:
         raise RuntimeError("GEMINI_API_KEY not set")
     llm = cfg["news"]["llm"]
-    r = requests.post(GEMINI_URL.format(model=llm["gemini_model"]), timeout=llm.get("timeout", 30),
-                      headers={"x-goog-api-key": key, "Content-Type": "application/json"},
-                      json={"contents": [{"parts": [{"text": prompt}]}],
-                            "generationConfig": {"temperature": 0,
-                                                 "responseMimeType": "application/json"}})
-    if not r.ok:
-        raise RuntimeError(f"Gemini HTTP {r.status_code}: {r.text[:150]}")
-    return _parse(r.json()["candidates"][0]["content"]["parts"][0]["text"])
+
+    def call(model):
+        r = requests.post(GEMINI_URL.format(model=model), timeout=llm.get("timeout", 30),
+                          headers={"x-goog-api-key": key, "Content-Type": "application/json"},
+                          json={"contents": [{"parts": [{"text": prompt}]}],
+                                "generationConfig": {"temperature": 0,
+                                                     "responseMimeType": "application/json"}})
+        if not r.ok:
+            return r.status_code, r.text
+        return 200, r.json()["candidates"][0]["content"]["parts"][0]["text"]
+    return _with_model_fallback("gemini", llm["gemini_model"], call)
 
 
-def _groq(prompt: str, cfg: dict) -> dict:
+def groq_text(prompt: str, cfg: dict) -> str:
     key = os.getenv("GROQ_API_KEY", "").strip()
     if not key:
         raise RuntimeError("GROQ_API_KEY not set")
     llm = cfg["news"]["llm"]
-    r = requests.post(GROQ_URL, timeout=llm.get("timeout", 30),
-                      headers={"Authorization": f"Bearer {key}"},
-                      json={"model": llm["groq_model"], "temperature": 0,
-                            "response_format": {"type": "json_object"},
-                            "messages": [{"role": "user", "content": prompt}]})
-    if not r.ok:
-        raise RuntimeError(f"Groq HTTP {r.status_code}: {r.text[:150]}")
-    return _parse(r.json()["choices"][0]["message"]["content"])
+
+    def call(model):
+        r = requests.post(GROQ_URL, timeout=llm.get("timeout", 30),
+                          headers={"Authorization": f"Bearer {key}"},
+                          json={"model": model, "temperature": 0,
+                                "response_format": {"type": "json_object"},
+                                "messages": [{"role": "user", "content": prompt}]})
+        if not r.ok:
+            return r.status_code, r.text
+        return 200, r.json()["choices"][0]["message"]["content"]
+    return _with_model_fallback("groq", llm["groq_model"], call)
 
 
 def keyword_verdict(items: list[dict]) -> dict:
@@ -283,6 +351,7 @@ def setup_check(symbol: str, company: str, isin: str, cfg: dict) -> dict:
             out[name] = "ok: " + fn(prompt, cfg)["verdict"]
         except Exception as e:
             out[name] = f"error: {str(e)[:160]}"
+    out["models_in_use"] = dict(_MODEL_CACHE)
     out["sample_headlines"] = [i["title"][:120] for i in g["items"][:3]]
     return out
 
