@@ -136,7 +136,8 @@ news:                         # news veto on the final candidates (see scanner/n
   reject_negative: true       # negative material news = reject; positive never rescues a stock
   premarket_lookback_hours: 8 # pre-market recheck only looks at news newer than this
   sources:
-    bse: true                 # BSE corporate announcements (official filings)
+    bse: false                # BSE filings: BSE returns 403 to GitHub's servers; works from a home
+                              # connection or a self-hosted runner, so it stays off on Actions
     google: true              # Google News RSS (media)
   llm:                        # tried in order; keyword matching if all fail or no keys are set
     order: [gemini, groq]
