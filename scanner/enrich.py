@@ -43,10 +43,15 @@ _SUFFIX = re.compile(r"\b(limited|ltd\.?|india)\b", re.I)
 
 
 def fetch_news(company: str, symbol: str, lookback_days: int, fresh_hours: int,
-               max_items: int) -> dict:
-    """Recent headlines from Google News RSS. Returns has_news, fresh flag and items."""
+               max_items: int, include_symbol: bool = False) -> dict:
+    """Recent headlines from Google News RSS. Returns has_news, fresh flag and items.
+
+    Searches the quoted company name; the bare symbol is off by default because short
+    symbols ("RELIANCE", "TITAN") pull in unrelated companies.
+    """
     name = _SUFFIX.sub("", company).strip(" .,")
-    q = quote_plus(f'"{name}" OR "{symbol}" stock when:{lookback_days}d')
+    terms = f'"{name}" OR "{symbol}"' if include_symbol else f'"{name}"'
+    q = quote_plus(f'{terms} (stock OR shares OR NSE) when:{lookback_days}d')
     url = f"https://news.google.com/rss/search?q={q}&hl=en-IN&gl=IN&ceid=IN:en"
     items = []
     try:
