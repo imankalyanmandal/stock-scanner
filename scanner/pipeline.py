@@ -11,8 +11,8 @@ from .data import download_prices, fetch_delivery
 from .enrich import upcoming_events
 from .news import bse_code_map, check_stock
 from . import macro as M
-from .filters import (arrays, evaluate, features, metrics_at, momentum_rank_table, rs_rank_table,
-                      select)
+from .filters import (arrays, evaluate, features, liquidity_requirements, metrics_at,
+                      momentum_rank_table, rs_rank_table, select, set_liquidity)
 from .market import bench_table, breadth_series, regime_at, sector_stats
 from .trade import size_position
 from .universe import load_exclusions, load_universe
@@ -25,7 +25,8 @@ def market_symbols(cfg: dict) -> list[str]:
     return list(mk["benchmarks"].values()) + ([mk["vix_symbol"]] if mk.get("vix_symbol") else [])
 
 
-def load_market_data(cfg: dict, symbols: list[str], period: str, prices: dict | None = None):
+def load_market_data(cfg: dict, symbols: list[str], period: str, prices: dict | None = None,
+                     liquidity: dict | None = None):
     """Download prices (unless given) and build features. Returns (feats, benchmarks, vix_close)."""
     mk = cfg["market"]
     bench_syms = mk["benchmarks"]
@@ -44,6 +45,7 @@ def load_market_data(cfg: dict, symbols: list[str], period: str, prices: dict | 
             f = features(prices[s], cfg, rs_close)
             if f is not None:
                 feats[s] = f
+    set_liquidity(feats, liquidity)
     vix = vix_df["Close"].astype(float) if vix_df is not None and len(vix_df) else None
     return feats, benchmarks, vix
 
@@ -81,7 +83,8 @@ def run(cfg: dict, with_news: bool = True, limit: int | None = None, force: bool
     excluded = load_exclusions(cfg["universe"].get("exclude_file"))
     log.info("Universe: %d stocks (%d on the exclusion list)", len(symbols), len(excluded))
 
-    feats, benchmarks, vix = load_market_data(cfg, symbols, cfg["data"]["period"])
+    feats, benchmarks, vix = load_market_data(cfg, symbols, cfg["data"]["period"],
+                                              liquidity=liquidity_requirements(universe, cfg))
     if not feats:
         raise RuntimeError("No usable price data")
     last_ts = max(f.index[-1] for f in feats.values())

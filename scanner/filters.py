@@ -40,6 +40,9 @@ def features(df: pd.DataFrame, cfg: dict, bench_close: pd.Series | None = None) 
     f["vol_avg50"] = vprev.rolling(50).mean()
     f["vol_ratio"] = v / f["vol_avg50"]
     f["turnover_med20_cr"] = (c * v).shift(1).rolling(20).median() / 1e7
+    # per-stock liquidity requirements (stricter for small caps; set by set_liquidity())
+    f["req_turnover_cr"] = float(cfg["gates"]["min_median_turnover_cr"])
+    f["req_avg_volume"] = float(cfg["gates"]["min_avg_volume"])
 
     hi52 = h.rolling(252, min_periods=200).max()
     lo52 = l.rolling(252, min_periods=200).min()
@@ -94,6 +97,28 @@ def features(df: pd.DataFrame, cfg: dict, bench_close: pd.Series | None = None) 
     return f
 
 
+def liquidity_requirements(universe: pd.DataFrame, cfg: dict) -> dict[str, tuple[float, float]]:
+    """symbol -> (min median turnover in crore, min avg volume), using the strictest override
+    among the indexes the stock belongs to (config `universe.liquidity_overrides`)."""
+    g = cfg["gates"]
+    over = cfg["universe"].get("liquidity_overrides") or {}
+    out = {}
+    for sym, idx in zip(universe["symbol"], universe["indexes"].astype(str)):
+        t, v = float(g["min_median_turnover_cr"]), float(g["min_avg_volume"])
+        for key in idx.split(","):
+            o = over.get(key.strip()) or {}
+            t = max(t, float(o.get("min_median_turnover_cr", t)))
+            v = max(v, float(o.get("min_avg_volume", v)))
+        out[sym] = (t, v)
+    return out
+
+
+def set_liquidity(feats: dict[str, pd.DataFrame], req: dict[str, tuple[float, float]] | None) -> None:
+    for s, f in feats.items():
+        if req and s in req:
+            f["req_turnover_cr"], f["req_avg_volume"] = req[s]
+
+
 def rs_composite(f: pd.DataFrame, cfg: dict) -> pd.Series:
     r = cfg["rs"]
     return sum(w * f[f"ret{n}"] for n, w in zip(r["lookbacks"], r["weights"]))
@@ -115,7 +140,8 @@ def momentum_scores(feats: dict[str, pd.DataFrame], cfg: dict) -> pd.DataFrame:
     for s, f in feats.items():
         m6[s] = f["ret126"] / f["vol252"]
         m12[s] = f["ret252"] / f["vol252"]
-        ok[s] = (f["close"] >= g["min_price"]) & (f["turnover_med20_cr"] >= g["min_median_turnover_cr"])
+        ok[s] = (f["close"] >= g["min_price"]) & (f["turnover_med20_cr"] >= f["req_turnover_cr"]) \
+            & (f["vol_avg20"] >= f["req_avg_volume"])
     m6, m12, ok = pd.DataFrame(m6), pd.DataFrame(m12), pd.DataFrame(ok).fillna(False).astype(bool)
 
     def z(df):
@@ -130,8 +156,8 @@ def momentum_rank_table(feats: dict[str, pd.DataFrame], cfg: dict) -> pd.DataFra
 
 def prefilter(f: pd.DataFrame, cfg: dict) -> pd.Series:
     g, tr = cfg["gates"], cfg["trend"]
-    m = ((f["close"] >= g["min_price"]) & (f["turnover_med20_cr"] >= g["min_median_turnover_cr"])
-         & (f["vol_avg20"] >= g["min_avg_volume"]) & (f["locked_20"] <= g["max_locked_days_20"])
+    m = ((f["close"] >= g["min_price"]) & (f["turnover_med20_cr"] >= f["req_turnover_cr"])
+         & (f["vol_avg20"] >= f["req_avg_volume"]) & (f["locked_20"] <= g["max_locked_days_20"])
          & (f["below_high_pct"] <= tr["max_below_52w_high_pct"])
          & (f["above_low_pct"] >= tr["min_above_52w_low_pct"])
          & f["sma50_rising"].astype(bool) & f["sma200_rising"].astype(bool))
@@ -246,6 +272,7 @@ def metrics_at(A: dict, i: int, cfg: dict, rs_rank: float | None = None,
         "gain_2d_pct": _f(A["gain_2d_pct"][i]), "gap_pct": _f(A["gap_pct"][i]),
         "close_location": float(A["close_loc"][i]), "vol_ratio": _f(A["vol_ratio"][i]),
         "avg_volume20": _f(A["vol_avg20"][i]), "median_turnover_cr": _f(A["turnover_med20_cr"][i]),
+        "req_turnover_cr": float(A["req_turnover_cr"][i]), "req_avg_volume": float(A["req_avg_volume"][i]),
         "locked_20": int(A["locked_20"][i]),
         "below_high_pct": float(A["below_high_pct"][i]), "above_low_pct": float(A["above_low_pct"][i]),
         "close_above_sma50": bool(close > A["sma50"][i]),
@@ -284,9 +311,9 @@ def evaluate(m: dict, cfg: dict, sector_ctx: dict | None = None,
         R.append(f"excluded:{excluded}")
     if m["close"] < g["min_price"]:
         R.append(f"price<{g['min_price']}")
-    if (m["median_turnover_cr"] or 0) < g["min_median_turnover_cr"]:
+    if (m["median_turnover_cr"] or 0) < m.get("req_turnover_cr", g["min_median_turnover_cr"]):
         R.append("low_turnover")
-    if (m["avg_volume20"] or 0) < g["min_avg_volume"]:
+    if (m["avg_volume20"] or 0) < m.get("req_avg_volume", g["min_avg_volume"]):
         R.append("low_volume")
     if m["locked_20"] > g["max_locked_days_20"]:
         R.append("circuit_history")

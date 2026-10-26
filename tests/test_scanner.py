@@ -798,3 +798,17 @@ def test_sleeves_portfolio_runs_and_lowvol_sleeve_stays_invested():
     res = run_momentum(feats, falling, cfg)
     assert res["months_in_cash_pct"] == 0          # low-vol sleeve never goes to cash
     assert res["strategy"]["cagr_pct"] is not None
+
+
+# ------------------------------------------------------------------ small caps
+def test_smallcap_liquidity_is_stricter():
+    from scanner.filters import liquidity_requirements, set_liquidity
+    uni = pd.DataFrame({"symbol": ["BIG", "SMALL"], "indexes": ["nifty50", "niftysmallcap250"]})
+    req = liquidity_requirements(uni, CFG)
+    assert req["BIG"] == (CFG["gates"]["min_median_turnover_cr"], CFG["gates"]["min_avg_volume"])
+    assert req["SMALL"] == (25.0, 300000.0)
+    df = breakout_df()                       # ~2M shares x ~Rs 500 = ~Rs 100 Cr/day: passes both
+    f = feats_for(df)
+    set_liquidity({"SMALL": f}, {"SMALL": (500.0, 300000.0)})   # demand Rs 500 Cr/day
+    m = metrics_at(arrays(f), len(f) - 1, CFG, 90)
+    assert "low_turnover" in evaluate(m, CFG)["reject_reasons"]

@@ -16,7 +16,7 @@ from pathlib import Path
 
 import pandas as pd
 
-from .filters import (arrays, evaluate, metrics_at, momentum_rank_table, prefilter, rs_rank_table,
+from .filters import (arrays, evaluate, liquidity_requirements, metrics_at, momentum_rank_table, prefilter, rs_rank_table,
                       select)
 from .market import bench_table, breadth_series, regime_at
 from .pipeline import load_market_data
@@ -39,7 +39,8 @@ def run_backtest(cfg: dict, limit: int | None = None, start: str | None = None,
         universe = universe.head(limit)
     symbols = universe["symbol"].tolist()
     industry = universe.set_index("symbol")["industry"].to_dict()
-    feats, benchmarks, vix = load_market_data(cfg, symbols, cfg["backtest"]["period"], prices)
+    feats, benchmarks, vix = load_market_data(cfg, symbols, cfg["backtest"]["period"], prices,
+                                              liquidity_requirements(universe, cfg))
     if not feats:
         raise RuntimeError("No usable price data")
     log.info("Backtest on %d symbols", len(feats))

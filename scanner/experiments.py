@@ -17,6 +17,7 @@ from .data import download_prices
 from .momentum import run_momentum
 from .pipeline import load_market_data, market_symbols
 from .trade import trade_stats
+from .filters import liquidity_requirements
 from .universe import load_universe
 
 log = logging.getLogger(__name__)
@@ -27,6 +28,13 @@ def deep_merge(base: dict, over: dict) -> dict:
     for k, v in (over or {}).items():
         out[k] = deep_merge(out[k], v) if isinstance(v, dict) and isinstance(out.get(k), dict) else v
     return out
+
+
+def _subset(universe: pd.DataFrame, cfg: dict) -> pd.DataFrame:
+    """Rows of the downloaded universe that belong to this variant's `universe.indexes`."""
+    keys = set(cfg["universe"]["indexes"])
+    mask = universe["indexes"].astype(str).str.split(",").apply(lambda xs: bool(keys & {x.strip() for x in xs}))
+    return universe[mask]
 
 
 def _halves(tdf: pd.DataFrame, period: list[str]) -> tuple[dict, dict]:
@@ -55,7 +63,8 @@ def run_experiments(cfg: dict, spec: dict, universe: pd.DataFrame | None = None,
     for name, over in (spec.get("breakout_variants") or {}).items():
         log.info("Breakout variant %s", name)
         try:
-            res = run_backtest(deep_merge(cfg, over), universe=universe, prices=prices, write=False)
+            vcfg = deep_merge(cfg, over)
+            res = run_backtest(vcfg, universe=_subset(universe, vcfg), prices=prices, write=False)
         except Exception as e:  # one broken variant shouldn't sink the whole run
             log.exception("variant %s failed", name)
             errors[name] = f"{type(e).__name__}: {e}"
@@ -68,12 +77,16 @@ def run_experiments(cfg: dict, spec: dict, universe: pd.DataFrame | None = None,
 
     momentum = {}
     if spec.get("momentum_variants"):
-        feats, benchmarks, _ = load_market_data(cfg, symbols, period, prices)
+        feats, benchmarks, _ = load_market_data(cfg, symbols, period, prices,
+                                                liquidity_requirements(universe, cfg))
         for name, over in spec["momentum_variants"].items():
             log.info("Momentum variant %s", name)
             try:
-                momentum[name] = {"overrides": over,
-                                  **run_momentum(feats, benchmarks, deep_merge(cfg, over))}
+                vcfg = deep_merge(cfg, over)
+                keep = set(_subset(universe, vcfg)["symbol"])
+                momentum[name] = {"overrides": over, "stocks": len(keep),
+                                  **run_momentum({s: f for s, f in feats.items() if s in keep},
+                                                 benchmarks, vcfg)}
             except Exception as e:
                 log.exception("variant %s failed", name)
                 errors[name] = f"{type(e).__name__}: {e}"

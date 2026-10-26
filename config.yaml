@@ -4,7 +4,10 @@
 
 universe:
   # Keys map to NSE constituent CSVs (see scanner/universe.py)
-  indexes: [nifty50, niftynext50, niftymidcap150]
+  indexes: [nifty50, niftynext50, niftymidcap150, niftysmallcap250]
+  # Stricter liquidity for small caps (the strictest rule among a stock's indexes applies)
+  liquidity_overrides:
+    niftysmallcap250: {min_median_turnover_cr: 25, min_avg_volume: 300000}
   # Manually maintained exclusions (ASM/GSM, F&O ban, anything you won't trade).
   # CSV with columns: symbol,reason. Missing file = no exclusions.
   exclude_file: data/exclude.csv
