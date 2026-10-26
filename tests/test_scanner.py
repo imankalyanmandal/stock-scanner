@@ -531,3 +531,38 @@ def test_experiments_end_to_end(tmp_path):
     assert res["momentum"]["m"]["strategy"]["cagr_pct"] is not None
     md = open(res["files"]["md"]).read()
     assert "Swing variants" in md and "Monthly momentum rotation" in md and "nifty50 (buy & hold)" in md
+
+
+# ------------------------------------------------------------------ extra indicators
+def test_indicators_on_known_patterns():
+    from scanner.indicators import adx, bb_width, macd, supertrend
+    n = 300
+    up = ohlc(100 * 1.004 ** np.arange(n) * (1 + np.random.default_rng(1).normal(0, 0.003, n)))
+    down = ohlc(100 * 0.996 ** np.arange(n) * (1 + np.random.default_rng(2).normal(0, 0.003, n)))
+    flat = ohlc(100 * (1 + np.random.default_rng(3).normal(0, 0.006, n)))
+    for name, df, st, m_pos in (("up", up, 1, True), ("down", down, -1, False)):
+        line, sig, hist = macd(df["Close"])
+        assert (line.iloc[-1] > 0) == m_pos, name
+        assert supertrend(df["High"], df["Low"], df["Close"]).iloc[-1] == st, name
+    a_up = adx(up["High"], up["Low"], up["Close"]).iloc[-1]
+    a_flat = adx(flat["High"], flat["Low"], flat["Close"]).iloc[-1]
+    assert a_up > 25 > a_flat
+    # Bollinger width shrinks when volatility shrinks
+    c = pd.Series(np.r_[100 * (1 + np.random.default_rng(4).normal(0, 0.02, 200)),
+                        100 * (1 + np.random.default_rng(5).normal(0, 0.003, 40))])
+    w = bb_width(c)
+    assert w.iloc[-1] < w.iloc[150] / 3
+
+
+def test_indicator_gates_only_when_enabled():
+    m, _ = last_metrics(breakout_df())
+    for k in ("macd_bull", "supertrend_up", "adx", "bb_squeeze"):
+        assert k in m
+    base = evaluate(m, CFG)["reject_reasons"]
+    assert not {"macd_not_bullish", "supertrend_down", "adx_too_low", "no_bb_squeeze"} & set(base)
+    cfg = copy.deepcopy(CFG)
+    cfg["indicators"].update({"require_macd_bullish": True, "require_supertrend_up": True,
+                              "min_adx": 99, "require_bb_squeeze": True})
+    m2 = {**m, "macd_bull": False, "supertrend_up": False, "bb_squeeze": False}
+    r = evaluate(m2, cfg)["reject_reasons"]
+    assert {"macd_not_bullish", "supertrend_down", "adx_too_low", "no_bb_squeeze"} <= set(r)

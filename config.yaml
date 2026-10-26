@@ -138,6 +138,16 @@ journal:
   path: data/journal.csv
   state_path: data/state.json # remembers the last scanned session to avoid duplicate alerts
 
+indicators:                   # extra filters, all OFF until the experiments show they help
+  require_macd_bullish: false # MACD(12,26,9) line above signal and above zero
+  require_supertrend_up: false
+  supertrend_period: 10
+  supertrend_mult: 3.0
+  min_adx: null               # e.g. 20 = skip choppy stocks (ADX 14 below 20)
+  require_bb_squeeze: false   # Bollinger(20,2) width in its lowest 25% of 6 months, just before the move
+  squeeze_lookback: 126
+  squeeze_quantile: 0.25
+
 momentum:                     # monthly rotation (backtest only for now: experiments.py)
   top_n: 30
   exit_rank: 45               # keep a holding while it ranks within this (cuts turnover)
