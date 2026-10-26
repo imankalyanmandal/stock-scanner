@@ -25,6 +25,7 @@ import requests
 from .enrich import fetch_news
 
 log = logging.getLogger(__name__)
+LAST_BSE_ERROR = {"value": ""}   # surfaced by the setup check
 IST = timezone(timedelta(hours=5, minutes=30))
 VERDICTS = {"negative", "positive", "neutral"}
 
@@ -78,7 +79,12 @@ def bse_code_map(data_dir: str = "data") -> dict[str, str]:
                 path.parent.mkdir(parents=True, exist_ok=True)
                 df.to_csv(path, index=False)
         except (requests.RequestException, ValueError, AttributeError) as e:
-            log.warning("BSE scrip list unavailable: %s", e)
+            resp = getattr(e, "response", None)
+            detail = f"HTTP {resp.status_code}: {resp.text[:120]}" if resp is not None else str(e)[:160]
+            if isinstance(e, ValueError) and "r" in locals():
+                detail = f"not JSON (HTTP {r.status_code}): {r.text[:120]!r}"
+            LAST_BSE_ERROR["value"] = f"{type(e).__name__}: {detail}"
+            log.warning("BSE scrip list unavailable: %s", LAST_BSE_ERROR["value"])
             df = None
     if df is None and path.exists():
         df = pd.read_csv(path, dtype=str).fillna("")
@@ -255,7 +261,18 @@ def setup_check(symbol: str, company: str, isin: str, cfg: dict) -> dict:
     out = {"GEMINI_API_KEY_set": bool(os.getenv("GEMINI_API_KEY")),
            "GROQ_API_KEY_set": bool(os.getenv("GROQ_API_KEY"))}
     codes = bse_code_map(cfg["output"]["data_dir"])
-    out["bse_scrip_map"] = f"ok ({len(codes) // 2} codes)" if codes else "unavailable"
+    out["bse_scrip_map"] = f"ok ({len(codes) // 2} codes)" if codes else \
+        f"unavailable: {LAST_BSE_ERROR['value'] or 'empty response'}"
+    try:   # direct test with Reliance's known BSE code, independent of the scrip list
+        got = bse_announcements("500325", 7)
+        out["bse_announcements_test"] = f"ok ({len(got)} filings for 500325 in 7 days)"
+        if not codes:
+            codes = {f"isin:{isin}": "500325"}
+    except Exception as e:
+        resp = getattr(e, "response", None)
+        out["bse_announcements_test"] = (f"error {type(e).__name__}: "
+                                         + (f"HTTP {resp.status_code} {resp.text[:120]!r}"
+                                            if resp is not None else str(e)[:160]))
     g = gather(symbol, company, isin, cfg, codes)
     out["sources"] = g["sources"]
     sample = g["items"][:6] or [{"title": f"{company} wins large order", "source": "test",
