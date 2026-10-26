@@ -1,0 +1,25 @@
+# Momentum vs low volatility vs blends (run with: python experiments.py --spec experiments_blend.yaml,
+# or the Experiments workflow with spec = experiments_blend.yaml). All: top 30, monthly, costs included.
+
+period: 10y
+
+breakout_variants: {}
+
+momentum_variants:
+  M1_momentum_always_invested:
+    momentum: {regime_filter: false}
+  M2_momentum_200dma_filter: {}
+  L1_lowvol_always_invested:
+    momentum: {score: low_vol, regime_filter: false}
+  L2_lowvol_200dma_filter:
+    momentum: {score: low_vol}
+  B1_50_50_sleeves_both_filtered:
+    momentum:
+      sleeves: [{score: momentum, weight: 0.5}, {score: low_vol, weight: 0.5}]
+  B2_50_50_sleeves_lowvol_always_in:
+    momentum:
+      sleeves: [{score: momentum, weight: 0.5}, {score: low_vol, weight: 0.5, regime_filter: false}]
+  B3_blend_score_top30:
+    momentum: {score: blend}
+  B4_blend_score_always_invested:
+    momentum: {score: blend, regime_filter: false}

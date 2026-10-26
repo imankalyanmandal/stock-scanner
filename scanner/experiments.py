@@ -83,7 +83,8 @@ def run_experiments(cfg: dict, spec: dict, universe: pd.DataFrame | None = None,
               "errors": errors}
     d = Path(out_dir or cfg["output"]["dir"])
     d.mkdir(parents=True, exist_ok=True)
-    stem = d / f"experiments_{result['run_date']}"
+    tag = spec.get("name") or ("blend" if not spec.get("breakout_variants") else "")
+    stem = d / f"experiments_{result['run_date']}{'_' + tag if tag else ''}"
     stem.with_suffix(".json").write_text(json.dumps(result, indent=2, default=str))
     md = to_markdown(result)
     stem.with_suffix(".md").write_text(md)

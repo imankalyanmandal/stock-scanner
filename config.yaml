@@ -205,6 +205,9 @@ momentum:                     # monthly rotation (backtest only for now: experim
   regime_filter: true         # go to cash when Nifty 50 closes below its 200 DMA at month end
   cost_pct: 0.25              # round trip, charged per side on traded value
   cash_yield_pct: 6.0         # annual return on idle cash (liquid fund)
+  score: momentum             # momentum | low_vol | blend (single-sleeve portfolios)
+  blend_momentum_weight: 0.5  # for score: blend
+  sleeves: null               # e.g. [{score: momentum, weight: 0.5}, {score: low_vol, weight: 0.5}]
 
 backtest:
   period: 5y

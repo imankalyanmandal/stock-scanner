@@ -1,7 +1,13 @@
 name: Experiments
 
 on:
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      spec:
+        description: "Variant file to run"
+        default: experiments.yaml
+        type: choice
+        options: [experiments.yaml, experiments_blend.yaml]
 
 permissions:
   contents: write         # commits the experiments report to reports/
@@ -23,7 +29,7 @@ jobs:
       - run: pip install -r requirements.txt
       - name: Run experiments
         run: |
-          python experiments.py
+          python experiments.py --spec "${{ inputs.spec || 'experiments.yaml' }}"
           cat reports/experiments_*.md >> "$GITHUB_STEP_SUMMARY"
       - name: Commit report
         run: |
