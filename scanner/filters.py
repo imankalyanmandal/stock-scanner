@@ -12,7 +12,7 @@ import math
 import numpy as np
 import pandas as pd
 
-from .indicators import atr, ema, pivot_highs, rsi, sma
+from .indicators import adx, atr, bb_width, ema, macd, pivot_highs, rsi, sma, supertrend
 
 MIN_BARS = 220  # 200 DMA + a little slope history
 
@@ -70,6 +70,17 @@ def features(df: pd.DataFrame, cfg: dict, bench_close: pd.Series | None = None) 
     h1 = L // 2
     f["base_undercut"] = (l.shift(1).rolling(L - h1).min() < l.shift(1 + L - h1).rolling(h1).min())
     f["pivot"] = pivot_highs(h, cfg["entry"]["resistance_pivot_window"])
+
+    # extra indicators (optional filters, see config `indicators`)
+    ic = cfg.get("indicators", {})
+    m_line, m_sig, _ = macd(c)
+    f["macd_bull"] = (m_line > m_sig) & (m_line > 0)
+    f["supertrend_up"] = supertrend(h, l, c, ic.get("supertrend_period", 10),
+                                    ic.get("supertrend_mult", 3.0)) > 0
+    f["adx"] = adx(h, l, c, 14)
+    bbw = bb_width(c, 20, 2.0)
+    f["bb_squeeze"] = bbw <= bbw.rolling(ic.get("squeeze_lookback", 126)).quantile(
+        ic.get("squeeze_quantile", 0.25))
 
     for n in sorted(set(cfg["rs"]["lookbacks"]) | {21, 63, 126, 252}):
         f[f"ret{n}"] = c / c.shift(n) - 1
@@ -248,6 +259,10 @@ def metrics_at(A: dict, i: int, cfg: dict, rs_rank: float | None = None,
         "ret21": _f(A["ret21"][i]), "ret63": _f(A["ret63"][i]),
         "bench_ret21": _f(A["bench_ret21"][i]), "bench_ret63": _f(A["bench_ret63"][i]),
         "rs_rank": _f(rs_rank), "mom_rank": _f(mom_rank),
+        "macd_bull": bool(A["macd_bull"][i]), "supertrend_up": bool(A["supertrend_up"][i]),
+        "adx": _f(A["adx"][i]),
+        # squeeze is judged just before the move: the bar before the breakout (or before today)
+        "bb_squeeze": bool(A["bb_squeeze"][max(0, (i - (bo_day - 1) if setup == "breakout" else i) - 1)]),
     }
 
 
@@ -294,6 +309,15 @@ def evaluate(m: dict, cfg: dict, sector_ctx: dict | None = None,
     top_n = cfg["rs"].get("momentum_top_n")
     if top_n and (m.get("mom_rank") is None or m["mom_rank"] > top_n):
         R.append("not_momentum_leader")
+    ic = cfg.get("indicators", {})
+    if ic.get("require_macd_bullish") and not m.get("macd_bull"):
+        R.append("macd_not_bullish")
+    if ic.get("require_supertrend_up") and not m.get("supertrend_up"):
+        R.append("supertrend_down")
+    if ic.get("min_adx") and (m.get("adx") or 0) < ic["min_adx"]:
+        R.append("adx_too_low")
+    if ic.get("require_bb_squeeze") and not m.get("bb_squeeze"):
+        R.append("no_bb_squeeze")
     # setup quality
     if m["setup"] == "none":
         R.append(f"no_setup{':' + m['setup_fail'] if m.get('setup_fail') else ''}")

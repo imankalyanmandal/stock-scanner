@@ -42,6 +42,16 @@ def write(result: dict, out_dir: str) -> dict[str, Path]:
     return paths
 
 
+def _indicator_line(p):
+    if "macd_bull" not in p:
+        return ""
+    yes = lambda x: "yes" if x else "no"
+    return (f"MACD bullish {yes(p['macd_bull'])} · Supertrend {'up' if p['supertrend_up'] else 'down'} · "
+            f"ADX {_fmt(p.get('adx'), 0)} · BB squeeze before move {yes(p['bb_squeeze'])} · "
+            f"RSI {_fmt(p.get('rsi'), 0)} · 20/50/200 DMA {_fmt(p['sma20'])} / {_fmt(p['sma50'])} / "
+            f"{_fmt(p['sma200'])}")
+
+
 def _setup_line(p):
     if p["setup"] == "breakout":
         return (f"Breakout day {p['bo_day']} over {_fmt(p['base_high'])} · base depth "
@@ -74,6 +84,7 @@ def _card(p, watch=False):
   <td>{_fmt(p['stop'])}</td><td>{_fmt(p['t1'])}</td><td>{_fmt(p['risk_per_share'])}</td>
   <td>{_fmt(p['stop_atr'], 1)}</td><td>{_fmt(p['room_r'], 1)}</td>{size}<td>{_fmt(p['rs_rank'], 0)}</td></tr></table>
   <div class=m>{_setup_line(p)}</div>
+  <div class=m>{_indicator_line(p)}</div>
   {'' if watch else f"<div class=plan>{html.escape(p.get('exit_plan', ''))}</div>"}
   <div class=m>Score parts: {comps}</div>
   <div class=m>Events: {html.escape(_events(p)) or 'none in window'}</div>
