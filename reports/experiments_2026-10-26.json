@@ -1,0 +1,1813 @@
+{
+  "run_date": "2026-10-26",
+  "period_setting": "10y",
+  "symbols": 249,
+  "breakout": {
+    "B_baseline_live": {
+      "overrides": {},
+      "period": [
+        "2017-11-13",
+        "2026-10-26"
+      ],
+      "overall": {
+        "trades": 228,
+        "win_rate_pct": 46.9,
+        "avg_win_r": 0.95,
+        "avg_loss_r": -0.76,
+        "expectancy_r": 0.047,
+        "total_r": 10.66,
+        "profit_factor": 1.12,
+        "max_drawdown_r": -11.81,
+        "avg_bars_held": 8.1,
+        "return_pct_simple": 10.1,
+        "max_drawdown_pct": -11.3,
+        "fill_rate_pct": 63.0
+      },
+      "by_setup": {
+        "breakout": {
+          "trades": 228,
+          "win_rate_pct": 46.9,
+          "avg_win_r": 0.95,
+          "avg_loss_r": -0.76,
+          "expectancy_r": 0.047,
+          "total_r": 10.66,
+          "profit_factor": 1.12,
+          "max_drawdown_r": -11.81,
+          "avg_bars_held": 8.1
+        }
+      },
+      "first_half": {
+        "trades": 106,
+        "win_rate_pct": 48.1,
+        "avg_win_r": 0.84,
+        "avg_loss_r": -0.72,
+        "expectancy_r": 0.028,
+        "total_r": 2.97,
+        "profit_factor": 1.07,
+        "max_drawdown_r": -7.51,
+        "avg_bars_held": 7.7
+      },
+      "second_half": {
+        "trades": 122,
+        "win_rate_pct": 45.9,
+        "avg_win_r": 1.06,
+        "avg_loss_r": -0.78,
+        "expectancy_r": 0.063,
+        "total_r": 7.69,
+        "profit_factor": 1.15,
+        "max_drawdown_r": -7.02,
+        "avg_bars_held": 8.6
+      },
+      "exit_reasons": {
+        "time_stop": 122,
+        "stop": 64,
+        "trail": 20,
+        "breakeven": 9,
+        "max_hold": 9,
+        "gap_stop": 4
+      },
+      "by_year": {
+        "2017": {
+          "trades": 3,
+          "win_rate_pct": 66.7,
+          "avg_win_r": 0.56,
+          "avg_loss_r": -1.07,
+          "expectancy_r": 0.019,
+          "total_r": 0.06,
+          "profit_factor": 1.05,
+          "max_drawdown_r": -1.07,
+          "avg_bars_held": 6.0
+        },
+        "2018": {
+          "trades": 22,
+          "win_rate_pct": 59.1,
+          "avg_win_r": 0.92,
+          "avg_loss_r": -0.85,
+          "expectancy_r": 0.196,
+          "total_r": 4.3,
+          "profit_factor": 1.56,
+          "max_drawdown_r": -3.19,
+          "avg_bars_held": 8.5
+        },
+        "2019": {
+          "trades": 18,
+          "win_rate_pct": 33.3,
+          "avg_win_r": 0.51,
+          "avg_loss_r": -0.68,
+          "expectancy_r": -0.286,
+          "total_r": -5.14,
+          "profit_factor": 0.37,
+          "max_drawdown_r": -5.15,
+          "avg_bars_held": 5.8
+        },
+        "2020": {
+          "trades": 25,
+          "win_rate_pct": 64.0,
+          "avg_win_r": 0.83,
+          "avg_loss_r": -0.7,
+          "expectancy_r": 0.276,
+          "total_r": 6.89,
+          "profit_factor": 2.09,
+          "max_drawdown_r": -3.54,
+          "avg_bars_held": 7.5
+        },
+        "2021": {
+          "trades": 33,
+          "win_rate_pct": 39.4,
+          "avg_win_r": 1.02,
+          "avg_loss_r": -0.72,
+          "expectancy_r": -0.036,
+          "total_r": -1.17,
+          "profit_factor": 0.92,
+          "max_drawdown_r": -6.18,
+          "avg_bars_held": 8.6
+        },
+        "2022": {
+          "trades": 26,
+          "win_rate_pct": 30.8,
+          "avg_win_r": 1.24,
+          "avg_loss_r": -0.83,
+          "expectancy_r": -0.192,
+          "total_r": -4.98,
+          "profit_factor": 0.67,
+          "max_drawdown_r": -5.02,
+          "avg_bars_held": 7.2
+        },
+        "2023": {
+          "trades": 31,
+          "win_rate_pct": 41.9,
+          "avg_win_r": 1.28,
+          "avg_loss_r": -0.74,
+          "expectancy_r": 0.106,
+          "total_r": 3.29,
+          "profit_factor": 1.25,
+          "max_drawdown_r": -3.32,
+          "avg_bars_held": 9.1
+        },
+        "2024": {
+          "trades": 23,
+          "win_rate_pct": 43.5,
+          "avg_win_r": 0.81,
+          "avg_loss_r": -0.74,
+          "expectancy_r": -0.07,
+          "total_r": -1.61,
+          "profit_factor": 0.83,
+          "max_drawdown_r": -5.04,
+          "avg_bars_held": 7.2
+        },
+        "2025": {
+          "trades": 30,
+          "win_rate_pct": 53.3,
+          "avg_win_r": 0.97,
+          "avg_loss_r": -0.78,
+          "expectancy_r": 0.156,
+          "total_r": 4.69,
+          "profit_factor": 1.43,
+          "max_drawdown_r": -4.11,
+          "avg_bars_held": 9.3
+        },
+        "2026": {
+          "trades": 17,
+          "win_rate_pct": 58.8,
+          "avg_win_r": 0.93,
+          "avg_loss_r": -0.7,
+          "expectancy_r": 0.255,
+          "total_r": 4.34,
+          "profit_factor": 1.88,
+          "max_drawdown_r": -1.21,
+          "avg_bars_held": 9.5
+        }
+      }
+    },
+    "D_momentum_top40": {
+      "overrides": {
+        "rs": {
+          "momentum_top_n": 40
+        }
+      },
+      "period": [
+        "2017-11-13",
+        "2026-10-26"
+      ],
+      "overall": {
+        "trades": 178,
+        "win_rate_pct": 49.4,
+        "avg_win_r": 0.92,
+        "avg_loss_r": -0.78,
+        "expectancy_r": 0.059,
+        "total_r": 10.53,
+        "profit_factor": 1.15,
+        "max_drawdown_r": -8.61,
+        "avg_bars_held": 8.1,
+        "return_pct_simple": 11.9,
+        "max_drawdown_pct": -7.0,
+        "fill_rate_pct": 64.7
+      },
+      "by_setup": {
+        "breakout": {
+          "trades": 178,
+          "win_rate_pct": 49.4,
+          "avg_win_r": 0.92,
+          "avg_loss_r": -0.78,
+          "expectancy_r": 0.059,
+          "total_r": 10.53,
+          "profit_factor": 1.15,
+          "max_drawdown_r": -8.61,
+          "avg_bars_held": 8.1
+        }
+      },
+      "first_half": {
+        "trades": 88,
+        "win_rate_pct": 52.3,
+        "avg_win_r": 0.81,
+        "avg_loss_r": -0.79,
+        "expectancy_r": 0.045,
+        "total_r": 3.99,
+        "profit_factor": 1.12,
+        "max_drawdown_r": -7.01,
+        "avg_bars_held": 7.6
+      },
+      "second_half": {
+        "trades": 90,
+        "win_rate_pct": 46.7,
+        "avg_win_r": 1.04,
+        "avg_loss_r": -0.77,
+        "expectancy_r": 0.073,
+        "total_r": 6.53,
+        "profit_factor": 1.18,
+        "max_drawdown_r": -8.55,
+        "avg_bars_held": 8.6
+      },
+      "exit_reasons": {
+        "time_stop": 95,
+        "stop": 50,
+        "trail": 17,
+        "breakeven": 7,
+        "max_hold": 6,
+        "gap_stop": 3
+      },
+      "by_year": {
+        "2017": {
+          "trades": 3,
+          "win_rate_pct": 66.7,
+          "avg_win_r": 0.56,
+          "avg_loss_r": -1.07,
+          "expectancy_r": 0.019,
+          "total_r": 0.06,
+          "profit_factor": 1.05,
+          "max_drawdown_r": -1.07,
+          "avg_bars_held": 6.0
+        },
+        "2018": {
+          "trades": 21,
+          "win_rate_pct": 61.9,
+          "avg_win_r": 0.92,
+          "avg_loss_r": -0.9,
+          "expectancy_r": 0.224,
+          "total_r": 4.71,
+          "profit_factor": 1.65,
+          "max_drawdown_r": -2.82,
+          "avg_bars_held": 8.6
+        },
+        "2019": {
+          "trades": 16,
+          "win_rate_pct": 37.5,
+          "avg_win_r": 0.51,
+          "avg_loss_r": -0.68,
+          "expectancy_r": -0.239,
+          "total_r": -3.82,
+          "profit_factor": 0.44,
+          "max_drawdown_r": -4.25,
+          "avg_bars_held": 6.1
+        },
+        "2020": {
+          "trades": 21,
+          "win_rate_pct": 61.9,
+          "avg_win_r": 0.9,
+          "avg_loss_r": -0.88,
+          "expectancy_r": 0.22,
+          "total_r": 4.63,
+          "profit_factor": 1.66,
+          "max_drawdown_r": -5.03,
+          "avg_bars_held": 7.3
+        },
+        "2021": {
+          "trades": 24,
+          "win_rate_pct": 45.8,
+          "avg_win_r": 0.84,
+          "avg_loss_r": -0.76,
+          "expectancy_r": -0.028,
+          "total_r": -0.67,
+          "profit_factor": 0.93,
+          "max_drawdown_r": -4.19,
+          "avg_bars_held": 8.4
+        },
+        "2022": {
+          "trades": 19,
+          "win_rate_pct": 36.8,
+          "avg_win_r": 1.21,
+          "avg_loss_r": -0.84,
+          "expectancy_r": -0.084,
+          "total_r": -1.59,
+          "profit_factor": 0.84,
+          "max_drawdown_r": -4.23,
+          "avg_bars_held": 7.4
+        },
+        "2023": {
+          "trades": 24,
+          "win_rate_pct": 41.7,
+          "avg_win_r": 1.14,
+          "avg_loss_r": -0.75,
+          "expectancy_r": 0.036,
+          "total_r": 0.86,
+          "profit_factor": 1.08,
+          "max_drawdown_r": -6.98,
+          "avg_bars_held": 8.5
+        },
+        "2024": {
+          "trades": 12,
+          "win_rate_pct": 50.0,
+          "avg_win_r": 0.91,
+          "avg_loss_r": -0.78,
+          "expectancy_r": 0.067,
+          "total_r": 0.8,
+          "profit_factor": 1.17,
+          "max_drawdown_r": -3.16,
+          "avg_bars_held": 8.2
+        },
+        "2025": {
+          "trades": 26,
+          "win_rate_pct": 50.0,
+          "avg_win_r": 1.02,
+          "avg_loss_r": -0.68,
+          "expectancy_r": 0.168,
+          "total_r": 4.38,
+          "profit_factor": 1.5,
+          "max_drawdown_r": -4.17,
+          "avg_bars_held": 9.3
+        },
+        "2026": {
+          "trades": 12,
+          "win_rate_pct": 58.3,
+          "avg_win_r": 0.77,
+          "avg_loss_r": -0.84,
+          "expectancy_r": 0.098,
+          "total_r": 1.18,
+          "profit_factor": 1.28,
+          "max_drawdown_r": -1.46,
+          "avg_bars_held": 8.5
+        }
+      }
+    },
+    "I1_macd_bullish": {
+      "overrides": {
+        "indicators": {
+          "require_macd_bullish": true
+        }
+      },
+      "period": [
+        "2017-11-13",
+        "2026-10-26"
+      ],
+      "overall": {
+        "trades": 187,
+        "win_rate_pct": 48.7,
+        "avg_win_r": 1.0,
+        "avg_loss_r": -0.74,
+        "expectancy_r": 0.107,
+        "total_r": 19.99,
+        "profit_factor": 1.28,
+        "max_drawdown_r": -7.98,
+        "avg_bars_held": 8.4,
+        "return_pct_simple": 19.5,
+        "max_drawdown_pct": -5.1,
+        "fill_rate_pct": 60.7
+      },
+      "by_setup": {
+        "breakout": {
+          "trades": 187,
+          "win_rate_pct": 48.7,
+          "avg_win_r": 1.0,
+          "avg_loss_r": -0.74,
+          "expectancy_r": 0.107,
+          "total_r": 19.99,
+          "profit_factor": 1.28,
+          "max_drawdown_r": -7.98,
+          "avg_bars_held": 8.4
+        }
+      },
+      "first_half": {
+        "trades": 85,
+        "win_rate_pct": 49.4,
+        "avg_win_r": 0.86,
+        "avg_loss_r": -0.74,
+        "expectancy_r": 0.051,
+        "total_r": 4.33,
+        "profit_factor": 1.14,
+        "max_drawdown_r": -7.98,
+        "avg_bars_held": 7.7
+      },
+      "second_half": {
+        "trades": 102,
+        "win_rate_pct": 48.0,
+        "avg_win_r": 1.12,
+        "avg_loss_r": -0.74,
+        "expectancy_r": 0.153,
+        "total_r": 15.66,
+        "profit_factor": 1.4,
+        "max_drawdown_r": -4.9,
+        "avg_bars_held": 8.9
+      },
+      "exit_reasons": {
+        "time_stop": 100,
+        "stop": 50,
+        "trail": 17,
+        "max_hold": 9,
+        "breakeven": 7,
+        "gap_stop": 4
+      },
+      "by_year": {
+        "2017": {
+          "trades": 2,
+          "win_rate_pct": 50.0,
+          "avg_win_r": 0.61,
+          "avg_loss_r": -1.07,
+          "expectancy_r": -0.233,
+          "total_r": -0.47,
+          "profit_factor": 0.57,
+          "max_drawdown_r": -1.07,
+          "avg_bars_held": 5.5
+        },
+        "2018": {
+          "trades": 19,
+          "win_rate_pct": 63.2,
+          "avg_win_r": 0.92,
+          "avg_loss_r": -0.85,
+          "expectancy_r": 0.268,
+          "total_r": 5.08,
+          "profit_factor": 1.86,
+          "max_drawdown_r": -3.09,
+          "avg_bars_held": 9.0
+        },
+        "2019": {
+          "trades": 13,
+          "win_rate_pct": 38.5,
+          "avg_win_r": 0.59,
+          "avg_loss_r": -0.72,
+          "expectancy_r": -0.216,
+          "total_r": -2.8,
+          "profit_factor": 0.51,
+          "max_drawdown_r": -2.9,
+          "avg_bars_held": 5.5
+        },
+        "2020": {
+          "trades": 21,
+          "win_rate_pct": 66.7,
+          "avg_win_r": 0.89,
+          "avg_loss_r": -0.6,
+          "expectancy_r": 0.392,
+          "total_r": 8.23,
+          "profit_factor": 2.95,
+          "max_drawdown_r": -3.49,
+          "avg_bars_held": 8.2
+        },
+        "2021": {
+          "trades": 27,
+          "win_rate_pct": 33.3,
+          "avg_win_r": 0.97,
+          "avg_loss_r": -0.75,
+          "expectancy_r": -0.178,
+          "total_r": -4.8,
+          "profit_factor": 0.64,
+          "max_drawdown_r": -7.32,
+          "avg_bars_held": 7.9
+        },
+        "2022": {
+          "trades": 17,
+          "win_rate_pct": 52.9,
+          "avg_win_r": 1.18,
+          "avg_loss_r": -0.8,
+          "expectancy_r": 0.249,
+          "total_r": 4.23,
+          "profit_factor": 1.66,
+          "max_drawdown_r": -2.75,
+          "avg_bars_held": 8.8
+        },
+        "2023": {
+          "trades": 23,
+          "win_rate_pct": 39.1,
+          "avg_win_r": 1.65,
+          "avg_loss_r": -0.73,
+          "expectancy_r": 0.201,
+          "total_r": 4.61,
+          "profit_factor": 1.45,
+          "max_drawdown_r": -3.72,
+          "avg_bars_held": 9.5
+        },
+        "2024": {
+          "trades": 22,
+          "win_rate_pct": 40.9,
+          "avg_win_r": 0.85,
+          "avg_loss_r": -0.67,
+          "expectancy_r": -0.049,
+          "total_r": -1.07,
+          "profit_factor": 0.88,
+          "max_drawdown_r": -3.34,
+          "avg_bars_held": 7.4
+        },
+        "2025": {
+          "trades": 28,
+          "win_rate_pct": 50.0,
+          "avg_win_r": 0.93,
+          "avg_loss_r": -0.74,
+          "expectancy_r": 0.095,
+          "total_r": 2.67,
+          "profit_factor": 1.26,
+          "max_drawdown_r": -4.68,
+          "avg_bars_held": 8.7
+        },
+        "2026": {
+          "trades": 15,
+          "win_rate_pct": 60.0,
+          "avg_win_r": 0.98,
+          "avg_loss_r": -0.74,
+          "expectancy_r": 0.288,
+          "total_r": 4.32,
+          "profit_factor": 1.97,
+          "max_drawdown_r": -1.21,
+          "avg_bars_held": 9.8
+        }
+      }
+    },
+    "I2_supertrend_up": {
+      "overrides": {
+        "indicators": {
+          "require_supertrend_up": true
+        }
+      },
+      "period": [
+        "2017-11-13",
+        "2026-10-26"
+      ],
+      "overall": {
+        "trades": 227,
+        "win_rate_pct": 46.7,
+        "avg_win_r": 0.93,
+        "avg_loss_r": -0.76,
+        "expectancy_r": 0.031,
+        "total_r": 7.0,
+        "profit_factor": 1.08,
+        "max_drawdown_r": -12.78,
+        "avg_bars_held": 8.0,
+        "return_pct_simple": 6.4,
+        "max_drawdown_pct": -11.5,
+        "fill_rate_pct": 63.1
+      },
+      "by_setup": {
+        "breakout": {
+          "trades": 227,
+          "win_rate_pct": 46.7,
+          "avg_win_r": 0.93,
+          "avg_loss_r": -0.76,
+          "expectancy_r": 0.031,
+          "total_r": 7.0,
+          "profit_factor": 1.08,
+          "max_drawdown_r": -12.78,
+          "avg_bars_held": 8.0
+        }
+      },
+      "first_half": {
+        "trades": 106,
+        "win_rate_pct": 48.1,
+        "avg_win_r": 0.84,
+        "avg_loss_r": -0.72,
+        "expectancy_r": 0.028,
+        "total_r": 2.97,
+        "profit_factor": 1.07,
+        "max_drawdown_r": -7.51,
+        "avg_bars_held": 7.7
+      },
+      "second_half": {
+        "trades": 121,
+        "win_rate_pct": 45.5,
+        "avg_win_r": 1.01,
+        "avg_loss_r": -0.78,
+        "expectancy_r": 0.033,
+        "total_r": 4.03,
+        "profit_factor": 1.08,
+        "max_drawdown_r": -7.99,
+        "avg_bars_held": 8.4
+      },
+      "exit_reasons": {
+        "time_stop": 122,
+        "stop": 64,
+        "trail": 20,
+        "breakeven": 9,
+        "max_hold": 8,
+        "gap_stop": 4
+      },
+      "by_year": {
+        "2017": {
+          "trades": 3,
+          "win_rate_pct": 66.7,
+          "avg_win_r": 0.56,
+          "avg_loss_r": -1.07,
+          "expectancy_r": 0.019,
+          "total_r": 0.06,
+          "profit_factor": 1.05,
+          "max_drawdown_r": -1.07,
+          "avg_bars_held": 6.0
+        },
+        "2018": {
+          "trades": 22,
+          "win_rate_pct": 59.1,
+          "avg_win_r": 0.92,
+          "avg_loss_r": -0.85,
+          "expectancy_r": 0.196,
+          "total_r": 4.3,
+          "profit_factor": 1.56,
+          "max_drawdown_r": -3.19,
+          "avg_bars_held": 8.5
+        },
+        "2019": {
+          "trades": 18,
+          "win_rate_pct": 33.3,
+          "avg_win_r": 0.51,
+          "avg_loss_r": -0.68,
+          "expectancy_r": -0.286,
+          "total_r": -5.14,
+          "profit_factor": 0.37,
+          "max_drawdown_r": -5.15,
+          "avg_bars_held": 5.8
+        },
+        "2020": {
+          "trades": 25,
+          "win_rate_pct": 64.0,
+          "avg_win_r": 0.83,
+          "avg_loss_r": -0.7,
+          "expectancy_r": 0.276,
+          "total_r": 6.89,
+          "profit_factor": 2.09,
+          "max_drawdown_r": -3.54,
+          "avg_bars_held": 7.5
+        },
+        "2021": {
+          "trades": 33,
+          "win_rate_pct": 39.4,
+          "avg_win_r": 1.02,
+          "avg_loss_r": -0.72,
+          "expectancy_r": -0.036,
+          "total_r": -1.17,
+          "profit_factor": 0.92,
+          "max_drawdown_r": -6.18,
+          "avg_bars_held": 8.6
+        },
+        "2022": {
+          "trades": 26,
+          "win_rate_pct": 30.8,
+          "avg_win_r": 1.24,
+          "avg_loss_r": -0.83,
+          "expectancy_r": -0.192,
+          "total_r": -4.98,
+          "profit_factor": 0.67,
+          "max_drawdown_r": -5.02,
+          "avg_bars_held": 7.2
+        },
+        "2023": {
+          "trades": 30,
+          "win_rate_pct": 40.0,
+          "avg_win_r": 1.09,
+          "avg_loss_r": -0.74,
+          "expectancy_r": -0.012,
+          "total_r": -0.37,
+          "profit_factor": 0.97,
+          "max_drawdown_r": -3.32,
+          "avg_bars_held": 8.4
+        },
+        "2024": {
+          "trades": 23,
+          "win_rate_pct": 43.5,
+          "avg_win_r": 0.81,
+          "avg_loss_r": -0.74,
+          "expectancy_r": -0.07,
+          "total_r": -1.61,
+          "profit_factor": 0.83,
+          "max_drawdown_r": -5.04,
+          "avg_bars_held": 7.2
+        },
+        "2025": {
+          "trades": 30,
+          "win_rate_pct": 53.3,
+          "avg_win_r": 0.97,
+          "avg_loss_r": -0.78,
+          "expectancy_r": 0.156,
+          "total_r": 4.69,
+          "profit_factor": 1.43,
+          "max_drawdown_r": -4.11,
+          "avg_bars_held": 9.3
+        },
+        "2026": {
+          "trades": 17,
+          "win_rate_pct": 58.8,
+          "avg_win_r": 0.93,
+          "avg_loss_r": -0.7,
+          "expectancy_r": 0.255,
+          "total_r": 4.34,
+          "profit_factor": 1.88,
+          "max_drawdown_r": -1.21,
+          "avg_bars_held": 9.5
+        }
+      }
+    },
+    "I3_adx_20": {
+      "overrides": {
+        "indicators": {
+          "min_adx": 20
+        }
+      },
+      "period": [
+        "2017-11-13",
+        "2026-10-26"
+      ],
+      "overall": {
+        "trades": 183,
+        "win_rate_pct": 45.4,
+        "avg_win_r": 0.92,
+        "avg_loss_r": -0.76,
+        "expectancy_r": 0.002,
+        "total_r": 0.37,
+        "profit_factor": 1.0,
+        "max_drawdown_r": -16.23,
+        "avg_bars_held": 7.9,
+        "return_pct_simple": 3.9,
+        "max_drawdown_pct": -12.8,
+        "fill_rate_pct": 62.5
+      },
+      "by_setup": {
+        "breakout": {
+          "trades": 183,
+          "win_rate_pct": 45.4,
+          "avg_win_r": 0.92,
+          "avg_loss_r": -0.76,
+          "expectancy_r": 0.002,
+          "total_r": 0.37,
+          "profit_factor": 1.0,
+          "max_drawdown_r": -16.23,
+          "avg_bars_held": 7.9
+        }
+      },
+      "first_half": {
+        "trades": 83,
+        "win_rate_pct": 48.2,
+        "avg_win_r": 0.83,
+        "avg_loss_r": -0.74,
+        "expectancy_r": 0.015,
+        "total_r": 1.29,
+        "profit_factor": 1.04,
+        "max_drawdown_r": -10.37,
+        "avg_bars_held": 7.5
+      },
+      "second_half": {
+        "trades": 100,
+        "win_rate_pct": 43.0,
+        "avg_win_r": 1.01,
+        "avg_loss_r": -0.77,
+        "expectancy_r": -0.009,
+        "total_r": -0.91,
+        "profit_factor": 0.98,
+        "max_drawdown_r": -10.17,
+        "avg_bars_held": 8.3
+      },
+      "exit_reasons": {
+        "time_stop": 101,
+        "stop": 53,
+        "trail": 14,
+        "max_hold": 7,
+        "breakeven": 5,
+        "gap_stop": 3
+      },
+      "by_year": {
+        "2017": {
+          "trades": 3,
+          "win_rate_pct": 66.7,
+          "avg_win_r": 0.56,
+          "avg_loss_r": -1.07,
+          "expectancy_r": 0.019,
+          "total_r": 0.06,
+          "profit_factor": 1.05,
+          "max_drawdown_r": -1.07,
+          "avg_bars_held": 6.0
+        },
+        "2018": {
+          "trades": 17,
+          "win_rate_pct": 70.6,
+          "avg_win_r": 0.93,
+          "avg_loss_r": -0.79,
+          "expectancy_r": 0.422,
+          "total_r": 7.18,
+          "profit_factor": 2.82,
+          "max_drawdown_r": -1.14,
+          "avg_bars_held": 9.6
+        },
+        "2019": {
+          "trades": 13,
+          "win_rate_pct": 30.8,
+          "avg_win_r": 0.36,
+          "avg_loss_r": -0.74,
+          "expectancy_r": -0.401,
+          "total_r": -5.21,
+          "profit_factor": 0.22,
+          "max_drawdown_r": -5.21,
+          "avg_bars_held": 5.5
+        },
+        "2020": {
+          "trades": 21,
+          "win_rate_pct": 61.9,
+          "avg_win_r": 0.93,
+          "avg_loss_r": -0.75,
+          "expectancy_r": 0.291,
+          "total_r": 6.11,
+          "profit_factor": 2.02,
+          "max_drawdown_r": -3.3,
+          "avg_bars_held": 7.6
+        },
+        "2021": {
+          "trades": 25,
+          "win_rate_pct": 32.0,
+          "avg_win_r": 0.9,
+          "avg_loss_r": -0.76,
+          "expectancy_r": -0.229,
+          "total_r": -5.73,
+          "profit_factor": 0.56,
+          "max_drawdown_r": -9.28,
+          "avg_bars_held": 7.5
+        },
+        "2022": {
+          "trades": 20,
+          "win_rate_pct": 40.0,
+          "avg_win_r": 0.79,
+          "avg_loss_r": -0.85,
+          "expectancy_r": -0.193,
+          "total_r": -3.86,
+          "profit_factor": 0.62,
+          "max_drawdown_r": -4.97,
+          "avg_bars_held": 6.0
+        },
+        "2023": {
+          "trades": 28,
+          "win_rate_pct": 42.9,
+          "avg_win_r": 1.31,
+          "avg_loss_r": -0.74,
+          "expectancy_r": 0.139,
+          "total_r": 3.9,
+          "profit_factor": 1.33,
+          "max_drawdown_r": -3.25,
+          "avg_bars_held": 9.2
+        },
+        "2024": {
+          "trades": 18,
+          "win_rate_pct": 33.3,
+          "avg_win_r": 0.66,
+          "avg_loss_r": -0.74,
+          "expectancy_r": -0.276,
+          "total_r": -4.97,
+          "profit_factor": 0.44,
+          "max_drawdown_r": -6.01,
+          "avg_bars_held": 6.0
+        },
+        "2025": {
+          "trades": 25,
+          "win_rate_pct": 44.0,
+          "avg_win_r": 1.07,
+          "avg_loss_r": -0.79,
+          "expectancy_r": 0.03,
+          "total_r": 0.75,
+          "profit_factor": 1.07,
+          "max_drawdown_r": -6.32,
+          "avg_bars_held": 9.7
+        },
+        "2026": {
+          "trades": 13,
+          "win_rate_pct": 53.8,
+          "avg_win_r": 0.82,
+          "avg_loss_r": -0.6,
+          "expectancy_r": 0.167,
+          "total_r": 2.17,
+          "profit_factor": 1.6,
+          "max_drawdown_r": -1.57,
+          "avg_bars_held": 9.2
+        }
+      }
+    },
+    "I4_adx_25": {
+      "overrides": {
+        "indicators": {
+          "min_adx": 25
+        }
+      },
+      "period": [
+        "2017-11-13",
+        "2026-10-26"
+      ],
+      "overall": {
+        "trades": 142,
+        "win_rate_pct": 50.0,
+        "avg_win_r": 0.92,
+        "avg_loss_r": -0.77,
+        "expectancy_r": 0.077,
+        "total_r": 10.98,
+        "profit_factor": 1.2,
+        "max_drawdown_r": -10.22,
+        "avg_bars_held": 8.2,
+        "return_pct_simple": 10.8,
+        "max_drawdown_pct": -9.5,
+        "fill_rate_pct": 63.4
+      },
+      "by_setup": {
+        "breakout": {
+          "trades": 142,
+          "win_rate_pct": 50.0,
+          "avg_win_r": 0.92,
+          "avg_loss_r": -0.77,
+          "expectancy_r": 0.077,
+          "total_r": 10.98,
+          "profit_factor": 1.2,
+          "max_drawdown_r": -10.22,
+          "avg_bars_held": 8.2
+        }
+      },
+      "first_half": {
+        "trades": 66,
+        "win_rate_pct": 48.5,
+        "avg_win_r": 0.8,
+        "avg_loss_r": -0.69,
+        "expectancy_r": 0.028,
+        "total_r": 1.85,
+        "profit_factor": 1.08,
+        "max_drawdown_r": -8.97,
+        "avg_bars_held": 7.6
+      },
+      "second_half": {
+        "trades": 76,
+        "win_rate_pct": 51.3,
+        "avg_win_r": 1.02,
+        "avg_loss_r": -0.83,
+        "expectancy_r": 0.12,
+        "total_r": 9.13,
+        "profit_factor": 1.3,
+        "max_drawdown_r": -6.72,
+        "avg_bars_held": 8.8
+      },
+      "exit_reasons": {
+        "time_stop": 79,
+        "stop": 39,
+        "trail": 12,
+        "max_hold": 6,
+        "breakeven": 4,
+        "gap_stop": 2
+      },
+      "by_year": {
+        "2017": {
+          "trades": 2,
+          "win_rate_pct": 100.0,
+          "avg_win_r": 0.56,
+          "avg_loss_r": 0.0,
+          "expectancy_r": 0.565,
+          "total_r": 1.13,
+          "profit_factor": null,
+          "max_drawdown_r": 0.0,
+          "avg_bars_held": 7.0
+        },
+        "2018": {
+          "trades": 14,
+          "win_rate_pct": 64.3,
+          "avg_win_r": 0.83,
+          "avg_loss_r": -0.79,
+          "expectancy_r": 0.251,
+          "total_r": 3.51,
+          "profit_factor": 1.89,
+          "max_drawdown_r": -1.7,
+          "avg_bars_held": 9.1
+        },
+        "2019": {
+          "trades": 10,
+          "win_rate_pct": 30.0,
+          "avg_win_r": 0.33,
+          "avg_loss_r": -0.68,
+          "expectancy_r": -0.375,
+          "total_r": -3.75,
+          "profit_factor": 0.21,
+          "max_drawdown_r": -3.75,
+          "avg_bars_held": 5.2
+        },
+        "2020": {
+          "trades": 17,
+          "win_rate_pct": 64.7,
+          "avg_win_r": 0.89,
+          "avg_loss_r": -0.65,
+          "expectancy_r": 0.347,
+          "total_r": 5.9,
+          "profit_factor": 2.52,
+          "max_drawdown_r": -2.65,
+          "avg_bars_held": 7.1
+        },
+        "2021": {
+          "trades": 20,
+          "win_rate_pct": 30.0,
+          "avg_win_r": 0.97,
+          "avg_loss_r": -0.77,
+          "expectancy_r": -0.249,
+          "total_r": -4.98,
+          "profit_factor": 0.54,
+          "max_drawdown_r": -7.85,
+          "avg_bars_held": 8.2
+        },
+        "2022": {
+          "trades": 15,
+          "win_rate_pct": 46.7,
+          "avg_win_r": 0.86,
+          "avg_loss_r": -0.82,
+          "expectancy_r": -0.035,
+          "total_r": -0.53,
+          "profit_factor": 0.92,
+          "max_drawdown_r": -3.14,
+          "avg_bars_held": 6.6
+        },
+        "2023": {
+          "trades": 22,
+          "win_rate_pct": 50.0,
+          "avg_win_r": 1.07,
+          "avg_loss_r": -0.84,
+          "expectancy_r": 0.116,
+          "total_r": 2.55,
+          "profit_factor": 1.27,
+          "max_drawdown_r": -2.74,
+          "avg_bars_held": 9.0
+        },
+        "2024": {
+          "trades": 15,
+          "win_rate_pct": 40.0,
+          "avg_win_r": 0.66,
+          "avg_loss_r": -0.79,
+          "expectancy_r": -0.208,
+          "total_r": -3.12,
+          "profit_factor": 0.56,
+          "max_drawdown_r": -4.93,
+          "avg_bars_held": 6.0
+        },
+        "2025": {
+          "trades": 20,
+          "win_rate_pct": 60.0,
+          "avg_win_r": 1.2,
+          "avg_loss_r": -0.81,
+          "expectancy_r": 0.397,
+          "total_r": 7.94,
+          "profit_factor": 2.22,
+          "max_drawdown_r": -2.1,
+          "avg_bars_held": 11.3
+        },
+        "2026": {
+          "trades": 7,
+          "win_rate_pct": 57.1,
+          "avg_win_r": 0.99,
+          "avg_loss_r": -0.54,
+          "expectancy_r": 0.332,
+          "total_r": 2.33,
+          "profit_factor": 2.43,
+          "max_drawdown_r": -0.66,
+          "avg_bars_held": 11.1
+        }
+      }
+    },
+    "I5_bb_squeeze": {
+      "overrides": {
+        "indicators": {
+          "require_bb_squeeze": true
+        }
+      },
+      "period": [
+        "2017-11-13",
+        "2026-10-26"
+      ],
+      "overall": {
+        "trades": 129,
+        "win_rate_pct": 45.0,
+        "avg_win_r": 1.06,
+        "avg_loss_r": -0.75,
+        "expectancy_r": 0.065,
+        "total_r": 8.36,
+        "profit_factor": 1.16,
+        "max_drawdown_r": -7.48,
+        "avg_bars_held": 8.6,
+        "return_pct_simple": 7.9,
+        "max_drawdown_pct": -6.9,
+        "fill_rate_pct": 64.2
+      },
+      "by_setup": {
+        "breakout": {
+          "trades": 129,
+          "win_rate_pct": 45.0,
+          "avg_win_r": 1.06,
+          "avg_loss_r": -0.75,
+          "expectancy_r": 0.065,
+          "total_r": 8.36,
+          "profit_factor": 1.16,
+          "max_drawdown_r": -7.48,
+          "avg_bars_held": 8.6
+        }
+      },
+      "first_half": {
+        "trades": 60,
+        "win_rate_pct": 46.7,
+        "avg_win_r": 0.97,
+        "avg_loss_r": -0.7,
+        "expectancy_r": 0.08,
+        "total_r": 4.81,
+        "profit_factor": 1.22,
+        "max_drawdown_r": -4.3,
+        "avg_bars_held": 8.6
+      },
+      "second_half": {
+        "trades": 69,
+        "win_rate_pct": 43.5,
+        "avg_win_r": 1.14,
+        "avg_loss_r": -0.79,
+        "expectancy_r": 0.051,
+        "total_r": 3.55,
+        "profit_factor": 1.12,
+        "max_drawdown_r": -7.48,
+        "avg_bars_held": 8.6
+      },
+      "exit_reasons": {
+        "time_stop": 67,
+        "stop": 36,
+        "trail": 14,
+        "breakeven": 6,
+        "max_hold": 4,
+        "gap_stop": 2
+      },
+      "by_year": {
+        "2017": {
+          "trades": 2,
+          "win_rate_pct": 50.0,
+          "avg_win_r": 0.52,
+          "avg_loss_r": -1.07,
+          "expectancy_r": -0.275,
+          "total_r": -0.55,
+          "profit_factor": 0.49,
+          "max_drawdown_r": -1.07,
+          "avg_bars_held": 5.5
+        },
+        "2018": {
+          "trades": 11,
+          "win_rate_pct": 45.5,
+          "avg_win_r": 1.38,
+          "avg_loss_r": -0.8,
+          "expectancy_r": 0.19,
+          "total_r": 2.09,
+          "profit_factor": 1.43,
+          "max_drawdown_r": -3.84,
+          "avg_bars_held": 9.5
+        },
+        "2019": {
+          "trades": 12,
+          "win_rate_pct": 25.0,
+          "avg_win_r": 0.55,
+          "avg_loss_r": -0.64,
+          "expectancy_r": -0.343,
+          "total_r": -4.12,
+          "profit_factor": 0.29,
+          "max_drawdown_r": -4.12,
+          "avg_bars_held": 6.4
+        },
+        "2020": {
+          "trades": 13,
+          "win_rate_pct": 69.2,
+          "avg_win_r": 1.01,
+          "avg_loss_r": -0.52,
+          "expectancy_r": 0.538,
+          "total_r": 6.99,
+          "profit_factor": 4.33,
+          "max_drawdown_r": -1.38,
+          "avg_bars_held": 9.8
+        },
+        "2021": {
+          "trades": 18,
+          "win_rate_pct": 50.0,
+          "avg_win_r": 0.96,
+          "avg_loss_r": -0.83,
+          "expectancy_r": 0.067,
+          "total_r": 1.21,
+          "profit_factor": 1.16,
+          "max_drawdown_r": -2.18,
+          "avg_bars_held": 9.4
+        },
+        "2022": {
+          "trades": 18,
+          "win_rate_pct": 33.3,
+          "avg_win_r": 1.17,
+          "avg_loss_r": -0.8,
+          "expectancy_r": -0.14,
+          "total_r": -2.53,
+          "profit_factor": 0.74,
+          "max_drawdown_r": -4.95,
+          "avg_bars_held": 7.2
+        },
+        "2023": {
+          "trades": 21,
+          "win_rate_pct": 38.1,
+          "avg_win_r": 1.65,
+          "avg_loss_r": -0.82,
+          "expectancy_r": 0.121,
+          "total_r": 2.54,
+          "profit_factor": 1.24,
+          "max_drawdown_r": -2.54,
+          "avg_bars_held": 10.0
+        },
+        "2024": {
+          "trades": 8,
+          "win_rate_pct": 37.5,
+          "avg_win_r": 0.76,
+          "avg_loss_r": -0.7,
+          "expectancy_r": -0.151,
+          "total_r": -1.21,
+          "profit_factor": 0.65,
+          "max_drawdown_r": -3.48,
+          "avg_bars_held": 6.8
+        },
+        "2025": {
+          "trades": 17,
+          "win_rate_pct": 52.9,
+          "avg_win_r": 0.82,
+          "avg_loss_r": -0.58,
+          "expectancy_r": 0.157,
+          "total_r": 2.68,
+          "profit_factor": 1.57,
+          "max_drawdown_r": -2.64,
+          "avg_bars_held": 8.4
+        },
+        "2026": {
+          "trades": 9,
+          "win_rate_pct": 55.6,
+          "avg_win_r": 0.93,
+          "avg_loss_r": -0.85,
+          "expectancy_r": 0.139,
+          "total_r": 1.25,
+          "profit_factor": 1.37,
+          "max_drawdown_r": -2.13,
+          "avg_bars_held": 9.2
+        }
+      }
+    },
+    "I6_all_four": {
+      "overrides": {
+        "indicators": {
+          "require_macd_bullish": true,
+          "require_supertrend_up": true,
+          "min_adx": 20,
+          "require_bb_squeeze": true
+        }
+      },
+      "period": [
+        "2017-11-13",
+        "2026-10-26"
+      ],
+      "overall": {
+        "trades": 67,
+        "win_rate_pct": 41.8,
+        "avg_win_r": 1.22,
+        "avg_loss_r": -0.78,
+        "expectancy_r": 0.056,
+        "total_r": 3.73,
+        "profit_factor": 1.12,
+        "max_drawdown_r": -6.74,
+        "avg_bars_held": 8.7,
+        "return_pct_simple": 4.9,
+        "max_drawdown_pct": -5.7,
+        "fill_rate_pct": 59.3
+      },
+      "by_setup": {
+        "breakout": {
+          "trades": 67,
+          "win_rate_pct": 41.8,
+          "avg_win_r": 1.22,
+          "avg_loss_r": -0.78,
+          "expectancy_r": 0.056,
+          "total_r": 3.73,
+          "profit_factor": 1.12,
+          "max_drawdown_r": -6.74,
+          "avg_bars_held": 8.7
+        }
+      },
+      "first_half": {
+        "trades": 30,
+        "win_rate_pct": 43.3,
+        "avg_win_r": 1.14,
+        "avg_loss_r": -0.79,
+        "expectancy_r": 0.051,
+        "total_r": 1.54,
+        "profit_factor": 1.12,
+        "max_drawdown_r": -5.65,
+        "avg_bars_held": 8.5
+      },
+      "second_half": {
+        "trades": 37,
+        "win_rate_pct": 40.5,
+        "avg_win_r": 1.29,
+        "avg_loss_r": -0.78,
+        "expectancy_r": 0.059,
+        "total_r": 2.19,
+        "profit_factor": 1.13,
+        "max_drawdown_r": -6.74,
+        "avg_bars_held": 8.8
+      },
+      "exit_reasons": {
+        "time_stop": 31,
+        "stop": 22,
+        "trail": 8,
+        "max_hold": 3,
+        "breakeven": 2,
+        "gap_stop": 1
+      },
+      "by_year": {
+        "2017": {
+          "trades": 1,
+          "win_rate_pct": 0.0,
+          "avg_win_r": 0.0,
+          "avg_loss_r": -1.07,
+          "expectancy_r": -1.073,
+          "total_r": -1.07,
+          "profit_factor": 0.0,
+          "max_drawdown_r": -1.07,
+          "avg_bars_held": 4.0
+        },
+        "2018": {
+          "trades": 6,
+          "win_rate_pct": 50.0,
+          "avg_win_r": 1.82,
+          "avg_loss_r": -0.75,
+          "expectancy_r": 0.534,
+          "total_r": 3.21,
+          "profit_factor": 2.42,
+          "max_drawdown_r": -2.23,
+          "avg_bars_held": 11.8
+        },
+        "2019": {
+          "trades": 3,
+          "win_rate_pct": 0.0,
+          "avg_win_r": 0.0,
+          "avg_loss_r": -0.64,
+          "expectancy_r": -0.639,
+          "total_r": -1.92,
+          "profit_factor": 0.0,
+          "max_drawdown_r": -1.92,
+          "avg_bars_held": 5.7
+        },
+        "2020": {
+          "trades": 9,
+          "win_rate_pct": 66.7,
+          "avg_win_r": 1.24,
+          "avg_loss_r": -0.59,
+          "expectancy_r": 0.629,
+          "total_r": 5.66,
+          "profit_factor": 4.22,
+          "max_drawdown_r": -1.03,
+          "avg_bars_held": 11.1
+        },
+        "2021": {
+          "trades": 9,
+          "win_rate_pct": 33.3,
+          "avg_win_r": 0.58,
+          "avg_loss_r": -1.05,
+          "expectancy_r": -0.508,
+          "total_r": -4.58,
+          "profit_factor": 0.27,
+          "max_drawdown_r": -5.6,
+          "avg_bars_held": 5.3
+        },
+        "2022": {
+          "trades": 7,
+          "win_rate_pct": 71.4,
+          "avg_win_r": 1.05,
+          "avg_loss_r": -0.54,
+          "expectancy_r": 0.598,
+          "total_r": 4.18,
+          "profit_factor": 4.88,
+          "max_drawdown_r": -1.03,
+          "avg_bars_held": 9.0
+        },
+        "2023": {
+          "trades": 14,
+          "win_rate_pct": 35.7,
+          "avg_win_r": 1.66,
+          "avg_loss_r": -0.82,
+          "expectancy_r": 0.065,
+          "total_r": 0.9,
+          "profit_factor": 1.12,
+          "max_drawdown_r": -3.12,
+          "avg_bars_held": 9.4
+        },
+        "2024": {
+          "trades": 6,
+          "win_rate_pct": 33.3,
+          "avg_win_r": 0.99,
+          "avg_loss_r": -0.68,
+          "expectancy_r": -0.127,
+          "total_r": -0.76,
+          "profit_factor": 0.72,
+          "max_drawdown_r": -2.24,
+          "avg_bars_held": 7.5
+        },
+        "2025": {
+          "trades": 8,
+          "win_rate_pct": 25.0,
+          "avg_win_r": 0.55,
+          "avg_loss_r": -0.8,
+          "expectancy_r": -0.465,
+          "total_r": -3.72,
+          "profit_factor": 0.23,
+          "max_drawdown_r": -4.5,
+          "avg_bars_held": 5.6
+        },
+        "2026": {
+          "trades": 4,
+          "win_rate_pct": 50.0,
+          "avg_win_r": 1.5,
+          "avg_loss_r": -0.59,
+          "expectancy_r": 0.455,
+          "total_r": 1.82,
+          "profit_factor": 2.54,
+          "max_drawdown_r": -1.18,
+          "avg_bars_held": 14.2
+        }
+      }
+    },
+    "I7_top40_plus_squeeze": {
+      "overrides": {
+        "rs": {
+          "momentum_top_n": 40
+        },
+        "indicators": {
+          "require_bb_squeeze": true
+        }
+      },
+      "period": [
+        "2017-11-13",
+        "2026-10-26"
+      ],
+      "overall": {
+        "trades": 106,
+        "win_rate_pct": 49.1,
+        "avg_win_r": 1.0,
+        "avg_loss_r": -0.77,
+        "expectancy_r": 0.101,
+        "total_r": 10.68,
+        "profit_factor": 1.26,
+        "max_drawdown_r": -6.45,
+        "avg_bars_held": 8.5,
+        "return_pct_simple": 9.6,
+        "max_drawdown_pct": -5.4,
+        "fill_rate_pct": 67.5
+      },
+      "by_setup": {
+        "breakout": {
+          "trades": 106,
+          "win_rate_pct": 49.1,
+          "avg_win_r": 1.0,
+          "avg_loss_r": -0.77,
+          "expectancy_r": 0.101,
+          "total_r": 10.68,
+          "profit_factor": 1.26,
+          "max_drawdown_r": -6.45,
+          "avg_bars_held": 8.5
+        }
+      },
+      "first_half": {
+        "trades": 52,
+        "win_rate_pct": 51.9,
+        "avg_win_r": 1.0,
+        "avg_loss_r": -0.72,
+        "expectancy_r": 0.173,
+        "total_r": 9.0,
+        "profit_factor": 1.5,
+        "max_drawdown_r": -3.83,
+        "avg_bars_held": 9.0
+      },
+      "second_half": {
+        "trades": 54,
+        "win_rate_pct": 46.3,
+        "avg_win_r": 1.01,
+        "avg_loss_r": -0.81,
+        "expectancy_r": 0.031,
+        "total_r": 1.68,
+        "profit_factor": 1.07,
+        "max_drawdown_r": -6.45,
+        "avg_bars_held": 8.1
+      },
+      "exit_reasons": {
+        "time_stop": 54,
+        "stop": 30,
+        "trail": 13,
+        "breakeven": 6,
+        "max_hold": 2,
+        "gap_stop": 1
+      },
+      "by_year": {
+        "2017": {
+          "trades": 2,
+          "win_rate_pct": 50.0,
+          "avg_win_r": 0.52,
+          "avg_loss_r": -1.07,
+          "expectancy_r": -0.275,
+          "total_r": -0.55,
+          "profit_factor": 0.49,
+          "max_drawdown_r": -1.07,
+          "avg_bars_held": 5.5
+        },
+        "2018": {
+          "trades": 10,
+          "win_rate_pct": 50.0,
+          "avg_win_r": 1.38,
+          "avg_loss_r": -0.88,
+          "expectancy_r": 0.249,
+          "total_r": 2.5,
+          "profit_factor": 1.57,
+          "max_drawdown_r": -3.43,
+          "avg_bars_held": 9.7
+        },
+        "2019": {
+          "trades": 11,
+          "win_rate_pct": 27.3,
+          "avg_win_r": 0.55,
+          "avg_loss_r": -0.59,
+          "expectancy_r": -0.279,
+          "total_r": -3.06,
+          "profit_factor": 0.35,
+          "max_drawdown_r": -3.65,
+          "avg_bars_held": 6.9
+        },
+        "2020": {
+          "trades": 11,
+          "win_rate_pct": 72.7,
+          "avg_win_r": 1.12,
+          "avg_loss_r": -0.59,
+          "expectancy_r": 0.657,
+          "total_r": 7.23,
+          "profit_factor": 5.11,
+          "max_drawdown_r": -1.03,
+          "avg_bars_held": 10.4
+        },
+        "2021": {
+          "trades": 16,
+          "win_rate_pct": 56.2,
+          "avg_win_r": 0.96,
+          "avg_loss_r": -0.86,
+          "expectancy_r": 0.166,
+          "total_r": 2.65,
+          "profit_factor": 1.44,
+          "max_drawdown_r": -2.1,
+          "avg_bars_held": 9.8
+        },
+        "2022": {
+          "trades": 14,
+          "win_rate_pct": 42.9,
+          "avg_win_r": 0.93,
+          "avg_loss_r": -0.8,
+          "expectancy_r": -0.058,
+          "total_r": -0.81,
+          "profit_factor": 0.87,
+          "max_drawdown_r": -4.94,
+          "avg_bars_held": 7.1
+        },
+        "2023": {
+          "trades": 17,
+          "win_rate_pct": 35.3,
+          "avg_win_r": 1.44,
+          "avg_loss_r": -0.82,
+          "expectancy_r": -0.021,
+          "total_r": -0.36,
+          "profit_factor": 0.96,
+          "max_drawdown_r": -6.3,
+          "avg_bars_held": 8.8
+        },
+        "2024": {
+          "trades": 4,
+          "win_rate_pct": 75.0,
+          "avg_win_r": 0.76,
+          "avg_loss_r": -1.03,
+          "expectancy_r": 0.309,
+          "total_r": 1.24,
+          "profit_factor": 2.19,
+          "max_drawdown_r": -1.03,
+          "avg_bars_held": 8.8
+        },
+        "2025": {
+          "trades": 14,
+          "win_rate_pct": 50.0,
+          "avg_win_r": 0.94,
+          "avg_loss_r": -0.63,
+          "expectancy_r": 0.155,
+          "total_r": 2.17,
+          "profit_factor": 1.49,
+          "max_drawdown_r": -1.53,
+          "avg_bars_held": 8.7
+        },
+        "2026": {
+          "trades": 7,
+          "win_rate_pct": 57.1,
+          "avg_win_r": 0.61,
+          "avg_loss_r": -0.91,
+          "expectancy_r": -0.045,
+          "total_r": -0.32,
+          "profit_factor": 0.88,
+          "max_drawdown_r": -1.46,
+          "avg_bars_held": 6.6
+        }
+      }
+    }
+  },
+  "momentum": {
+    "M2_top30_200dma_filter": {
+      "overrides": {},
+      "strategy": {
+        "cagr_pct": 25.9,
+        "vol_pct": 16.3,
+        "max_drawdown_pct": -21.5,
+        "return_over_vol": 1.59,
+        "total_return_pct": 675.9,
+        "worst_year_pct": -13.8,
+        "yearly_pct": {
+          "2017": 7.7,
+          "2018": -13.8,
+          "2019": 8.4,
+          "2020": 38.4,
+          "2021": 91.3,
+          "2022": 11.6,
+          "2023": 56.8,
+          "2024": 41.5,
+          "2025": 13.6,
+          "2026": 3.6
+        }
+      },
+      "rebalances": 107,
+      "months_in_cash_pct": 27.1,
+      "avg_turnover_pct": 41.4,
+      "period": [
+        "2017-12-01",
+        "2026-10-26"
+      ],
+      "benchmarks": {
+        "nifty50": {
+          "cagr_pct": 9.5,
+          "vol_pct": 16.8,
+          "max_drawdown_pct": -38.4,
+          "return_over_vol": 0.57,
+          "total_return_pct": 124.8,
+          "worst_year_pct": -12.9,
+          "yearly_pct": {
+            "2017": 4.0,
+            "2018": 3.2,
+            "2019": 12.0,
+            "2020": 14.9,
+            "2021": 24.1,
+            "2022": 4.3,
+            "2023": 20.0,
+            "2024": 8.8,
+            "2025": 10.5,
+            "2026": -12.9
+          }
+        },
+        "nifty500": {
+          "cagr_pct": 10.3,
+          "vol_pct": 16.7,
+          "max_drawdown_pct": -38.3,
+          "return_over_vol": 0.61,
+          "total_return_pct": 138.5,
+          "worst_year_pct": -9.5,
+          "yearly_pct": {
+            "2017": 4.7,
+            "2018": -3.4,
+            "2019": 7.7,
+            "2020": 16.7,
+            "2021": 30.2,
+            "2022": 3.0,
+            "2023": 25.8,
+            "2024": 15.2,
+            "2025": 6.7,
+            "2026": -9.5
+          }
+        }
+      },
+      "equity_monthly": {
+        "2017-12-29": 1.0495,
+        "2018-01-31": 1.0406,
+        "2018-02-28": 1.0107,
+        "2018-03-28": 0.9684,
+        "2018-04-30": 0.9736,
+        "2018-05-31": 0.961,
+        "2018-06-29": 0.9421,
+        "2018-07-31": 0.9721,
+        "2018-08-31": 1.02,
+        "2018-09-28": 0.9288,
+        "2018-10-31": 0.8966,
+        "2018-11-30": 0.9032,
+        "2018-12-31": 0.905,
+        "2019-01-31": 0.9266,
+        "2019-02-28": 0.9304,
+        "2019-03-28": 0.9343,
+        "2019-04-30": 0.9297,
+        "2019-05-31": 0.9561,
+        "2019-06-28": 0.9761,
+        "2019-07-31": 0.9061,
+        "2019-08-30": 0.9045,
+        "2019-09-30": 0.9085,
+        "2019-10-31": 0.9548,
+        "2019-11-29": 0.9615,
+        "2019-12-31": 0.9809,
+        "2020-01-31": 1.0251,
+        "2020-02-28": 0.9922,
+        "2020-03-31": 1.0098,
+        "2020-04-30": 1.014,
+        "2020-05-29": 1.0185,
+        "2020-06-30": 1.0237,
+        "2020-07-31": 1.0291,
+        "2020-08-31": 1.0436,
+        "2020-09-30": 1.1529,
+        "2020-10-30": 1.1577,
+        "2020-11-27": 1.267,
+        "2020-12-31": 1.3575,
+        "2021-01-29": 1.3244,
+        "2021-02-26": 1.5376,
+        "2021-03-31": 1.6552,
+        "2021-04-30": 1.7729,
+        "2021-05-31": 1.9257,
+        "2021-06-30": 1.976,
+        "2021-07-30": 2.1218,
+        "2021-08-31": 2.2627,
+        "2021-09-30": 2.3508,
+        "2021-10-29": 2.3693,
+        "2021-11-30": 2.4012,
+        "2021-12-31": 2.5971,
+        "2022-01-31": 2.4939,
+        "2022-02-28": 2.407,
+        "2022-03-31": 2.4031,
+        "2022-04-29": 2.4565,
+        "2022-05-31": 2.4429,
+        "2022-06-30": 2.4554,
+        "2022-07-29": 2.4674,
+        "2022-08-30": 2.7041,
+        "2022-09-30": 2.7531,
+        "2022-10-31": 2.8614,
+        "2022-11-30": 2.9248,
+        "2022-12-30": 2.8994,
+        "2023-01-31": 2.7403,
+        "2023-02-28": 2.6156,
+        "2023-03-31": 2.6321,
+        "2023-04-28": 2.6425,
+        "2023-05-31": 2.706,
+        "2023-06-30": 3.0408,
+        "2023-07-31": 3.3252,
+        "2023-08-31": 3.4113,
+        "2023-09-29": 3.6425,
+        "2023-10-31": 3.5724,
+        "2023-11-30": 4.0609,
+        "2023-12-29": 4.5457,
+        "2024-01-31": 5.0071,
+        "2024-02-29": 5.1027,
+        "2024-03-28": 5.1564,
+        "2024-04-30": 5.5701,
+        "2024-05-31": 5.7846,
+        "2024-06-28": 6.0762,
+        "2024-07-31": 6.3963,
+        "2024-08-30": 6.3437,
+        "2024-09-30": 6.443,
+        "2024-10-31": 6.0142,
+        "2024-11-29": 6.0445,
+        "2024-12-31": 6.4308,
+        "2025-01-31": 6.4516,
+        "2025-02-28": 6.4815,
+        "2025-03-28": 6.51,
+        "2025-04-30": 6.5387,
+        "2025-05-30": 6.8376,
+        "2025-06-30": 7.2939,
+        "2025-07-31": 6.9951,
+        "2025-08-29": 6.8526,
+        "2025-09-30": 6.8327,
+        "2025-10-31": 7.0016,
+        "2025-11-28": 7.1667,
+        "2025-12-31": 7.3047,
+        "2026-01-30": 7.2316,
+        "2026-02-27": 7.5212,
+        "2026-03-30": 7.3215,
+        "2026-04-30": 7.3554,
+        "2026-05-29": 7.3878,
+        "2026-06-30": 7.4238,
+        "2026-07-31": 7.4634,
+        "2026-08-31": 7.4997,
+        "2026-09-30": 7.5362,
+        "2026-10-26": 7.5641
+      }
+    }
+  },
+  "errors": {}
+}
