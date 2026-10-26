@@ -7,7 +7,11 @@
     "google": "ok (8)"
   },
   "gemini": "ok: positive",
-  "groq": "error: Groq HTTP 404: {\"error\":{\"message\":\"The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.\",\"type\":\"invalid_request_error\",\"code\":\"",
+  "groq": "ok: positive",
+  "models_in_use": {
+    "gemini": "gemini-2.5-flash",
+    "groq": "openai/gpt-oss-120b"
+  },
   "sample_headlines": [
     "Buy, Sell Or Hold: Kalyan Jewellers, Biocon, Paytm, Reliance Industries, ITC And IDFC First Bank — Ask Profit - NDTV Pro",
     "Religare sets INR 1,696.00 target for Reliance stock - ad-hoc-news.de",
