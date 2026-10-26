@@ -98,6 +98,27 @@ classifies them with **Gemini**, falling back to **Groq**, then to keyword match
 last 8 hours for the pending picks and sends a Telegram message: all clear, or which buy-stop to
 cancel.
 
+### Global (international) risk
+
+Each scan also runs `scanner/macro.py`:
+- **Overnight market moves:** S&P 500, Nasdaq, Brent crude, USD/INR, US 10-year yield, dollar index, Nikkei, Hang Seng.
+- **Global headlines from the last 36 hours:** the Fed, Wall Street, crude, US tariffs, wars, FII outflows, the rupee, China, recession.
+
+Gemini (then Groq) judges the risk of opening new longs in India and lists the NSE sectors directly
+hit. Rules on the market moves set a **floor**: e.g. S&P −3% or Brent +6% overnight is "high" even
+if the LLM says otherwise.
+
+| Global risk | Effect |
+|---|---|
+| low | nothing |
+| elevated | position size × 0.5 |
+| high | no new longs today (watchlist only) |
+| sector marked negative | stocks in that sector rejected (`global_sector_headwind`) |
+
+The pre-market check repeats this with news from the last 8 hours plus the Asian open, and tells you
+to hold off on buy-stops if global risk is high. None of this can be backtested (no headline
+archive), so it is used only to reduce risk, never to add trades.
+
 ### Secrets
 
 | GitHub secret | Used for | Required |

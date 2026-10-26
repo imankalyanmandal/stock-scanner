@@ -42,6 +42,29 @@ def upcoming_events(symbol: str, today: date, lookahead_days: int) -> list[dict]
 _SUFFIX = re.compile(r"\b(limited|ltd\.?|india)\b", re.I)
 
 
+def google_news(query: str, lookback_days: int) -> list[dict]:
+    """Raw Google News RSS search (India edition). Raises on network/parse errors."""
+    q = quote_plus(f"{query} when:{lookback_days}d")
+    url = f"https://news.google.com/rss/search?q={q}&hl=en-IN&gl=IN&ceid=IN:en"
+    r = requests.get(url, timeout=15, headers={"User-Agent": "Mozilla/5.0"})
+    r.raise_for_status()
+    root = ET.fromstring(r.content)
+    now = datetime.now(timezone.utc)
+    items = []
+    for it in root.iter("item"):
+        pub = it.findtext("pubDate")
+        try:
+            ts = parsedate_to_datetime(pub) if pub else None
+        except (TypeError, ValueError):
+            ts = None
+        items.append({"title": (it.findtext("title") or "").strip(),
+                      "source": (it.findtext("source") or "").strip(),
+                      "link": it.findtext("link") or "",
+                      "published": ts.isoformat() if ts else "",
+                      "age_hours": round((now - ts).total_seconds() / 3600, 1) if ts else None})
+    return items
+
+
 def fetch_news(company: str, symbol: str, lookback_days: int, fresh_hours: int,
                max_items: int, include_symbol: bool = False) -> dict:
     """Recent headlines from Google News RSS. Returns has_news, fresh flag and items.
