@@ -1,0 +1,16 @@
+{
+  "GEMINI_API_KEY_set": false,
+  "GROQ_API_KEY_set": false,
+  "bse_scrip_map": "unavailable",
+  "sources": {
+    "bse": "no BSE code",
+    "google": "ok (8)"
+  },
+  "gemini": "error: GEMINI_API_KEY not set",
+  "groq": "error: GROQ_API_KEY not set",
+  "sample_headlines": [
+    "KeyBanc raises Reliance Steel stock price target on market share gains By Investing.com - Investing.com India",
+    "Religare sets INR 1,696.00 target for Reliance stock - ad-hoc-news.de",
+    "ServiceNow To Rally Over 26%? Here Are 10 Top Analyst Forecasts For Monday - Benzinga"
+  ]
+}
