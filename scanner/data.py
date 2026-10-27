@@ -67,3 +67,34 @@ def fetch_delivery(trade_date: date) -> dict[str, float]:
             log.debug("delivery fetch from %s failed: %s", host, e)
     log.warning("Delivery data unavailable for %s; delivery score set neutral", trade_date)
     return {}
+
+
+if __name__ == "__main__":
+    import json
+    import sys
+    from datetime import datetime, timezone
+    from pathlib import Path
+    out = {"utc_now": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+           "yfinance_version": yf.__version__}
+    tickers = ["RELIANCE.NS", "TCS.NS", "HDFCBANK.NS", "^NSEI"]
+    try:
+        raw = yf.download(tickers, period="10d", interval="1d", auto_adjust=True,
+                          group_by="ticker", progress=False, threads=True)
+        for t in tickers:
+            df = raw[t]
+            out[t] = {"raw_last_rows": [str(x)[:25] for x in df.index[-3:]],
+                      "close_last_rows": [None if pd.isna(v) else round(float(v), 2)
+                                          for v in df["Close"].iloc[-3:]]}
+    except Exception as e:
+        out["download_error"] = f"{type(e).__name__}: {e}"
+    try:
+        h = yf.Ticker("RELIANCE.NS").history(period="5d", auto_adjust=True)
+        out["history_RELIANCE"] = [f"{str(i)[:25]} close={round(float(c), 2)}"
+                                   for i, c in zip(h.index[-3:], h["Close"].iloc[-3:])]
+    except Exception as e:
+        out["history_error"] = f"{type(e).__name__}: {e}"
+    text = json.dumps(out, indent=2)
+    print(text)
+    if len(sys.argv) > 1:
+        Path(sys.argv[1]).parent.mkdir(parents=True, exist_ok=True)
+        Path(sys.argv[1]).write_text(text + "\n")

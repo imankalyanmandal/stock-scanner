@@ -812,3 +812,35 @@ def test_smallcap_liquidity_is_stricter():
     set_liquidity({"SMALL": f}, {"SMALL": (500.0, 300000.0)})   # demand Rs 500 Cr/day
     m = metrics_at(arrays(f), len(f) - 1, CFG, 90)
     assert "low_turnover" in evaluate(m, CFG)["reject_reasons"]
+
+
+# ------------------------------------------------------------------ stale data
+def test_expected_session_calendar():
+    from scanner.market_calendar import IST, expected_session
+    at = lambda s: datetime.fromisoformat(s).replace(tzinfo=IST)
+    assert expected_session(CFG, at("2026-10-27T03:00")).isoformat() == "2026-10-26"   # Tue 3 AM -> Mon
+    assert expected_session(CFG, at("2026-10-24T03:00")).isoformat() == "2026-10-23"   # Sat -> Fri
+    assert expected_session(CFG, at("2026-10-26T03:00")).isoformat() == "2026-10-23"   # Mon 3 AM -> Fri
+    assert expected_session(CFG, at("2026-10-21T03:00")).isoformat() == "2026-10-19"   # Dussehra Tue 20
+    assert expected_session(CFG, at("2026-10-26T17:00")).isoformat() == "2026-10-26"   # after close
+
+
+def test_stale_data_sends_one_warning(monkeypatch, tmp_path):
+    import run_scan
+    cfg = _cfg(tmp_path)
+    J.mark_session(cfg["journal"]["state_path"], "2026-10-23")
+    fake = {"session": "2026-10-23", "duplicate": True,
+            "stale": {"session": "2026-10-23", "expected": "2026-10-26"}}
+    monkeypatch.setattr(run_scan, "run", lambda *a, **k: dict(fake))
+    sent = []
+    monkeypatch.setattr(run_scan.notify, "_call",
+                        lambda m, d, **k: sent.append(d["text"]) or run_scan.notify.LAST.update({m: "ok"}) or True)
+    r1 = run_scan.scan_and_notify(cfg)
+    r2 = run_scan.scan_and_notify(cfg)          # backup run, data still behind: no second warning
+    assert len(sent) == 1 and "price data is behind" in sent[0]
+    assert r1["notify"]["sendMessage"].startswith("stale-data warning")
+    assert r2["notify"]["sendMessage"].startswith("skipped: data still behind")
+    # duplicate but NOT stale (already alerted this session): stays silent
+    monkeypatch.setattr(run_scan, "run", lambda *a, **k: {"session": "2026-10-26", "duplicate": True, "stale": None})
+    r3 = run_scan.scan_and_notify(cfg)
+    assert len(sent) == 1 and r3["notify"]["sendMessage"].startswith("skipped: session already alerted")

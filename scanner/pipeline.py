@@ -14,6 +14,7 @@ from . import macro as M
 from .filters import (arrays, evaluate, features, liquidity_requirements, metrics_at,
                       momentum_rank_table, rs_rank_table, select, set_liquidity)
 from .market import bench_table, breadth_series, regime_at, sector_stats
+from .market_calendar import expected_session
 from .trade import size_position
 from .universe import load_exclusions, load_universe
 
@@ -93,6 +94,8 @@ def run(cfg: dict, with_news: bool = True, limit: int | None = None, force: bool
     # journal: replay open trades with the new prices before adding today's picks
     jdf = J.update(J.load(jcfg["path"]), feats, cfg)
     duplicate = (not force) and J.last_session(jcfg["state_path"]) == session
+    expected = expected_session(cfg)
+    stale = pd.Timestamp(session).date() < expected
 
     regime = regime_at(_bench_at(benchmarks, last_ts),
                        breadth_series(feats).get(last_ts, math.nan), _vix_at(vix, last_ts), cfg)
@@ -224,10 +227,9 @@ def run(cfg: dict, with_news: bool = True, limit: int | None = None, force: bool
     J.save(jdf, jcfg["path"])
     J.mark_session(jcfg["state_path"], session)
 
-    age = (date.today() - ref).days
-    if age > 4:
-        notes.append(f"Latest price data is from {session} ({age} days old). "
-                     "The data source may be lagging.")
+    if stale:
+        notes.append(f"Price data is behind: latest session in the data is {session}, "
+                     f"but {expected.isoformat()} was a trading day. The data source is lagging.")
     if duplicate:
         notes.append("Same session as the previous run; picks were not added to the journal again.")
 
@@ -235,6 +237,7 @@ def run(cfg: dict, with_news: bool = True, limit: int | None = None, force: bool
               "rejected": rejected, "universe_size": len(symbols), "evaluated": len(current),
               "passed_gates": len(passed), "min_score": cfg["selection"]["min_score"],
               "duplicate": duplicate, "note": " ".join(notes), "macro": gm,
+              "stale": {"session": session, "expected": expected.isoformat()} if stale else None,
               "news_vetoed": [{"symbol": p["symbol"], "company": p["company"],
                                "reason": p["news"].get("reason"),
                                "headline": p["news"].get("key_headline"),

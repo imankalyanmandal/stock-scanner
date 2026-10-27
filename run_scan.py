@@ -8,6 +8,7 @@ from pathlib import Path
 
 import yaml
 
+from scanner import journal as J
 from scanner import notify
 from scanner.pipeline import run
 
@@ -29,7 +30,24 @@ def scan_and_notify(cfg: dict, with_news: bool = True, limit: int | None = None,
         if send:
             notify.send_failure(f"{type(e).__name__}: {e}\n{traceback.format_exc(limit=3)}")
         raise
-    if res.get("duplicate"):
+    st = res.get("stale")
+    state_path = cfg["journal"]["state_path"]
+    if st and res.get("duplicate"):
+        # nothing new to scan: the data source hasn't published the expected session yet
+        if not send:
+            status = {"sendMessage": "skipped: --no-notify"}
+        elif J.read_state(state_path).get("stale_warned_for") == st["expected"]:
+            status = {"sendMessage": f"skipped: data still behind ({st['session']} < "
+                                     f"{st['expected']}), already warned"}
+        else:
+            notify.LAST.clear()
+            notify._call("sendMessage", {"parse_mode": "HTML", "text": (
+                "⚠️ <b>No scan yet:</b> price data is behind.\n"
+                f"Latest session in the data: {st['session']}. Expected: {st['expected']} "
+                "(a trading day).\nThe next scheduled run will try again.")})
+            status = {"sendMessage": "stale-data warning: " + notify.LAST.get("sendMessage", "?")}
+            J.write_state(state_path, stale_warned_for=st["expected"])
+    elif res.get("duplicate"):
         logging.getLogger("run_scan").info("Session %s already scanned; no alert sent "
                                            "(use --force to resend)", res["session"])
         status = {"sendMessage": "skipped: session already alerted (run with --force to resend)"}

@@ -36,6 +36,8 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
         run: python -m scanner.macro reports/macro_check.json
+      - name: Check price data freshness (Yahoo)
+        run: python -m scanner.data reports/data_check.json
       - name: Commit result
         run: |
           git config user.name "github-actions[bot]"
