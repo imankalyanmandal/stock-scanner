@@ -109,13 +109,23 @@ def summary(df: pd.DataFrame) -> dict:
                                                     "r_multiple"]].to_dict("records")}
 
 
-def last_session(state_path: str) -> str | None:
+def read_state(state_path: str) -> dict:
     try:
-        return json.loads(Path(state_path).read_text()).get("last_session")
+        return json.loads(Path(state_path).read_text())
     except (OSError, ValueError):
-        return None
+        return {}
+
+
+def write_state(state_path: str, **updates) -> None:
+    st = read_state(state_path)
+    st.update(updates)
+    Path(state_path).parent.mkdir(parents=True, exist_ok=True)
+    Path(state_path).write_text(json.dumps(st))
+
+
+def last_session(state_path: str) -> str | None:
+    return read_state(state_path).get("last_session")
 
 
 def mark_session(state_path: str, session: str) -> None:
-    Path(state_path).parent.mkdir(parents=True, exist_ok=True)
-    Path(state_path).write_text(json.dumps({"last_session": session}))
+    write_state(state_path, last_session=session)

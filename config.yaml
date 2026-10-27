@@ -36,6 +36,11 @@ market:
   vix_extreme: 28             # India VIX at/above this -> no new longs
   sector_weak_pct: 40         # sector breadth (% above 50 DMA) below this -> weak_sector flag
   sector_min_count: 5         # sectors with fewer stocks than this are too small to judge
+  # NSE equity holidays (weekdays). Used to tell "no new data yet" from "market was closed".
+  # Update each December from NSE's circular for the next year.
+  holidays: [2026-01-15, 2026-01-26, 2026-03-03, 2026-03-26, 2026-03-31, 2026-04-03,
+             2026-04-14, 2026-05-01, 2026-05-28, 2026-06-26, 2026-09-14, 2026-10-02,
+             2026-10-20, 2026-11-10, 2026-11-24, 2026-12-25]
 
 gates:                        # hard rejects
   min_price: 50
