@@ -1,104 +1,112 @@
 {
-  "risk": "elevated",
-  "summary": "FII outflows and INR depreciation are headwinds despite easing oil prices and positive US tech sentiment. Fed rate hike uncertainty persists.",
+  "risk": "low",
+  "summary": "Crude oil prices fell significantly due to Middle East diplomacy, boosting global sentiment. Fed meeting uncertainty remains, but overall risk is low.",
   "sector_impacts": [
     {
-      "sector": "Financial Services",
+      "sector": "Oil Gas & Consumable Fuels",
       "direction": "negative",
-      "reason": "FII outflows and INR depreciation signal reduced foreign capital."
-    },
-    {
-      "sector": "Information Technology",
-      "direction": "positive",
-      "reason": "Strong rally in US tech/AI stocks suggests robust demand for services."
+      "reason": "Falling crude prices may impact upstream revenues."
     },
     {
       "sector": "Automobile and Auto Components",
       "direction": "positive",
-      "reason": "Falling crude oil prices reduce input costs and potentially boost consumer spending."
+      "reason": "Lower fuel costs benefit consumers and reduce logistics expenses."
+    },
+    {
+      "sector": "Fast Moving Consumer Goods",
+      "direction": "positive",
+      "reason": "Reduced input and logistics costs, potentially higher disposable income."
+    },
+    {
+      "sector": "Chemicals",
+      "direction": "positive",
+      "reason": "Lower crude oil prices reduce feedstock costs."
+    },
+    {
+      "sector": "Financial Services",
+      "direction": "positive",
+      "reason": "Lower inflation pressure and improved economic outlook."
     }
   ],
   "method": "gemini",
-  "llm_risk": "elevated",
-  "rule_risk": "elevated",
-  "rule_reasons": [
-    "4 shock headlines"
-  ],
+  "llm_risk": "low",
+  "rule_risk": "low",
+  "rule_reasons": [],
   "moves": {
     "sp500": {
-      "close": 7681.38,
-      "chg1_pct": 0.76,
-      "chg5_pct": -0.12,
-      "chg1_abs": 57.7,
+      "close": 7676.77,
+      "chg1_pct": 0.7,
+      "chg5_pct": -0.18,
+      "chg1_abs": 53.09,
       "date": "2026-10-26"
     },
     "nasdaq": {
-      "close": 26219.676,
-      "chg1_pct": 1.02,
-      "chg5_pct": -0.8,
-      "chg1_abs": 264.336,
+      "close": 26169.381,
+      "chg1_pct": 0.82,
+      "chg5_pct": -0.99,
+      "chg1_abs": 214.041,
       "date": "2026-10-26"
     },
     "brent": {
-      "close": 110.84,
-      "chg1_pct": -5.04,
-      "chg5_pct": 1.18,
-      "chg1_abs": -5.88,
+      "close": 109.7,
+      "chg1_pct": -6.01,
+      "chg5_pct": 0.14,
+      "chg1_abs": -7.02,
       "date": "2026-10-26"
     },
     "usdinr": {
       "close": 95.175,
-      "chg1_pct": 0.49,
-      "chg5_pct": 0.21,
-      "chg1_abs": 0.464,
-      "date": "2026-10-26"
+      "chg1_pct": 0.25,
+      "chg5_pct": 0.19,
+      "chg1_abs": 0.237,
+      "date": "2026-10-27"
     },
     "us10y": {
-      "close": 4.982,
-      "chg1_pct": -0.12,
-      "chg5_pct": -3.0,
-      "chg1_abs": -0.006,
+      "close": 4.986,
+      "chg1_pct": -0.04,
+      "chg5_pct": -2.92,
+      "chg1_abs": -0.002,
       "date": "2026-10-26"
     },
     "dxy": {
-      "close": 101.903,
-      "chg1_pct": 0.09,
-      "chg5_pct": -0.08,
-      "chg1_abs": 0.093,
+      "close": 102.05,
+      "chg1_pct": 0.24,
+      "chg5_pct": 0.07,
+      "chg1_abs": 0.24,
       "date": "2026-10-26"
     },
     "nikkei": {
-      "close": 62693.16,
-      "chg1_pct": -0.34,
-      "chg5_pct": -4.03,
-      "chg1_abs": -214.68,
-      "date": "2026-10-23"
+      "close": 63357.762,
+      "chg1_pct": 1.88,
+      "chg5_pct": -1.12,
+      "chg1_abs": 1168.113,
+      "date": "2026-10-27"
     },
     "hangseng": {
-      "close": 23093.369,
-      "chg1_pct": 0.69,
-      "chg5_pct": -4.03,
-      "chg1_abs": 158.689,
-      "date": "2026-10-23"
+      "close": 23112.289,
+      "chg1_pct": -0.43,
+      "chg5_pct": -3.17,
+      "chg1_abs": -99.521,
+      "date": "2026-10-27"
     }
   },
   "headline_count": 40,
   "query_status": {
-    "Federal Reserve interest rates": 100,
-    "Wall Street stocks": 40,
+    "Federal Reserve interest rates": 92,
+    "Wall Street stocks": 43,
     "crude oil prices": 100,
     "US tariffs India": 22,
-    "war geopolitical tensions": 52,
-    "FII outflows India": 19,
-    "rupee dollar": 73,
-    "China economy": 57,
-    "global recession": 46
+    "war geopolitical tensions": 56,
+    "FII outflows India": 20,
+    "rupee dollar": 61,
+    "China economy": 50,
+    "global recession": 47
   },
   "top_headlines": [
-    "Oil Prices Retreat as Fed and ECB Decisions Loom - FXEmpire",
-    "Wall St looks for best day in month as Anthropic's IPO filing propels AI stocks - The National",
-    "Federal Reserve meeting: Rice experts available to discuss interest rates, inflation and economic outlook - Rice University",
-    "Oil inches higher, stays near six-month highs on Saudi attacks - The Korea Times",
-    "Bitcoin Price Teeters At $80,000 As Traders Wait On Fed - Bitcoin Magazine"
+    "Gold, silver rates: What is weighing on prices and what investors should watch - CNBC TV18",
+    "Gold eases as stronger dollar weighs, Fed meeting in focus - The Economic Times",
+    "GIFT Nifty Signals Weak Start Near 22,670; Crude Oil at $109.84 and Central-Bank Decisions in Focus - Dalal Street Investment Journal",
+    "Gold Holds Above $4,000 per Ounce – Investors Await the U.S. Federal Reserve’s Decision - Українські Національні Новини (УНН)",
+    "PSX posts marginal gains despite uncertainty - Dawn"
   ]
 }
