@@ -23,7 +23,7 @@
     "size_mult": 0.0,
     "allow_new_longs": false,
     "block_reason": "weak market",
-    "macro_risk": "elevated",
+    "macro_risk": "low",
     "sectors": {
       "Automobile and Auto Components": {
         "breadth_pct": 0.0,
@@ -35,7 +35,7 @@
       },
       "Chemicals": {
         "breadth_pct": 0.0,
-        "count": 26
+        "count": 25
       },
       "Construction": {
         "breadth_pct": 0.0,
@@ -62,8 +62,8 @@
         "count": 28
       },
       "Financial Services": {
-        "breadth_pct": 8.333333333333332,
-        "count": 96
+        "breadth_pct": 8.24742268041237,
+        "count": 97
       },
       "Healthcare": {
         "breadth_pct": 6.8181818181818175,
@@ -507,14 +507,7 @@
     {
       "symbol": "ANURAS",
       "reasons": [
-        "below_50dma",
-        "50dma_below_200dma",
-        "50dma_not_rising",
-        "200dma_not_rising",
-        "too_close_to_52w_low",
-        "weak_rs_rank",
-        "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "no_data_or_short_history"
       ]
     },
     {
@@ -2674,7 +2667,15 @@
     {
       "symbol": "ICICILIFE",
       "reasons": [
-        "no_data_or_short_history"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -6060,72 +6061,70 @@
   "evaluated": 484,
   "passed_gates": 0,
   "min_score": 40,
-  "duplicate": false,
-  "note": "No new longs today (weak market). Setups shown as a watchlist only.",
+  "duplicate": true,
+  "note": "No new longs today (weak market). Setups shown as a watchlist only. Same session as the previous run; picks were not added to the journal again.",
   "macro": {
-    "risk": "elevated",
-    "summary": "Significant crude oil price drop is a major positive for India. US markets closed higher. Rupee weakened, but global sentiment not overtly negative. Fed uncertainty persists.",
+    "risk": "low",
+    "summary": "Global markets positive on falling oil prices and AI optimism. Rupee weakened, but crude drop is a major positive for India, easing inflation concerns.",
     "sector_impacts": [
       {
         "sector": "Oil Gas & Consumable Fuels",
         "direction": "negative",
-        "reason": "Crude price drop impacts upstream profitability."
+        "reason": "Falling crude prices reduce profitability."
       },
       {
         "sector": "Automobile and Auto Components",
         "direction": "positive",
-        "reason": "Lower fuel costs boost demand and reduce input costs."
-      },
-      {
-        "sector": "Fast Moving Consumer Goods",
-        "direction": "positive",
-        "reason": "Reduced logistics and input costs improve margins."
+        "reason": "Lower fuel costs and input prices benefit sector."
       },
       {
         "sector": "Chemicals",
         "direction": "positive",
-        "reason": "Lower crude prices reduce raw material costs."
+        "reason": "Reduced raw material costs from falling crude."
       },
       {
         "sector": "Information Technology",
         "direction": "positive",
-        "reason": "Weakening rupee increases export earnings."
+        "reason": "Strong Wall Street AI rally boosts global sentiment."
+      },
+      {
+        "sector": "Fast Moving Consumer Goods",
+        "direction": "positive",
+        "reason": "Lower oil prices may boost consumer spending."
       }
     ],
     "method": "gemini",
     "llm_risk": "low",
-    "rule_risk": "elevated",
-    "rule_reasons": [
-      "4 shock headlines"
-    ],
+    "rule_risk": "low",
+    "rule_reasons": [],
     "moves": {
       "sp500": {
-        "close": 7676.26,
-        "chg1_pct": 0.69,
-        "chg5_pct": -0.19,
-        "chg1_abs": 52.58,
+        "close": 7676.77,
+        "chg1_pct": 0.7,
+        "chg5_pct": -0.18,
+        "chg1_abs": 53.09,
         "date": "2026-10-26"
       },
       "nasdaq": {
-        "close": 26181.953,
-        "chg1_pct": 0.87,
-        "chg5_pct": -0.94,
-        "chg1_abs": 226.613,
+        "close": 26169.381,
+        "chg1_pct": 0.82,
+        "chg5_pct": -0.99,
+        "chg1_abs": 214.041,
         "date": "2026-10-26"
       },
       "brent": {
-        "close": 110.77,
-        "chg1_pct": -5.1,
-        "chg5_pct": 1.11,
-        "chg1_abs": -5.95,
+        "close": 110.03,
+        "chg1_pct": -5.73,
+        "chg5_pct": 0.44,
+        "chg1_abs": -6.69,
         "date": "2026-10-26"
       },
       "usdinr": {
         "close": 95.175,
-        "chg1_pct": 0.49,
-        "chg5_pct": 0.21,
-        "chg1_abs": 0.464,
-        "date": "2026-10-26"
+        "chg1_pct": 0.25,
+        "chg5_pct": 0.19,
+        "chg1_abs": 0.237,
+        "date": "2026-10-27"
       },
       "us10y": {
         "close": 4.986,
@@ -6135,18 +6134,18 @@
         "date": "2026-10-26"
       },
       "dxy": {
-        "close": 101.945,
-        "chg1_pct": 0.13,
-        "chg5_pct": -0.03,
-        "chg1_abs": 0.135,
+        "close": 102.023,
+        "chg1_pct": 0.21,
+        "chg5_pct": 0.04,
+        "chg1_abs": 0.213,
         "date": "2026-10-26"
       },
       "nikkei": {
-        "close": 62693.16,
-        "chg1_pct": -0.34,
-        "chg5_pct": -4.03,
-        "chg1_abs": -214.68,
-        "date": "2026-10-23"
+        "close": 63378.949,
+        "chg1_pct": 1.09,
+        "chg5_pct": -2.37,
+        "chg1_abs": 685.789,
+        "date": "2026-10-27"
       },
       "hangseng": {
         "close": 23093.369,
@@ -6159,21 +6158,21 @@
     "headline_count": 40,
     "query_status": {
       "Federal Reserve interest rates": 100,
-      "Wall Street stocks": 88,
+      "Wall Street stocks": 97,
       "crude oil prices": 100,
-      "US tariffs India": 22,
-      "war geopolitical tensions": 54,
-      "FII outflows India": 9,
-      "rupee dollar": 70,
-      "China economy": 56,
-      "global recession": 44
+      "US tariffs India": 21,
+      "war geopolitical tensions": 56,
+      "FII outflows India": 10,
+      "rupee dollar": 61,
+      "China economy": 48,
+      "global recession": 45
     },
     "top_headlines": [
-      "Bank of America still forecasts Fed rate hike this week, but with low confidence - The Business Journals",
-      "Rupee Falls To 94.98 Against US Dollar As Crude Oil Prices Rise - BW Businessworld",
-      "ASX set to edge up, Wall Street climbs; Anthropic files for IPO - SMH.com.au",
-      "India and US fine-tune trade pact after concluding most talks, says Piyush Goyal - The Economic Times",
-      "Wall St looks for best day in month as Anthropic's IPO filing propels AI stocks - The National"
+      "Rupee slips below to 95.18 against dollar on elevated oil prices - The Economic Times",
+      "(LEAD) Seoul stocks open higher on Wall Street gains, renewed AI optimism - Yonhap News Agency",
+      "Oil prices fall for the second consecutive day \u2013 talks on Iran raise hopes of an end to the escalation - \u0423\u043a\u0440\u0430\u0457\u043d\u0441\u044c\u043a\u0456 \u041d\u0430\u0446\u0456\u043e\u043d\u0430\u043b\u044c\u043d\u0456 \u041d\u043e\u0432\u0438\u043d\u0438 (\u0423\u041d\u041d)",
+      "World stocks gain ahead of 'formidable' week for risk; oil prices fall - The Star",
+      "In China, more than one in five workers is still employed in agriculture - Our World in Data"
     ]
   },
   "news_vetoed": [],
