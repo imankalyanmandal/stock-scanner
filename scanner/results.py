@@ -210,6 +210,7 @@ def parse_xbrl(xml: bytes | str, start: date, end: date) -> dict:
         except ValueError:
             continue
     out = {k: next((facts[t] for t in tags if t in facts), None) for k, tags in TAGS.items()}
+    out["_revenue_tag"] = next((t for t in TAGS["revenue"] if t in facts), None)
     out["_tags"] = sorted(facts)
     return out
 
@@ -242,7 +243,7 @@ def snapshot(client: NSEClient, symbol: str, cache_dir: str = "data/results") ->
     try:
         cached = json.loads(path.read_text())
         if cached.get("seq") == latest["seq"] and cached.get("xbrl") == latest["xbrl"] \
-                and cached.get("version") == 2:
+                and cached.get("version") == 3:
             return cached
     except (OSError, ValueError):
         pass
@@ -252,8 +253,9 @@ def snapshot(client: NSEClient, symbol: str, cache_dir: str = "data/results") ->
         if q:
             parsed[k] = parse_xbrl(client.get(q["xbrl"]).content, q["from"], q["to"])
     L, P, Y = parsed.get("latest", {}), parsed.get("prev", {}), parsed.get("year_ago", {})
+    bank = L.get("_revenue_tag") == "InterestEarned"   # operating margin isn't meaningful for banks
     out = {
-        "version": 2, "source": "nse", "symbol": symbol, "seq": latest["seq"], "xbrl": latest["xbrl"],
+        "version": 3, "source": "nse", "bank": bank, "symbol": symbol, "seq": latest["seq"], "xbrl": latest["xbrl"],
         "basis": sel["basis"],
         "quarter": quarter_label(latest["to"]), "period_end": latest["to"].isoformat(),
         "filed": latest["filed"].isoformat() if latest["filed"] else None,
@@ -264,7 +266,8 @@ def snapshot(client: NSEClient, symbol: str, cache_dir: str = "data/results") ->
         "profit_yoy_pct": _pct(L.get("net_profit"), Y.get("net_profit")),
         "revenue_qoq_pct": _pct(L.get("revenue"), P.get("revenue")),
         "profit_qoq_pct": _pct(L.get("net_profit"), P.get("net_profit")),
-        "op_margin_pct": _margin(L), "op_margin_year_ago_pct": _margin(Y),
+        "op_margin_pct": None if bank else _margin(L),
+        "op_margin_year_ago_pct": None if bank else _margin(Y),
         "loss": (L.get("net_profit") or 0) < 0,
         "missing": [k for k in ("revenue", "net_profit") if L.get(k) is None],
         "tags_seen": L.get("_tags", [])[:80] if L.get("revenue") is None or L.get("net_profit") is None else [],
@@ -334,7 +337,7 @@ def summary_line(s: dict | None) -> str:
     """Short human line for Telegram / report."""
     if not s or s.get("error"):
         return ""
-    bits = [f"{s['quarter']}"]
+    bits = [str(s.get('quarter', 'latest quarter'))]
     if s.get("revenue_yoy_pct") is not None:
         bits.append(f"Rev {s['revenue_yoy_pct']:+.0f}% YoY")
     if s.get("loss"):

@@ -10,6 +10,7 @@ from . import report
 from .data import download_prices, fetch_delivery
 from .enrich import upcoming_events
 from .news import bse_code_map, check_stock
+from .results import NSEClient, get_snapshot, results_calendar, summary_line
 from . import macro as M
 from .filters import (arrays, evaluate, features, liquidity_requirements, metrics_at,
                       momentum_rank_table, rs_rank_table, select, set_liquidity)
@@ -157,13 +158,28 @@ def run(cfg: dict, with_news: bool = True, limit: int | None = None, force: bool
             passed.append(row)
 
     # event risk on the survivors (network-heavy, so only here)
-    ecfg = cfg["events"]
+    ecfg, rcfg = cfg["events"], cfg.get("results", {})
     ref = date.fromisoformat(session)
+    nse, nse_cal = None, None
+    if rcfg.get("enabled") and with_news and passed:
+        nse = NSEClient(delay=rcfg.get("request_delay_sec", 1.0))
+        if rcfg.get("calendar", "nse") == "nse":
+            try:   # official board-meeting dates for results; Yahoo dates are the fallback
+                nse_cal = results_calendar(nse)
+            except Exception as e:
+                log.warning("NSE results calendar unavailable, using Yahoo dates: %s", e)
     survivors = []
     for p in passed:
         p["events"] = upcoming_events(p["symbol"], ref,
                                       max(ecfg["earnings_window_days"], ecfg["dividend_flag_days"]))
-        days = {e["type"]: (date.fromisoformat(e["date"]) - ref).days for e in p["events"]}
+        if nse_cal is not None:
+            p["events"] = [e for e in p["events"] if e["type"] != "earnings"] + [
+                {"type": "earnings", "date": d, "source": "nse"}
+                for d in nse_cal.get(p["symbol"].upper(), []) if d >= session]
+        days = {}
+        for e in p["events"]:
+            dd = (date.fromisoformat(e["date"]) - ref).days
+            days[e["type"]] = min(days.get(e["type"], 10 ** 6), dd)
         if "earnings" in days and days["earnings"] <= ecfg["earnings_window_days"]:
             if ecfg.get("reject_earnings", True):
                 rejected.append({"symbol": p["symbol"], "reasons": ["earnings_in_hold_window"]})
@@ -219,6 +235,22 @@ def run(cfg: dict, with_news: bool = True, limit: int | None = None, force: bool
     for p in picks + vetoed:
         p.update(size_position(p["trigger"], p["stop"], cfg, regime["size_mult"]))
         p["exit_plan"] = exit_plan_text(p, cfg)
+
+    # quarterly results snapshot (information only; never changes the selection)
+    if rcfg.get("enabled") and with_news:
+        for p in picks + watchlist:
+            try:
+                p["results"] = get_snapshot(nse, p["symbol"], cfg)
+            except Exception as e:
+                p["results"] = {"error": f"{type(e).__name__}"}
+            p["results_line"] = summary_line(p["results"])
+            r = p["results"]
+            if r.get("filed") and (ref - date.fromisoformat(r["filed"])).days <= 3:
+                p["flags"].append("results_just_out")
+            if r.get("loss") or (r.get("profit_yoy_pct") is not None and r["profit_yoy_pct"] < -10):
+                p["flags"].append("profit_down_yoy")
+            nxt = sorted(d for d in (nse_cal or {}).get(p["symbol"].upper(), []) if d >= session)
+            p["next_results"] = nxt[0] if nxt else None
 
     if not duplicate:
         jdf = J.add_picks(jdf, picks, session, regime)
