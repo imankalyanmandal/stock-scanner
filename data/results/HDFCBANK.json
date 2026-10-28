@@ -1,0 +1,23 @@
+{
+ "version": 1,
+ "source": "nse",
+ "symbol": "HDFCBANK",
+ "seq": "1190261",
+ "basis": "consolidated",
+ "quarter": "Q3 FY25",
+ "period_end": "2024-12-31",
+ "filed": "2025-01-23",
+ "audited": "Un-Audited",
+ "revenue_cr": 85040.2,
+ "net_profit_cr": 18340.1,
+ "eps": 23.11,
+ "revenue_yoy_pct": 9.0,
+ "profit_yoy_pct": 3.5,
+ "revenue_qoq_pct": 2.5,
+ "profit_qoq_pct": 2.9,
+ "op_margin_pct": -3.7,
+ "op_margin_year_ago_pct": -20.2,
+ "loss": false,
+ "missing": [],
+ "tags_seen": []
+}

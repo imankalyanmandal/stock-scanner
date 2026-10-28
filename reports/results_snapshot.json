@@ -1,0 +1,124 @@
+{
+  "calendar": {
+    "companies": 907,
+    "sample": {
+      "21STCENMGM": [
+        "2026-10-29"
+      ],
+      "3IINFOLTD": [
+        "2026-10-29"
+      ],
+      "ACI": [
+        "2026-10-29"
+      ],
+      "AHCL": [
+        "2026-10-29"
+      ],
+      "ALIVUS": [
+        "2026-10-29"
+      ]
+    },
+    "RELIANCE": [
+      "2026-10-30"
+    ],
+    "HDFCBANK": null,
+    "TCS": null,
+    "INFY": null
+  },
+  "RELIANCE": {
+    "version": 1,
+    "source": "nse",
+    "symbol": "RELIANCE",
+    "seq": "1189821",
+    "basis": "consolidated",
+    "quarter": "Q3 FY25",
+    "period_end": "2024-12-31",
+    "filed": "2025-01-16",
+    "audited": "Un-Audited",
+    "revenue_cr": 243865.0,
+    "net_profit_cr": 18540.0,
+    "eps": 13.7,
+    "revenue_yoy_pct": 7.0,
+    "profit_yoy_pct": 7.4,
+    "revenue_qoq_pct": 3.6,
+    "profit_qoq_pct": 11.9,
+    "op_margin_pct": 18.0,
+    "op_margin_year_ago_pct": 17.8,
+    "loss": false,
+    "missing": [],
+    "tags_seen": [],
+    "line": "Q3 FY25 \u00b7 Rev +7% YoY \u00b7 PAT +7% YoY \u00b7 margin 18% (+0.2pp) \u00b7 filed 2025-01-16"
+  },
+  "HDFCBANK": {
+    "version": 1,
+    "source": "nse",
+    "symbol": "HDFCBANK",
+    "seq": "1190261",
+    "basis": "consolidated",
+    "quarter": "Q3 FY25",
+    "period_end": "2024-12-31",
+    "filed": "2025-01-23",
+    "audited": "Un-Audited",
+    "revenue_cr": 85040.2,
+    "net_profit_cr": 18340.1,
+    "eps": 23.11,
+    "revenue_yoy_pct": 9.0,
+    "profit_yoy_pct": 3.5,
+    "revenue_qoq_pct": 2.5,
+    "profit_qoq_pct": 2.9,
+    "op_margin_pct": -3.7,
+    "op_margin_year_ago_pct": -20.2,
+    "loss": false,
+    "missing": [],
+    "tags_seen": [],
+    "line": "Q3 FY25 \u00b7 Rev +9% YoY \u00b7 PAT +4% YoY \u00b7 margin -4% (+16.5pp) \u00b7 filed 2025-01-23"
+  },
+  "TCS": {
+    "version": 1,
+    "source": "nse",
+    "symbol": "TCS",
+    "seq": "1189599",
+    "basis": "consolidated",
+    "quarter": "Q3 FY25",
+    "period_end": "2024-12-31",
+    "filed": "2025-01-09",
+    "audited": "Audited",
+    "revenue_cr": 63973.0,
+    "net_profit_cr": 12380.0,
+    "eps": 34.21,
+    "revenue_yoy_pct": 5.6,
+    "profit_yoy_pct": 12.0,
+    "revenue_qoq_pct": -0.4,
+    "profit_qoq_pct": 4.0,
+    "op_margin_pct": 26.6,
+    "op_margin_year_ago_pct": 25.5,
+    "loss": false,
+    "missing": [],
+    "tags_seen": [],
+    "line": "Q3 FY25 \u00b7 Rev +6% YoY \u00b7 PAT +12% YoY \u00b7 margin 27% (+1.1pp) \u00b7 filed 2025-01-09"
+  },
+  "INFY": {
+    "version": 1,
+    "source": "nse",
+    "symbol": "INFY",
+    "seq": "1189811",
+    "basis": "consolidated",
+    "quarter": "Q3 FY25",
+    "period_end": "2024-12-31",
+    "filed": "2025-01-16",
+    "audited": "Audited",
+    "revenue_cr": 41764.0,
+    "net_profit_cr": 6806.0,
+    "eps": 16.43,
+    "revenue_yoy_pct": 7.6,
+    "profit_yoy_pct": 11.5,
+    "revenue_qoq_pct": 1.9,
+    "profit_qoq_pct": 4.6,
+    "op_margin_pct": 24.2,
+    "op_margin_year_ago_pct": 23.5,
+    "loss": false,
+    "missing": [],
+    "tags_seen": [],
+    "line": "Q3 FY25 \u00b7 Rev +8% YoY \u00b7 PAT +12% YoY \u00b7 margin 24% (+0.7pp) \u00b7 filed 2025-01-16"
+  }
+}

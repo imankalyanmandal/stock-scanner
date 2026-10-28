@@ -1,0 +1,23 @@
+{
+ "version": 1,
+ "source": "nse",
+ "symbol": "RELIANCE",
+ "seq": "1189821",
+ "basis": "consolidated",
+ "quarter": "Q3 FY25",
+ "period_end": "2024-12-31",
+ "filed": "2025-01-16",
+ "audited": "Un-Audited",
+ "revenue_cr": 243865.0,
+ "net_profit_cr": 18540.0,
+ "eps": 13.7,
+ "revenue_yoy_pct": 7.0,
+ "profit_yoy_pct": 7.4,
+ "revenue_qoq_pct": 3.6,
+ "profit_qoq_pct": 11.9,
+ "op_margin_pct": 18.0,
+ "op_margin_year_ago_pct": 17.8,
+ "loss": false,
+ "missing": [],
+ "tags_seen": []
+}
