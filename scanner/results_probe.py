@@ -95,7 +95,16 @@ def probe_yahoo() -> dict:
     return res
 
 
-if __name__ == "__main__":
+def _main():
+    if "--deep" in sys.argv:
+        out = deep_probe()
+        target = [a for a in sys.argv[1:] if not a.startswith("--")]
+        text = json.dumps(out, indent=2, default=str)
+        print(text[:2000])
+        if target:
+            Path(target[0]).parent.mkdir(parents=True, exist_ok=True)
+            Path(target[0]).write_text(text + "\n")
+        return
     out = {"utc_now": datetime.now(timezone.utc).isoformat(timespec="seconds"),
            "nse": probe_nse(), "yahoo": probe_yahoo(),
            "note": "Yahoo revenue/profit figures are in Rs crore"}
@@ -104,3 +113,47 @@ if __name__ == "__main__":
     if len(sys.argv) > 1:
         Path(sys.argv[1]).parent.mkdir(parents=True, exist_ok=True)
         Path(sys.argv[1]).write_text(text + "\n")
+
+
+def deep_probe() -> dict:
+    """Full sample records + one XBRL file, to design the parser against the real format."""
+    out = {}
+    s = requests.Session()
+    s.headers.update({"User-Agent": UA, "Accept": "*/*", "Accept-Language": "en-US,en;q=0.9",
+                      "Referer": f"{NSE}/"})
+    s.get(NSE, timeout=20)
+    time.sleep(1.5)
+    r = s.get(f"{NSE}/api/corporates-financial-results?index=equities&symbol=RELIANCE&period=Quarterly",
+              timeout=20)
+    rows = r.json() if r.ok else []
+    out["fin_results_first3"] = rows[:3]
+    time.sleep(1.5)
+    for name, url in {
+        "results_comparison_RELIANCE": f"{NSE}/api/results-comparision?symbol=RELIANCE",
+        "results_comparison_HDFCBANK": f"{NSE}/api/results-comparision?symbol=HDFCBANK",
+    }.items():
+        try:
+            rr = s.get(url, timeout=20)
+            out[name] = {"status": rr.status_code, "body_head": rr.text[:4000]}
+        except requests.RequestException as e:
+            out[name] = f"error {type(e).__name__}"
+        time.sleep(1.5)
+    xbrl = next((x.get("xbrl") for x in rows if str(x.get("xbrl", "")).startswith("http")), None)
+    out["xbrl_url"] = xbrl
+    if xbrl:
+        try:
+            xr = s.get(xbrl, timeout=30)
+            out["xbrl"] = {"status": xr.status_code, "bytes": len(xr.content),
+                           "head": xr.text[:6000]}
+        except requests.RequestException as e:
+            out["xbrl"] = f"error {type(e).__name__}"
+    time.sleep(1.5)
+    ev = s.get(f"{NSE}/api/event-calendar?index=equities", timeout=20)
+    evj = ev.json() if ev.ok else []
+    out["event_calendar_first5"] = evj[:5]
+    out["event_purposes_sample"] = sorted({str(x.get("purpose", ""))[:60] for x in evj})[:25]
+    return out
+
+
+if __name__ == "__main__":
+    _main()

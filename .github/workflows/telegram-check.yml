@@ -40,6 +40,8 @@ jobs:
         run: python -m scanner.data reports/data_check.json
       - name: Check quarterly results sources (NSE, Yahoo)
         run: python -m scanner.results_probe reports/results_check.json
+      - name: Sample NSE results format (for the results parser)
+        run: python -m scanner.results_probe --deep reports/results_deep.json
       - name: Commit result
         run: |
           git config user.name "github-actions[bot]"
