@@ -844,3 +844,71 @@ def test_stale_data_sends_one_warning(monkeypatch, tmp_path):
     monkeypatch.setattr(run_scan, "run", lambda *a, **k: {"session": "2026-10-26", "duplicate": True, "stale": None})
     r3 = run_scan.scan_and_notify(cfg)
     assert len(sent) == 1 and r3["notify"]["sendMessage"].startswith("skipped: session already alerted")
+
+
+# ------------------------------------------------------------------ quarterly results
+XBRL_SAMPLE = """<?xml version="1.0" encoding="UTF-8"?>
+<xbrli:xbrl xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:in-bse-fin="http://www.bseindia.com/xbrl/fin/2020-03-31/in-bse-fin" xmlns:xbrldi="http://xbrl.org/2006/xbrldi">
+<xbrli:context id="OneD"><xbrli:entity><xbrli:identifier scheme="x">ACME</xbrli:identifier></xbrli:entity>
+<xbrli:period><xbrli:startDate>2026-07-01</xbrli:startDate><xbrli:endDate>2026-09-30</xbrli:endDate></xbrli:period></xbrli:context>
+<xbrli:context id="Seg1"><xbrli:entity><xbrli:identifier scheme="x">ACME</xbrli:identifier><xbrli:segment><xbrldi:explicitMember dimension="a">b</xbrldi:explicitMember></xbrli:segment></xbrli:entity>
+<xbrli:period><xbrli:startDate>2026-07-01</xbrli:startDate><xbrli:endDate>2026-09-30</xbrli:endDate></xbrli:period></xbrli:context>
+<xbrli:context id="HalfYear"><xbrli:entity><xbrli:identifier scheme="x">ACME</xbrli:identifier></xbrli:entity>
+<xbrli:period><xbrli:startDate>2026-04-01</xbrli:startDate><xbrli:endDate>2026-09-30</xbrli:endDate></xbrli:period></xbrli:context>
+<in-bse-fin:RevenueFromOperations contextRef="OneD" unitRef="INR" decimals="-5">{rev}</in-bse-fin:RevenueFromOperations>
+<in-bse-fin:RevenueFromOperations contextRef="Seg1" unitRef="INR" decimals="-5">999</in-bse-fin:RevenueFromOperations>
+<in-bse-fin:RevenueFromOperations contextRef="HalfYear" unitRef="INR" decimals="-5">888</in-bse-fin:RevenueFromOperations>
+<in-bse-fin:ProfitLossForPeriod contextRef="OneD" unitRef="INR" decimals="-5">{np}</in-bse-fin:ProfitLossForPeriod>
+<in-bse-fin:ProfitBeforeTax contextRef="OneD" unitRef="INR" decimals="-5">{pbt}</in-bse-fin:ProfitBeforeTax>
+<in-bse-fin:FinanceCosts contextRef="OneD" unitRef="INR" decimals="-5">1000000000</in-bse-fin:FinanceCosts>
+<in-bse-fin:DepreciationDepletionAndAmortisationExpense contextRef="OneD" unitRef="INR" decimals="-5">2000000000</in-bse-fin:DepreciationDepletionAndAmortisationExpense>
+<in-bse-fin:OtherIncome contextRef="OneD" unitRef="INR" decimals="-5">500000000</in-bse-fin:OtherIncome>
+</xbrli:xbrl>"""
+
+
+def test_parse_xbrl_picks_quarter_totals_only():
+    from datetime import date
+    from scanner.results import parse_xbrl
+    x = XBRL_SAMPLE.format(rev=100000000000, np=12000000000, pbt=16000000000)
+    m = parse_xbrl(x, date(2026, 7, 1), date(2026, 9, 30))
+    assert m["revenue"] == 1e11 and m["net_profit"] == 1.2e10   # not the segment or half-year values
+    assert "RevenueFromOperations" in m["_tags"]
+
+
+def test_pick_filings_and_snapshot(monkeypatch, tmp_path):
+    from scanner import results as R
+
+    def row(frm, to, cons, seq, url):
+        return {"period": "Quarterly", "fromDate": frm, "toDate": to, "xbrl": url, "seqNumber": seq,
+                "consolidated": "Consolidated" if cons else "Non-Consolidated",
+                "filingDate": "20-Oct-2026 18:00", "audited": "Un-Audited"}
+    rows = [row("01-Apr-2026", "30-Jun-2026", True, "2", "u_prev"),
+            row("01-Jul-2026", "30-Sep-2026", False, "3", "u_latest_sa"),
+            row("01-Jul-2026", "30-Sep-2026", True, "4", "u_latest"),
+            row("01-Jul-2025", "30-Sep-2025", True, "1", "u_yago"),
+            row("01-Apr-2026", "30-Sep-2026", True, "5", "u_halfyear")]          # 6-month filing ignored
+    sel = R.pick_filings(rows)
+    assert sel["basis"] == "consolidated"
+    assert (sel["latest"]["xbrl"], sel["prev"]["xbrl"], sel["year_ago"]["xbrl"]) == ("u_latest", "u_prev", "u_yago")
+    docs = {"u_latest": XBRL_SAMPLE.format(rev=110e9, np=13.2e9, pbt=17e9),
+            "u_yago": XBRL_SAMPLE.format(rev=100e9, np=12e9, pbt=16e9).replace("2026-07-01", "2025-07-01").replace("2026-09-30", "2025-09-30").replace("2026-04-01", "2025-04-01"),
+            "u_prev": XBRL_SAMPLE.format(rev=105e9, np=11e9, pbt=15e9).replace("2026-07-01", "2026-04-01").replace("2026-09-30", "2026-06-30")}
+
+    class Fake:
+        calls = 0
+        def json(self, path):
+            return rows
+        def get(self, url):
+            Fake.calls += 1
+            class Resp:
+                content = docs[url].encode()
+            return Resp()
+    s = R.snapshot(Fake(), "ACME", str(tmp_path))
+    assert s["quarter"] == "Q2 FY27" and s["basis"] == "consolidated"
+    assert s["revenue_cr"] == 11000.0 and s["revenue_yoy_pct"] == 10.0 and s["profit_yoy_pct"] == 10.0
+    assert s["revenue_qoq_pct"] == round((110 / 105 - 1) * 100, 1)
+    assert s["op_margin_pct"] == round((17e9 + 1e9 + 2e9 - 0.5e9) / 110e9 * 100, 1)
+    n = Fake.calls
+    R.snapshot(Fake(), "ACME", str(tmp_path))         # same filing -> cached, no XBRL downloads
+    assert Fake.calls == n
+    assert "Q2 FY27 · Rev +10% YoY · PAT +10% YoY" in R.summary_line(s)

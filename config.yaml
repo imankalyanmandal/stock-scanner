@@ -193,6 +193,13 @@ macro:                        # global / international risk check (see scanner/m
     us10y_move_bp: 15
     shock_headlines_elevated: 4
 
+results:                      # quarterly results (NSE filings; information + earnings-date check)
+  enabled: true
+  calendar: nse               # upcoming results dates: nse (official board meetings) | yahoo
+  cache_dir: data/results     # one file per company, refreshed when a newer filing appears
+  request_delay_sec: 1.0      # pause between NSE requests
+  yahoo_fallback: true
+
 journal:
   path: data/journal.csv
   state_path: data/state.json # remembers the last scanned session to avoid duplicate alerts
