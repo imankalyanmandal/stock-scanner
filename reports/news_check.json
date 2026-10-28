@@ -6,8 +6,8 @@
   "sources": {
     "google": "ok (8)"
   },
-  "gemini": "ok: negative",
-  "groq": "ok: neutral",
+  "gemini": "ok: positive",
+  "groq": "ok: negative",
   "models_in_use": {
     "gemini": "gemini-2.5-flash",
     "groq": "openai/gpt-oss-120b"

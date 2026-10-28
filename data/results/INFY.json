@@ -1,6 +1,7 @@
 {
- "version": 2,
+ "version": 3,
  "source": "nse",
+ "bank": false,
  "symbol": "INFY",
  "seq": "203729",
  "xbrl": "https://nsearchives.nseindia.com/corporate/xbrl/INTEGRATED_FILING_INDAS_1745058_23102026082117_WEB.xml",

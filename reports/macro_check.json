@@ -1,34 +1,34 @@
 {
   "risk": "elevated",
-  "summary": "Rising global crude oil prices due to Middle East tensions and supply concerns, coupled with INR depreciation, create headwinds for Indian equities despite stable US markets.",
+  "summary": "Elevated risk as rising oil prices and commodity outlook create headwinds, while Fed likely holds rates, limiting upside.",
   "sector_impacts": [
     {
       "sector": "Oil Gas & Consumable Fuels",
-      "direction": "negative",
-      "reason": "Higher import bill, potential margin pressure for downstream companies."
+      "direction": "positive",
+      "reason": "Crude price rise from supply concerns"
     },
     {
-      "sector": "Automobile and Auto Components",
+      "sector": "Information Technology",
       "direction": "negative",
-      "reason": "Higher fuel costs for consumers, increased input costs for manufacturers."
+      "reason": "Higher costs and global rate uncertainty"
     },
     {
-      "sector": "Chemicals",
+      "sector": "Financial Services",
       "direction": "negative",
-      "reason": "Crude derivatives are key raw materials, increasing input costs significantly."
+      "reason": "Potential credit strain from oil‑driven inflation"
     },
     {
-      "sector": "Fast Moving Consumer Goods",
+      "sector": "Consumer Durables",
       "direction": "negative",
-      "reason": "Higher logistics, packaging costs, and potential demand slowdown."
+      "reason": "Rising input costs dampen demand"
     },
     {
-      "sector": "Construction Materials",
+      "sector": "Metals & Mining",
       "direction": "negative",
-      "reason": "Higher energy and transportation costs for production and delivery."
+      "reason": "Higher energy costs squeeze margins"
     }
   ],
-  "method": "gemini",
+  "method": "groq",
   "llm_risk": "elevated",
   "rule_risk": "elevated",
   "rule_reasons": [
@@ -36,24 +36,24 @@
   ],
   "moves": {
     "sp500": {
-      "close": 7721.74,
-      "chg1_pct": -0.01,
-      "chg5_pct": -0.46,
-      "chg1_abs": -0.86,
+      "close": 7728.67,
+      "chg1_pct": 0.08,
+      "chg5_pct": -0.37,
+      "chg1_abs": 6.07,
       "date": "2026-10-28"
     },
     "nasdaq": {
-      "close": 26448.527,
-      "chg1_pct": -0.11,
-      "chg5_pct": -0.95,
-      "chg1_abs": -29.283,
+      "close": 26467.789,
+      "chg1_pct": -0.04,
+      "chg5_pct": -0.88,
+      "chg1_abs": -10.021,
       "date": "2026-10-28"
     },
     "brent": {
-      "close": 111.5,
-      "chg1_pct": -2.09,
-      "chg5_pct": 2.46,
-      "chg1_abs": -2.38,
+      "close": 111.37,
+      "chg1_pct": -2.2,
+      "chg5_pct": 2.34,
+      "chg1_abs": -2.51,
       "date": "2026-10-28"
     },
     "usdinr": {
@@ -64,17 +64,17 @@
       "date": "2026-10-28"
     },
     "us10y": {
-      "close": 4.995,
-      "chg1_pct": 0.04,
-      "chg5_pct": -2.93,
-      "chg1_abs": 0.002,
+      "close": 5.003,
+      "chg1_pct": 0.2,
+      "chg5_pct": -2.78,
+      "chg1_abs": 0.01,
       "date": "2026-10-28"
     },
     "dxy": {
-      "close": 102.324,
-      "chg1_pct": 0.0,
-      "chg5_pct": 0.53,
-      "chg1_abs": 0.004,
+      "close": 102.333,
+      "chg1_pct": 0.01,
+      "chg5_pct": 0.54,
+      "chg1_abs": 0.013,
       "date": "2026-10-28"
     },
     "nikkei": {
@@ -94,21 +94,21 @@
   },
   "headline_count": 40,
   "query_status": {
-    "Federal Reserve interest rates": 82,
-    "Wall Street stocks": 40,
+    "Federal Reserve interest rates": 80,
+    "Wall Street stocks": 100,
     "crude oil prices": 100,
     "US tariffs India": 31,
-    "war geopolitical tensions": 32,
+    "war geopolitical tensions": 14,
     "FII outflows India": 16,
-    "rupee dollar": 76,
+    "rupee dollar": 78,
     "China economy": 91,
-    "global recession": 44
+    "global recession": 43
   },
   "top_headlines": [
-    "US stocks hold steady as the countdown ticks to a Federal Reserve decision on interest rates - The Northern Virginia Daily",
+    "US stocks hold steady as the countdown ticks to a Federal Reserve decision on interest rates - San Antonio Express-News",
+    "Crude Oil Price Forecast: Oil Supplies Remain Tight - FXEmpire",
     "Today’s Mortgage Rates, October 28: 30-Year Fixed Drops 9 Basis Points - Norada Real Estate Investments",
-    "Dow Jones Holds Steady Ahead of Fed Rate Decision - TipRanks",
-    "World Bank sees commodity prices up 23% in 2026 due to Middle East war, other shocks - CNA",
-    "US stocks edge higher ahead of Federal Reserve decision on interest rates - Ottumwa Courier"
+    "US stocks edge higher ahead of Federal Reserve decision on interest rates - Castanet",
+    "Dow Jones Holds Steady Ahead of Fed Rate Decision - TipRanks"
   ]
 }

@@ -1,6 +1,7 @@
 {
- "version": 2,
+ "version": 3,
  "source": "nse",
+ "bank": true,
  "symbol": "HDFCBANK",
  "seq": "202132",
  "xbrl": "https://nsearchives.nseindia.com/corporate/xbrl/INTEGRATED_FILING_BANKING_1740913_17102026054812_WEB.xml",
@@ -16,8 +17,8 @@
  "profit_yoy_pct": 5.6,
  "revenue_qoq_pct": 5.0,
  "profit_qoq_pct": 1.6,
- "op_margin_pct": -6.7,
- "op_margin_year_ago_pct": -6.5,
+ "op_margin_pct": null,
+ "op_margin_year_ago_pct": null,
  "loss": false,
  "missing": [],
  "tags_seen": []

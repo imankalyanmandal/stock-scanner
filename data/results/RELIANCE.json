@@ -1,6 +1,7 @@
 {
- "version": 2,
+ "version": 3,
  "source": "nse",
+ "bank": false,
  "symbol": "RELIANCE",
  "seq": "175608",
  "xbrl": "https://nsearchives.nseindia.com/corporate/xbrl/INTEGRATED_FILING_INDAS_1695741_17072026075004_WEB.xml",

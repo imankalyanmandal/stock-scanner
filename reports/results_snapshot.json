@@ -72,8 +72,9 @@
     ]
   },
   "RELIANCE": {
-    "version": 2,
+    "version": 3,
     "source": "nse",
+    "bank": false,
     "symbol": "RELIANCE",
     "seq": "175608",
     "xbrl": "https://nsearchives.nseindia.com/corporate/xbrl/INTEGRATED_FILING_INDAS_1695741_17072026075004_WEB.xml",
@@ -97,8 +98,9 @@
     "line": "Q1 FY27 \u00b7 Rev +25% YoY \u00b7 PAT -22% YoY \u00b7 margin 15% (-2.1pp) \u00b7 filed 2026-07-17"
   },
   "HDFCBANK": {
-    "version": 2,
+    "version": 3,
     "source": "nse",
+    "bank": true,
     "symbol": "HDFCBANK",
     "seq": "202132",
     "xbrl": "https://nsearchives.nseindia.com/corporate/xbrl/INTEGRATED_FILING_BANKING_1740913_17102026054812_WEB.xml",
@@ -114,16 +116,17 @@
     "profit_yoy_pct": 5.6,
     "revenue_qoq_pct": 5.0,
     "profit_qoq_pct": 1.6,
-    "op_margin_pct": -6.7,
-    "op_margin_year_ago_pct": -6.5,
+    "op_margin_pct": null,
+    "op_margin_year_ago_pct": null,
     "loss": false,
     "missing": [],
     "tags_seen": [],
-    "line": "Q2 FY27 \u00b7 Rev +9% YoY \u00b7 PAT +6% YoY \u00b7 margin -7% (-0.2pp) \u00b7 filed 2026-10-17"
+    "line": "Q2 FY27 \u00b7 Rev +9% YoY \u00b7 PAT +6% YoY \u00b7 filed 2026-10-17"
   },
   "TCS": {
-    "version": 2,
+    "version": 3,
     "source": "nse",
+    "bank": false,
     "symbol": "TCS",
     "seq": "200121",
     "xbrl": "https://nsearchives.nseindia.com/corporate/xbrl/INTEGRATED_FILING_INDAS_1734607_08102026100810_WEB.xml",
@@ -147,8 +150,9 @@
     "line": "Q2 FY27 \u00b7 Rev +11% YoY \u00b7 PAT +15% YoY \u00b7 margin 26% (+0.1pp) \u00b7 filed 2026-10-08"
   },
   "INFY": {
-    "version": 2,
+    "version": 3,
     "source": "nse",
+    "bank": false,
     "symbol": "INFY",
     "seq": "203729",
     "xbrl": "https://nsearchives.nseindia.com/corporate/xbrl/INTEGRATED_FILING_INDAS_1745058_23102026082117_WEB.xml",

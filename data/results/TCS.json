@@ -1,6 +1,7 @@
 {
- "version": 2,
+ "version": 3,
  "source": "nse",
+ "bank": false,
  "symbol": "TCS",
  "seq": "200121",
  "xbrl": "https://nsearchives.nseindia.com/corporate/xbrl/INTEGRATED_FILING_INDAS_1734607_08102026100810_WEB.xml",
