@@ -82,6 +82,8 @@ def format_summary(result: dict, max_picks: int = 5, report_url: str | None = No
             lines.append("   📰 no news in the last 3 days")
         elif nw.get("verdict") == "unchecked":
             lines.append("   📰 news not checked")
+        if p.get("results_line"):
+            lines.append(f"   📊 {e(p['results_line'])}")
     if len(picks) > max_picks:
         lines.append(f"\n…and {len(picks) - max_picks} more in the full report")
     if not picks:

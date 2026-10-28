@@ -97,6 +97,9 @@ def _card(p, watch=False):
   {'' if watch else f"<div class=plan>{html.escape(p.get('exit_plan', ''))}</div>"}
   <div class=m>Score parts: {comps}</div>
   <div class=m>Events: {html.escape(_events(p)) or 'none in window'}</div>
+  {f"<div class=m><b>Results:</b> {html.escape(p['results_line'])}"
+   f"{' · next results ' + html.escape(p['next_results']) if p.get('next_results') else ''}</div>"
+   if p.get('results_line') else ''}
   {news_line}
   {f'<ul class=news>{news}</ul>' if news else ''}
 </div>"""

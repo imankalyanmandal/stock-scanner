@@ -290,6 +290,9 @@ def _cfg(tmp_path):
     cfg["journal"] = {"path": str(tmp_path / "journal.csv"), "state_path": str(tmp_path / "state.json")}
     cfg["universe"]["exclude_file"] = str(tmp_path / "none.csv")
     cfg["macro"]["enabled"] = False      # network; tested separately with mocks
+    cfg["news"]["enabled"] = False
+    cfg["results"]["cache_dir"] = str(tmp_path / "results")
+    cfg["results"]["enabled"] = False    # network; tested separately with mocks
     return cfg
 
 
@@ -652,6 +655,8 @@ def test_pipeline_vetoes_negative_news_and_refills(monkeypatch, tmp_path):
                 "items": [], "sources": {}, "keyword_alert": False}
     monkeypatch.setattr(pipeline, "check_stock", fake_check)
     cfg2 = _cfg(tmp_path / "second")
+    cfg2["news"]["enabled"] = True
+    cfg2["results"]["enabled"] = False
     res = pipeline.run(cfg2, with_news=True)
     syms_picked = [p["symbol"] for p in res["picks"]]
     assert bad not in syms_picked
@@ -928,3 +933,34 @@ def test_normalize_integrated_rows():
     sel = pick_filings(n)
     assert sel["latest"]["xbrl"] == "https://x/a.xml" and sel["year_ago"]["xbrl"] == "https://x/c.xml"
     assert sel["prev"] is None
+
+
+
+def test_pipeline_uses_nse_results_calendar_and_snapshot(monkeypatch, tmp_path):
+    syms, uni = _universe(30)
+    data = _market(syms)
+    monkeypatch.setattr(pipeline, "load_universe", lambda *a, **k: uni)
+    monkeypatch.setattr(pipeline, "download_prices", lambda s, **k: {x: data[x] for x in s if x in data})
+    monkeypatch.setattr(pipeline, "fetch_delivery", lambda d: {})
+    monkeypatch.setattr(pipeline, "upcoming_events", lambda *a: [])
+    base = pipeline.run(_cfg(tmp_path), with_news=False)
+    first = base["picks"][0]["symbol"]
+
+    class FakeClient:
+        def __init__(self, **k):
+            pass
+    monkeypatch.setattr(pipeline, "NSEClient", FakeClient)
+    monkeypatch.setattr(pipeline, "results_calendar", lambda c: {first: ["2026-10-29"], "S1": ["2026-12-20"]})
+    snap = {"source": "nse", "quarter": "Q2 FY27", "filed": "2026-10-10", "revenue_yoy_pct": 12.0,
+            "profit_yoy_pct": -15.0, "op_margin_pct": 20.0, "op_margin_year_ago_pct": 21.0, "loss": False}
+    monkeypatch.setattr(pipeline, "get_snapshot", lambda c, sym, cfg: dict(snap))
+    cfg_b = _cfg(tmp_path / "b")
+    cfg_b["results"]["enabled"] = True
+    res = pipeline.run(cfg_b, with_news=True)
+    assert first not in [p["symbol"] for p in res["picks"]]              # results due in 6 days
+    assert any("earnings_in_hold_window" in r["reasons"] for r in res["rejected"] if r["symbol"] == first)
+    p = res["picks"][0]
+    assert p["results_line"].startswith("Q2 FY27 · Rev +12% YoY · PAT -15% YoY")
+    assert "profit_down_yoy" in p["flags"] and "results_just_out" not in p["flags"]
+    from scanner import notify
+    assert "📊 Q2 FY27" in notify.format_summary(res)

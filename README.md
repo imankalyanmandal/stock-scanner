@@ -98,6 +98,18 @@ classifies them with **Gemini**, falling back to **Groq**, then to keyword match
 last 8 hours for the pending picks and sends a Telegram message: all clear, or which buy-stop to
 cancel.
 
+### Quarterly results
+
+`scanner/results.py` reads results straight from NSE's official filings, from GitHub:
+- **Results calendar** (NSE board meetings with purpose "Financial Results"): a stock whose results
+  are due within 14 days is rejected (`earnings_in_hold_window`). Yahoo dates are the fallback.
+- **Results snapshot** for each pick and watchlist stock, information only: latest quarter's revenue
+  and net profit, YoY and QoQ growth, operating margin vs a year ago (not shown for banks), filing
+  date. Parsed from the XBRL files of NSE's Integrated Filing (Mar-2025 quarter onwards) and the
+  older Reg-33 filings, preferring consolidated figures. Cached per company in `data/results/` and
+  refreshed only when a newer filing appears. Flags: `results_just_out` (filed within 3 days),
+  `profit_down_yoy` (profit down >10% or a loss).
+
 ### Global (international) risk
 
 Each scan also runs `scanner/macro.py`:
