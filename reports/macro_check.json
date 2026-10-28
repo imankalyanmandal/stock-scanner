@@ -1,112 +1,114 @@
 {
-  "risk": "low",
-  "summary": "Crude oil prices fell significantly due to Middle East diplomacy, boosting global sentiment. Fed meeting uncertainty remains, but overall risk is low.",
+  "risk": "elevated",
+  "summary": "Mixed global cues: Fed likely hold rates, rising oil and commodity prices, slight rupee weakening; moderate headwinds suggest elevated risk for new longs.",
   "sector_impacts": [
     {
       "sector": "Oil Gas & Consumable Fuels",
-      "direction": "negative",
-      "reason": "Falling crude prices may impact upstream revenues."
+      "direction": "positive",
+      "reason": "Higher global oil prices boost earnings"
     },
     {
       "sector": "Automobile and Auto Components",
-      "direction": "positive",
-      "reason": "Lower fuel costs benefit consumers and reduce logistics expenses."
+      "direction": "negative",
+      "reason": "Rupee weakening raises import costs"
     },
     {
-      "sector": "Fast Moving Consumer Goods",
+      "sector": "Metals & Mining",
       "direction": "positive",
-      "reason": "Reduced input and logistics costs, potentially higher disposable income."
-    },
-    {
-      "sector": "Chemicals",
-      "direction": "positive",
-      "reason": "Lower crude oil prices reduce feedstock costs."
+      "reason": "Commodity price surge lifts metal prices"
     },
     {
       "sector": "Financial Services",
-      "direction": "positive",
-      "reason": "Lower inflation pressure and improved economic outlook."
+      "direction": "negative",
+      "reason": "Potential rate hike could tighten credit"
+    },
+    {
+      "sector": "Consumer Durables",
+      "direction": "negative",
+      "reason": "Higher input costs from oil and weak rupee"
     }
   ],
-  "method": "gemini",
-  "llm_risk": "low",
-  "rule_risk": "low",
-  "rule_reasons": [],
+  "method": "groq",
+  "llm_risk": "elevated",
+  "rule_risk": "elevated",
+  "rule_reasons": [
+    "7 shock headlines"
+  ],
   "moves": {
     "sp500": {
-      "close": 7676.77,
-      "chg1_pct": 0.7,
-      "chg5_pct": -0.18,
-      "chg1_abs": 53.09,
-      "date": "2026-10-26"
+      "close": 7732.82,
+      "chg1_pct": 0.13,
+      "chg5_pct": -0.31,
+      "chg1_abs": 10.22,
+      "date": "2026-10-28"
     },
     "nasdaq": {
-      "close": 26169.381,
-      "chg1_pct": 0.82,
-      "chg5_pct": -0.99,
-      "chg1_abs": 214.041,
-      "date": "2026-10-26"
+      "close": 26548.469,
+      "chg1_pct": 0.27,
+      "chg5_pct": -0.58,
+      "chg1_abs": 70.658,
+      "date": "2026-10-28"
     },
     "brent": {
-      "close": 109.7,
-      "chg1_pct": -6.01,
-      "chg5_pct": 0.14,
-      "chg1_abs": -7.02,
-      "date": "2026-10-26"
+      "close": 111.3,
+      "chg1_pct": -2.27,
+      "chg5_pct": 2.28,
+      "chg1_abs": -2.58,
+      "date": "2026-10-28"
     },
     "usdinr": {
-      "close": 95.175,
-      "chg1_pct": 0.25,
-      "chg5_pct": 0.19,
-      "chg1_abs": 0.237,
-      "date": "2026-10-27"
+      "close": 95.21,
+      "chg1_pct": 0.02,
+      "chg5_pct": 0.52,
+      "chg1_abs": 0.023,
+      "date": "2026-10-28"
     },
     "us10y": {
-      "close": 4.986,
-      "chg1_pct": -0.04,
-      "chg5_pct": -2.92,
-      "chg1_abs": -0.002,
-      "date": "2026-10-26"
+      "close": 4.995,
+      "chg1_pct": 0.04,
+      "chg5_pct": -2.93,
+      "chg1_abs": 0.002,
+      "date": "2026-10-28"
     },
     "dxy": {
-      "close": 102.05,
-      "chg1_pct": 0.24,
-      "chg5_pct": 0.07,
-      "chg1_abs": 0.24,
-      "date": "2026-10-26"
+      "close": 102.35,
+      "chg1_pct": 0.03,
+      "chg5_pct": 0.56,
+      "chg1_abs": 0.03,
+      "date": "2026-10-28"
     },
     "nikkei": {
-      "close": 63357.762,
-      "chg1_pct": 1.88,
-      "chg5_pct": -1.12,
-      "chg1_abs": 1168.113,
-      "date": "2026-10-27"
+      "close": 63954.191,
+      "chg1_pct": 1.08,
+      "chg5_pct": -1.03,
+      "chg1_abs": 685.82,
+      "date": "2026-10-28"
     },
     "hangseng": {
-      "close": 23112.289,
-      "chg1_pct": -0.43,
-      "chg5_pct": -3.17,
-      "chg1_abs": -99.521,
-      "date": "2026-10-27"
+      "close": 23094.83,
+      "chg1_pct": 0.23,
+      "chg5_pct": -2.36,
+      "chg1_abs": 53.51,
+      "date": "2026-10-28"
     }
   },
   "headline_count": 40,
   "query_status": {
-    "Federal Reserve interest rates": 92,
-    "Wall Street stocks": 43,
+    "Federal Reserve interest rates": 100,
+    "Wall Street stocks": 100,
     "crude oil prices": 100,
-    "US tariffs India": 22,
-    "war geopolitical tensions": 56,
-    "FII outflows India": 20,
-    "rupee dollar": 61,
-    "China economy": 50,
-    "global recession": 47
+    "US tariffs India": 31,
+    "war geopolitical tensions": 34,
+    "FII outflows India": 9,
+    "rupee dollar": 100,
+    "China economy": 91,
+    "global recession": 52
   },
   "top_headlines": [
-    "Gold, silver rates: What is weighing on prices and what investors should watch - CNBC TV18",
-    "Gold eases as stronger dollar weighs, Fed meeting in focus - The Economic Times",
-    "GIFT Nifty Signals Weak Start Near 22,670; Crude Oil at $109.84 and Central-Bank Decisions in Focus - Dalal Street Investment Journal",
-    "Gold Holds Above $4,000 per Ounce – Investors Await the U.S. Federal Reserve’s Decision - Українські Національні Новини (УНН)",
-    "PSX posts marginal gains despite uncertainty - Dawn"
+    "World Bank: Commodity Prices to Surge 23% by 2026 Amid Global Shocks - Global Banking & Finance Review",
+    "US stocks edge higher ahead of Federal Reserve decision on interest rates - Castanet",
+    "Indian market is looking far more promising with its diversified growth profile: Ridham Desai - Moneycontrol.com",
+    "Rush Street Interactive Stock Draws Attention Ahead Of Earnings Report - Simply Wall St",
+    "Is Western Digital's Nightmare 3 Months Over? A Wall Street Pro Says Its Price Will Increase 130% - 24/7 Wall St."
   ]
 }

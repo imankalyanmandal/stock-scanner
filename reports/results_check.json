@@ -1,0 +1,239 @@
+{
+  "utc_now": "2026-10-28T13:40:28+00:00",
+  "nse": {
+    "homepage": {
+      "status": 200,
+      "cookies": [
+        "_abck",
+        "ak_bmsc",
+        "bm_sz"
+      ]
+    },
+    "financial_results_RELIANCE": {
+      "status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "bytes": 101760,
+      "json": "list[130]",
+      "first_keys": [
+        "audited",
+        "bank",
+        "broadCastDate",
+        "companyName",
+        "consolidated",
+        "cumulative",
+        "difference",
+        "exchdisstime",
+        "filingDate",
+        "financialYear",
+        "format",
+        "fromDate"
+      ]
+    },
+    "results_calendar": {
+      "status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "bytes": 230428,
+      "json": "list[928]",
+      "first_keys": [
+        "symbol",
+        "company",
+        "purpose",
+        "bm_desc",
+        "date"
+      ]
+    },
+    "announcements_TCS": {
+      "status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "bytes": 2505583,
+      "json": "list[3382]",
+      "first_keys": [
+        "an_dt",
+        "attFileSize",
+        "attchmntFile",
+        "attchmntText",
+        "bflag",
+        "csvName",
+        "desc",
+        "difference",
+        "dt",
+        "exchdisstime",
+        "fileSize",
+        "hasXbrl"
+      ]
+    },
+    "quote_HDFCBANK": {
+      "status": 403,
+      "content_type": "text/html",
+      "bytes": 397,
+      "text_head": "<HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"ht"
+    }
+  },
+  "yahoo": {
+    "RELIANCE": {
+      "quarters": [
+        "2026-06-30",
+        "2026-03-31",
+        "2025-12-31",
+        "2025-06-30",
+        "2025-03-31"
+      ],
+      "Total Revenue": [
+        309468.0,
+        294059.0,
+        264905.0,
+        243632.0,
+        261388.0
+      ],
+      "Net Income": [
+        20946.0,
+        16971.0,
+        18645.0,
+        26994.0,
+        19407.0
+      ],
+      "Operating Income": [
+        32417.0,
+        29333.0,
+        31396.0,
+        29063.0,
+        30353.0
+      ],
+      "calendar_earnings_date": [
+        "2026-10-30"
+      ],
+      "earnings_dates": [
+        "2026-10-30",
+        "2026-07-17",
+        "2026-04-24",
+        "2026-01-16",
+        "2025-10-17",
+        "2025-07-18",
+        "2025-04-25",
+        "2025-01-16",
+        "2024-10-14",
+        "2024-07-19",
+        "2024-04-22",
+        "2024-01-19",
+        "2023-10-27",
+        "2023-07-21",
+        "2023-04-21",
+        "2023-01-20",
+        "2022-10-21",
+        "2022-07-22",
+        "2022-05-06",
+        "2022-01-21",
+        "2021-10-22",
+        "2021-07-23",
+        "2021-04-30",
+        "2021-01-22",
+        "2020-10-30"
+      ]
+    },
+    "TCS": {
+      "quarters": [
+        "2026-09-30",
+        "2026-06-30",
+        "2026-03-31",
+        "2025-12-31",
+        "2025-06-30"
+      ],
+      "Total Revenue": [
+        73188.0,
+        72275.0,
+        70698.0,
+        67087.0,
+        63437.0
+      ],
+      "Net Income": [
+        13884.0,
+        13349.0,
+        13718.0,
+        10657.0,
+        12760.0
+      ],
+      "Operating Income": [
+        17553.0,
+        17401.0,
+        17870.0,
+        16926.0,
+        15539.0
+      ],
+      "calendar_earnings_date": [
+        "2026-10-08"
+      ],
+      "earnings_dates": [
+        "2027-01-11",
+        "2026-10-08",
+        "2026-07-08",
+        "2026-04-09",
+        "2026-01-12",
+        "2025-10-09",
+        "2025-07-10",
+        "2025-04-10",
+        "2025-01-09",
+        "2024-10-10",
+        "2024-07-11",
+        "2024-04-12",
+        "2024-01-11",
+        "2023-10-11",
+        "2023-07-12",
+        "2023-04-12",
+        "2023-01-09",
+        "2022-10-10",
+        "2022-07-08",
+        "2022-04-11",
+        "2022-01-12",
+        "2021-10-08",
+        "2021-07-08",
+        "2021-04-12",
+        "2021-01-08"
+      ]
+    },
+    "HDFCBANK": {
+      "quarters": [
+        "2025-06-30",
+        "2025-03-31"
+      ],
+      "Total Revenue": [
+        85346.5,
+        95305.9
+      ],
+      "Net Income": [
+        16257.9,
+        15393.5
+      ],
+      "calendar_earnings_date": [
+        "2027-01-16"
+      ],
+      "earnings_dates": [
+        "2027-01-16",
+        "2026-10-17",
+        "2026-07-18",
+        "2026-04-18",
+        "2026-01-17",
+        "2025-10-18",
+        "2025-07-19",
+        "2025-04-19",
+        "2025-01-22",
+        "2024-10-19",
+        "2024-07-20",
+        "2024-04-20",
+        "2024-01-16",
+        "2023-10-16",
+        "2023-07-17",
+        "2023-04-15",
+        "2023-01-14",
+        "2022-10-15",
+        "2022-07-16",
+        "2022-04-16",
+        "2022-01-15",
+        "2021-10-16",
+        "2021-07-17",
+        "2021-04-17",
+        "2021-01-16"
+      ]
+    }
+  },
+  "note": "Yahoo revenue/profit figures are in Rs crore"
+}
