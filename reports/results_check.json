@@ -1,5 +1,5 @@
 {
-  "utc_now": "2026-10-28T13:48:04+00:00",
+  "utc_now": "2026-10-28T13:51:20+00:00",
   "nse": {
     "homepage": {
       "status": 200,
@@ -32,8 +32,8 @@
     "results_calendar": {
       "status": 200,
       "content_type": "application/json; charset=utf-8",
-      "bytes": 230428,
-      "json": "list[928]",
+      "bytes": 230908,
+      "json": "list[930]",
       "first_keys": [
         "symbol",
         "company",
@@ -65,7 +65,7 @@
     "quote_HDFCBANK": {
       "status": 403,
       "content_type": "text/html",
-      "bytes": 397,
+      "bytes": 395,
       "text_head": "<HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"ht"
     }
   },

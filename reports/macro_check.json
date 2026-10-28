@@ -1,34 +1,34 @@
 {
   "risk": "elevated",
-  "summary": "Fed likely holds rates while Middle East conflict lifts oil prices, adding headwinds; overall risk elevated for new longs.",
+  "summary": "Rising global crude oil prices due to Middle East tensions and supply concerns, coupled with INR depreciation, create headwinds for Indian equities despite stable US markets.",
   "sector_impacts": [
     {
       "sector": "Oil Gas & Consumable Fuels",
-      "direction": "positive",
-      "reason": "Higher oil prices boost earnings"
+      "direction": "negative",
+      "reason": "Higher import bill, potential margin pressure for downstream companies."
     },
     {
       "sector": "Automobile and Auto Components",
       "direction": "negative",
-      "reason": "Rising fuel costs may curb vehicle demand"
+      "reason": "Higher fuel costs for consumers, increased input costs for manufacturers."
     },
     {
-      "sector": "Information Technology",
+      "sector": "Chemicals",
       "direction": "negative",
-      "reason": "Higher energy costs and global slowdown pressure IT margins"
+      "reason": "Crude derivatives are key raw materials, increasing input costs significantly."
     },
     {
       "sector": "Fast Moving Consumer Goods",
       "direction": "negative",
-      "reason": "Inflation from oil spikes raises input costs"
+      "reason": "Higher logistics, packaging costs, and potential demand slowdown."
     },
     {
-      "sector": "Financial Services",
+      "sector": "Construction Materials",
       "direction": "negative",
-      "reason": "Potential credit stress from commodity shock"
+      "reason": "Higher energy and transportation costs for production and delivery."
     }
   ],
-  "method": "groq",
+  "method": "gemini",
   "llm_risk": "elevated",
   "rule_risk": "elevated",
   "rule_reasons": [
@@ -36,24 +36,24 @@
   ],
   "moves": {
     "sp500": {
-      "close": 7727.06,
-      "chg1_pct": 0.06,
-      "chg5_pct": -0.39,
-      "chg1_abs": 4.46,
+      "close": 7721.74,
+      "chg1_pct": -0.01,
+      "chg5_pct": -0.46,
+      "chg1_abs": -0.86,
       "date": "2026-10-28"
     },
     "nasdaq": {
-      "close": 26482.432,
-      "chg1_pct": 0.02,
-      "chg5_pct": -0.83,
-      "chg1_abs": 4.621,
+      "close": 26448.527,
+      "chg1_pct": -0.11,
+      "chg5_pct": -0.95,
+      "chg1_abs": -29.283,
       "date": "2026-10-28"
     },
     "brent": {
-      "close": 111.41,
-      "chg1_pct": -2.17,
-      "chg5_pct": 2.38,
-      "chg1_abs": -2.47,
+      "close": 111.5,
+      "chg1_pct": -2.09,
+      "chg5_pct": 2.46,
+      "chg1_abs": -2.38,
       "date": "2026-10-28"
     },
     "usdinr": {
@@ -64,17 +64,17 @@
       "date": "2026-10-28"
     },
     "us10y": {
-      "close": 4.999,
-      "chg1_pct": 0.12,
-      "chg5_pct": -2.86,
-      "chg1_abs": 0.006,
+      "close": 4.995,
+      "chg1_pct": 0.04,
+      "chg5_pct": -2.93,
+      "chg1_abs": 0.002,
       "date": "2026-10-28"
     },
     "dxy": {
-      "close": 102.347,
-      "chg1_pct": 0.03,
-      "chg5_pct": 0.56,
-      "chg1_abs": 0.027,
+      "close": 102.324,
+      "chg1_pct": 0.0,
+      "chg5_pct": 0.53,
+      "chg1_abs": 0.004,
       "date": "2026-10-28"
     },
     "nikkei": {
@@ -94,21 +94,21 @@
   },
   "headline_count": 40,
   "query_status": {
-    "Federal Reserve interest rates": 100,
-    "Wall Street stocks": 100,
+    "Federal Reserve interest rates": 82,
+    "Wall Street stocks": 40,
     "crude oil prices": 100,
-    "US tariffs India": 36,
-    "war geopolitical tensions": 31,
-    "FII outflows India": 10,
+    "US tariffs India": 31,
+    "war geopolitical tensions": 32,
+    "FII outflows India": 16,
     "rupee dollar": 76,
-    "China economy": 64,
-    "global recession": 45
+    "China economy": 91,
+    "global recession": 44
   },
   "top_headlines": [
-    "World Bank sees commodity prices up 23% in 2026 due to Middle East war, other shocks By Reuters - Investing.com",
-    "US stocks edge higher ahead of Federal Reserve decision on interest rates - www.the-journal.com",
-    "US stocks edge higher ahead of Federal Reserve decision on interest rates - Ottumwa Courier",
-    "US stocks edge higher ahead of Federal Reserve decision on interest rates - Castanet",
-    "US stocks edge higher ahead of Federal Reserve decision on interest rates - Black Hills Pioneer"
+    "US stocks hold steady as the countdown ticks to a Federal Reserve decision on interest rates - The Northern Virginia Daily",
+    "Today’s Mortgage Rates, October 28: 30-Year Fixed Drops 9 Basis Points - Norada Real Estate Investments",
+    "Dow Jones Holds Steady Ahead of Fed Rate Decision - TipRanks",
+    "World Bank sees commodity prices up 23% in 2026 due to Middle East war, other shocks - CNA",
+    "US stocks edge higher ahead of Federal Reserve decision on interest rates - Ottumwa Courier"
   ]
 }

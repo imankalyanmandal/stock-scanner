@@ -7,14 +7,14 @@
     "google": "ok (8)"
   },
   "gemini": "ok: negative",
-  "groq": "ok: positive",
+  "groq": "ok: neutral",
   "models_in_use": {
     "gemini": "gemini-2.5-flash",
     "groq": "openai/gpt-oss-120b"
   },
   "sample_headlines": [
     "Jio shares surge 21% in India’s biggest-ever IPO - Free Press Kashmir",
-    "Sensex, Nifty decline amid rising crude, US Fed caution - Rediff",
-    "From 104 shareholders to nearly 80 lakh! Jio becomes India's most widely owned stock on listing day - The Economic Times"
+    "reliance share - LatestLY",
+    "Jio Platforms shares soar 27% on historic debut, close at Rs 1,418 with Rs 13 lakh crore market cap - Firstpost"
   ]
 }
