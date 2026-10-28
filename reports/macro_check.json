@@ -1,59 +1,52 @@
 {
-  "risk": "elevated",
-  "summary": "Mixed global cues: Fed likely hold rates, rising oil and commodity prices, slight rupee weakening; moderate headwinds suggest elevated risk for new longs.",
+  "risk": "high",
+  "summary": "Rising global oil prices due to Middle East tensions constitute a crude spike, likely causing broad Indian market selloff. Fed expected to hold rates.",
   "sector_impacts": [
     {
       "sector": "Oil Gas & Consumable Fuels",
-      "direction": "positive",
-      "reason": "Higher global oil prices boost earnings"
+      "direction": "negative",
+      "reason": "OMCs face under-recoveries from rising crude prices."
     },
     {
       "sector": "Automobile and Auto Components",
       "direction": "negative",
-      "reason": "Rupee weakening raises import costs"
+      "reason": "Higher fuel costs increase operating expenses, reduce consumer demand."
     },
     {
-      "sector": "Metals & Mining",
-      "direction": "positive",
-      "reason": "Commodity price surge lifts metal prices"
-    },
-    {
-      "sector": "Financial Services",
+      "sector": "Fast Moving Consumer Goods",
       "direction": "negative",
-      "reason": "Potential rate hike could tighten credit"
+      "reason": "Increased logistics and raw material costs from rising oil/commodities."
     },
     {
-      "sector": "Consumer Durables",
+      "sector": "Construction Materials",
       "direction": "negative",
-      "reason": "Higher input costs from oil and weak rupee"
+      "reason": "Higher energy and transportation costs for production and distribution."
+    },
+    {
+      "sector": "Power",
+      "direction": "negative",
+      "reason": "Increased input costs for thermal generation due to rising fuel prices."
     }
   ],
-  "method": "groq",
-  "llm_risk": "elevated",
+  "method": "gemini",
+  "llm_risk": "high",
   "rule_risk": "elevated",
   "rule_reasons": [
-    "7 shock headlines"
+    "6 shock headlines"
   ],
   "moves": {
     "sp500": {
-      "close": 7732.82,
-      "chg1_pct": 0.13,
-      "chg5_pct": -0.31,
-      "chg1_abs": 10.22,
+      "close": 7731.4,
+      "chg1_pct": 0.11,
+      "chg5_pct": -0.33,
+      "chg1_abs": 8.8,
       "date": "2026-10-28"
     },
     "nasdaq": {
-      "close": 26548.469,
-      "chg1_pct": 0.27,
-      "chg5_pct": -0.58,
-      "chg1_abs": 70.658,
-      "date": "2026-10-28"
-    },
-    "brent": {
-      "close": 111.3,
-      "chg1_pct": -2.27,
-      "chg5_pct": 2.28,
-      "chg1_abs": -2.58,
+      "close": 26526.234,
+      "chg1_pct": 0.18,
+      "chg5_pct": -0.66,
+      "chg1_abs": 48.424,
       "date": "2026-10-28"
     },
     "usdinr": {
@@ -64,17 +57,17 @@
       "date": "2026-10-28"
     },
     "us10y": {
-      "close": 4.995,
-      "chg1_pct": 0.04,
-      "chg5_pct": -2.93,
-      "chg1_abs": 0.002,
+      "close": 4.997,
+      "chg1_pct": 0.08,
+      "chg5_pct": -2.9,
+      "chg1_abs": 0.004,
       "date": "2026-10-28"
     },
     "dxy": {
-      "close": 102.35,
-      "chg1_pct": 0.03,
-      "chg5_pct": 0.56,
-      "chg1_abs": 0.03,
+      "close": 102.356,
+      "chg1_pct": 0.04,
+      "chg5_pct": 0.57,
+      "chg1_abs": 0.036,
       "date": "2026-10-28"
     },
     "nikkei": {
@@ -94,21 +87,21 @@
   },
   "headline_count": 40,
   "query_status": {
-    "Federal Reserve interest rates": 100,
-    "Wall Street stocks": 100,
+    "Federal Reserve interest rates": 84,
+    "Wall Street stocks": 98,
     "crude oil prices": 100,
     "US tariffs India": 31,
-    "war geopolitical tensions": 34,
-    "FII outflows India": 9,
-    "rupee dollar": 100,
-    "China economy": 91,
-    "global recession": 52
+    "war geopolitical tensions": 31,
+    "FII outflows India": 16,
+    "rupee dollar": 76,
+    "China economy": 64,
+    "global recession": 46
   },
   "top_headlines": [
-    "World Bank: Commodity Prices to Surge 23% by 2026 Amid Global Shocks - Global Banking & Finance Review",
     "US stocks edge higher ahead of Federal Reserve decision on interest rates - Castanet",
+    "World Bank sees commodity prices up 23% in 2026 due to Middle East war, other shocks - Modesto Bee",
     "Indian market is looking far more promising with its diversified growth profile: Ridham Desai - Moneycontrol.com",
-    "Rush Street Interactive Stock Draws Attention Ahead Of Earnings Report - Simply Wall St",
-    "Is Western Digital's Nightmare 3 Months Over? A Wall Street Pro Says Its Price Will Increase 130% - 24/7 Wall St."
+    "Federal Reserve Expected to Hold Interest Rates Steady Ahead of Midterm Elections - SSBCrack",
+    "Rush Street Interactive Stock Draws Attention Ahead Of Earnings Report - Simply Wall St"
   ]
 }

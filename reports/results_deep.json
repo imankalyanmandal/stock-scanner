@@ -1,0 +1,156 @@
+{
+  "fin_results_first3": [
+    {
+      "audited": "Un-Audited",
+      "bank": "N",
+      "broadCastDate": "16-Jan-2025 20:20:21",
+      "companyName": "Reliance Industries Limited",
+      "consolidated": "Non-Consolidated",
+      "cumulative": "Non-cumulative",
+      "difference": "00:00:33",
+      "exchdisstime": "16-Jan-2025 20:20:54",
+      "filingDate": "16-Jan-2025 20:20",
+      "financialYear": "01-Apr-2024 To 31-Mar-2025",
+      "format": "New",
+      "fromDate": "01-Oct-2024",
+      "indAs": "Ind-AS New",
+      "industry": "-",
+      "isin": "INE002A01018",
+      "oldNewFlag": "N",
+      "params": "01-Oct-202431-Dec-2024Q3UNNNNERELIANCE",
+      "period": "Quarterly",
+      "reInd": "N",
+      "relatingTo": "Third Quarter",
+      "resultDescription": null,
+      "resultDetailedDataLink": null,
+      "seqNumber": "1189823",
+      "symbol": "RELIANCE",
+      "toDate": "31-Dec-2024",
+      "xbrl": "https://nsearchives.nseindia.com/corporate/xbrl/INDAS_117298_1348254_16012025082021.xml"
+    },
+    {
+      "audited": "Un-Audited",
+      "bank": "N",
+      "broadCastDate": "16-Jan-2025 20:15:20",
+      "companyName": "Reliance Industries Limited",
+      "consolidated": "Consolidated",
+      "cumulative": "Non-cumulative",
+      "difference": "00:00:26",
+      "exchdisstime": "16-Jan-2025 20:15:46",
+      "filingDate": "16-Jan-2025 20:15",
+      "financialYear": "01-Apr-2024 To 31-Mar-2025",
+      "format": "New",
+      "fromDate": "01-Oct-2024",
+      "indAs": "Ind-AS New",
+      "industry": "-",
+      "isin": "INE002A01018",
+      "oldNewFlag": "N",
+      "params": "01-Oct-202431-Dec-2024Q3UNNCNERELIANCE",
+      "period": "Quarterly",
+      "reInd": "N",
+      "relatingTo": "Third Quarter",
+      "resultDescription": null,
+      "resultDetailedDataLink": null,
+      "seqNumber": "1189821",
+      "symbol": "RELIANCE",
+      "toDate": "31-Dec-2024",
+      "xbrl": "https://nsearchives.nseindia.com/corporate/xbrl/INDAS_117297_1348248_16012025081520.xml"
+    },
+    {
+      "audited": "Un-Audited",
+      "bank": "N",
+      "broadCastDate": "14-Oct-2024 19:32:45",
+      "companyName": "Reliance Industries Limited",
+      "consolidated": "Consolidated",
+      "cumulative": "Non-cumulative",
+      "difference": "00:00:35",
+      "exchdisstime": "14-Oct-2024 19:33:20",
+      "filingDate": "14-Oct-2024 19:32",
+      "financialYear": "01-Apr-2024 To 31-Mar-2025",
+      "format": "New",
+      "fromDate": "01-Jul-2024",
+      "indAs": "Ind-AS New",
+      "industry": "-",
+      "isin": "INE002A01018",
+      "oldNewFlag": "N",
+      "params": "01-Jul-202430-Sep-2024Q2UNNCNERELIANCE",
+      "period": "Quarterly",
+      "reInd": "N",
+      "relatingTo": "Second Quarter",
+      "resultDescription": null,
+      "resultDetailedDataLink": null,
+      "seqNumber": "1181443",
+      "symbol": "RELIANCE",
+      "toDate": "30-Sep-2024",
+      "xbrl": "https://nsearchives.nseindia.com/corporate/xbrl/INDAS_112771_1269085_14102024073244.xml"
+    }
+  ],
+  "results_comparison_RELIANCE": {
+    "status": 200,
+    "body_head": "{\"resCmpData\":[{\"re_amt_grs_np_asst\":null,\"re_bal_rbi_oth_bnk_funds\":null,\"re_basic_eps\":null,\"re_basic_eps_for_cont_dic_opr\":\"6.44\",\"re_bsc_eps_bfr_exi\":null,\"re_cap_ade_rat\":null,\"re_cet_1_ret\":null,\"re_con_pro_loss\":\"872100\",\"re_create_dt\":\"16-JAN-2025\",\"re_curr_tax\":\"248300\",\"re_debt_eqt_rat\":\"0\",\"re_debt_rdmption\":null,\"re_debt_ser_cov\":\"0.03\",\"re_deff_tax\":\"39300\",\"re_depr_und_exp\":\"445900\",\"re_desc_note_fin\":\"Notes to Financial Results:   1.The following ratios which form part of the Standalone Financial Results for the quarter and nine months ended 31st December, 2024, are reproduced below, as there are no rows designated for the same in the XBRL format:                      Ratio                                                               Quarter ended                   Nine Months ended                                                                                      31st December, 2024          31st December, 2024      A) Current ratio                                                             1.01                                   1.01   B) Long Term Debt to Working Capital                          6.25                                   6.25   C) Bad Debts to Account Receivable Ratio                    0.00                                   0.00             D) Current Liability Ratio                                                0.56                                   0.56   E) Total Debt to Total Assets                                         0.22                                   0.22   F) Debtors Turnover Ratio $                                         39.92                                 39.55   G) Inventory Turnover Ratio $                                      6.26                                   6.82             H) Operating Margin (%)                                                8.0                                     7.1   I) Net Profit Margin (%)                                                6.5                                      5.8                      $ Ratios for the quarter / nine months have been annualised.\",\"re_desc_note_seg\":\"1. Q3 FY25 Segment Revenue includes Rs 5,873 crore GST recovered. Net Revenue is Rs 128,260 crore.      2. 9M FY25 Segment Revenue includes Rs 17,838 crore GST recovered. Net Revenue is Rs 396,645 crore.      3. Oil to Chemicals Segment results includes Interest Income pertaining to it's segment.\",\"re_dil_eps_bfr_exi\":null,\"re_dilut_eps_for_cont_dic_opr\":\"6.44\",\"re_diluted_eps\":null,\"re_excepn_items\":null,\"re_excepn_items_new\":\"0\",\"re_extraord_items\":null,\"re_face_val\":\"10\",\"re_face_value_debt\":null,\"re_from_dt\":\"01-OCT-2024\",\"re_goi_per_shhd\":null,\"re_grs_npa\":null,\"re_grs_npa_per\":null,\"re_inc_dre_sttr\":\"-408500\",\"re_income_inv\":null,\"re_int_dis_adv_bills\":null,\"re_int_earned\":null,\"re_int_expd\":null,\"re_int_new\":\"237100\",\"re_int_ser_cov\":\"0.06\",\"re_minority_int\":null,\"re_net_profit\":\"872100\",\"re_net_sale\":\"12826000\",\"re_notes_to_ac\":\"\",\"re_oper_exp\":null,\"re_oper_exp_bef_pro_cont\":null,\"re_oth\":null,\"re_oth_exp\":\"1948600\",\"re_oth_inc\":null,\"re_oth_inc_new\":\"321400\",\"re_oth_oper_exp\":null,\"re_oth_pro_cont\":null,\"re_oth_tot_exp\":\"11987700\",\"re_paid_debt\":null,\"re_pdup\":\"1353200\",\"re_per_grs_npa\":null,\"re_pro_aft_int_bef_excep\":null,\"re_pro_los_frm_dis_opr\":\"0\",\"re_pro_loss_bef_tax\":\"1159700\",\"re_pro_loss_bef_tax_sum\":null,\"re_prolos_dis_opr_aftr_tax\":\"0\",\"re_proloss_ord_act\":\"872100\",\"re_prov_emp_pay\":null,\"re_pur_trd_goods\":\"390400\",\"re_rawmat_consump\":\"9156100\",\"re_remarks\":null,\"re_res_reval\":null,\"re_res_type\":\"U\",\"re_ret_asset\":null,\"re_seg_remarks\":null,\"re_seq_num\":\"1189823\",\"re_share_associate\":\"0\",\"re_staff_cost\":\"218100\",\"re_tax\":\"287600\",\"re_tax_expens_of_dis_opr\":\"0\",\"re_to_dt\":\"31-DEC-2024\",\"re_tot_exp_exc_pro_cont\":null,\"re_tot_inc\":null,\"re_total_inc\":\"13147400\"},{\"re_amt_grs_np_asst\":null,\"re_bal_rbi_oth_bnk_funds\":null,\"re_basic_eps\":null,\"re_basic_eps_for_cont_dic_opr\":\"11.4\",\"re_bsc_eps_bfr_exi\":null,\"re_cap_ade_rat\":null,\"re_cet_1_ret\":null,"
+  },
+  "results_comparison_HDFCBANK": {
+    "status": 200,
+    "body_head": "{\"resCmpData\":[{\"re_amt_grs_np_asst\":\"3601858\",\"re_bal_rbi_oth_bnk_funds\":\"75756\",\"re_basic_eps\":\"21.9\",\"re_basic_eps_for_cont_dic_opr\":null,\"re_bsc_eps_bfr_exi\":\"21.9\",\"re_cap_ade_rat\":\"0\",\"re_cet_1_ret\":\"19.97\",\"re_con_pro_loss\":\"1673550\",\"re_create_dt\":\"23-JAN-2025\",\"re_curr_tax\":null,\"re_debt_eqt_rat\":null,\"re_debt_rdmption\":null,\"re_debt_ser_cov\":null,\"re_deff_tax\":null,\"re_depr_und_exp\":null,\"re_desc_note_fin\":\"-\",\"re_desc_note_seg\":\"Capital, Employees stock options outstanding and Reserves as on December 31, 2024 were Rs. 483020.88 crore. As the format does not have the particular category, it has been clubbed under Un-allocable Liabilities.\",\"re_dil_eps_bfr_exi\":\"21.8\",\"re_dilut_eps_for_cont_dic_opr\":null,\"re_diluted_eps\":\"21.8\",\"re_excepn_items\":\"0\",\"re_excepn_items_new\":null,\"re_extraord_items\":\"0\",\"re_face_val\":\"1\",\"re_face_value_debt\":null,\"re_from_dt\":\"01-OCT-2024\",\"re_goi_per_shhd\":\"0\",\"re_grs_npa\":\"1158754\",\"re_grs_npa_per\":\"0.46\",\"re_inc_dre_sttr\":null,\"re_income_inv\":\"1371710\",\"re_int_dis_adv_bills\":\"5992395\",\"re_int_earned\":\"7600688\",\"re_int_expd\":\"4535363\",\"re_int_new\":null,\"re_int_ser_cov\":null,\"re_minority_int\":null,\"re_net_profit\":\"1673550\",\"re_net_sale\":null,\"re_notes_to_ac\":\"\",\"re_oper_exp\":\"1710641\",\"re_oper_exp_bef_pro_cont\":\"2500040\",\"re_oth\":\"160827\",\"re_oth_exp\":null,\"re_oth_inc\":\"1145356\",\"re_oth_inc_new\":null,\"re_oth_oper_exp\":\"1115600\",\"re_oth_pro_cont\":\"315385\",\"re_oth_tot_exp\":null,\"re_paid_debt\":null,\"re_pdup\":\"76483\",\"re_per_grs_npa\":\"1.42\",\"re_pro_aft_int_bef_excep\":null,\"re_pro_los_frm_dis_opr\":null,\"re_pro_loss_bef_tax\":\"2184655\",\"re_pro_loss_bef_tax_sum\":null,\"re_prolos_dis_opr_aftr_tax\":null,\"re_proloss_ord_act\":\"1673550\",\"re_prov_emp_pay\":\"595041\",\"re_pur_trd_goods\":null,\"re_rawmat_consump\":null,\"re_remarks\":null,\"re_res_reval\":null,\"re_res_type\":\"U\",\"re_ret_asset\":\"0.47\",\"re_seg_remarks\":null,\"re_seq_num\":\"1190259\",\"re_share_associate\":null,\"re_staff_cost\":null,\"re_tax\":\"511105\",\"re_tax_expens_of_dis_opr\":null,\"re_to_dt\":\"31-DEC-2024\",\"re_tot_exp_exc_pro_cont\":\"6246004\",\"re_tot_inc\":\"8746044\",\"re_total_inc\":null},{\"re_amt_grs_np_asst\":\"3425062\",\"re_bal_rbi_oth_bnk_funds\":\"67474\",\"re_basic_eps\":\"22.08\",\"re_basic_eps_for_cont_dic_opr\":null,\"re_bsc_eps_bfr_exi\":\"22.08\",\"re_cap_ade_rat\":\"0\",\"re_cet_1_ret\":\"19.77\",\"re_con_pro_loss\":\"1682097\",\"re_create_dt\":\"20-OCT-2024\",\"re_curr_tax\":null,\"re_debt_eqt_rat\":null,\"re_debt_rdmption\":null,\"re_debt_ser_cov\":null,\"re_deff_tax\":null,\"re_depr_und_exp\":null,\"re_desc_note_fin\":\"-\",\"re_desc_note_seg\":\"Capital, Employees stock options outstanding and Reserves as on September 30, 2024 were Rs. 463470.76 crore. As the format does not have the particular category, it has been clubbed under Un-allocable Liabilities.\",\"re_dil_eps_bfr_exi\":\"21.98\",\"re_dilut_eps_for_cont_dic_opr\":null,\"re_diluted_eps\":\"21.98\",\"re_excepn_items\":\"0\",\"re_excepn_items_new\":null,\"re_extraord_items\":\"0\",\"re_face_val\":\"1\",\"re_face_value_debt\":null,\"re_from_dt\":\"01-JUL-2024\",\"re_goi_per_shhd\":\"0\",\"re_grs_npa\":\"1030854\",\"re_grs_npa_per\":\"0.41\",\"re_inc_dre_sttr\":null,\"re_income_inv\":\"1263160\",\"re_int_dis_adv_bills\":\"5938981\",\"re_int_earned\":\"7401691\",\"re_int_expd\":\"4390301\",\"re_int_new\":null,\"re_int_ser_cov\":null,\"re_minority_int\":null,\"re_net_profit\":\"1682097\",\"re_net_sale\":null,\"re_notes_to_ac\":\"\",\"re_oper_exp\":\"1689089\",\"re_oper_exp_bef_pro_cont\":\"2470574\",\"re_oth\":\"132076\",\"re_oth_exp\":null,\"re_oth_inc\":\"1148273\",\"re_oth_inc_new\":null,\"re_oth_oper_exp\":\"1090559\",\"re_oth_pro_cont\":\"270046\",\"re_oth_tot_exp\":null,\"re_paid_debt\":null,\"re_pdup\":\"76308\",\"re_per_grs_npa\":\"1.36\",\"re_pro_aft_int_bef_excep\":null,\"re_pro_los_frm_dis_opr\":null,\"re_pro_loss_bef_tax\":\"2200528\",\"re_pro_loss_bef_tax_sum\":null,\"re_prolos_dis_opr_aftr_tax\":null,\"re_proloss_ord_act\":\"1682097\",\"re_prov_emp_pay\":\"598530\",\"re_pur_trd_goods\":null,\"re_rawmat_consump\":null,\"re_remarks\":null,\"re_res_reval\":null,\"re_res_type\":\"U\",\"re_ret_asset\":\"0.49\",\"re_seg_remarks\":null,\"re_seq_num\":\"1181772\",\"re_share_associate\":null,\"r"
+  },
+  "xbrl_url": "https://nsearchives.nseindia.com/corporate/xbrl/INDAS_117298_1348254_16012025082021.xml",
+  "xbrl": {
+    "status": 200,
+    "bytes": 57588,
+    "head": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<xbrli:xbrl xmlns:in-bse-fin=\"http://www.bseindia.com/xbrl/fin/2020-03-31/in-bse-fin\" xmlns:in-bse-fin-roles=\"http://www.bseindia.com/xbrl/fin/2020-03-31/in-bse-fin-roles\" xmlns:in-bse-fin-ent=\"http://www.bseindia.com/xbrl/fin/2020-03-31/in-bse-fin/in-bse-fin-ent\" xmlns:in-bse-fin-type=\"http://www.bseindia.com/xbrl/fin/2020-03-31/in-bse-fin-types\" xmlns:xbrldt=\"http://xbrl.org/2005/xbrldt\" xmlns:nonnum=\"http://www.xbrl.org/dtr/type/non-numeric\" xmlns:link=\"http://www.xbrl.org/2003/linkbase\" xmlns:net=\"http://www.xbrl.org/2009/role/net\" xmlns:num=\"http://www.xbrl.org/dtr/type/numeric\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xmlns:iso4217=\"http://www.xbrl.org/2003/iso4217\" xmlns:negated=\"http://www.xbrl.org/2009/role/negated\" xmlns:xbrldi=\"http://xbrl.org/2006/xbrldi\" xmlns:xbrli=\"http://www.xbrl.org/2003/instance\" xmlns:xl=\"http://www.xbrl.org/2003/XLink\">\n<link:schemaRef xlink:type=\"simple\" xlink:href=\"Ind-AS_entry_point_2020-03-31.xsd\"/>\n<xbrli:context id=\"OneD\"><xbrli:entity><xbrli:identifier scheme=\"http://www.nseindia.com/NSESymbol\">RELIANCE</xbrli:identifier></xbrli:entity><xbrli:period><xbrli:startDate>2024-10-01</xbrli:startDate><xbrli:endDate>2024-12-31</xbrli:endDate></xbrli:period></xbrli:context>\n<xbrli:context id=\"FourD\"><xbrli:entity><xbrli:identifier scheme=\"http://www.nseindia.com/NSESymbol\">RELIANCE</xbrli:identifier></xbrli:entity><xbrli:period><xbrli:startDate>2024-10-01</xbrli:startDate><xbrli:endDate>2024-12-31</xbrli:endDate></xbrli:period></xbrli:context>\n<xbrli:context id=\"OneOperatingExpenses01D\"><xbrli:entity><xbrli:identifier scheme=\"http://www.nseindia.com/NSESymbol\">RELIANCE</xbrli:identifier></xbrli:entity><xbrli:period><xbrli:startDate>2024-10-01</xbrli:startDate><xbrli:endDate>2024-12-31</xbrli:endDate></xbrli:period><xbrli:scenario><xbrldi:explicitMember dimension=\"in-bse-fin:DetailsOfOtherExpensesAxis\">in-bse-fin:OneOperatingExpenses01Member</xbrldi:explicitMember></xbrli:scenario></xbrli:context>\n<xbrli:context id=\"OneOperatingExpenses02D\"><xbrli:entity><xbrli:identifier scheme=\"http://www.nseindia.com/NSESymbol\">RELIANCE</xbrli:identifier></xbrli:entity><xbrli:period><xbrli:startDate>2024-10-01</xbrli:startDate><xbrli:endDate>2024-12-31</xbrli:endDate></xbrli:period><xbrli:scenario><xbrldi:explicitMember dimension=\"in-bse-fin:DetailsOfOtherExpensesAxis\">in-bse-fin:OneOperatingExpenses02Member</xbrldi:explicitMember></xbrli:scenario></xbrli:context>\n<xbrli:context id=\"FourOperatingExpenses01D\"><xbrli:entity><xbrli:identifier scheme=\"http://www.nseindia.com/NSESymbol\">RELIANCE</xbrli:identifier></xbrli:entity><xbrli:period><xbrli:startDate>2024-10-01</xbrli:startDate><xbrli:endDate>2024-12-31</xbrli:endDate></xbrli:period><xbrli:scenario><xbrldi:explicitMember dimension=\"in-bse-fin:DetailsOfOtherExpensesAxis\">in-bse-fin:FourOperatingExpenses01Member</xbrldi:explicitMember></xbrli:scenario></xbrli:context>\n<xbrli:context id=\"FourOperatingExpenses02D\"><xbrli:entity><xbrli:identifier scheme=\"http://www.nseindia.com/NSESymbol\">RELIANCE</xbrli:identifier></xbrli:entity><xbrli:period><xbrli:startDate>2024-10-01</xbrli:startDate><xbrli:endDate>2024-12-31</xbrli:endDate></xbrli:period><xbrli:scenario><xbrldi:explicitMember dimension=\"in-bse-fin:DetailsOfOtherExpensesAxis\">in-bse-fin:FourOperatingExpenses02Member</xbrldi:explicitMember></xbrli:scenario></xbrli:context>\n<xbrli:context id=\"OneI\"><xbrli:entity><xbrli:identifier scheme=\"http://www.nseindia.com/NSESymbol\">RELIANCE</xbrli:identifier></xbrli:entity><xbrli:period><xbrli:instant>2024-12-31</xbrli:instant></xbrli:period></xbrli:context>\n<xbrli:context id=\"OneReportableSegmentRevenue01D\"><xbrli:entity><xbrli:identifier scheme=\"http://www.nseindia.com/NSESymbol\">RELIANCE</xbrli:identifier></xbrli:entity><xbrli:period><xbrli:startDate>2024-10-01</xbrli:startDate><xbrli:endDate>2024-12-31</xbrli:endDate></xbrli:period><xbrli:scenario><xbrldi:explicitMember dimension=\"in-bse-fin:ReportableSegmentsAxis\">in-bse-fin:OneReportableSegmentRevenue01Member</xbrldi:explicitMember></xbrli:scenario></xbrli:context>\n<xbrli:context id=\"OneReportableSegmentRevenue02D\"><xbrli:entity><xbrli:identifier scheme=\"http://www.nseindia.com/NSESymbol\">RELIANCE</xbrli:identifier></xbrli:entity><xbrli:period><xbrli:startDate>2024-10-01</xbrli:startDate><xbrli:endDate>2024-12-31</xbrli:endDate></xbrli:period><xbrli:scenario><xbrldi:explicitMember dimension=\"in-bse-fin:ReportableSegmentsAxis\">in-bse-fin:OneReportableSegmentRevenue02Member</xbrldi:explicitMember></xbrli:scenario></xbrli:context>\n<xbrli:context id=\"OneReportableSegmentRevenue03D\"><xbrli:entity><xbrli:identifier scheme=\"http://www.nseindia.com/NSESymbol\">RELIANCE</xbrli:identifier></xbrli:entity><xbrli:period><xbrli:startDate>2024-10-01</xbrli:startDate><xbrli:endDate>2024-12-31</xbrli:endDate></xbrli:period><xbrli:scenario><xbrldi:explicitMember dimension=\"in-bse-fin:ReportableSegmentsAxis\">in-bse-fin:OneReportableSegmentRevenue03Member</xbrldi:explicitMember></xbrli:scenario></xbrli:context>\n<xbrli:context id=\"OneReportableSegmentRevenue04D\"><xbrli:entity><xbrli:identifier scheme=\"http://www.nseindia.com/NSESymbol\">RELIANCE</xbrli:identifier></xbrli:entity><xbrli:period><xbrli:startDate>2024-10-01</xbrli:startDate><xbrli:endDate>2024-12-31</xbrli:endDate></xbrli:period><xbrli:scenario><xbrldi:explicitMember dimension=\"in-bse-fin:ReportableSegmentsAxis\">in-bse-fin:OneReportableSegmentRevenue04Member</xbrldi:explicitMember></xbrli:scenario></xbrli:context>\n<xbrli:context id=\"OneReportableSegmentRevenue05D\"><xbrli:entity><xbrli:identifier scheme=\"http://www.nseindia.com/NSESymbol\">RELIANCE</xbrli:identifier></xbrli:entity><xbrli:period><xbrli:startDate>2024-10-01</xbrli:startDate><xbrli:endDate>2024-12-31</xbrli:endDate></xbrli:period><xbrli:scenario><xbrldi:explicitMember dimension=\"in-bse-fin:ReportableSegmentsAxis\">in-bse-fin:OneReportableSegmentRevenue05Member</xbrldi:explicitMember></xbrli:scenario></xbrli:context>\n<xbrli:context "
+  },
+  "event_calendar_first5": [
+    {
+      "symbol": "21STCENMGM",
+      "company": "21st Century Management Services Limited",
+      "purpose": "Financial Results",
+      "bm_desc": "To consider and approve the financial results for the period ended September 30, 2026",
+      "date": "29-Oct-2026"
+    },
+    {
+      "symbol": "3IINFOLTD",
+      "company": "3i Infotech Limited",
+      "purpose": "Financial Results/Other business matters",
+      "bm_desc": "To consider and approve the unaudited financial results for the quarter and half year ended September 30, 2026 and other business matters",
+      "date": "29-Oct-2026"
+    },
+    {
+      "symbol": "ACI",
+      "company": "Archean Chemical Industries Limited",
+      "purpose": "Financial Results",
+      "bm_desc": "To consider and approve the financial results for the period ended September 30, 2026",
+      "date": "29-Oct-2026"
+    },
+    {
+      "symbol": "AHCL",
+      "company": "Anlon Healthcare Limited",
+      "purpose": "Financial Results/Other business matters",
+      "bm_desc": "To consider and approve the financial results for the period ended September 30, 2026 and other business matters",
+      "date": "29-Oct-2026"
+    },
+    {
+      "symbol": "ALIVUS",
+      "company": "Alivus Life Sciences Limited",
+      "purpose": "Financial Results",
+      "bm_desc": "Inter-alia to consider and approve the unaudited financial results for the quarter and half year ended September 30, 2026",
+      "date": "29-Oct-2026"
+    }
+  ],
+  "event_purposes_sample": [
+    "Board meeting Rescheduled",
+    "Bonus",
+    "Buyback",
+    "Dividend",
+    "Financial Results",
+    "Financial Results/Dividend",
+    "Financial Results/Dividend/Fund Raising",
+    "Financial Results/Dividend/Other business matters",
+    "Financial Results/Fund Raising",
+    "Financial Results/Fund Raising/Other business matters",
+    "Financial Results/Other business matters",
+    "Financial Results/Stock Split",
+    "Fund Raising",
+    "Fund Raising/Other business matters",
+    "Other business matters"
+  ]
+}
