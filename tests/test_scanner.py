@@ -897,7 +897,7 @@ def test_pick_filings_and_snapshot(monkeypatch, tmp_path):
     class Fake:
         calls = 0
         def json(self, path):
-            return rows
+            return {"data": [], "totalCount": 0} if "integrated" in path else rows
         def get(self, url):
             Fake.calls += 1
             class Resp:
@@ -912,3 +912,19 @@ def test_pick_filings_and_snapshot(monkeypatch, tmp_path):
     R.snapshot(Fake(), "ACME", str(tmp_path))         # same filing -> cached, no XBRL downloads
     assert Fake.calls == n
     assert "Q2 FY27 · Rev +10% YoY · PAT +10% YoY" in R.summary_line(s)
+
+
+
+def test_normalize_integrated_rows():
+    from scanner.results import normalize_integrated, pick_filings
+    rows = [{"qe_Date": "30-SEP-2026", "consolidated": "Consolidated", "xbrl": "https://x/a.xml",
+             "seq_Id": "9", "broadcast_Date": "08-Oct-2026 16:00:00"},
+            {"qe_Date": "30-SEP-2026", "consolidated": "Standalone", "xbrl": "https://x/b.xml", "seq_Id": "8"},
+            {"qe_Date": "30-JUN-2026", "consolidated": "Consolidated", "xbrl": "https://nsearchives/corporate/null"},
+            {"qe_Date": "30-SEP-2025", "consolidated": "Consolidated", "xbrl": "https://x/c.xml", "seq_Id": "2"}]
+    n = normalize_integrated(rows)
+    assert [r["xbrl"] for r in n] == ["https://x/a.xml", "https://x/b.xml", "https://x/c.xml"]
+    assert n[0]["fromDate"] == "01-Jul-2026" and n[0]["toDate"] == "30-Sep-2026"
+    sel = pick_filings(n)
+    assert sel["latest"]["xbrl"] == "https://x/a.xml" and sel["year_ago"]["xbrl"] == "https://x/c.xml"
+    assert sel["prev"] is None

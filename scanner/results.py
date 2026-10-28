@@ -94,6 +94,60 @@ def results_calendar(client: NSEClient) -> dict[str, list[str]]:
 
 
 # ----------------------------------------------------------------------------- filings
+def _quarter_start(end: date) -> date:
+    m = end.month - 2
+    y = end.year if m > 0 else end.year - 1
+    return date(y, m if m > 0 else m + 12, 1)
+
+
+def normalize_integrated(rows: list[dict]) -> list[dict]:
+    """Integrated Filing (Financials) rows, Mar-2025 quarter onwards -> the old row shape."""
+    out = []
+    for x in rows or []:
+        low = {k.lower(): v for k, v in x.items()}
+        url = str(low.get("xbrl") or "")
+        if not url.startswith("http") or url.rstrip("/").endswith("null"):
+            continue
+        end = _d(str(low.get("qe_date", ""))[:11])
+        if not end:
+            continue
+        cons = str(low.get("consolidated", "")).strip().lower()
+        out.append({"period": "Quarterly", "fromDate": _quarter_start(end).strftime("%d-%b-%Y"),
+                    "toDate": end.strftime("%d-%b-%Y"),
+                    "consolidated": "Consolidated" if cons.startswith("consolidated") else "Non-Consolidated",
+                    "xbrl": url, "seqNumber": str(low.get("seq_id", "")),
+                    "filingDate": str(low.get("broadcast_date") or low.get("creation_date") or "")[:11],
+                    "audited": low.get("audited") or low.get("type_sub"), "source": "integrated"})
+    return out
+
+
+def all_filings(client: "NSEClient", symbol: str, max_pages: int = 3) -> list[dict]:
+    """Integrated filings (2025+) plus the older Reg-33 filings (up to Dec 2024)."""
+    rows, seen = [], set()
+    for page in range(1, max_pages + 1):
+        q = (f"/api/integrated-filing-results?index=equities&symbol={symbol}"
+             f"&type=Integrated%20Filing-%20Financials&page={page}")
+        try:
+            env = client.json(q)
+        except requests.HTTPError:
+            break
+        data = env.get("data", []) if isinstance(env, dict) else (env or [])
+        new = [r for r in normalize_integrated(data) if (r["xbrl"]) not in seen]
+        if not new:
+            break
+        seen.update(r["xbrl"] for r in new)
+        rows += new
+        total = env.get("totalCount") if isinstance(env, dict) else None
+        if total is not None and len(seen) >= int(total):
+            break
+    try:
+        rows += client.json(f"/api/corporates-financial-results?index=equities&symbol={symbol}"
+                            f"&period=Quarterly") or []
+    except requests.HTTPError:
+        pass
+    return rows
+
+
 def pick_filings(rows: list[dict]) -> dict:
     """Latest quarter, the quarter before and the same quarter a year earlier.
 
@@ -179,7 +233,7 @@ def _cr(v):
 
 def snapshot(client: NSEClient, symbol: str, cache_dir: str = "data/results") -> dict:
     """Results snapshot for one company. Re-parses only when a newer filing appears."""
-    rows = client.json(f"/api/corporates-financial-results?index=equities&symbol={symbol}&period=Quarterly")
+    rows = all_filings(client, symbol)
     sel = pick_filings(rows)
     if not sel or not sel.get("latest"):
         return {"source": "nse", "error": "no quarterly filings found"}
@@ -187,7 +241,8 @@ def snapshot(client: NSEClient, symbol: str, cache_dir: str = "data/results") ->
     path = Path(cache_dir) / f"{symbol}.json"
     try:
         cached = json.loads(path.read_text())
-        if cached.get("seq") == latest["seq"] and cached.get("version") == 1:
+        if cached.get("seq") == latest["seq"] and cached.get("xbrl") == latest["xbrl"] \
+                and cached.get("version") == 2:
             return cached
     except (OSError, ValueError):
         pass
@@ -198,7 +253,8 @@ def snapshot(client: NSEClient, symbol: str, cache_dir: str = "data/results") ->
             parsed[k] = parse_xbrl(client.get(q["xbrl"]).content, q["from"], q["to"])
     L, P, Y = parsed.get("latest", {}), parsed.get("prev", {}), parsed.get("year_ago", {})
     out = {
-        "version": 1, "source": "nse", "symbol": symbol, "seq": latest["seq"], "basis": sel["basis"],
+        "version": 2, "source": "nse", "symbol": symbol, "seq": latest["seq"], "xbrl": latest["xbrl"],
+        "basis": sel["basis"],
         "quarter": quarter_label(latest["to"]), "period_end": latest["to"].isoformat(),
         "filed": latest["filed"].isoformat() if latest["filed"] else None,
         "audited": latest.get("audited"),
@@ -311,6 +367,16 @@ if __name__ == "__main__":
     except Exception as e:
         out["calendar"] = f"error {type(e).__name__}: {str(e)[:120]}"
     cache = cfg.get("results", {}).get("cache_dir", "data/results")
+    try:
+        env = c.json(f"/api/integrated-filing-results?index=equities&symbol={syms[0]}"
+                     f"&type=Integrated%20Filing-%20Financials")
+        data = env.get("data", []) if isinstance(env, dict) else env
+        out["integrated_raw"] = {"envelope_keys": list(env)[:8] if isinstance(env, dict) else "list",
+                                 "totalCount": env.get("totalCount") if isinstance(env, dict) else None,
+                                 "rows": len(data), "first_row": data[0] if data else None,
+                                 "qe_dates": [d.get("qe_Date") for d in data][:12]}
+    except Exception as e:
+        out["integrated_raw"] = f"error {type(e).__name__}: {str(e)[:160]}"
     for s in syms:
         try:
             out[s] = snapshot(c, s, cache)
