@@ -4,7 +4,9 @@ on:
   schedule:
     # 02:50 UTC Mon-Fri = 8:20 AM IST. GitHub may start scheduled jobs late, so this aims
     # to finish before the 9:15 open even with a delay.
-    - cron: "50 2 * * 1-5"
+    - cron: "20 2 * * 1-5"    # 7:50 AM IST
+    - cron: "50 2 * * 1-5"    # 8:20 AM IST (backup; skipped if the first already ran)
+    - cron: "25 3 * * 1-5"    # 8:55 AM IST (last chance; stands down after 9:20)
   workflow_dispatch: {}
 
 permissions:

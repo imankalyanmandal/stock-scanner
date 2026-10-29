@@ -150,7 +150,7 @@ def send_failure(error: str) -> None:
     _call("sendMessage", {"text": text, "parse_mode": "HTML"})
 
 
-def check() -> dict:
+def check(send_test: bool = False) -> dict:
     """Diagnose Telegram setup without revealing secrets: which vars exist and what the API says."""
     token = os.getenv("TELEGRAM_BOT_TOKEN", "").strip()
     chat = os.getenv("TELEGRAM_CHAT_ID", "").strip()
@@ -164,7 +164,11 @@ def check() -> dict:
         j = r.json()
         out["getMe"] = "ok @" + j["result"].get("username", "?") if j.get("ok") \
             else f"error {r.status_code}: {j.get('description')}"
-        if chat:
+        if chat and not send_test:
+            r = requests.post(API.format(token=token, method="getChat"), data={"chat_id": chat}, timeout=20)
+            j = r.json()
+            out["getChat"] = "ok" if j.get("ok") else f"error {r.status_code}: {j.get('description')}"
+        elif chat:
             r = requests.post(API.format(token=token, method="sendMessage"),
                               data={"chat_id": chat, "text": "✅ Stock scanner: Telegram test message"},
                               timeout=20)
@@ -178,9 +182,10 @@ def check() -> dict:
 if __name__ == "__main__":
     import json
     import sys
-    res = check()
+    res = check(send_test="--send-test" in sys.argv)
     text = json.dumps(res, indent=2)
     print(text)
-    if len(sys.argv) > 1:
-        Path(sys.argv[1]).parent.mkdir(parents=True, exist_ok=True)
-        Path(sys.argv[1]).write_text(text + "\n")
+    target = [a for a in sys.argv[1:] if not a.startswith("--")]
+    if target:
+        Path(target[0]).parent.mkdir(parents=True, exist_ok=True)
+        Path(target[0]).write_text(text + "\n")

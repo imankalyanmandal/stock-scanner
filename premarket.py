@@ -21,7 +21,20 @@ from scanner.news import bse_code_map, check_stock
 log = logging.getLogger("premarket")
 
 
-def run(cfg: dict, send: bool = True) -> dict:
+def run(cfg: dict, send: bool = True, force: bool = False, now: datetime | None = None) -> dict:
+    from scanner.market_calendar import IST, is_trading_day
+    now = (now or datetime.now(IST)).astimezone(IST)
+    state_path = cfg["journal"]["state_path"]
+    if not force:
+        holidays = {str(h) for h in cfg["market"].get("holidays", [])}
+        if not is_trading_day(now.date(), holidays):
+            return {"checked": [], "note": "market closed today"}
+        if now.time() > datetime.strptime("09:20", "%H:%M").time():
+            # GitHub sometimes starts scheduled jobs hours late; a "pre-market" alert after the
+            # open would be misleading, so stand down
+            return {"checked": [], "note": f"started too late ({now:%H:%M} IST)"}
+        if J.read_state(state_path).get("premarket_done_for") == now.date().isoformat():
+            return {"checked": [], "note": "already checked today"}
     jdf = J.load(cfg["journal"]["path"])
     if jdf.empty:
         return {"checked": [], "note": "journal empty"}
@@ -92,6 +105,7 @@ def run(cfg: dict, send: bool = True) -> dict:
         notify._call("sendMessage", {"text": "\n".join(lines), "parse_mode": "HTML",
                                      "disable_web_page_preview": "true"})
         status = dict(notify.LAST)
+    J.write_state(state_path, premarket_done_for=now.date().isoformat())
     out = {"at": datetime.now().isoformat(timespec="seconds"), "session": session,
            "checked": checked, "global": gm, "telegram": status}
     p = Path(cfg["output"]["dir"]) / "premarket_last.json"
@@ -104,9 +118,10 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--config", default="config.yaml")
     ap.add_argument("--no-notify", action="store_true")
+    ap.add_argument("--force", action="store_true", help="run even if late / already done today")
     args = ap.parse_args()
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
-    res = run(yaml.safe_load(open(args.config)), send=not args.no_notify)
+    res = run(yaml.safe_load(open(args.config)), send=not args.no_notify, force=args.force)
     print(json.dumps(res, indent=2, ensure_ascii=False))
 
 

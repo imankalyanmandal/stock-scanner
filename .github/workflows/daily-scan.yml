@@ -7,6 +7,8 @@ on:
     # Backup run at 00:30 UTC = 6:00 AM IST Tue-Sat. GitHub sometimes starts scheduled jobs hours
     # late or skips them; this run is silent if the 3 AM run already alerted the session.
     - cron: "30 0 * * 2-6"
+    # Second backup at 02:00 UTC = 7:30 AM IST, still before the open.
+    - cron: "0 2 * * 2-6"
   workflow_dispatch:      # adds a "Run workflow" button for manual runs
     inputs:
       force:
