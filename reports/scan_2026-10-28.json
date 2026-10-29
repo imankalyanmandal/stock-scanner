@@ -3,19 +3,19 @@
   "regime": {
     "regime": "weak",
     "breadth_pct": 21.7,
-    "vix": 16.399999618530273,
+    "vix": 16.25,
     "benchmarks": {
       "nifty50": {
-        "close": 22749.75,
-        "sma20": 22678.4197265625,
-        "sma50": 23337.1459375,
+        "close": 22698.849609375,
+        "sma20": 22674.34970703125,
+        "sma50": 23303.8029296875,
         "above_20": true,
         "above_50": false
       },
       "nifty500": {
-        "close": 21734.900390625,
-        "sma20": 21936.45263671875,
-        "sma50": 22665.89203125,
+        "close": 21727.44921875,
+        "sma20": 21911.217578125,
+        "sma50": 22628.5430078125,
         "above_20": false,
         "above_50": false
       }
@@ -206,8 +206,7 @@
       "reasons": [
         "below_50dma",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -225,8 +224,7 @@
         "50dma_not_rising",
         "far_from_52w_high",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -245,8 +243,7 @@
         "below_50dma",
         "50dma_not_rising",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -264,8 +261,7 @@
         "far_from_52w_high",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -274,8 +270,7 @@
         "below_50dma",
         "50dma_not_rising",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -321,7 +316,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -370,8 +366,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -562,8 +557,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -625,7 +619,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -771,7 +766,8 @@
       "reasons": [
         "far_from_52w_high",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -892,8 +888,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -916,8 +911,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -952,7 +946,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -1019,8 +1014,7 @@
         "below_50dma",
         "too_close_to_52w_low",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -1034,7 +1028,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -1110,8 +1105,7 @@
       "symbol": "CHENNPETRO",
       "reasons": [
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -1215,7 +1209,8 @@
       "symbol": "COFORGE",
       "reasons": [
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -1239,7 +1234,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -1336,7 +1332,8 @@
       "symbol": "CUPID",
       "reasons": [
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -1419,8 +1416,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -1458,7 +1454,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -1502,7 +1499,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -1551,7 +1549,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -1761,8 +1760,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -1852,7 +1850,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -1961,8 +1960,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -1982,7 +1980,8 @@
         "50dma_below_200dma",
         "200dma_not_rising",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -2103,7 +2102,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -2296,8 +2296,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -2377,7 +2376,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -2434,8 +2434,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -2530,7 +2529,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -2641,8 +2641,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -2675,8 +2674,7 @@
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
         "stop_too_wide",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -2751,8 +2749,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -2762,8 +2759,7 @@
         "50dma_not_rising",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -2879,7 +2875,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -3007,7 +3004,8 @@
         "200dma_not_rising",
         "no_setup:pullbacks_disabled",
         "stretched_from_20dma",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -3081,7 +3079,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -3204,8 +3203,7 @@
       "reasons": [
         "no_setup:pullbacks_disabled",
         "stop_too_wide",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -3301,8 +3299,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -3343,7 +3340,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -3352,7 +3350,8 @@
         "below_50dma",
         "50dma_not_rising",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -3385,8 +3384,7 @@
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
         "stop_too_wide",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -3410,8 +3408,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -3455,8 +3452,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -3505,8 +3501,7 @@
         "50dma_not_rising",
         "too_close_to_52w_low",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -3554,8 +3549,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -3587,7 +3581,8 @@
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
         "stop_too_wide",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -3616,8 +3611,7 @@
         "below_50dma",
         "too_close_to_52w_low",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -3654,8 +3648,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "extended_2day_gain",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -3763,8 +3756,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -3906,8 +3898,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -3948,8 +3939,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -3986,7 +3976,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -4168,8 +4159,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -4363,7 +4353,8 @@
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
         "stretched_from_20dma",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -4383,8 +4374,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -4407,7 +4397,8 @@
         "far_from_52w_high",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -4424,7 +4415,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -4438,7 +4430,8 @@
       "reasons": [
         "no_setup:pullbacks_disabled",
         "stretched_from_20dma",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -4485,8 +4478,7 @@
         "50dma_not_rising",
         "far_from_52w_high",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -4635,7 +4627,8 @@
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
         "stop_too_wide",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -4683,7 +4676,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -4741,7 +4735,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -4807,8 +4802,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -4865,8 +4859,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -4879,7 +4872,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -4926,7 +4920,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -4976,44 +4971,42 @@
   "evaluated": 304,
   "passed_gates": 0,
   "min_score": 40,
-  "duplicate": true,
-  "note": "No new longs today (weak market). Setups shown as a watchlist only. Same session as the previous run; picks were not added to the journal again.",
+  "duplicate": false,
+  "note": "No new longs today (weak market). Setups shown as a watchlist only.",
   "macro": {
     "risk": "elevated",
-    "summary": "Fed held rates, easing immediate concerns. However, INR depreciation and ongoing crude oil volatility due to Mideast risks present headwinds.",
+    "summary": "Fed hold, high oil prices and rising yields create modest headwinds; risk elevated for new longs.",
     "sector_impacts": [
       {
-        "sector": "Information Technology",
-        "direction": "positive",
-        "reason": "INR depreciation boosts export revenues."
-      },
-      {
         "sector": "Oil Gas & Consumable Fuels",
-        "direction": "negative",
-        "reason": "Overnight Brent crude price drop impacts producer revenues."
+        "direction": "positive",
+        "reason": "Higher global oil prices boost margins"
       },
       {
-        "sector": "Consumer Durables",
+        "sector": "Information Technology",
         "direction": "negative",
-        "reason": "INR depreciation increases import costs for components."
+        "reason": "Higher yields increase discount rates, dampen valuations"
+      },
+      {
+        "sector": "Fast Moving Consumer Goods",
+        "direction": "negative",
+        "reason": "Rising commodity costs pressure margins"
       },
       {
         "sector": "Capital Goods",
         "direction": "negative",
-        "reason": "INR depreciation increases import costs for machinery and components."
+        "reason": "Higher financing costs reduce capital spending"
       },
       {
-        "sector": "Power",
-        "direction": "negative",
-        "reason": "INR depreciation increases cost of imported fuel."
+        "sector": "Financial Services",
+        "direction": "positive",
+        "reason": "Rising yields improve net interest margins"
       }
     ],
-    "method": "gemini",
+    "method": "groq",
     "llm_risk": "elevated",
-    "rule_risk": "elevated",
-    "rule_reasons": [
-      "4 shock headlines"
-    ],
+    "rule_risk": "low",
+    "rule_reasons": [],
     "moves": {
       "sp500": {
         "close": 7743.98,
@@ -5030,10 +5023,10 @@
         "date": "2026-10-28"
       },
       "brent": {
-        "close": 110.75,
-        "chg1_pct": -2.75,
-        "chg5_pct": 1.77,
-        "chg1_abs": -3.13,
+        "close": 110.55,
+        "chg1_pct": -2.92,
+        "chg5_pct": 1.59,
+        "chg1_abs": -3.33,
         "date": "2026-10-28"
       },
       "usdinr": {
@@ -5051,45 +5044,45 @@
         "date": "2026-10-28"
       },
       "dxy": {
-        "close": 102.239,
-        "chg1_pct": -0.08,
-        "chg5_pct": 0.45,
-        "chg1_abs": -0.081,
+        "close": 102.138,
+        "chg1_pct": -0.18,
+        "chg5_pct": 0.35,
+        "chg1_abs": -0.182,
         "date": "2026-10-28"
       },
       "nikkei": {
-        "close": 64565.352,
-        "chg1_pct": 2.05,
-        "chg5_pct": -0.09,
-        "chg1_abs": 1296.98,
+        "close": 63897.852,
+        "chg1_pct": -0.09,
+        "chg5_pct": 1.57,
+        "chg1_abs": -56.34,
         "date": "2026-10-29"
       },
       "hangseng": {
-        "close": 23041.32,
-        "chg1_pct": -0.73,
-        "chg5_pct": -3.46,
-        "chg1_abs": -170.49,
-        "date": "2026-10-27"
+        "close": 23091.529,
+        "chg1_pct": -0.01,
+        "chg5_pct": 0.68,
+        "chg1_abs": -3.301,
+        "date": "2026-10-29"
       }
     },
     "headline_count": 40,
     "query_status": {
       "Federal Reserve interest rates": 100,
-      "Wall Street stocks": 35,
+      "Wall Street stocks": 32,
       "crude oil prices": 100,
-      "US tariffs India": 40,
+      "US tariffs India": 24,
       "war geopolitical tensions": 12,
-      "FII outflows India": 12,
-      "rupee dollar": 100,
-      "China economy": 67,
-      "global recession": 12
+      "FII outflows India": 8,
+      "rupee dollar": 79,
+      "China economy": 94,
+      "global recession": 20
     },
     "top_headlines": [
-      "US should spy on Chinese firms to maintain edge in tech race: ex-CIA official - South China Morning Post",
-      "Federal Reserve set to issue interest rate decision as midterm elections loom - Rural Radio Network",
-      "US oil prices fall as investors gauge risks to Mideast supply - Reuters",
-      "India's deeptech dream remain import dependent for critical components - The Economic Times",
-      "Fed holds key interest rate steady; Warsh says inflation 'too high' - The Korea Herald"
+      "US Federal Reserve keeps its key interest rate unchanged at 3.9% despite high inflation - News On AIR",
+      "Oil Prices Today: Brent Crude Near $114 As US Weighs Fresh Iran Strikes After Midterms - NDTV Profit",
+      "The Fed Holds Interest Rates in a 10\u20132 Vote. Here's What This Means for Artificial Intelligence (AI) Stocks. - The Motley Fool",
+      "World Bank forecasts 23% commodity price surge in 2026, warns of oil, food shocks in 2027 - Manila Bulletin",
+      "Fed holds rates, says more data will help next decision - Livemint"
     ]
   },
   "stale": null,
