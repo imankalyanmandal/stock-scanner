@@ -28,13 +28,20 @@ def market_symbols(cfg: dict) -> list[str]:
 
 
 def load_market_data(cfg: dict, symbols: list[str], period: str, prices: dict | None = None,
-                     liquidity: dict | None = None):
-    """Download prices (unless given) and build features. Returns (feats, benchmarks, vix_close)."""
+                     liquidity: dict | None = None, cutoff=None):
+    """Download prices (unless given) and build features. Returns (feats, benchmarks, vix_close).
+
+    cutoff: drop bars after this date. The live scan passes the last *completed* session, so a
+    run that starts during market hours never treats today's half-finished bar as a session.
+    """
     mk = cfg["market"]
     bench_syms = mk["benchmarks"]
     vix_sym = mk.get("vix_symbol")
     prices = dict(prices) if prices is not None else \
         download_prices(symbols + market_symbols(cfg), period=period)
+    if cutoff is not None:
+        cut = pd.Timestamp(cutoff)
+        prices = {k: v[v.index <= cut] for k, v in prices.items()}
     benchmarks = {k: prices.pop(v) for k, v in bench_syms.items() if v in prices}
     vix_df = prices.pop(vix_sym, None) if vix_sym else None
     if "nifty50" not in benchmarks:
@@ -85,8 +92,10 @@ def run(cfg: dict, with_news: bool = True, limit: int | None = None, force: bool
     excluded = load_exclusions(cfg["universe"].get("exclude_file"))
     log.info("Universe: %d stocks (%d on the exclusion list)", len(symbols), len(excluded))
 
+    expected = expected_session(cfg)     # last session that is complete right now
     feats, benchmarks, vix = load_market_data(cfg, symbols, cfg["data"]["period"],
-                                              liquidity=liquidity_requirements(universe, cfg))
+                                              liquidity=liquidity_requirements(universe, cfg),
+                                              cutoff=expected)
     if not feats:
         raise RuntimeError("No usable price data")
     last_ts = max(f.index[-1] for f in feats.values())
@@ -95,7 +104,6 @@ def run(cfg: dict, with_news: bool = True, limit: int | None = None, force: bool
     # journal: replay open trades with the new prices before adding today's picks
     jdf = J.update(J.load(jcfg["path"]), feats, cfg)
     duplicate = (not force) and J.last_session(jcfg["state_path"]) == session
-    expected = expected_session(cfg)
     stale = pd.Timestamp(session).date() < expected
 
     regime = regime_at(_bench_at(benchmarks, last_ts),

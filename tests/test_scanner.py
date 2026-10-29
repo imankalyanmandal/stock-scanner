@@ -687,7 +687,7 @@ def test_premarket_recheck(monkeypatch, tmp_path):
     monkeypatch.setattr(premarket, "check_stock", fake_check)
     sent = []
     monkeypatch.setattr(premarket.notify, "_call", lambda m, d, **k: sent.append(d["text"]) or True)
-    res = premarket.run(cfg)
+    res = premarket.run(cfg, force=True)
     assert {c["symbol"]: c["verdict"] for c in res["checked"]} == {"GOOD": "none", "BAD": "negative"}
     assert "BAD: consider cancelling" in sent[0] and "GOOD" in sent[0]
     j = J.load(cfg["journal"]["path"])
@@ -964,3 +964,31 @@ def test_pipeline_uses_nse_results_calendar_and_snapshot(monkeypatch, tmp_path):
     assert "profit_down_yoy" in p["flags"] and "results_just_out" not in p["flags"]
     from scanner import notify
     assert "📊 Q2 FY27" in notify.format_summary(res)
+
+
+
+def test_live_scan_ignores_todays_partial_bar(monkeypatch, tmp_path):
+    """A run during market hours must not treat today's half-finished bar as a session."""
+    import datetime as dt
+    syms, uni = _universe(12)
+    data = _market(syms)                       # bars end 2026-10-23
+    monkeypatch.setattr(pipeline, "load_universe", lambda *a, **k: uni)
+    monkeypatch.setattr(pipeline, "download_prices", lambda s, **k: {x: data[x] for x in s if x in data})
+    monkeypatch.setattr(pipeline, "fetch_delivery", lambda d: {})
+    monkeypatch.setattr(pipeline, "upcoming_events", lambda *a: [])
+    monkeypatch.setattr(pipeline, "expected_session", lambda cfg: dt.date(2026, 10, 22))  # 23rd still trading
+    res = pipeline.run(_cfg(tmp_path), with_news=False)
+    assert res["session"] == "2026-10-22" and not res["stale"]
+
+
+def test_premarket_stands_down_when_late_or_repeated(tmp_path):
+    import premarket
+    from scanner.market_calendar import IST
+    cfg = _cfg(tmp_path)
+    late = datetime(2026, 10, 28, 14, 30, tzinfo=IST)
+    assert "too late" in premarket.run(cfg, now=late)["note"]
+    holiday = datetime(2026, 11, 10, 8, 20, tzinfo=IST)     # Diwali Balipratipada
+    assert premarket.run(cfg, now=holiday)["note"] == "market closed today"
+    J.write_state(cfg["journal"]["state_path"], premarket_done_for="2026-10-28")
+    early = datetime(2026, 10, 28, 8, 20, tzinfo=IST)
+    assert premarket.run(cfg, now=early)["note"] == "already checked today"

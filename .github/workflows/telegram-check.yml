@@ -1,7 +1,12 @@
 name: Setup check
 
 on:
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      send_test:
+        description: "Also send a Telegram test message"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -25,7 +30,7 @@ jobs:
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        run: python -m scanner.notify reports/telegram_check.json
+        run: python -m scanner.notify reports/telegram_check.json ${{ inputs.send_test && '--send-test' || '' }}
       - name: Check news sources and LLM keys (prints only status, never keys)
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
