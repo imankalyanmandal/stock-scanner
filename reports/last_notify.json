@@ -1,5 +1,5 @@
 {
   "session": "2026-10-28",
-  "at": "2026-10-29T06:09:18",
-  "sendMessage": "skipped: session already alerted (run with --force to resend)"
+  "at": "2026-10-30T01:19:34",
+  "sendMessage": "stale-data warning: ok"
 }
