@@ -22,7 +22,7 @@
     },
     "size_mult": 0.0,
     "allow_new_longs": false,
-    "block_reason": "weak market, global risk high: US market weakness, rising oil prices and looming US tariffs on India create headwinds, raising risk to elevated for new longs.",
+    "block_reason": "weak market, global risk high: US tech selloff, soaring crude prices due to potential Iran strikes, and new US tariffs on India create significant headwinds.",
     "macro_risk": "high",
     "sectors": {
       "Automobile and Auto Components": {
@@ -115,13 +115,13 @@
       "open": 459.20001220703125,
       "high": 462.8999938964844,
       "low": 457.04998779296875,
-      "atr": 9.88149131902115,
-      "atr_pct": 2.1407043302346027,
+      "atr": 9.881491319021151,
+      "atr_pct": 2.140704330234603,
       "rsi": 69.12633966679705,
       "sma20": 439.4749984741211,
       "sma50": 423.6009991455078,
       "sma200": 400.18230239868166,
-      "ext_atr": 2.239035274645792,
+      "ext_atr": 2.2390352746457918,
       "gain_2d_pct": 4.909092296253559,
       "gap_pct": 0.04357564423338456,
       "close_location": 0.7777800962998127,
@@ -153,7 +153,7 @@
       "max_entry": 470.3133372987365,
       "stop": 438.2618508680979,
       "risk_per_share": 25.10104302228291,
-      "stop_atr": 2.5402079718438078,
+      "stop_atr": 2.5402079718438073,
       "t1": 513.5649799349467,
       "resistance": null,
       "room_r": Infinity,
@@ -165,7 +165,7 @@
       "mom_rank": 37.0,
       "macd_bull": true,
       "supertrend_up": true,
-      "adx": 35.249338244811575,
+      "adx": 35.24933824481154,
       "bb_squeeze": false,
       "rejected": false,
       "reject_reasons": [],
@@ -190,8 +190,8 @@
       "events": [],
       "news": {
         "verdict": "positive",
-        "reason": "Strong Q2 profit growth, shares gaining, outperforming peers, and hitting a lifetime peak.",
-        "key_headline": "Kotak Mahindra Bank Q2 Results: Profit Rises 29.5%, Shares Gain 3.7% - Business Viewpoint Magazine",
+        "reason": "Stock hit lifetime peak on better outlook, supported by strong Q2 profit rise and outperformance.",
+        "key_headline": "Kotak Bank Stock Touches Lifetime Peak on Better Outlook - Kalkine India",
         "method": "gemini",
         "items": [
           {
@@ -199,56 +199,56 @@
             "source": "Business Viewpoint Magazine",
             "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE8xZkxtOUo1NW9RMmtVYnpMWnptc3ZwZ2RHWVJ0aE1Bb0VFbjI3eDVXb0psSHl4cWZWQlNZQV9KeW1DN0pKNEhxM0l0MFNmNmFiZ1hab2lFU282MTBjQ3B4emZaUUl6Tk5ZeGVCU25UdEw2UGJBeW9Bcw?oc=5",
             "published": "2026-10-30T16:55:41+00:00",
-            "age_hours": 13.1
+            "age_hours": 14.7
           },
           {
             "title": "Kotak Mahindra Bank KOTAKBANK Q2 FY27 Earnings Call Transcript - Kalkine India",
             "source": "Kalkine India",
             "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNNnMzZWZzdXVQNmZjMGlwb25MNVdhSm9Jc2dMQXhyT0FwYkVTMDlveW1NcC10aGhxWXRXdTBCeHNmc2hSLVpEeHhWYkM1T2tCNmtpcmxaWTUxR0pxeVdKQlRCWGQ1bkRZMTdTWDM3Rmh1c3gzSXNtTWYxZnktSUh5Xy1qaU9xQTRvMGthV2I5TktqMHNVb2pLbUpjSklYLWMzTTU3VXdscDBINHVBQTVUUTJFT1R6aW5EdmFkNWJhS01BaFBManhPUzRGUWFsUQ?oc=5",
             "published": "2026-10-30T16:09:00+00:00",
-            "age_hours": 13.9
+            "age_hours": 15.5
           },
           {
             "title": "Kotak Mahindra Bank (NSE:KOTAKBANK) FY26 results and financial outlook - Kalkine India",
             "source": "Kalkine India",
             "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQT3ljY3lPWmhRbzFtc0N4dGs0Rkg3MTExVHVQaDM4cWJLU1V0X3Utb0FjdHBHSHBiVDRRcW01WFliX0N3SDJKeEl5VkZNWWdhOWpfMmhfR0ViZ1ZQZTFCMlJoR2l4ZVYxRVVmaE9oLW5mX3dHSnFydDUtRUEwRlpSN2NiNkNwRWhSanpiM1YxaXFfdGZ4NVRRb2F4cVlxVk56Yl9PUVhvWWVyVHdVMnJ4akJtdDZhV196LTRjR2hWT0JMejBjR3R3?oc=5",
             "published": "2026-10-30T13:37:00+00:00",
-            "age_hours": 16.5
+            "age_hours": 18.0
           },
           {
             "title": "Coforge among 6 stocks hitting 52-week highs; rally up to 20% in a month - The Economic Times",
             "source": "The Economic Times",
             "link": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxNeWtJWWxDX2VGSGQ0VUMwT3FXaVJtSVBtZ2xPTGlDckVIUXZoLUZaVEZzT2RMSFFfa1llU255ZkNXUXo4Rk5laFY5QXZUNFQ2LVlITFVXbjdyX1JSRXRsMHB6N3dlQksyV0VmdGRSeWZPXzdteVVHZlJmbXNqMXhHMzFOa0NZMmdQdXFpV3lJNTVZTURVeG5mdHh4QWJsVm1iejktemhua1RTZE1PY01pTFZ3OFRyN0ZJcmZoNUkzRlMwNlhrQS10Q1U2X2J6LWdqaEpRRDMzYTZSUllSMVhTaU4teDIzdzlFQXc?oc=5",
             "published": "2026-10-30T11:54:28+00:00",
-            "age_hours": 18.2
+            "age_hours": 19.7
           },
           {
             "title": "Kotak Mahindra Bank rises Friday, outperforms competitors - MarketWatch",
             "source": "MarketWatch",
             "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQTFBFdkpVVng0NURScm1ZVW5NLTFXRHhBRzFJUDRZNmJYVTR3MGJ1LWhDbTJYMmlGOGNUWGhkNGRHWGlhU3k5eVRYWnYyOGVwS2MwSFZ0bDhObGlfbnNnQnVLTFg4OWlrMWV5ZkIwWmlScGtUTzhsVXpfODNONjNHRm1WbjRaOHhGR1ZoMEJnQnN0ZF9wZjJfcTdOenRNbU9TdnN6T0tCTkFzVnNoV3hfbmZDem5hM3FrdzQ2ZmxybVo1VEN5RnZWd3AxNEtZVEk?oc=5",
             "published": "2026-10-30T10:30:00+00:00",
-            "age_hours": 19.6
+            "age_hours": 21.1
           },
           {
             "title": "Kotak Bank Stock Touches Lifetime Peak on Better Outlook - Kalkine India",
             "source": "Kalkine India",
             "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQaGYwODFFeHRVbTR6aGplZFBTVmNaYnVtYmR3LTAtUi1lbnNBVGNZYzZGX2ZtNGVkc0pONnZvQnI5bExxTXRIY1BaUzZTWVZScmUxWno4NktDRzNabEZYRmk5dDJWWmVxV3o1aU5KZVhYdzVVX19RTDR3a1FWWlk2Y1R5MGlEN2NOLVFzZjc0WWp1ZUVIWUM1YUZDcF9PR1VxOHVpNlEwR1dxU3lLb29KSXlsZlhBZEI1dHRuR1R3akN6V3ZJajFF?oc=5",
             "published": "2026-10-30T06:57:00+00:00",
-            "age_hours": 23.1
+            "age_hours": 24.7
           },
           {
             "title": "Sensex, Nifty turn lower; broader markets crash as oil tops $116/barrel. What lies ahead? - The Economic Times",
             "source": "The Economic Times",
             "link": "https://news.google.com/rss/articles/CBMizAJBVV95cUxPdmhTZ1drbXJrZlNwUXpzbGx2TWZaWHdRcXAzaG1RT0NnZlVHVVhBUzdBUzBId2Fqd2t6VTIydXV1WVNBNG1LcF9KenZQYkxXQ01EYTY0ajRURjFCLVJUTDlXMDJqQWlpdWZoaGZZU3FSekpmcTR5ejNiamR3Sk5MQmhmQVBWWTRISUJLZVRnREVvN1FJbEE2UE4xcURWQ2FWNWhzWkdhZHk5Ry0zR1R5LUJOVEdMaTlTaGFJZ0NxTk82aXU5cjl0MTFURnRIOWlQVGJWWElwZldzVS1udVByY0NxRVJUYi1IeTlodFhVR1Y5M2ViZmNCX0ZMUV9kVnVsbHdMS25kakY1clA2TEtvTURqUmFVcjhldURWSExRTV9hZ09PMExhMFg5QnNvS2R0OUdFRjJhWWF2azNpejR6MWpMWkQyOGltWmZpQdIB9AFBVV95cUxOamxtQkl4aWpPQXZ3RXdZblRPa085YklxbVh2ZXczb1BhNGdoLWpOSWF6OEdHTjcydlA4eXlUOHpZMUdNMk45VDNGNXJacFBra25ycnNGQlFJT090el9yc3ZjZ3NYRmhZa0VHX1JEOER2RHQyV3RXRURtUnZrQk5Xci04Wk41X1RTSXhJN0haNmtVNUFpbmVMR0F6VzFPZHliV0dHMU9iR05WTWFPb29QazVvRXk0eVNLb1hfNXlIclJ6YWhfa0ZUc25Xdm5fLWZhWEhHUGk3SHZHNkxKUUpqRm9KdjdyREFhdV8xeXpkMll4aEZk?oc=5",
             "published": "2026-10-30T05:36:52+00:00",
-            "age_hours": 24.5
+            "age_hours": 26.0
           },
           {
             "title": "Kotak Mahindra Bank Limited Share Price and Technical Levels - Kalkine India",
             "source": "Kalkine India",
             "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxNVWI4YW9QbjJqRTM3VmphRG5fa1kzc2RNd1l2OEQzSmJnTGg3OTRlS2p4X3dzOWxwZG4xY0dEWG1nZEpnVUJDOFVvMldDQmR2dHpRWEVjTktjYzg5UThRMV9GaFczRFo4ajZrb2MyLWk2cnNYbVo4QmdScW1pdHFWcG1SRGVFU0R0MElTVG9YU3JBYk9Uakl6djRMaWRGcjVWZERwMkttMnFfb2lpV2lYRjRmZDNsZEhRNE11LWh0NzlVR1JocWwxUXlwUG5EeUNrMVYxSzFJNmxYdw?oc=5",
             "published": "2026-10-30T05:06:00+00:00",
-            "age_hours": 25.0
+            "age_hours": 26.5
           }
         ],
         "sources": {
@@ -312,7 +312,8 @@
         "50dma_not_rising",
         "too_close_to_52w_low",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -399,8 +400,7 @@
       "reasons": [
         "below_50dma",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -431,8 +431,7 @@
         "50dma_not_rising",
         "no_setup:pullbacks_disabled",
         "stop_too_wide",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -448,8 +447,7 @@
         "50dma_not_rising",
         "far_from_52w_high",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -475,7 +473,8 @@
         "50dma_not_rising",
         "no_setup:pullbacks_disabled",
         "stop_too_wide",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -734,7 +733,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -771,8 +771,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -786,8 +785,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -883,8 +881,7 @@
       "reasons": [
         "below_50dma",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -1111,8 +1108,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -1277,8 +1273,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -1374,7 +1369,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -1442,8 +1438,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -1549,8 +1544,7 @@
       "symbol": "CUPID",
       "reasons": [
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -1570,8 +1564,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -1598,7 +1591,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -1614,7 +1608,8 @@
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
         "stop_too_wide",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -1690,8 +1685,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -1745,8 +1739,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -1786,8 +1779,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -2054,8 +2046,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -2069,8 +2060,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -2342,8 +2332,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -2387,7 +2376,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -2800,8 +2790,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -2944,8 +2933,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -2986,8 +2974,7 @@
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
         "stop_too_wide",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -3274,7 +3261,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -3646,7 +3634,8 @@
       "reasons": [
         "low_volume",
         "50dma_not_rising",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -3686,8 +3675,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -3723,8 +3711,7 @@
         "weak_rs_rank",
         "breakout_low_volume",
         "stretched_from_20dma",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -3750,8 +3737,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -3795,8 +3781,7 @@
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
         "stop_too_wide",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -3810,8 +3795,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -3913,7 +3897,8 @@
         "far_from_52w_high",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -3926,8 +3911,7 @@
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
         "stop_too_wide",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -4010,7 +3994,8 @@
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
         "stop_too_wide",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -4099,8 +4084,7 @@
         "weak_rs_rank",
         "breakout_low_volume",
         "breakout_weak_close",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -4278,8 +4262,7 @@
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
         "stop_too_wide",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -4496,8 +4479,7 @@
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
         "stop_too_wide",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -4522,7 +4504,8 @@
         "below_50dma",
         "50dma_not_rising",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -4546,7 +4529,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -4573,7 +4557,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -4633,7 +4618,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -4706,7 +4692,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -4723,8 +4710,7 @@
         "200dma_not_rising",
         "too_close_to_52w_low",
         "weak_rs_rank",
-        "breakout_low_volume",
-        "global_sector_headwind"
+        "breakout_low_volume"
       ]
     },
     {
@@ -4765,8 +4751,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -4991,7 +4976,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -5074,8 +5060,7 @@
         "no_setup:pullbacks_disabled",
         "extended_2day_gain",
         "stop_too_wide",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -5095,7 +5080,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -5136,8 +5122,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -5239,7 +5224,8 @@
       "symbol": "WELSPUNLIV",
       "reasons": [
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -5352,8 +5338,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -5374,45 +5359,45 @@
   "passed_gates": 2,
   "min_score": 40,
   "duplicate": true,
-  "note": "No new longs today (weak market, global risk high: US market weakness, rising oil prices and looming US tariffs on India create headwinds, raising risk to elevated for new longs.). Setups shown as a watchlist only. Same session as the previous run; picks were not added to the journal again.",
+  "note": "No new longs today (weak market, global risk high: US tech selloff, soaring crude prices due to potential Iran strikes, and new US tariffs on India create significant headwinds.). Setups shown as a watchlist only. Same session as the previous run; picks were not added to the journal again.",
   "macro": {
     "risk": "high",
-    "summary": "US market weakness, rising oil prices and looming US tariffs on India create headwinds, raising risk to elevated for new longs.",
+    "summary": "US tech selloff, soaring crude prices due to potential Iran strikes, and new US tariffs on India create significant headwinds.",
     "sector_impacts": [
       {
         "sector": "Information Technology",
         "direction": "negative",
-        "reason": "US tariffs could curb export demand"
-      },
-      {
-        "sector": "Automobile and Auto Components",
-        "direction": "negative",
-        "reason": "Tariffs may hit export orders and raise input costs"
+        "reason": "Significant US tech selloff and AI spending concerns impact Indian IT exports."
       },
       {
         "sector": "Oil Gas & Consumable Fuels",
         "direction": "positive",
-        "reason": "Higher crude prices boost domestic oil firms"
+        "reason": "Soaring Brent crude prices benefit upstream oil and gas producers."
       },
       {
-        "sector": "Power",
+        "sector": "Automobile and Auto Components",
         "direction": "negative",
-        "reason": "Rising oil prices increase generation costs"
+        "reason": "Higher crude prices increase fuel costs for consumers and input costs for manufacturers."
       },
       {
-        "sector": "Fast Moving Consumer Goods",
+        "sector": "Chemicals",
         "direction": "negative",
-        "reason": "Higher input costs and tariff pressure on imports"
+        "reason": "Elevated crude oil prices lead to higher feedstock costs for chemical companies."
+      },
+      {
+        "sector": "Textiles",
+        "direction": "negative",
+        "reason": "New 10% US tariffs on India directly impact textile exports."
       }
     ],
-    "method": "groq",
-    "llm_risk": "elevated",
+    "method": "gemini",
+    "llm_risk": "high",
     "rule_risk": "high",
     "rule_reasons": [
       "S&P 500 -1.8%",
       "Nasdaq -2.9%",
       "Nikkei -2.1%",
-      "9 shock headlines"
+      "8 shock headlines"
     ],
     "moves": {
       "sp500": {
@@ -5475,21 +5460,21 @@
     "headline_count": 40,
     "query_status": {
       "Federal Reserve interest rates": 100,
-      "Wall Street stocks": 54,
+      "Wall Street stocks": 100,
       "crude oil prices": 100,
-      "US tariffs India": 39,
+      "US tariffs India": 22,
       "war geopolitical tensions": 24,
-      "FII outflows India": 11,
-      "rupee dollar": 86,
-      "China economy": 68,
-      "global recession": 38
+      "FII outflows India": 18,
+      "rupee dollar": 78,
+      "China economy": 67,
+      "global recession": 37
     },
     "top_headlines": [
-      "DXP Enterprises (NASDAQ:DXPE) Stock Rating Lowered by Wall Street Zen - MarketBeat",
-      "Rupee continues upward trend against dollar - Daily Times",
-      "Tech Stocks Plunge as Wall Street Enters \u2018Show Me\u2019 Phase - Bloomberg",
-      "Western Digital (NASDAQ:WDC) Stock Moved Down to Buy by Wall Street Zen - MarketBeat",
-      "Jones Lang LaSalle (NYSE:JLL) Stock Gets Downgrade from Wall Street Zen - MarketBeat"
+      "China's marine economy grows 4.9% in Jan-Sept - China Daily",
+      "Oil Prices - 30-10-26 - Armenpress",
+      "US-India Tariffs: Why The Midterm Election May Not Change The Picture - NDTV Profit",
+      "Middle East flights: KLM, Singapore Airlines and Air France extend suspensions - The National",
+      "Tech Stocks Plunge as Wall Street Enters \u2018Show Me\u2019 Phase - Bloomberg"
     ]
   },
   "stale": null,
