@@ -10,6 +10,7 @@ from . import report
 from .data import download_prices, fetch_delivery
 from .enrich import upcoming_events
 from .news import bse_code_map, check_stock
+from .screen import run_screen
 from .results import NSEClient, get_snapshot, results_calendar, summary_line
 from . import macro as M
 from .filters import (arrays, evaluate, features, liquidity_requirements, metrics_at,
@@ -273,10 +274,23 @@ def run(cfg: dict, with_news: bool = True, limit: int | None = None, force: bool
     if duplicate:
         notes.append("Same session as the previous run; picks were not added to the journal again.")
 
+    # breakout quality screen (information only; never changes the selection)
+    screen = None
+    if cfg.get("screen", {}).get("enabled"):
+        try:
+            screen = run_screen(current, info, cfg, excluded, fetch=with_news)
+            log.info("Screen: %d breakouts, %d above 200 DMA, %d passed, %d ROE unknown",
+                     screen["breakouts"], screen["above_200dma"], len(screen["passed"]),
+                     len(screen["roe_unknown"]))
+        except Exception as e:  # never let the screen break the scan
+            log.exception("screen failed")
+            screen = {"error": f"{type(e).__name__}: {e}"}
+
     result = {"session": session, "regime": regime, "picks": picks, "watchlist": watchlist,
               "rejected": rejected, "universe_size": len(symbols), "evaluated": len(current),
               "passed_gates": len(passed), "min_score": cfg["selection"]["min_score"],
               "duplicate": duplicate, "note": " ".join(notes), "macro": gm,
+              "screen": screen,
               "stale": {"session": session, "expected": expected.isoformat()} if stale else None,
               "news_vetoed": [{"symbol": p["symbol"], "company": p["company"],
                                "reason": p["news"].get("reason"),

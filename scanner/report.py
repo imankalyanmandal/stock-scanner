@@ -7,6 +7,9 @@ from pathlib import Path
 
 import pandas as pd
 
+SCREEN_COLS = ["symbol", "company", "industry", "close", "bo_day", "base_high", "vol_ratio", "sma200",
+               "above_200dma_pct", "roe_pct", "roe_source", "roe_fetched", "roe_stale", "status",
+               "excluded"]
 CSV_COLS = ["symbol", "company", "industry", "setup", "score", "close", "trigger", "max_entry",
             "stop", "t1", "risk_per_share", "stop_atr", "room_r", "qty", "position_value",
             "risk_amount", "rs_rank", "setup_vol_ratio", "setup_close_loc", "below_high_pct",
@@ -39,6 +42,12 @@ def write(result: dict, out_dir: str) -> dict[str, Path]:
              "events": _events(p)} for p in result["picks"]]
     pd.DataFrame(rows, columns=CSV_COLS).to_csv(paths["csv"], index=False)
     paths["html"].write_text(_html(result))
+    sc = result.get("screen")
+    if sc and "passed" in sc:
+        paths["screen"] = d / f"screen_{result['session']}.csv"
+        rows = [{**p, "status": s} for s, key in (("passed", "passed"), ("roe_unknown", "roe_unknown"))
+                for p in sc[key]]
+        pd.DataFrame(rows, columns=SCREEN_COLS).to_csv(paths["screen"], index=False)
     return paths
 
 
@@ -122,6 +131,28 @@ def _macro(gm):
             + (f"<details><summary>Top global headlines</summary><ul>{heads}</ul></details>" if heads else ""))
 
 
+def _screen(sc):
+    if not sc:
+        return ""
+    if "passed" not in sc:
+        return f"<h2>Breakout screen</h2><p class=warn>Screen failed: {html.escape(sc.get('error', ''))}</p>"
+
+    def row(p):
+        roe = _fmt(p.get("roe_pct"), 1) + (" (old)" if p.get("roe_stale") else "")
+        note = f" <span class=flag>excluded: {html.escape(p['excluded'])}</span>" if p.get("excluded") else ""
+        return (f"<tr><td style='text-align:left'><b>{html.escape(p['symbol'])}</b>{note}</td>"
+                f"<td>{_fmt(p['close'])}</td><td>{_fmt(p['vol_ratio'])}×</td>"
+                f"<td>{_fmt(p['above_200dma_pct'], 1)}%</td><td>{roe}</td></tr>")
+    head = "<tr><th>Stock</th><th>Close</th><th>Volume</th><th>Above 200 DMA</th><th>ROE %</th></tr>"
+    rows = "".join(row(p) for p in sc["passed"] + sc["roe_unknown"])
+    return (f"<h2>Breakout screen</h2><p>{sc['checked']} stocks checked · {sc['breakouts']} volume "
+            f"breakouts · {sc['above_200dma']} above 200 DMA · <b>{len(sc['passed'])} with ROE &gt; "
+            f"{sc['roe_min_pct']:g}%</b> · {len(sc['roe_unknown'])} ROE unknown</p>"
+            + (f"<table>{head}{rows}</table>" if rows else "")
+            + "<p class=m>Information only: separate from the swing picks and not in the journal. "
+            "Stocks with unknown ROE (shown as –) did not pass.</p>")
+
+
 def _vetoed(v):
     if not v:
         return ""
@@ -190,6 +221,7 @@ India VIX {_fmt(reg.get('vix'), 1)} · position size ×{reg['size_mult']}
 {_macro(r.get('macro'))}
 {cards or '<p>No trades today.</p>'}
 {f'<h2>Watchlist (not tradeable today)</h2>{watch}' if watch else ''}
+{_screen(r.get('screen'))}
 {_vetoed(r.get('news_vetoed'))}
 {_journal(r.get('journal'))}
 <details><summary>Why stocks were rejected</summary><ul>{rej_html}</ul></details>
