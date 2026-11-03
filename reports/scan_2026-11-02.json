@@ -2,7 +2,7 @@
   "session": "2026-11-02",
   "regime": {
     "regime": "weak",
-    "breadth_pct": 26.8,
+    "breadth_pct": 26.5,
     "vix": 15.5,
     "benchmarks": {
       "nifty50": {
@@ -30,8 +30,8 @@
         "count": 19
       },
       "Capital Goods": {
-        "breadth_pct": 12.5,
-        "count": 40
+        "breadth_pct": 10.256410256410255,
+        "count": 39
       },
       "Chemicals": {
         "breadth_pct": 6.666666666666667,
@@ -108,7 +108,178 @@
     }
   },
   "picks": [],
-  "watchlist": [],
+  "watchlist": [
+    {
+      "symbol": "COFORGE",
+      "company": "Coforge Ltd.",
+      "industry": "Information Technology",
+      "indexes": "niftymidcap150",
+      "last_date": "2026-11-02",
+      "close": 2099.0,
+      "open": 2065.0,
+      "high": 2112.199951171875,
+      "low": 2053.300048828125,
+      "atr": 71.66938233110916,
+      "atr_pct": 3.414453660367278,
+      "rsi": 70.6035670281943,
+      "sma20": 1926.9550048828125,
+      "sma50": 1887.69400390625,
+      "sma200": 1540.0305108642578,
+      "ext_atr": 2.4005368753193337,
+      "gain_2d_pct": 6.98267074413863,
+      "gap_pct": 0.9779951100244544,
+      "close_location": 0.7758917986852032,
+      "vol_ratio": 1.4049564108571075,
+      "avg_volume20": 2781753.45,
+      "median_turnover_cr": 469.0769816188538,
+      "req_turnover_cr": 10.0,
+      "req_avg_volume": 100000.0,
+      "locked_20": 0,
+      "below_high_pct": 0.624938522726104,
+      "above_low_pct": 108.69853563844272,
+      "close_above_sma50": true,
+      "sma50_above_sma200": true,
+      "sma50_rising": true,
+      "sma200_rising": true,
+      "setup": "breakout",
+      "setup_fail": "",
+      "bo_day": 2,
+      "base_high": 2008.800048828125,
+      "base_depth_pct": 12.928119620152783,
+      "contraction": 0.7570275017708886,
+      "base_vol_ratio": 1.1089518726189096,
+      "base_undercut": false,
+      "setup_vol_ratio": 2.4713488837614084,
+      "setup_close_loc": 0.8129171526367445,
+      "setup_low": 1972.0,
+      "trigger_base": 2112.199951171875,
+      "trigger": 2114.3121511230465,
+      "max_entry": 2146.026833389892,
+      "stop": 1964.8330617668892,
+      "risk_per_share": 149.47908935615737,
+      "stop_atr": 2.085675702709018,
+      "t1": 2413.2703298353613,
+      "resistance": null,
+      "room_r": Infinity,
+      "ret21": 0.20004575455833984,
+      "ret63": 0.2224810716365755,
+      "bench_ret21": 0.007670352356424326,
+      "bench_ret63": -0.051971973075317646,
+      "rs_rank": 94.70198675496688,
+      "mom_rank": 10.0,
+      "macd_bull": true,
+      "supertrend_up": true,
+      "adx": 17.639336164465835,
+      "bb_squeeze": false,
+      "rejected": false,
+      "reject_reasons": [],
+      "flags": [
+        "blue_sky",
+        "positive_news"
+      ],
+      "score": 77.8,
+      "components": {
+        "rs_rank": 0.82,
+        "volume": 0.98,
+        "tightness": 0.09,
+        "close_location": 0.78,
+        "near_high": 0.98,
+        "beats_benchmark": 1.0,
+        "room": 1.0,
+        "delivery": 0.72
+      },
+      "delivery_pct": 46.7,
+      "events": [],
+      "news": {
+        "verdict": "positive",
+        "reason": "New product launch, strong momentum with all-time/52-week highs, and positive margin expectations.",
+        "key_headline": "Coforge Ltd Hits All-Time High of Rs 2,086.05 as Momentum Builds Across Timeframes",
+        "method": "gemini",
+        "items": [
+          {
+            "title": "Coforge launches BridgeCX solution for real-time customer personalization - scanx.trade",
+            "source": "scanx.trade",
+            "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQX0tQam9EQjVUdG9MNVB1VGQ1RnBZeTN6TjB0a3JGS09paGE3elNSTTNNNndCU1JQSjZ0aUxEaU5VZExqd1Q5OTRIN3Q1cUMwc3FMb2phNUVndUJKdTFXaFVDRGl1bklkT1hiNm45U2RxbFNCRU5kR2tRazk3X3hCV2xqQ1dtdGVaQVRvMGNoOXRqR3RnOWMzNF9hc2FMNGZPU09HNkJadlg0VVdORS02cXlMNUs3Z1FsN3g4bUFPTnNSVnlEQ1E?oc=5",
+            "published": "2026-11-03T05:26:08+00:00",
+            "age_hours": 3.3
+          },
+          {
+            "title": "Coforge launches BridgeCX personalisation solution with Pega, Mastercard - Business Upturn",
+            "source": "Business Upturn",
+            "link": "https://news.google.com/rss/articles/CBMiiAJBVV95cUxPRFVPWWxQQ2JEUFhLV1BHcWdIZHNFTFJ1MUo0eEN1SXFTRjZfcUhZaGJwWTk2OGFKUVFrbEVNT0pDM3ZnbzFyMmloMlZ4eUVuVzAtWlVwRjFoUjZKV0lzemlOZlhDTnVzLUNaejl4enY1dmVOSEp1LXBwanhQU3ZZb3dCenc3d1llZWVUa0FRTkFCX0poRXh0TVJsQUNVbjR1M0FLV0JrbFpxbGd3NHkxa0sxbFZ4bGg1bDBqbWZXV085cW5sQnlXNWEtWklOS2EzUk5QRVhJNHpFUUxxNFRpZk5oaWJsb1RMVm9rZzVhZ1Q3a0ZMNUhrY2RDUl9GSGZwX1dJdkVRcXQ?oc=5",
+            "published": "2026-11-03T05:18:33+00:00",
+            "age_hours": 3.4
+          },
+          {
+            "title": "Stock Radar: Coforge stock hits fresh record high in October; will the rally continue in November 2026? - The Economic Times",
+            "source": "The Economic Times",
+            "link": "https://news.google.com/rss/articles/CBMihAJBVV95cUxOT08tZlByTU8xSnQ0SUF4cFhTeFUyYlV2R240NmJBWTZtVENpalVKejkzVU5Gb3VrZzF0ZzVINVhaeDJaOXpSVWptQWdqVDNubHAwN0YzMXExelllTG1HbGlLelFWMVRQS01pM3hfdmlPeUgxNDJMVkVmSE4yTFAxNkx2Q2kxXzRVcUNwQ1JMaG9YVGF1LUs4ZkFkbm02dHl4N0U4VUkxS1FYRGlsYkMzaHg0akFqSndWb0pLeUVvQ2tJX3RKdU9GUTVoMXZ0Zk5FZWVnUWhlX2FKVnozaGctT3NTdGVxZ2FYelhBVE9XdXdpVmNsaGRkSmoxT3VsVzFzeUkxaNIBigJBVV95cUxOdHFabDJRbG5vbFRNUzdiTmZlOG81MWxPa1pfZWJZQzZKM3Rxb3o2VnlLVW9sRldEV3Y2WHd6emJiYVI3WjNFNmQ3NVdwd0FrSW5qTmt4NDM0eFI1Z1NpU2FjaWMtZVZGcy1wM1hZcklsS0x4SUVXazZ0N2NMN0VFbGxyS0N2ZGtBREgyN25qLUQ1ZDZNTnd6T09YMjdJVHd0Z3d0SzBRM2tMNV9hTzdxRm5fM01IWGhVOTUxOWJMb210TGVtV21pSVJMc3dyRG80bFJzcV9HT3Q5OGdKS1h2Qnh5VGVzOUFWVXZwR1l4UzVrUGlHSkF6aG0zV3F1VC12OHBEZ3g5VUhWdw?oc=5",
+            "published": "2026-11-02T23:30:00+00:00",
+            "age_hours": 9.2
+          },
+          {
+            "title": "Coforge among 4 stocks that hit 52-week highs and rallied up to 15% in a month - The Economic Times",
+            "source": "The Economic Times",
+            "link": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxNZnEtZE8yMjEwcTZqQjNPS1NCUUpqTmZfUGVaY2Z2UHoyc2NmbDNsU2JhbkpPaXlVYzB4WHdLVTJURXVjV29mMGI3MG5oV1Q3OFFwNU9BRHdCOWVrNjI5R1hEX3A3cHV6WlVfN0ZHSGNhMlg1MFowVnduUkxISHdzSnpoaDBqdDlJWlk2STlUWEFQdHF2MVZJTnpGQ1hmcWsyWUhkS2c2WlVydEdNM2pIdm9KU0NnOHdCeDRtQWpTY21VRDM2bWJ0QVlMdkxrWngxbHN5clZWd3RxVHlZeVhWS05qb3cxejFiZUZaX0F2Skd2Ujg?oc=5",
+            "published": "2026-11-02T13:39:09+00:00",
+            "age_hours": 19.1
+          },
+          {
+            "title": "Coforge Ltd Hits All-Time High of Rs 2,086.05 as Momentum Builds Across Timeframes - MarketsMojo",
+            "source": "MarketsMojo",
+            "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOZWxrWDA4a3BUV3ZvU0VhMWE0dDdDLU9EWC0wOFdBYjlwOEtDZzExVkg3MFVJbEF6c1dFRk0wUE1hVEhlZmJlUVFOTnNHZDVqbThDakpPYkVPMTJoZHVQYXNwRXhFay1QRWtqT05Edzh6dmVjTVIyeE9vU0dsbUNKd2xBS0M5NTFaZ3dzZHpVVU8wNWh3d2lPNzgwOExRWlNYRHpmdEp6N3FjS0c2dGNkcVhOamNFVHNqcV9kV1hB?oc=5",
+            "published": "2026-11-02T13:07:48+00:00",
+            "age_hours": 19.6
+          },
+          {
+            "title": "Coforge Ltd Sees Sharp Open Interest Surge Amidst Strong Market Momentum - MarketsMojo",
+            "source": "MarketsMojo",
+            "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNZkdiSFB1TXNQRDYyNmlZNUZNNUs0S05oSnQ3WlREZXcweGVtT3hyX2pKN2l1SlZlbXlqUWNXMDNxc09POFNmelJ0N3UyemZ0Sy1PWV9XMzJidEVrd3hTNlI1R2o2anpLRUdlcmthVzdIVEFoekp1RElEOHNPemFIQmZoYmMwb2dYSV9ycUVubXB6MDN2OWw3SFZfUXFwazlRWThYc2pESHBvOEY4bUt5UndJaTVmd0xkbDhsSFlzUTN2YVZteVp2VzNR?oc=5",
+            "published": "2026-11-02T13:07:41+00:00",
+            "age_hours": 19.6
+          },
+          {
+            "title": "Coforge Q2 FY27 results: Large deals underpin stronger margin expectations - Kalkine India",
+            "source": "Kalkine India",
+            "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNZWlqWUhiUkF4SEZxNDRkMFQta0V2bW1xOWtSc3F0RzRjZlpkWHNiQmxqOXhzaVljUFgtVGV5RjlFVkY1U1M5bU0zTmdUajV4TEpEaDBSYTl2TkhfN0RHb3FKMTh5OXN3VVlIcWdyT0lDT1Nqa21CSkQzZy16Rk8xU1RnYVZqbjhNVlNvay1zLURZRDBKazVwdl9PRDBVeVVVRENxVFFrcGIxbHdzSGc?oc=5",
+            "published": "2026-11-02T11:27:00+00:00",
+            "age_hours": 21.3
+          },
+          {
+            "title": "Momentum Stocks: Silky Overseas, Menon Bearings up on sheer momentum; Coforge, Indian Hotels at 52-week... - Moneycontrol.com",
+            "source": "Moneycontrol.com",
+            "link": "https://news.google.com/rss/articles/CBMiggJBVV95cUxNZkotYTFySDQ1dVdzWE03bVBXbXVsUWthZXRJam9hMHFDWEdiUi1fMTlWV2J2X0NUd0FvZWJocmNJTDdEZ2U2ZFJueTNQNE41WXo4NWRxYVE4TXNpV2pvWGlHN0RCbWY4MlUwRUd4aVJET0twWkk2Wno1blg3SXZYaDFEVXNrV2lRUHpfUmN5NVVaeHJ1Wmd1ZWxBak9vcjg3VTdGNDd3dlRrcl9CS0VrY0o4N2FXaUJsY29tcGg3QmJ0Y2U3QXFDWW5xd2YwSmtoNUFGTXB0RnJKTHFoQ0NIZU9OYmFTM2JrUU9vRUI2ME9GekFneFpnSFZQdkJvSUJVWGfSAYICQVVfeXFMTWZKLWExckg0NXVXc1hNN21QV211bFFrYWV0SWpvYTBxQ1hHYlItXzE5Vldidl9DVHdBb2ViaHJjSUw3RGdlNmRSbnkzUDRONVl6ODVkcWFROE1zaVdqb1hpRzdEQm1mODJVMEVHeGlSRE9LcFpJNlp6NW5YN0l2WGgxRFVza1dpUVB6X1JjeTVVWnhydVpndWVsQWpPb3I4N1U3RjQ3d3ZUa3JfQktFa2NKODdhV2lCbGNvbXBoN0JidGNlN0FxQ1lucXdmMEpraDVBRk1wdEZySkxxaENDSGVPTmJhUzNia1FPb0VCNjBPRnpBZ3haZ0hWUHZCb0lCVVhn?oc=5",
+            "published": "2026-11-02T05:18:08+00:00",
+            "age_hours": 27.4
+          }
+        ],
+        "sources": {
+          "google": "ok (8)"
+        },
+        "keyword_alert": false
+      },
+      "results": {
+        "source": "yahoo",
+        "symbol": "COFORGE",
+        "quarter": "Q2 FY27",
+        "period_end": "2026-09-30",
+        "basis": "as reported by Yahoo",
+        "filed": null,
+        "revenue_cr": 6170.8,
+        "net_profit_cr": 588.1,
+        "revenue_yoy_pct": 53.6,
+        "profit_yoy_pct": null,
+        "revenue_qoq_pct": 11.6,
+        "profit_qoq_pct": 13.4,
+        "op_margin_pct": null,
+        "loss": false,
+        "stale": false,
+        "fallback_reason": "nse: missing revenue,net_profit"
+      },
+      "results_line": "Q2 FY27 \u00b7 Rev +54% YoY \u00b7 via Yahoo",
+      "next_results": null
+    }
+  ],
   "rejected": [
     {
       "symbol": "360ONE",
@@ -120,7 +291,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -153,7 +325,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -174,7 +347,8 @@
         "below_50dma",
         "50dma_not_rising",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -326,8 +500,7 @@
         "no_setup:pullbacks_disabled",
         "extended_2day_gain",
         "stop_too_wide",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -369,7 +542,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -389,7 +563,8 @@
     {
       "symbol": "ANANDRATHI",
       "reasons": [
-        "no_setup:pullbacks_disabled"
+        "no_setup:pullbacks_disabled",
+        "global_sector_headwind"
       ]
     },
     {
@@ -411,7 +586,8 @@
         "below_50dma",
         "50dma_not_rising",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -438,9 +614,7 @@
     {
       "symbol": "APLAPOLLO",
       "reasons": [
-        "too_close_to_52w_low",
-        "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "no_data_or_short_history"
       ]
     },
     {
@@ -461,7 +635,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -481,7 +656,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -532,7 +708,8 @@
       "symbol": "ATHERENERG",
       "reasons": [
         "base_too_deep",
-        "stretched_from_20dma"
+        "stretched_from_20dma",
+        "global_sector_headwind"
       ]
     },
     {
@@ -550,7 +727,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -572,7 +750,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -586,7 +765,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -599,7 +779,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -634,7 +815,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -652,7 +834,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -666,7 +849,8 @@
       "reasons": [
         "below_50dma",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -679,7 +863,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -691,7 +876,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "breakout_weak_close",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -704,7 +890,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -720,7 +907,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -779,7 +967,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -795,7 +984,8 @@
         "50dma_not_rising",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -868,7 +1058,8 @@
         "low_volume",
         "breakout_low_volume",
         "stretched_from_20dma",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -901,7 +1092,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -910,7 +1102,8 @@
         "50dma_below_200dma",
         "50dma_not_rising",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -922,8 +1115,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -936,7 +1128,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -949,7 +1142,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -969,7 +1163,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -1009,7 +1204,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -1022,7 +1218,8 @@
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
         "stop_too_wide",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -1050,7 +1247,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -1094,7 +1292,8 @@
         "200dma_not_rising",
         "weak_rs_rank",
         "breakout_weak_close",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -1180,12 +1379,6 @@
       ]
     },
     {
-      "symbol": "COFORGE",
-      "reasons": [
-        "global_sector_headwind"
-      ]
-    },
-    {
       "symbol": "COHANCE",
       "reasons": [
         "stale_data"
@@ -1202,7 +1395,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -1264,7 +1458,8 @@
         "far_from_52w_high",
         "too_close_to_52w_low",
         "weak_rs_rank",
-        "no_setup:pullbacks_disabled"
+        "no_setup:pullbacks_disabled",
+        "global_sector_headwind"
       ]
     },
     {
@@ -1284,7 +1479,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -1310,7 +1506,8 @@
       "symbol": "CUPID",
       "reasons": [
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -1330,7 +1527,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -1411,7 +1609,8 @@
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
         "stop_too_wide",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -1441,7 +1640,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -1516,7 +1716,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -1591,7 +1792,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -1606,7 +1808,8 @@
         "below_50dma",
         "50dma_not_rising",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -1641,7 +1844,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -1661,7 +1865,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -1727,7 +1932,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -1799,7 +2005,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -1870,7 +2077,8 @@
       "reasons": [
         "50dma_not_rising",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -1916,7 +2124,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -1936,8 +2145,7 @@
         "200dma_not_rising",
         "no_setup:pullbacks_disabled",
         "stretched_from_20dma",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -1950,7 +2158,8 @@
         "far_from_52w_high",
         "too_close_to_52w_low",
         "weak_rs_rank",
-        "no_setup:pullbacks_disabled"
+        "no_setup:pullbacks_disabled",
+        "global_sector_headwind"
       ]
     },
     {
@@ -1970,7 +2179,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -1984,7 +2194,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -2017,8 +2228,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -2071,7 +2281,8 @@
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
         "stop_too_wide",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -2125,7 +2336,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -2141,7 +2353,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -2154,7 +2367,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -2168,7 +2382,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -2182,7 +2397,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -2203,7 +2419,8 @@
         "200dma_not_rising",
         "too_close_to_52w_low",
         "weak_rs_rank",
-        "no_setup:pullbacks_disabled"
+        "no_setup:pullbacks_disabled",
+        "global_sector_headwind"
       ]
     },
     {
@@ -2217,7 +2434,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -2229,7 +2447,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -2299,7 +2518,8 @@
         "50dma_not_rising",
         "too_close_to_52w_low",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -2341,8 +2561,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -2381,8 +2600,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -2457,7 +2675,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -2471,7 +2690,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -2484,7 +2704,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -2524,7 +2745,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -2546,7 +2768,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -2581,7 +2804,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -2602,7 +2826,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -2617,7 +2842,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -2725,7 +2951,8 @@
         "50dma_not_rising",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -2734,14 +2961,16 @@
         "below_50dma",
         "50dma_not_rising",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
       "symbol": "KARURVYSYA",
       "reasons": [
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -2819,7 +3048,8 @@
     {
       "symbol": "KOTAKBANK",
       "reasons": [
-        "no_setup:pullbacks_disabled"
+        "no_setup:pullbacks_disabled",
+        "global_sector_headwind"
       ]
     },
     {
@@ -2889,7 +3119,8 @@
         "below_50dma",
         "too_close_to_52w_low",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -2900,7 +3131,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -2913,7 +3145,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -2966,7 +3199,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -2986,8 +3220,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -3019,7 +3252,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -3032,7 +3266,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -3041,7 +3276,8 @@
         "below_50dma",
         "50dma_not_rising",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -3052,7 +3288,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -3069,7 +3306,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -3082,7 +3320,8 @@
         "far_from_52w_high",
         "too_close_to_52w_low",
         "weak_rs_rank",
-        "no_setup:pullbacks_disabled"
+        "no_setup:pullbacks_disabled",
+        "global_sector_headwind"
       ]
     },
     {
@@ -3110,7 +3349,8 @@
       "reasons": [
         "below_50dma",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -3137,7 +3377,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -3173,7 +3414,8 @@
         "below_50dma",
         "50dma_not_rising",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -3187,8 +3429,7 @@
       "reasons": [
         "200dma_not_rising",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -3217,7 +3458,8 @@
         "breakout_weak_close",
         "stretched_from_20dma",
         "extended_2day_gain",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -3242,7 +3484,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -3330,7 +3573,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -3340,8 +3584,7 @@
         "50dma_not_rising",
         "far_from_52w_high",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -3380,7 +3623,8 @@
         "far_from_52w_high",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -3489,8 +3733,7 @@
         "below_50dma",
         "50dma_not_rising",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -3509,7 +3752,8 @@
         "far_from_52w_high",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -3569,7 +3813,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -3595,8 +3840,7 @@
       "reasons": [
         "200dma_not_rising",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -3617,7 +3861,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -3637,7 +3882,8 @@
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
         "stop_too_wide",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -3682,7 +3928,8 @@
         "far_from_52w_high",
         "too_close_to_52w_low",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -3691,7 +3938,8 @@
         "below_50dma",
         "50dma_not_rising",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -3699,7 +3947,8 @@
       "reasons": [
         "too_close_to_52w_low",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -3719,7 +3968,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -3751,7 +4001,8 @@
         "no_setup:pullbacks_disabled",
         "extended_2day_gain",
         "stop_too_wide",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -3829,7 +4080,8 @@
         "below_50dma",
         "50dma_not_rising",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -3866,7 +4118,8 @@
         "50dma_not_rising",
         "too_close_to_52w_low",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -3879,7 +4132,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -3932,7 +4186,8 @@
         "50dma_not_rising",
         "no_setup:pullbacks_disabled",
         "stop_too_wide",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -3986,8 +4241,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -4016,7 +4270,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -4052,7 +4307,8 @@
         "200dma_not_rising",
         "too_close_to_52w_low",
         "weak_rs_rank",
-        "breakout_low_volume"
+        "breakout_low_volume",
+        "global_sector_headwind"
       ]
     },
     {
@@ -4106,7 +4362,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -4196,7 +4453,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -4326,7 +4584,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -4351,7 +4610,8 @@
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
         "stop_too_wide",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -4363,8 +4623,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -4377,7 +4636,8 @@
         "far_from_52w_high",
         "too_close_to_52w_low",
         "weak_rs_rank",
-        "no_setup:pullbacks_disabled"
+        "no_setup:pullbacks_disabled",
+        "global_sector_headwind"
       ]
     },
     {
@@ -4431,8 +4691,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -4448,8 +4707,7 @@
       "symbol": "TECHM",
       "reasons": [
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -4465,7 +4723,6 @@
         "below_50dma",
         "200dma_not_rising",
         "too_close_to_52w_low",
-        "weak_rs_rank",
         "no_setup:pullbacks_disabled",
         "resistance_too_close"
       ]
@@ -4491,7 +4748,8 @@
         "50dma_not_rising",
         "far_from_52w_high",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -4510,7 +4768,8 @@
         "far_from_52w_high",
         "too_close_to_52w_low",
         "weak_rs_rank",
-        "no_setup:pullbacks_disabled"
+        "no_setup:pullbacks_disabled",
+        "global_sector_headwind"
       ]
     },
     {
@@ -4539,7 +4798,8 @@
         "50dma_not_rising",
         "too_close_to_52w_low",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -4562,7 +4822,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -4659,7 +4920,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -4673,7 +4935,8 @@
       "reasons": [
         "50dma_not_rising",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -4691,7 +4954,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -4743,7 +5007,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -4809,7 +5074,8 @@
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
         "stop_too_wide",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -4856,7 +5122,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -4870,8 +5137,7 @@
         "no_setup:pullbacks_disabled",
         "stretched_from_20dma",
         "stop_too_wide",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -4895,7 +5161,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -4941,49 +5208,55 @@
       "reasons": [
         "stale_data"
       ]
+    },
+    {
+      "symbol": "COFORGE",
+      "reasons": [
+        "regime_block"
+      ]
     }
   ],
   "universe_size": 496,
-  "evaluated": 310,
-  "passed_gates": 0,
+  "evaluated": 309,
+  "passed_gates": 1,
   "min_score": 40,
   "duplicate": true,
   "note": "No new longs today (weak market). Setups shown as a watchlist only. Same session as the previous run; picks were not added to the journal again.",
   "macro": {
     "risk": "elevated",
-    "summary": "Global equity weakness and oil volatility create headwinds, but rupee stability and FII inflows limit shock risk.",
+    "summary": "Geopolitical tensions in Middle East causing crude rebound, coupled with global inflation fears and weak US markets, create headwinds for new long positions.",
     "sector_impacts": [
       {
         "sector": "Oil Gas & Consumable Fuels",
         "direction": "positive",
-        "reason": "Lower crude boosts refiners, margins improve"
-      },
-      {
-        "sector": "Fast Moving Consumer Goods",
-        "direction": "positive",
-        "reason": "Reduced logistics costs from falling oil"
+        "reason": "Crude price rebound and strong refining margins due to geopolitical events."
       },
       {
         "sector": "Automobile and Auto Components",
-        "direction": "positive",
-        "reason": "Cheaper fuel supports demand"
+        "direction": "negative",
+        "reason": "Rising crude oil prices increase input and fuel costs, impacting demand."
+      },
+      {
+        "sector": "Consumer Durables",
+        "direction": "negative",
+        "reason": "Inflationary pressures from crude oil impact consumer spending power."
+      },
+      {
+        "sector": "Fast Moving Consumer Goods",
+        "direction": "negative",
+        "reason": "Inflationary pressures from crude oil impact consumer spending power."
       },
       {
         "sector": "Financial Services",
-        "direction": "positive",
-        "reason": "FII inflows lift market sentiment"
-      },
-      {
-        "sector": "Information Technology",
         "direction": "negative",
-        "reason": "US tech selloff pressures IT valuations"
+        "reason": "Global higher interest rate expectations and inflation concerns persist."
       }
     ],
-    "method": "groq",
+    "method": "gemini",
     "llm_risk": "elevated",
     "rule_risk": "elevated",
     "rule_reasons": [
-      "9 shock headlines"
+      "8 shock headlines"
     ],
     "moves": {
       "sp500": {
@@ -5001,17 +5274,17 @@
         "date": "2026-11-02"
       },
       "brent": {
-        "close": 106.48,
-        "chg1_pct": 1.63,
-        "chg5_pct": -6.5,
-        "chg1_abs": 1.71,
+        "close": 106.49,
+        "chg1_pct": 1.64,
+        "chg5_pct": -6.49,
+        "chg1_abs": 1.72,
         "date": "2026-11-03"
       },
       "usdinr": {
-        "close": 94.865,
-        "chg1_pct": -0.04,
-        "chg5_pct": -0.34,
-        "chg1_abs": -0.04,
+        "close": 94.67,
+        "chg1_pct": -0.25,
+        "chg5_pct": -0.54,
+        "chg1_abs": -0.235,
         "date": "2026-11-03"
       },
       "us10y": {
@@ -5022,10 +5295,10 @@
         "date": "2026-11-02"
       },
       "dxy": {
-        "close": 101.772,
-        "chg1_pct": 0.02,
-        "chg5_pct": -0.54,
-        "chg1_abs": 0.022,
+        "close": 101.712,
+        "chg1_pct": -0.04,
+        "chg5_pct": -0.59,
+        "chg1_abs": -0.038,
         "date": "2026-11-03"
       },
       "nikkei": {
@@ -5036,31 +5309,31 @@
         "date": "2026-11-02"
       },
       "hangseng": {
-        "close": 23453.57,
-        "chg1_pct": 0.26,
-        "chg5_pct": 1.79,
-        "chg1_abs": 60.25,
+        "close": 23525.971,
+        "chg1_pct": 0.57,
+        "chg5_pct": 2.1,
+        "chg1_abs": 132.65,
         "date": "2026-11-03"
       }
     },
     "headline_count": 40,
     "query_status": {
-      "Federal Reserve interest rates": 31,
-      "Wall Street stocks": 47,
+      "Federal Reserve interest rates": 43,
+      "Wall Street stocks": 48,
       "crude oil prices": 100,
-      "US tariffs India": 28,
-      "war geopolitical tensions": 51,
-      "FII outflows India": 19,
+      "US tariffs India": 19,
+      "war geopolitical tensions": 25,
+      "FII outflows India": 13,
       "rupee dollar": 100,
-      "China economy": 49,
-      "global recession": 39
+      "China economy": 62,
+      "global recession": 20
     },
     "top_headlines": [
-      "Indian rupee's relative calm masks lingering anxiety, data shows - Reuters",
-      "Oil prices climb after U.S. reportedly strikes Iran's Qeshm Island - CNBC",
-      "Crude Oil Prices Rise as US Strike on Iran\u2019s Qeshm Island Rekindles Supply Disruption Fears - APAC Media",
-      "Saudi Aramco Q3 2026 profit surges 35% to $36.3bn amid global energy disruptions - Gulf Business",
-      "Japanese professor highlights Azerbaijan's diplomatic potential amid geopolitical tensions - Latest news from Azerbaijan"
+      "Rupee rises against dollar as oil prices slide and FIIs buy; can it strengthen further towards 93? - Zee Business",
+      "Gold falls 0.9% as oil rebound fuels inflation fears - Profit by Pakistan Today",
+      "Iran War Impact: Can Crude Oil Return To $60-70? Sudeep Explains India's Oil Risk - Business Today",
+      "Aramco Profit Rises 9% as Refining, Oil Price Drive Earnings - Bloomberg.com",
+      "CVR Energy Nears $4 Billion Refinery Deal With Marathon - Crude Oil Prices Today | OilPrice.com"
     ]
   },
   "stale": null,
