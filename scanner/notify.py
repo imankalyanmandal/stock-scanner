@@ -48,7 +48,8 @@ def _call(method: str, data: dict, files: dict | None = None) -> bool:
         return False
 
 
-def format_summary(result: dict, max_picks: int = 5, report_url: str | None = None) -> str:
+def format_summary(result: dict, max_picks: int = 5, report_url: str | None = None,
+                   telegram_max: int = 10) -> str:
     e = html.escape
     reg = result["regime"]
     icon = {"strong": "🟢", "neutral": "🟡", "weak": "🔴"}.get(reg["regime"], "⚪")
@@ -92,6 +93,7 @@ def format_summary(result: dict, max_picks: int = 5, report_url: str | None = No
             " Watchlist: " + ", ".join(e(w["symbol"]) for w in watch) if watch else ""))
     for v in result.get("news_vetoed") or []:
         lines.append(f"🚫 <b>{e(v['symbol'])}</b> rejected on news: <i>{e((v.get('headline') or v.get('reason') or '')[:110])}</i>")
+    lines += screen_lines(result.get("screen"), telegram_max)
     o = (result.get("journal") or {}).get("overall", {})
     if o.get("trades"):
         lines.append(f"\n📒 Journal: {o['trades']} closed · win {o['win_rate_pct']}% · "
@@ -102,6 +104,27 @@ def format_summary(result: dict, max_picks: int = 5, report_url: str | None = No
 
     text = "\n".join(lines)
     return text if len(text) <= MAX_LEN else text[:MAX_LEN - 20] + "\n…(truncated)"
+
+
+def screen_lines(sc: dict | None, limit: int = 10) -> list[str]:
+    """Breakout screen block: information only, separate from the picks."""
+    if not sc:
+        return []
+    e = html.escape
+    if "passed" not in sc:
+        return [f"\n🔎 Breakout screen failed: {e(sc.get('error', '')[:150])}"]
+    out = [f"\n🔎 <b>Breakout screen: {len(sc['passed'])} passed</b> (info only)",
+           f"   {sc['breakouts']} volume breakouts · {sc['above_200dma']} above 200 DMA · "
+           f"ROE &gt; {sc['roe_min_pct']:g}%"]
+    for p in sc["passed"][:limit]:
+        out.append(f"   <b>{e(p['symbol'])}</b> · vol {p['vol_ratio']:.1f}× · ROE {p['roe_pct']:.1f}%"
+                   + (" (old)" if p.get("roe_stale") else "")
+                   + (" 🚫 excluded" if p.get("excluded") else ""))
+    if len(sc["passed"]) > limit:
+        out.append(f"   …and {len(sc['passed']) - limit} more in the full report")
+    if sc["roe_unknown"]:
+        out.append("   ROE unknown: " + ", ".join(e(p["symbol"]) for p in sc["roe_unknown"][:limit]))
+    return out
 
 
 def macro_lines(gm: dict | None) -> list[str]:
@@ -132,7 +155,8 @@ def send_scan(result: dict, cfg: dict, report_html: Path | None = None) -> dict:
     tcfg = cfg.get("notify", {}).get("telegram", {})
     if not tcfg.get("enabled", True):
         return {"sendMessage": "skipped: notify.telegram.enabled is false"}
-    text = format_summary(result, tcfg.get("max_picks", 5), os.getenv("REPORT_URL"))
+    text = format_summary(result, tcfg.get("max_picks", 5), os.getenv("REPORT_URL"),
+                          cfg.get("screen", {}).get("telegram_max", 10))
     _call("sendMessage", {"text": text, "parse_mode": "HTML",
                           "disable_web_page_preview": "true"})
     if tcfg.get("send_report_file", True) and report_html and report_html.exists():

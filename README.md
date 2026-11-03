@@ -81,6 +81,24 @@ they show which rules actually make money.
   win/loss and expectancy in the report and Telegram message use exactly the backtest's rules.
   Re-running the same session doesn't add duplicates or resend the alert (`--force` overrides).
 
+## Breakout screen (volume breakout, 200 DMA, ROE)
+
+Each scan also checks every stock with price data, with no liquidity, regime or top-N limit:
+
+1. **Volume breakout:** today's close is above the prior 20-bar high, on at least 1.5× the 50-day
+   average volume.
+2. **Close above the 200 DMA.**
+3. **ROE above 20%.** Looked up only for stocks that pass steps 1 and 2.
+
+Results are in `reports/screen_<session>.csv`, the HTML report and the Telegram message. The screen
+is information only: it never changes the swing picks or the journal, and it can't be backtested
+because there is no point-in-time ROE history.
+
+ROE comes from Yahoo (`returnOnEquity`, else latest annual net income / year-end equity) and is
+cached in `data/fundamentals.json` for 7 days. If a refresh fails, the old value is used and marked
+"(old)". Stocks with no ROE are listed as unknown and do not pass. `--no-news` uses cached ROE only.
+Settings are under `screen` in `config.yaml`.
+
 ## News check
 
 For the final candidates only (up to 15 per scan), `scanner/news.py` collects the last 3 days of

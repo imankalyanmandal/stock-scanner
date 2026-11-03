@@ -21,6 +21,12 @@ CFG_PB["setups"]["pullback"]["enabled"] = True
 END = "2026-10-23"
 
 
+@pytest.fixture(autouse=True)
+def no_yahoo_roe(monkeypatch):
+    """Tests never call Yahoo for ROE or write the real cache."""
+    monkeypatch.setattr("scanner.fundamentals.yahoo_roe", lambda s: None)
+
+
 # ------------------------------------------------------------------ synthetic data
 def ohlc(close, vol=2_000_000, rng_pct=0.012, seed=0, end=END):
     """OHLC around a close path: open = prev close, symmetric-ish range."""
@@ -293,6 +299,7 @@ def _cfg(tmp_path):
     cfg["news"]["enabled"] = False
     cfg["results"]["cache_dir"] = str(tmp_path / "results")
     cfg["results"]["enabled"] = False    # network; tested separately with mocks
+    cfg["screen"].update(roe_cache=str(tmp_path / "fundamentals.json"), request_delay_sec=0)
     return cfg
 
 
@@ -992,3 +999,135 @@ def test_premarket_stands_down_when_late_or_repeated(tmp_path):
     J.write_state(cfg["journal"]["state_path"], premarket_done_for="2026-10-28")
     early = datetime(2026, 10, 28, 8, 20, tzinfo=IST)
     assert premarket.run(cfg, now=early)["note"] == "already checked today"
+
+
+# ------------------------------------------------------------------ breakout screen
+def screen_cfg(tmp_path):
+    cfg = copy.deepcopy(CFG)
+    cfg["screen"]["roe_cache"] = str(tmp_path / "fundamentals.json")
+    cfg["screen"]["request_delay_sec"] = 0
+    return cfg
+
+
+def screen_info(*symbols):
+    return pd.DataFrame({"company": list(symbols), "industry": ["IT"] * len(symbols)}, index=list(symbols))
+
+
+def test_screen_needs_breakout_volume_and_only_fetches_roe_for_breakouts(tmp_path):
+    from scanner.screen import run_screen
+    cfg = screen_cfg(tmp_path)
+    feats = {"GOOD": feats_for(breakout_df(bo_vol=2.5)), "QUIET": feats_for(breakout_df(bo_vol=1.0)),
+             "FLAT": feats_for(ohlc(uptrend(330)).iloc[:-1])}
+    asked = []
+
+    def fetcher(s):
+        asked.append(s)
+        return 25.0, "test"
+    r = run_screen(feats, screen_info(*feats), cfg, fetcher=fetcher)
+    assert asked == ["GOOD"] and [p["symbol"] for p in r["passed"]] == ["GOOD"]
+    assert r["checked"] == 3 and r["breakouts"] == 1
+
+
+def test_screen_rejects_breakout_below_200dma(tmp_path):
+    from scanner.screen import run_screen
+    cfg = screen_cfg(tmp_path)
+    df = breakout_df()
+    f = feats_for(df)
+    f.iloc[-1, f.columns.get_loc("sma200")] = f["close"].iloc[-1] * 1.1
+    r = run_screen({"X": f}, screen_info("X"), cfg, fetcher=lambda s: pytest.fail("ROE not needed"))
+    assert r["breakouts"] == 1 and r["above_200dma"] == 0 and r["passed"] == []
+
+
+@pytest.mark.parametrize("roe,passes", [(20.0, False), (20.01, True), (-5.0, False)])
+def test_screen_roe_must_be_above_threshold(tmp_path, roe, passes):
+    from scanner.screen import run_screen
+    r = run_screen({"X": feats_for(breakout_df())}, screen_info("X"), screen_cfg(tmp_path),
+                   fetcher=lambda s: (roe, "test"))
+    assert bool(r["passed"]) is passes and r["roe_unknown"] == []
+
+
+def test_screen_missing_roe_is_unknown_not_passed(tmp_path):
+    from scanner.screen import run_screen
+    r = run_screen({"X": feats_for(breakout_df())}, screen_info("X"), screen_cfg(tmp_path),
+                   fetcher=lambda s: None)
+    assert r["passed"] == [] and [p["symbol"] for p in r["roe_unknown"]] == ["X"]
+
+
+def test_roe_cache_reuse_refresh_and_stale_fallback(tmp_path):
+    from datetime import date
+    from scanner.fundamentals import get_roe
+    cfg = screen_cfg(tmp_path)
+    d0 = date(2026, 11, 2)
+    calls = []
+
+    def ok(s):
+        calls.append(s)
+        return 30.0, "test"
+    assert get_roe(["A"], cfg, today=d0, fetcher=ok)["A"]["roe_pct"] == 30.0
+    get_roe(["A"], cfg, today=date(2026, 11, 9), fetcher=ok)     # 7 days old: still fresh
+    assert calls == ["A"]
+    late = date(2026, 11, 10)
+    assert get_roe(["A"], cfg, today=late, fetcher=lambda s: None)["A"]["stale"] is True
+    assert get_roe(["A"], cfg, today=late, fetch=False, fetcher=ok)["A"]["stale"] is True
+    assert calls == ["A"]
+    assert get_roe(["A"], cfg, today=late, fetcher=ok)["A"]["stale"] is False
+
+
+def test_roe_from_statements():
+    from scanner.fundamentals import roe_from_statements
+    cols = pd.to_datetime(["2026-03-31", "2025-03-31"])
+    inc = pd.DataFrame({cols[0]: [50.0], cols[1]: [40.0]}, index=["Net Income"])
+    bal = pd.DataFrame({cols[0]: [200.0], cols[1]: [190.0]}, index=["Stockholders Equity"])
+    assert roe_from_statements(inc, bal) == 25.0
+    assert roe_from_statements(inc, bal * -1) is None
+    assert roe_from_statements(pd.DataFrame(), bal) is None
+
+
+def test_screen_report_and_telegram(tmp_path):
+    from scanner import notify, report
+    from scanner.screen import run_screen
+    sc = run_screen({"X": feats_for(breakout_df())}, screen_info("X"), screen_cfg(tmp_path),
+                    fetcher=lambda s: (31.0, "test"))
+    text = "\n".join(notify.screen_lines(sc))
+    assert "X" in text and "ROE 31.0%" in text and "1 passed" in text
+    assert notify.screen_lines(None) == []
+    assert "failed" in notify.screen_lines({"error": "boom"})[0]
+    assert "<b>X</b>" in report._screen(sc)
+
+
+def test_pipeline_screen_output_and_swing_picks_unchanged(monkeypatch, tmp_path):
+    syms, uni = _universe(30)
+    data = _market(syms)
+    monkeypatch.setattr(pipeline, "load_universe", lambda *a, **k: uni)
+    monkeypatch.setattr(pipeline, "download_prices", lambda s, **k: {x: data[x] for x in s if x in data})
+    monkeypatch.setattr(pipeline, "fetch_delivery", lambda d: {})
+    monkeypatch.setattr(pipeline, "upcoming_events", lambda *a: [])
+    monkeypatch.setattr("scanner.fundamentals.yahoo_roe", lambda s: (25.0, "test"))
+
+    def run(enabled, name):
+        (tmp_path / name).mkdir()
+        cfg = _cfg(tmp_path / name)
+        cfg["screen"]["enabled"] = enabled
+        return cfg, pipeline.run(cfg, with_news=True)
+    _, off = run(False, "off")
+    cfg, on = run(True, "on")
+    assert off["screen"] is None
+    assert [p["symbol"] for p in on["picks"]] == [p["symbol"] for p in off["picks"]]
+    assert on["screen"]["passed"] and on["screen"]["checked"] == on["evaluated"]
+    csv = pd.read_csv(tmp_path / "on" / "reports" / f"screen_{on['session']}.csv")
+    assert set(csv["symbol"]) == {p["symbol"] for p in on["screen"]["passed"]}
+
+
+def test_pipeline_survives_screen_failure(monkeypatch, tmp_path):
+    syms, uni = _universe(30)
+    data = _market(syms)
+    monkeypatch.setattr(pipeline, "load_universe", lambda *a, **k: uni)
+    monkeypatch.setattr(pipeline, "download_prices", lambda s, **k: {x: data[x] for x in s if x in data})
+    monkeypatch.setattr(pipeline, "fetch_delivery", lambda d: {})
+    monkeypatch.setattr(pipeline, "upcoming_events", lambda *a: [])
+
+    def boom(*a, **k):
+        raise ValueError("bad data")
+    monkeypatch.setattr(pipeline, "run_screen", boom)
+    res = pipeline.run(_cfg(tmp_path), with_news=False)
+    assert res["screen"] == {"error": "ValueError: bad data"} and "session" in res

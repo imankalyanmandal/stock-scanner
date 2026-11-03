@@ -224,6 +224,16 @@ momentum:                     # monthly rotation (backtest only for now: experim
   blend_momentum_weight: 0.5  # for score: blend
   sleeves: null               # e.g. [{score: momentum, weight: 0.5}, {score: low_vol, weight: 0.5}]
 
+screen:                       # volume breakout > 200 DMA > ROE, on every stock (see scanner/screen.py)
+  enabled: true               # information only; never changes the swing picks or the journal
+  breakout_max_day: 1         # 1 = only the day it breaks out, so each breakout is listed once
+  min_vol_ratio: 1.5          # breakout-day volume vs 50-day average
+  roe_min_pct: 20
+  roe_cache: data/fundamentals.json
+  roe_max_age_days: 7         # refetch ROE after this many days
+  request_delay_sec: 0.5      # pause between Yahoo lookups
+  telegram_max: 10            # most stocks listed in the Telegram message
+
 backtest:
   period: 5y
   warmup_bars: 260            # bars needed before the first tradeable signal
