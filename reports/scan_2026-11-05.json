@@ -22,7 +22,7 @@
     },
     "size_mult": 0.0,
     "allow_new_longs": false,
-    "block_reason": "global risk high: Global equity rout, AI selloff, US market crash and rising oil prices raise sell\u2011off risk.",
+    "block_reason": "global risk high: US and global equities are crashing on AI worries and recession fears. Despite India's rupee strength and falling crude, global contagion risk is high for new long positions.",
     "macro_risk": "high",
     "sectors": {
       "Automobile and Auto Components": {
@@ -165,7 +165,7 @@
       "mom_rank": 49.0,
       "macd_bull": true,
       "supertrend_up": true,
-      "adx": 23.083547545388356,
+      "adx": 23.083547545388367,
       "bb_squeeze": false,
       "rejected": false,
       "reject_reasons": [],
@@ -188,65 +188,65 @@
       "events": [],
       "news": {
         "verdict": "positive",
-        "reason": "Evos acquisition is EPS accretive, driving RoCE; brokerages optimistic; stock hit all-time highs.",
+        "reason": "Brokerages view the Evos acquisition as EPS accretive and RoCE driving, with the stock breaking all-time highs.",
         "key_headline": "Adani Ports' Evos Acquisition To Be EPS Accretive, Drive Double-Digit RoCE By FY30, Say Brokerages - NDTV Profit",
         "method": "gemini",
         "items": [
+          {
+            "title": "Adani Ports Plans $2.9 Billion Deal for Europe\u2019s Evos - Equitypandit",
+            "source": "Equitypandit",
+            "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOVDhIemtJRFQtX1B5clpxS2d3NDY1ZmdBODY5UlBnUmtRcENSX2ZmdVh3M0c2aVdYMFR4cEstM1pzV0kyaUM1S0hIem0xX3ZCNE44cTczenoyR1pvTE51MUltVzdxSVR0Vk9ib1dhSkNZWVdlQmdpcDJKWGpMNWNxclpqTnZoQkxD?oc=5",
+            "published": "2026-11-06T07:37:05+00:00",
+            "age_hours": 1.0
+          },
           {
             "title": "Diwali 2026 Stock Picks: Adani Ports, Eternal, Titan, Unimech Among 10 Stocks With Up to 43% Upside; Do You Own Any? - Trade Brains",
             "source": "Trade Brains",
             "link": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxQMUstY1U1S2p0emhrRU1QVHBqOF9TZHRSaHM1dktxdVJCOG1uRUxKdFZsUldmeDJpTERRSzk0bFFVbXc0MWlZN2VudExHc0VncV9pRUxpeXlJRTh5ZENyMGtUOFFXeU1iT21CVWlLWmRNd0xLdE1LUEhQRGRkYXFwMU45dW1mUjl3ZVZPVExKVEt5VUphaHhNN3JGWmVJZlhLUUx4SFJuZmFoNG5Vc3FqZllfMXVydVZ0OFZZalpCVnNHSVlkbTFVSDdvUV9NeWhKMUN3enZkZS02eFZwVWQxZ3JuY1ZxeHdPWVIzSg?oc=5",
             "published": "2026-11-06T04:48:17+00:00",
-            "age_hours": 2.3
-          },
-          {
-            "title": "Adani Ports In Focus: Evos Acquisition Makes Motilal Oswal More Optimistic; Check Target Price - NDTV Profit",
-            "source": "NDTV Profit",
-            "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQbGZoNjRTUmZXSng3R0Qwa1JVeFNnajlpN2ZURGo0WS1vZFVRY1Zubk9JdEtlbzBZNDRIT0xid3RpeWYxR1FiVDBHRkVFa1R2QXJPLWxySkwtNEdieHZlVE1PaGRNX25qNnV6Q2U3SGR6U3RNbVVFNXFscjlSX0RGYmdMOUo5UVBiTmdBU2ZDS1IxdlhWbEVORUQya3JoQ0hYM25hNjlzb3Q1RkdQckFWa21xMUVwODh1QVh0YkZ5c0tEcUtzQzFhSVFFdjZjaTBMd0E?oc=5",
-            "published": "2026-11-06T04:36:48+00:00",
-            "age_hours": 2.5
+            "age_hours": 3.8
           },
           {
             "title": "Adani Ports' Evos Acquisition To Be EPS Accretive, Drive Double-Digit RoCE By FY30, Say Brokerages - NDTV Profit",
             "source": "NDTV Profit",
             "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNanA0dHJRRndlNGwzV0pCSU1BWi0ya1kzcG1IU2Q4R0tTbkg1WmJJeHp4UXFnOWpXcFhCSW1uSWRhQ29neHRBRlE2UktLU3BIR3lYdW9VbkpkZ1lXU3FybWZUVFVJZl94NnhOaEZyUmV3dGtwTlQ2UkhKcDB0eG5uSk84OVZjdnVPV3ZUd0otLU1aT09oMEFpSFVjMS0zUm0yWEI3alVhbUN6WHFURVBFVFVSMW5NLUZ6dFJoYmJGaGhnenNhVk1kN2Fsci1UUzVPQ25uaS1n0gHeAUFVX3lxTE8ybk9ON0gwZUVJYzRsMlc3QlRyR2c1aS1QQUZDNWsxM0t5WS04T01MX1pUTmFGRXRzd0JwS0xzRlBmZkNTcU1VWlBfZ0U0Tlp6ZnVNNjhnWkN0TXBxdEtKU2k5cjhXX0hKbGZzZkdkMVI1dld0WUNsZVdlMVFlUEhVSG00R2R4MUstRDNmbjBXcTA4RzBCRVRXeVF1NkI3T3V1N01qUnc5ZDU0OFI0TldGZXNfZmVjQTVKNGRhZVJwRUdrSmVBQkZ0dVFCN3Q2ZjQ4LWtxM2lRV2psZDhvdw?oc=5",
             "published": "2026-11-06T03:00:39+00:00",
-            "age_hours": 4.1
+            "age_hours": 5.6
           },
           {
             "title": "TVS Motor, Adani Ports, and 3 Other Stocks Breaking Their All-Time Highs - Trade Brains",
             "source": "Trade Brains",
             "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPZW1ZTmZLcUpaZ244ZnZQOUh6bG5GQVlRWUpGbXRKc0w1ZmRSbk1Yajg1QVMzajh5X1N2cWFzNVhzeDc1bG9fUVhMMEMzYW5OQ2FXNWZURTFWX2JHR09CdWNMYzJIUEZncDlRVVpkME5PeHNBR2hRSEJxc0hpc01DZmVJVmExWGQ0TFRZdFhDRUprZkYxWUFhLWtPRjRSUXgxOU9zRHprMUJMQWtmbVZqclVfVFl2Rk8x?oc=5",
             "published": "2026-11-06T02:00:37+00:00",
-            "age_hours": 5.1
+            "age_hours": 6.6
           },
           {
             "title": "Stock Picks Today: Hindalco Novelis, Bharti Airtel, LIC, Bharat Forge, And More On Brokerages' Radar - NDTV Profit",
             "source": "NDTV Profit",
             "link": "https://news.google.com/rss/articles/CBMinwJBVV95cUxPbS1vNk9QNlMyT2JoOFV4b2IxbnowdFI3TXNGaTZRN0xmSmZEYjltRVVLY2ttbExKSXVIX0VqU0ZxYno2Uktzclp0Q0hUNVBXaDVFWnMyZ0JnMEJkc0Nfb2w1eXFTVUZBUEJLcnR4MklZNTZBUzF4Q0RKcV95SXJJWTVGbjFXNm44M0RpUHBCbmhLSHoxUlN4cFFwMEI5aV9OWEJoMVhNMXZfWVBtbEI1Z1d6RDR5cV9CT0RNTHZ3TGlaZVRlUHQ1dlVseW9NbF8tcGVQT2hBQW1uWDdPS1hyZFpGWkl1SzIzVi1WYWQ3T3hjNFdMbEJYM0RjSG5RV01pcXQ2UVdZVGpIbTdJUEpDRGFPa3dwWnRXaE85SkhFZ9IBpwJBVV95cUxPTGV6NGp3VFBTY2ExRnJpSkxQY2ZnUXFoUVR3emlzUDNpRk8yODdDbTB2SEdCb2R2dk83OWVxTDhHZ3ZGeTlNUFV3ZkRxSUUyMk1pZXM5ak8yNU5oalFYZVQ2c3YtQkRiNEpsQnNDZFpxcVVsc3ZsUVR5dkhDbngzMmtQb0lxWDNaOXpha0NuYUk1NVpFUVZyMmdwQlhrWU5RT2gwTVBFdEhRbE5ibXdnWWo1Sy1TMTN1SnozRFNfUFZSNW1WeFp6amJ1TWdMNUJ2QjlzYmI1TzdlU0llakZINjhkRzdlQk02R2gwYlYza0R4YzdjSEZIb19xQTZYVUQyYkk0eXc5MWVsTjF2d3ZsQl9uQzJobUtkT3R4QlgwU2tPeEhwdE80?oc=5",
             "published": "2026-11-06T01:52:45+00:00",
-            "age_hours": 5.3
+            "age_hours": 6.8
           },
           {
             "title": "Adani Ports announces agreement to acquire 100% stake in Evos B.V. - Business Upturn",
             "source": "Business Upturn",
             "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPV0tqNkpjaFdJX3FaekJ3SElvOFJBV0pEY1YwNzN3d2RIVmpSTS1mdHE5Ml9pN1hnV0pjUmtNVkhscFRmVlBkWDA1MmVBamZPUGJZZlR2UmE3cG1ZZUs1b0h2T1FILU81ZGZ6Y3hRUXBTSkM2QXBONC1sZXk0ZVNXMVFuVkRWbm1lSUNISDNXYVRLa0hBT0VMY2hWbk9aZ0JodUIw?oc=5",
             "published": "2026-11-05T17:47:49+00:00",
-            "age_hours": 13.4
+            "age_hours": 14.8
           },
           {
             "title": "Adani Ports to buy Evos in a deal valued at $2.88 billion - ARYnews.tv",
             "source": "ARYnews.tv",
             "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOSDBuNkVGZ3Q4TFk3M2tna2RsRkpKT3B2SmI5d1Y2NG9WVW53Yl9BNkJHZ1haTHlFWmdNTU5IZjVlelYyQVFtWDNEbUZvZXpjMEZDZklXazk3d2U0eXBQSXB5a1VRM2lISVZVaTlBM2VjLTZjbW40Smo3WDFWdWhMTA?oc=5",
             "published": "2026-11-05T15:38:30+00:00",
-            "age_hours": 15.5
+            "age_hours": 17.0
           },
           {
             "title": "Adani Ports to enter Europe with \u20ac2.56 billion buyout of Evos - Livemint",
             "source": "Livemint",
             "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPZUM2cG1CUUtaZHhWQUJvbUVvelNTa1FueVpUTlIzVjhrNG40b0tDWjhLTEZrajdnRGZyZUk5VkVfMjZ3WHB5dTJoQ3FZMDVSSGMzMnhpRUJSYlh5NTNick1wbGRlcVdEZjBUcjFEcHYwOVhyQncxNmN1Y1dWNVlRc1FYZ3p5ek11NkRtbktkdHZDMWlYSXBOWUlFX3k1VnFycnhOOU1ZS3FIT3dMMnNFVnJSQ0pGYTB0VVlYbdIBwgFBVV95cUxNZDFKSlVtbElGdDJMUjZ6dE44SmhzTklwR1VRYTFTSmtEdzdWa244RExIVGNYekxJUlFaWG1PajhoYmpaa1Rua21LZHZTd1JIVGtCNmV2QmR4dnAtSFJ2N19keGhnRVN4MFNBNElBdGdDNGNFV2dMbW9CYVVyQ0xTQzVkQlhPclA1M1JES3RYb2FIMkhaMzVjYXF3ZnVmUHU4NER4WUFMMnBSNmNUQS1lcFVQVEEwQmlXOEJnZnpvUm1oZw?oc=5",
             "published": "2026-11-05T14:36:30+00:00",
-            "age_hours": 16.5
+            "age_hours": 18.0
           }
         ],
         "sources": {
@@ -433,7 +433,8 @@
         "below_50dma",
         "50dma_not_rising",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -658,7 +659,8 @@
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
         "stop_too_wide",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -690,8 +692,7 @@
         "weak_rs_rank",
         "breakout_weak_close",
         "stretched_from_20dma",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -734,7 +735,8 @@
       "reasons": [
         "no_setup:pullbacks_disabled",
         "stretched_from_20dma",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -923,8 +925,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -967,7 +968,8 @@
         "below_50dma",
         "50dma_not_rising",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -998,7 +1000,8 @@
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
         "stop_too_wide",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -1056,8 +1059,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -1067,7 +1069,8 @@
         "no_setup:pullbacks_disabled",
         "overbought_rsi",
         "stretched_from_20dma",
-        "stop_too_wide"
+        "stop_too_wide",
+        "global_sector_headwind"
       ]
     },
     {
@@ -1233,7 +1236,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "breakout_weak_close",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -1518,8 +1522,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -1650,8 +1653,7 @@
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
         "stop_too_wide",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -1722,7 +1724,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "stretched_from_20dma",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -1852,7 +1855,8 @@
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
         "stop_too_wide",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -1916,7 +1920,8 @@
         "far_from_52w_high",
         "too_close_to_52w_low",
         "weak_rs_rank",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -1949,7 +1954,8 @@
       "reasons": [
         "50dma_not_rising",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -2032,7 +2038,8 @@
         "no_setup:pullbacks_disabled",
         "extended_2day_gain",
         "stop_too_wide",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -2180,8 +2187,7 @@
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
         "stop_too_wide",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -2262,7 +2268,8 @@
         "200dma_not_rising",
         "too_close_to_52w_low",
         "weak_rs_rank",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -2288,7 +2295,8 @@
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
         "stop_too_wide",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -2301,7 +2309,8 @@
         "far_from_52w_high",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -2343,7 +2352,8 @@
         "breakout_low_volume",
         "breakout_weak_close",
         "extended_2day_gain",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -2412,7 +2422,8 @@
         "weak_rs_rank",
         "breakout_low_volume",
         "stretched_from_20dma",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -2861,7 +2872,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -2950,7 +2962,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -2986,7 +2999,8 @@
         "too_close_to_52w_low",
         "no_setup:pullbacks_disabled",
         "stretched_from_20dma",
-        "stop_too_wide"
+        "stop_too_wide",
+        "global_sector_headwind"
       ]
     },
     {
@@ -3035,8 +3049,7 @@
         "no_setup:pullbacks_disabled",
         "extended_2day_gain",
         "stop_too_wide",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -3205,8 +3218,7 @@
       "symbol": "LGEINDIA",
       "reasons": [
         "no_setup:pullbacks_disabled",
-        "stop_too_wide",
-        "global_sector_headwind"
+        "stop_too_wide"
       ]
     },
     {
@@ -3326,7 +3338,8 @@
         "weak_rs_rank",
         "stretched_from_20dma",
         "stop_too_wide",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -3389,7 +3402,8 @@
         "no_setup:pullbacks_disabled",
         "stretched_from_20dma",
         "stop_too_wide",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -3480,7 +3494,8 @@
       "symbol": "MOTHERSON",
       "reasons": [
         "50dma_not_rising",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -3513,7 +3528,8 @@
         "weak_rs_rank",
         "stretched_from_20dma",
         "stop_too_wide",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -3537,7 +3553,8 @@
         "no_setup:pullbacks_disabled",
         "stretched_from_20dma",
         "stop_too_wide",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -3589,7 +3606,8 @@
         "far_from_52w_high",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -3715,7 +3733,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -3817,7 +3836,8 @@
         "far_from_52w_high",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -3833,7 +3853,8 @@
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
         "stop_too_wide",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -4326,7 +4347,8 @@
         "below_50dma",
         "50dma_not_rising",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -4516,7 +4538,8 @@
       "symbol": "SONACOMS",
       "reasons": [
         "base_too_deep",
-        "stretched_from_20dma"
+        "stretched_from_20dma",
+        "global_sector_headwind"
       ]
     },
     {
@@ -4741,7 +4764,8 @@
         "weak_rs_rank",
         "breakout_low_volume",
         "breakout_weak_close",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -4830,7 +4854,8 @@
         "too_close_to_52w_low",
         "no_setup:pullbacks_disabled",
         "stop_too_wide",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -4876,8 +4901,7 @@
         "50dma_not_rising",
         "stretched_from_20dma",
         "stop_too_wide",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -4900,7 +4924,8 @@
         "far_from_52w_high",
         "too_close_to_52w_low",
         "weak_rs_rank",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -4969,7 +4994,8 @@
         "50dma_not_rising",
         "breakout_low_volume",
         "breakout_weak_close",
-        "stretched_from_20dma"
+        "stretched_from_20dma",
+        "global_sector_headwind"
       ]
     },
     {
@@ -5020,7 +5046,8 @@
         "stretched_from_20dma",
         "extended_2day_gain",
         "stop_too_wide",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -5097,7 +5124,8 @@
         "base_too_deep",
         "breakout_low_volume",
         "stretched_from_20dma",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -5140,8 +5168,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "stretched_from_20dma",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -5190,8 +5217,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -5280,7 +5306,8 @@
         "weak_rs_rank",
         "breakout_low_volume",
         "extended_2day_gain",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -5314,46 +5341,46 @@
   "evaluated": 334,
   "passed_gates": 1,
   "min_score": 40,
-  "duplicate": false,
-  "note": "No new longs today (global risk high: Global equity rout, AI selloff, US market crash and rising oil prices raise sell\u2011off risk.). Setups shown as a watchlist only.",
+  "duplicate": true,
+  "note": "No new longs today (global risk high: US and global equities are crashing on AI worries and recession fears. Despite India's rupee strength and falling crude, global contagion risk is high for new long positions.). Setups shown as a watchlist only. Same session as the previous run; picks were not added to the journal again.",
   "macro": {
     "risk": "high",
-    "summary": "Global equity rout, AI selloff, US market crash and rising oil prices raise sell\u2011off risk.",
+    "summary": "US and global equities are crashing on AI worries and recession fears. Despite India's rupee strength and falling crude, global contagion risk is high for new long positions.",
     "sector_impacts": [
       {
         "sector": "Information Technology",
         "direction": "negative",
-        "reason": "US tech slump hits IT earnings outlook"
+        "reason": "Global AI stock sell-off and tech rout impacting sentiment."
       },
       {
         "sector": "Oil Gas & Consumable Fuels",
         "direction": "negative",
-        "reason": "Brent near $100 raises input costs"
+        "reason": "Significant drop in Brent crude prices impacts upstream profitability."
+      },
+      {
+        "sector": "Automobile and Auto Components",
+        "direction": "negative",
+        "reason": "US tariffs on auto components could impact export-oriented businesses."
       },
       {
         "sector": "Financial Services",
         "direction": "negative",
-        "reason": "Market volatility may trigger FII outflows"
+        "reason": "Global equity market crash and recession fears increase instability."
       },
       {
-        "sector": "Consumer Durables",
+        "sector": "Metals & Mining",
         "direction": "negative",
-        "reason": "Economic slowdown reduces discretionary spending"
-      },
-      {
-        "sector": "Fast Moving Consumer Goods",
-        "direction": "positive",
-        "reason": "Defensive demand amid market uncertainty"
+        "reason": "Global recession fears likely to reduce commodity demand."
       }
     ],
-    "method": "groq",
+    "method": "gemini",
     "llm_risk": "high",
     "rule_risk": "high",
     "rule_reasons": [
       "S&P 500 -4.4%",
       "Nasdaq -5.5%",
       "Nikkei -6.0%",
-      "12 shock headlines"
+      "14 shock headlines"
     ],
     "moves": {
       "sp500": {
@@ -5371,17 +5398,17 @@
         "date": "2026-11-05"
       },
       "brent": {
-        "close": 99.69,
-        "chg1_pct": 1.42,
-        "chg5_pct": -15.26,
-        "chg1_abs": 1.4,
+        "close": 97.65,
+        "chg1_pct": -0.65,
+        "chg5_pct": -16.99,
+        "chg1_abs": -0.64,
         "date": "2026-11-06"
       },
       "usdinr": {
-        "close": 94.143,
-        "chg1_pct": -0.39,
-        "chg5_pct": -1.06,
-        "chg1_abs": -0.373,
+        "close": 93.88,
+        "chg1_pct": -0.67,
+        "chg5_pct": -1.34,
+        "chg1_abs": -0.635,
         "date": "2026-11-06"
       },
       "us10y": {
@@ -5392,10 +5419,10 @@
         "date": "2026-11-05"
       },
       "dxy": {
-        "close": 101.896,
-        "chg1_pct": 0.34,
-        "chg5_pct": 0.02,
-        "chg1_abs": 0.346,
+        "close": 101.886,
+        "chg1_pct": 0.33,
+        "chg5_pct": 0.01,
+        "chg1_abs": 0.336,
         "date": "2026-11-06"
       },
       "nikkei": {
@@ -5406,31 +5433,31 @@
         "date": "2026-11-06"
       },
       "hangseng": {
-        "close": 24527.84,
-        "chg1_pct": -1.09,
-        "chg5_pct": 5.29,
-        "chg1_abs": -269.141,
+        "close": 24481.859,
+        "chg1_pct": -1.27,
+        "chg5_pct": 5.1,
+        "chg1_abs": -315.121,
         "date": "2026-11-06"
       }
     },
     "headline_count": 40,
     "query_status": {
-      "Federal Reserve interest rates": 28,
-      "Wall Street stocks": 74,
+      "Federal Reserve interest rates": 26,
+      "Wall Street stocks": 77,
       "crude oil prices": 100,
-      "US tariffs India": 98,
+      "US tariffs India": 93,
       "war geopolitical tensions": 28,
       "FII outflows India": 21,
-      "rupee dollar": 93,
-      "China economy": 48,
-      "global recession": 22
+      "rupee dollar": 91,
+      "China economy": 46,
+      "global recession": 21
     },
     "top_headlines": [
-      "Korea moves to avert forced stock sales as Wall Street rout rattles markets - Korea JoongAng Daily",
-      "WTI sticks to gains above $90.00 as US-Iran tensions persist; lacks bullish conviction - www.tmgm.com",
-      "Rupee strengthens against US dollar in early trade on Friday - Investment Guru India",
-      "Closest-ever look at Gary Neville's \u00a3400m St Michael's development unveils future of Sir Ralph Abercromby pub \ud83c\udf7b\ud83d\ude4c - Facebook",
-      "Rupee falls 9 paise to 94.50 against US dollar in early trade - IBTimes India"
+      "Wipe-out for AI stocks sends Wall Street reeling - 1News",
+      "Canadian dollar to Indian rupee prediction: Weak momentum points to limited upside near \u20b967.4442 resistance - Traders Union",
+      "Analysts say the inclusion of the Morgan Stanley Capital International (MSCI) index of advanced coun.. - \ub9e4\uc77c\uacbd\uc81c",
+      "Rupee hits over 6-month high of 94.06 as US dollar softens post midterms - Business Standard",
+      "MSCI Chairman Warns Recession Risk if AI Data Centers Halt - \uc870\uc120\uc77c\ubcf4"
     ]
   },
   "stale": null,
