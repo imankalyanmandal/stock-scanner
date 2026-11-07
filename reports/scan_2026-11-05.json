@@ -22,7 +22,7 @@
     },
     "size_mult": 0.0,
     "allow_new_longs": false,
-    "block_reason": "global risk high: Crude oil crash and strong Rupee are major positives for India, offsetting global headwinds from US rate hike fears and Nikkei weakness.",
+    "block_reason": "global risk high: Global markets volatile with US indices down over 5 days and Nikkei sharply lower. Strong US jobs data boosts dollar/yields. However, crude oil plunged and Rupee rallied, significantly benefiting India.",
     "macro_risk": "high",
     "sectors": {
       "Automobile and Auto Components": {
@@ -365,8 +365,7 @@
         "no_setup:pullbacks_disabled",
         "stretched_from_20dma",
         "stop_too_wide",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -879,8 +878,7 @@
       "symbol": "BBOX",
       "reasons": [
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -1095,8 +1093,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -1437,8 +1434,7 @@
     {
       "symbol": "COFORGE",
       "reasons": [
-        "no_setup:pullbacks_disabled",
-        "global_sector_headwind"
+        "no_setup:pullbacks_disabled"
       ]
     },
     {
@@ -1597,8 +1593,7 @@
       "symbol": "CYIENT",
       "reasons": [
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -2381,8 +2376,7 @@
         "200dma_not_rising",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -2472,8 +2466,7 @@
         "far_from_52w_high",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -2765,8 +2758,7 @@
         "50dma_not_rising",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -2864,8 +2856,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -2906,8 +2897,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -3454,8 +3444,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -3633,8 +3622,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -3642,8 +3630,7 @@
       "reasons": [
         "200dma_not_rising",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -3858,8 +3845,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -4047,8 +4033,7 @@
         "far_from_52w_high",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -4216,8 +4201,7 @@
         "below_50dma",
         "50dma_not_rising",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -4347,8 +4331,7 @@
       "reasons": [
         "200dma_not_rising",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -4804,8 +4787,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -5282,8 +5264,7 @@
         "weak_rs_rank",
         "base_too_deep",
         "breakout_low_volume",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -5330,8 +5311,7 @@
         "50dma_not_rising",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -5355,8 +5335,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -5371,8 +5350,7 @@
     {
       "symbol": "TECHM",
       "reasons": [
-        "no_setup:pullbacks_disabled",
-        "global_sector_headwind"
+        "no_setup:pullbacks_disabled"
       ]
     },
     {
@@ -5903,8 +5881,7 @@
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
         "stretched_from_20dma",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -5954,8 +5931,7 @@
         "base_too_deep",
         "breakout_low_volume",
         "stretched_from_20dma",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -6020,43 +5996,43 @@
   "passed_gates": 1,
   "min_score": 40,
   "duplicate": true,
-  "note": "No new longs today (global risk high: Crude oil crash and strong Rupee are major positives for India, offsetting global headwinds from US rate hike fears and Nikkei weakness.). Setups shown as a watchlist only. Price data is behind: latest session in the data is 2026-11-05, but 2026-11-06 was a trading day. The data source is lagging. Same session as the previous run; picks were not added to the journal again.",
+  "note": "No new longs today (global risk high: Global markets volatile with US indices down over 5 days and Nikkei sharply lower. Strong US jobs data boosts dollar/yields. However, crude oil plunged and Rupee rallied, significantly benefiting India.). Setups shown as a watchlist only. Price data is behind: latest session in the data is 2026-11-05, but 2026-11-06 was a trading day. The data source is lagging. Same session as the previous run; picks were not added to the journal again.",
   "macro": {
     "risk": "high",
-    "summary": "Crude oil crash and strong Rupee are major positives for India, offsetting global headwinds from US rate hike fears and Nikkei weakness.",
+    "summary": "Global markets volatile with US indices down over 5 days and Nikkei sharply lower. Strong US jobs data boosts dollar/yields. However, crude oil plunged and Rupee rallied, significantly benefiting India.",
     "sector_impacts": [
+      {
+        "sector": "Oil Gas & Consumable Fuels",
+        "direction": "positive",
+        "reason": "Crude oil prices plunged, reducing input costs for refiners and marketers."
+      },
       {
         "sector": "Automobile and Auto Components",
         "direction": "positive",
-        "reason": "Lower fuel costs for consumers and reduced input costs."
+        "reason": "Lower crude oil prices reduce fuel and input costs, boosting demand."
       },
       {
         "sector": "Chemicals",
         "direction": "positive",
-        "reason": "Reduced raw material costs due to falling crude oil prices."
+        "reason": "Lower crude oil prices reduce feedstock costs for chemical manufacturers."
       },
       {
-        "sector": "Fast Moving Consumer Goods",
+        "sector": "Consumer Durables",
         "direction": "positive",
-        "reason": "Lower transportation and packaging material costs."
-      },
-      {
-        "sector": "Information Technology",
-        "direction": "negative",
-        "reason": "Stronger Rupee negatively impacts export revenues."
+        "reason": "Lower crude oil prices ease inflation, increasing consumer disposable income."
       },
       {
         "sector": "Financial Services",
         "direction": "positive",
-        "reason": "Improved macro stability, FII inflows, and lower inflation outlook."
+        "reason": "Stronger Rupee and improved economic outlook from lower crude benefit lending."
       }
     ],
     "method": "gemini",
-    "llm_risk": "low",
+    "llm_risk": "elevated",
     "rule_risk": "high",
     "rule_reasons": [
       "Nikkei -6.0%",
-      "15 shock headlines"
+      "11 shock headlines"
     ],
     "moves": {
       "sp500": {
@@ -6118,22 +6094,22 @@
     },
     "headline_count": 40,
     "query_status": {
-      "Federal Reserve interest rates": 61,
-      "Wall Street stocks": 76,
+      "Federal Reserve interest rates": 62,
+      "Wall Street stocks": 71,
       "crude oil prices": 100,
-      "US tariffs India": 52,
-      "war geopolitical tensions": 24,
+      "US tariffs India": 46,
+      "war geopolitical tensions": 23,
       "FII outflows India": 19,
-      "rupee dollar": 86,
-      "China economy": 46,
-      "global recession": 21
+      "rupee dollar": 80,
+      "China economy": 45,
+      "global recession": 20
     },
     "top_headlines": [
-      "Wall Street grapples with $5.7 trillion rout as AI bets unwind - The Economic Times",
-      "COMMENTARY: US stocks always rise after midterms. Is this time different? - Reuters",
-      "Samvat 2082: Commodities witness sharp volatility as crude surges - Rediff",
-      "Crude Oil Crashes 15%, But Petrol, Diesel Prices Stay Flat - HDFC Sky",
-      "Rupee Rallies 1.2% to 93.91, Biggest Weekly Gain in 2026 - HDFC Sky"
+      "#cpitestsdecemberrateoutlook Community Insights & Market Sentiment | Binance Square - Binance",
+      "Why Did Tutor Perini (TPC) Shares Jump Today? - Simply Wall St",
+      "\u2018US-India security ties lost in tariff row\u2019: John Bolton urges Democrats to Repeal Trump's tariffs - The Economic Times",
+      "US oil rig count up for week ending Nov. 7 - Anadolu Ajans\u0131",
+      "Oil Prices Down - 06-11-26 - Armenpress"
     ]
   },
   "stale": {
@@ -6144,7 +6120,7 @@
     {
       "symbol": "ADANIPORTS",
       "company": "Adani Ports and Special Economic Zone Ltd.",
-      "reason": "Warning about profit quality raises material risk for a long position.",
+      "reason": "Warning to dig deeper than statutory profit suggests potential financial reporting issues, a material risk.",
       "headline": "Adani Ports and Special Economic Zone's (NSE:ADANIPORTS) Shareholders May Want To Dig Deeper Than Statutory Profit - Simply Wall St",
       "method": "gemini"
     }
