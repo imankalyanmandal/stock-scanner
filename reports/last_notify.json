@@ -1,5 +1,5 @@
 {
   "session": "2026-11-05",
-  "at": "2026-11-07T01:07:13",
-  "sendMessage": "stale-data warning: ok"
+  "at": "2026-11-07T06:21:25",
+  "sendMessage": "skipped: data still behind (2026-11-05 < 2026-11-06), already warned"
 }
