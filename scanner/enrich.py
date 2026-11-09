@@ -66,15 +66,19 @@ def google_news(query: str, lookback_days: int) -> list[dict]:
 
 
 def fetch_news(company: str, symbol: str, lookback_days: int, fresh_hours: int,
-               max_items: int, include_symbol: bool = False) -> dict:
+               max_items: int, include_symbol: bool = False, query: str | None = None) -> dict:
     """Recent headlines from Google News RSS. Returns has_news, fresh flag and items.
 
     Searches the quoted company name; the bare symbol is off by default because short
-    symbols ("RELIANCE", "TITAN") pull in unrelated companies.
+    symbols ("RELIANCE", "TITAN") pull in unrelated companies. `query` replaces the whole
+    search (used for ETFs, which track a theme such as "silver price" rather than a company).
     """
-    name = _SUFFIX.sub("", company).strip(" .,")
-    terms = f'"{name}" OR "{symbol}"' if include_symbol else f'"{name}"'
-    q = quote_plus(f'{terms} (stock OR shares OR NSE) when:{lookback_days}d')
+    if query:
+        q = quote_plus(f'{query} when:{lookback_days}d')
+    else:
+        name = _SUFFIX.sub("", company).strip(" .,")
+        terms = f'"{name}" OR "{symbol}"' if include_symbol else f'"{name}"'
+        q = quote_plus(f'{terms} (stock OR shares OR NSE) when:{lookback_days}d')
     url = f"https://news.google.com/rss/search?q={q}&hl=en-IN&gl=IN&ceid=IN:en"
     items = []
     try:

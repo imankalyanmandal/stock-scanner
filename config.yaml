@@ -153,6 +153,16 @@ news:                         # news veto on the final candidates (see scanner/n
     groq_model: llama-3.3-70b-versatile   # env GROQ_API_KEY
     timeout: 30
 
+holdings_news:                # news digest for what you already hold (holdings_news.py)
+  enabled: true
+  file: data/holdings.csv     # symbol, company, kind (stock|etf), optional custom search query
+  state_path: data/holdings_news_state.json  # headlines already sent, so you only get new news
+  lookback_hours: 26          # news this recent (runs twice a day; repeats are filtered out)
+  monday_lookback_hours: 74   # Monday morning also covers the weekend
+  max_items: 8                # headlines per source passed to the classifier
+  include_neutral: false      # true = also list routine/neutral items
+  send_when_empty: true       # send "no material news" when nothing new is found
+
 macro:                        # global / international risk check (see scanner/macro.py)
   enabled: true
   lookback_hours: 36          # global headlines this recent

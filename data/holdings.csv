@@ -1,0 +1,18 @@
+symbol,company,kind,query
+ADANIPOWER,Adani Power,stock,
+BSE,BSE Ltd,stock,
+GOKULAGRO,Gokul Agro Resources,stock,
+HBLENGINE,HBL Engineering,stock,
+HSCL,Himadri Speciality Chemical,stock,
+M&M,Mahindra & Mahindra,stock,
+NH,Narayana Hrudayalaya,stock,
+RADICO,Radico Khaitan,stock,
+SHRIPISTON,Shriram Pistons & Rings,stock,"(""Shriram Pistons"" OR ""SPR Auto Technologies"") (stock OR shares OR NSE)"
+TATAPOWER,Tata Power,stock,
+TI,Tilaknagar Industries,stock,
+VIJAYA,Vijaya Diagnostic Centre,stock,
+WAAREEENER,Waaree Energies,stock,
+JIOPLATFORMS,Jio Platforms,stock,
+MAFANG,NYSE FANG+ big tech stocks (Mirae Asset FANG+ ETF),etf,"(""FANG+"" OR Meta OR Apple OR Amazon OR Netflix OR Alphabet OR Nvidia OR Microsoft) stocks Wall Street"
+MON100,Nasdaq 100 (Motilal Oswal Nasdaq 100 ETF),etf,"""Nasdaq 100"" OR Nasdaq tech stocks"
+SILVERBEES/SILVERIETF,Silver price (silver ETFs),etf,"silver price (India OR MCX OR COMEX OR ETF)"
