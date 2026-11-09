@@ -7,6 +7,8 @@ from pathlib import Path
 
 import pandas as pd
 
+from .ownership import GOOD_FLAGS
+
 CSV_COLS = ["symbol", "company", "industry", "setup", "score", "close", "trigger", "max_entry",
             "stop", "t1", "risk_per_share", "stop_atr", "room_r", "qty", "position_value",
             "risk_amount", "rs_rank", "setup_vol_ratio", "setup_close_loc", "below_high_pct",
@@ -65,7 +67,16 @@ def _setup_line(p):
 
 
 def _card(p, watch=False):
-    flags = " ".join(f"<span class=flag>{html.escape(f)}</span>" for f in p["flags"])
+    flags = " ".join(f"<span class='flag{' good' if f in GOOD_FLAGS else ''}'>{html.escape(f)}</span>"
+                     for f in p["flags"])
+    own, dl = p.get("ownership") or {}, p.get("deals") or {}
+    who = "".join([
+        f"<div class=m><b>Ownership ({html.escape(str(own.get('prev_quarter', '')))} → "
+        f"{html.escape(str(own.get('quarter', '')))}): {html.escape(own['verdict'])}</b> · "
+        f"{html.escape('; '.join(own.get('reasons', [])) or 'no big changes')}</div>"
+        if own.get("verdict") not in (None, "none", "error") else "",
+        f"<div class=m><b>Bulk/block deals: {html.escape(dl['verdict'])}</b> · net ₹{dl['net_cr']:,.1f} cr · "
+        f"{html.escape('; '.join(dl.get('lines', [])))}</div>" if dl.get("deals") else ""])
     comps = " · ".join(f"{k} {v}" for k, v in p["components"].items())
     nw = p.get("news") or {}
     news = "".join(
@@ -93,6 +104,7 @@ def _card(p, watch=False):
   <td>{_fmt(p['stop'])}</td><td>{_fmt(p['t1'])}</td><td>{_fmt(p['risk_per_share'])}</td>
   <td>{_fmt(p['stop_atr'], 1)}</td><td>{_fmt(p['room_r'], 1)}</td>{size}<td>{_fmt(p['rs_rank'], 0)}</td></tr></table>
   <div class=m>{_setup_line(p)}</div>
+  {who}
   <div class=m>{_indicator_line(p)}</div>
   {'' if watch else f"<div class=plan>{html.escape(p.get('exit_plan', ''))}</div>"}
   <div class=m>Score parts: {comps}</div>
@@ -177,6 +189,7 @@ body{{background:var(--bg);color:var(--fg);font:14px/1.5 system-ui,sans-serif;pa
 .hd{{display:flex;gap:8px;align-items:baseline}} .score{{margin-left:auto;font-weight:700;color:var(--acc);font-size:18px}}
 .m{{color:var(--m);font-size:12px}} .tag{{background:var(--acc);color:var(--bg);border-radius:4px;padding:1px 6px;font-size:12px}}
 .flag{{border:1px solid var(--warn);color:var(--warn);border-radius:4px;padding:0 5px;font-size:11px}}
+.flag.good{{border-color:var(--acc);color:var(--acc)}}
 .plan{{margin:6px 0;padding:6px 8px;border-left:3px solid var(--acc);font-size:13px}}
 table{{border-collapse:collapse;margin:8px 0;font-size:12px}} th,td{{padding:3px 8px;border-bottom:1px solid var(--line);text-align:right}}
 .warn{{color:var(--warn);font-weight:600}} a{{color:var(--acc)}} .news{{margin:6px 0 0;padding-left:18px}}

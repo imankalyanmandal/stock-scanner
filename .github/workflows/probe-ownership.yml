@@ -1,0 +1,32 @@
+name: Probe ownership endpoints
+on:
+  push:
+    branches: [ownership-signals]
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12", cache: pip}
+      - run: pip install -r requirements.txt
+      - name: Holdings digest (dry run, nothing sent)
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+        run: python holdings_news.py --no-notify 2>&1 | grep -v "^20..-..-.. .* INFO"
+      - name: Scan flags on sample stocks
+        run: |
+          python - <<'PY'
+          import json, yaml
+          from datetime import date
+          from scanner.ownership import annotate
+          from scanner.results import NSEClient
+          cfg = yaml.safe_load(open("config.yaml"))
+          rows = [{"symbol": s, "flags": []} for s in ["GMRAIRPORT", "VEDL", "RADICO", "HSCL", "M&M", "BSE", "ADANIPOWER"]]
+          annotate(rows, NSEClient(), cfg, date.today())
+          for r in rows:
+              o, d = r.get("ownership", {}), r.get("deals", {})
+              print(r["symbol"], r["flags"], "|", o.get("verdict"), o.get("quarter"), o.get("reasons"), "|", d.get("verdict"), d.get("net_cr"), d.get("lines"))
+          PY

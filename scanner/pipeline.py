@@ -10,6 +10,7 @@ from . import report
 from .data import download_prices, fetch_delivery
 from .enrich import upcoming_events
 from .news import bse_code_map, check_stock
+from .ownership import annotate
 from .results import NSEClient, get_snapshot, results_calendar, summary_line
 from . import macro as M
 from .filters import (arrays, evaluate, features, liquidity_requirements, metrics_at,
@@ -259,6 +260,14 @@ def run(cfg: dict, with_news: bool = True, limit: int | None = None, force: bool
                 p["flags"].append("profit_down_yoy")
             nxt = sorted(d for d in (nse_cal or {}).get(p["symbol"].upper(), []) if d >= session)
             p["next_results"] = nxt[0] if nxt else None
+
+    # who is buying: shareholding changes and bulk/block deals (flags only; never changes the selection)
+    if with_news and (cfg.get("ownership", {}).get("enabled") or cfg.get("deals", {}).get("enabled")):
+        try:
+            annotate(picks + watchlist,
+                     nse or NSEClient(delay=cfg.get("ownership", {}).get("request_delay_sec", 1.0)), cfg, ref)
+        except Exception as e:  # noqa: BLE001 - extra information must never break the scan
+            log.warning("ownership/deals annotation failed: %s", e)
 
     if not duplicate:
         jdf = J.add_picks(jdf, picks, session, regime)
