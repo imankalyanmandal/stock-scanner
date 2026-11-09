@@ -14,6 +14,7 @@ import logging
 import re
 from datetime import date
 from pathlib import Path
+from urllib.parse import quote
 
 from .results import NSEClient, _d, quarter_label
 
@@ -62,7 +63,7 @@ def _quarters(master: list[dict]) -> list[dict]:
 
 def shareholding(client: NSEClient, symbol: str, cache_dir: str = "data/ownership") -> dict:
     """Latest two quarters of holding percentages and the change between them (percentage points)."""
-    master = client.json(f"/api/corporate-share-holdings-master?index=equities&symbol={symbol}")
+    master = client.json(f"/api/corporate-share-holdings-master?index=equities&symbol={quote(symbol, safe='')}")
     qs = _quarters(master)[:2]
     if len(qs) < 2:
         return {"error": "fewer than two shareholding filings"}

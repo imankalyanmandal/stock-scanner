@@ -1121,7 +1121,10 @@ class FakeNSE:
 
     def json(self, path):
         if "share-holdings-master" in path:
-            sym = path.split("symbol=")[1]
+            from urllib.parse import unquote
+            raw = path.split("symbol=")[1]
+            assert "&" not in raw, "symbol must be URL-encoded (M&M)"
+            sym = unquote(raw)
             return [{"date": d, "broadcastDate": b, "xbrl": f"https://x/{sym}_{d}_{b}.xml", "pr_and_prgrp": "1"}
                     for d, b, _ in self.filings.get(sym, [])]
         if "bulk-block-short-deals" in path:
@@ -1251,6 +1254,10 @@ def test_scan_annotate_flags_and_rendering(tmp_path):
     annotate([p], fake, cfg, date(2026, 11, 9))
     assert {"ownership_up", "deals_buying", "earnings_soon"} <= set(p["flags"])
     assert p["ownership"]["verdict"] == "positive" and p["deals"]["net_cr"] == 25.0
+    fake.filings["M&M"] = fake.filings["ACME"]
+    mm = {"symbol": "M&M", "flags": []}
+    annotate([mm], fake, cfg, date(2026, 11, 9))           # '&' must be encoded in the URL
+    assert mm["ownership"]["verdict"] == "positive"
     broken = {"symbol": "NOPE", "flags": []}
     annotate([broken], fake, cfg, date(2026, 11, 9))       # unknown symbol: no crash, no flags
     assert broken["flags"] == []
