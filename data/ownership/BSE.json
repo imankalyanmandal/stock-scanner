@@ -1,0 +1,16 @@
+{
+ "https://nsearchives.nseindia.com/corporate/xbrl/SHP_1741125_19102026104829_WEB.xml": {
+  "promoter": 0.0,
+  "fii": 17.1,
+  "dii": 25.89,
+  "mf": 16.74,
+  "pledge": 0.0
+ },
+ "https://nsearchives.nseindia.com/corporate/xbrl/SHP_1692530_14072026061904_WEB.xml": {
+  "promoter": 0.0,
+  "fii": null,
+  "dii": null,
+  "mf": null,
+  "pledge": 0.0
+ }
+}
