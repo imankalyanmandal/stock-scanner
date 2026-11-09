@@ -98,6 +98,20 @@ classifies them with **Gemini**, falling back to **Groq**, then to keyword match
 last 8 hours for the pending picks and sends a Telegram message: all clear, or which buy-stop to
 cancel.
 
+### News on your holdings
+
+`holdings_news.py` (workflow **Holdings news**, 7:35 AM IST Mon–Sat and 6:05 PM IST Mon–Fri) checks
+news for what you already own and sends one Telegram digest, tagged 🔴 negative / 🟢 positive for
+a holder. It uses the same sources and LLM chain as the news check below (Gemini → Groq → keywords),
+with a holder-focused prompt.
+
+- **Your list:** `data/holdings.csv` (`symbol, company, kind, query`). Edit it when you buy or sell.
+  ETFs set a `query` so they follow what they track (silver price, Nasdaq 100) instead of the fund name.
+- **Only new news:** headlines already sent are remembered in `data/holdings_news_state.json`, so the
+  evening run doesn't repeat the morning's. Monday morning looks back over the weekend.
+- **Settings:** `holdings_news` in `config.yaml` (lookback, neutral items on/off, "no news" message on/off).
+- **Try it:** `python holdings_news.py --no-notify` prints the digest without sending or remembering anything.
+
 ### Quarterly results
 
 `scanner/results.py` reads results straight from NSE's official filings, from GitHub:

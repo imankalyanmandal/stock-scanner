@@ -992,3 +992,106 @@ def test_premarket_stands_down_when_late_or_repeated(tmp_path):
     J.write_state(cfg["journal"]["state_path"], premarket_done_for="2026-10-28")
     early = datetime(2026, 10, 28, 8, 20, tzinfo=IST)
     assert premarket.run(cfg, now=early)["note"] == "already checked today"
+
+
+# ------------------------------------------------------------------ holdings news
+def _holdings_cfg(tmp_path):
+    cfg = copy.deepcopy(CFG)
+    f = tmp_path / "holdings.csv"
+    f.write_text('symbol,company,kind,query\nACME,Acme Industries,stock,\n'
+                 'BADCO,Bad Co,stock,\nQUIET,Quiet Ltd,stock,\nSILV,Silver price,etf,"silver price"\n')
+    cfg["holdings_news"].update(file=str(f), state_path=str(tmp_path / "state.json"))
+    cfg["news"]["sources"]["bse"] = False
+    return cfg
+
+
+def _fake_news(monkeypatch):
+    from scanner import holdings as H
+    news = {"Acme Industries": "Acme Industries profit jumps 40%, record order book",
+            "Bad Co": "SEBI show-cause notice to Bad Co promoters",
+            "silver price": "Silver prices slump 5% on strong dollar"}
+    seen_queries = []
+
+    def fake_fetch(company, symbol, days, fresh, max_items, query=None):
+        seen_queries.append(query)
+        t = news.get(query or company)
+        items = [{"title": t, "source": "Test", "link": f"https://example.com/{symbol}",
+                  "published": "", "age_hours": 3.0}] if t else []
+        return {"items": items}
+
+    def fake_llm(prompt, cfg):
+        bad = "notice to Bad Co" in prompt
+        if bad or "Silver prices slump" in prompt:
+            line = "SEBI show-cause notice to Bad Co promoters" if bad else \
+                "Silver prices slump 5% on strong dollar"
+            return json.dumps({"verdict": "negative", "reason": "bad for holders", "key_headline": line})
+        return json.dumps({"verdict": "positive", "reason": "strong results",
+                           "key_headline": "Acme Industries profit jumps 40%, record order book"})
+    monkeypatch.setattr(H, "fetch_news", fake_fetch)
+    monkeypatch.setattr(H, "gemini_text", fake_llm)
+    return seen_queries
+
+
+def test_holdings_news_tags_and_dedupes(monkeypatch, tmp_path):
+    from scanner import holdings as H
+    cfg = _holdings_cfg(tmp_path)
+    queries = _fake_news(monkeypatch)
+    sent = []
+    now = datetime(2026, 11, 10, 7, 35)   # a Tuesday
+    res = H.run(cfg, now, send=lambda t: sent.append(t) or True)
+    by = {r["symbol"]: r for r in res["results"]}
+    assert by["ACME"]["verdict"] == "positive" and by["BADCO"]["verdict"] == "negative"
+    assert by["SILV"]["verdict"] == "negative" and by["QUIET"]["verdict"] == "none"
+    assert "silver price" in queries                       # ETF uses its own query
+    assert res["lookback_hours"] == cfg["holdings_news"]["lookback_hours"]
+    text = "\n".join(sent)
+    assert text.index("Negative") < text.index("Positive")   # bad news first
+    assert "🔴 <b>BADCO</b>" in text and "🟢 <b>ACME</b>" in text
+    assert 'href="https://example.com/ACME"' in text and "QUIET" in text
+
+    sent.clear()                                            # second run: same news, nothing new
+    res2 = H.run(cfg, now, send=lambda t: sent.append(t) or True)
+    assert all(r["already_sent"] for r in res2["results"] if r["verdict"] != "none")
+    assert "No material new news" in sent[0]
+
+
+def test_holdings_news_dry_run_remembers_nothing(monkeypatch, tmp_path):
+    from scanner import holdings as H
+    cfg = _holdings_cfg(tmp_path)
+    _fake_news(monkeypatch)
+    H.run(cfg, datetime(2026, 11, 9, 7, 35), send=None)     # Monday: weekend lookback
+    assert not (tmp_path / "state.json").exists()
+    res = H.run(cfg, datetime(2026, 11, 9, 7, 35), send=None)
+    assert res["lookback_hours"] == cfg["holdings_news"]["monday_lookback_hours"]
+    assert not any(r["already_sent"] for r in res["results"])
+
+
+def test_holdings_news_falls_back_to_keywords(monkeypatch, tmp_path):
+    from scanner import holdings as H
+    cfg = _holdings_cfg(tmp_path)
+    _fake_news(monkeypatch)
+    def boom(prompt, cfg):
+        raise RuntimeError("no key")
+    monkeypatch.setattr(H, "gemini_text", boom)
+    monkeypatch.setattr(H, "groq_text", boom)
+    res = H.run(cfg, datetime(2026, 11, 10, 7, 35), send=None)
+    by = {r["symbol"]: r for r in res["results"]}
+    assert by["BADCO"]["verdict"] == "negative" and by["BADCO"]["method"] == "keywords"
+    assert by["ACME"]["verdict"] == "positive"
+
+
+def test_holdings_file_in_repo_loads():
+    from scanner.holdings import load_holdings
+    h = load_holdings(CFG["holdings_news"]["file"])
+    syms = {x["symbol"] for x in h}
+    assert {"M&M", "WAAREEENER", "SILVERBEES/SILVERIETF", "MON100"} <= syms
+    assert all(x["query"] for x in h if x["kind"] == "etf")
+
+
+def test_holdings_news_reports_fetch_failure(monkeypatch, tmp_path):
+    from scanner import holdings as H
+    cfg = _holdings_cfg(tmp_path)
+    monkeypatch.setattr(H, "fetch_news", lambda *a, **k: {"items": [], "error": "403"})
+    res = H.run(cfg, datetime(2026, 11, 10, 7, 35), send=None)
+    assert "Couldn't fetch any news" in res["messages"][0]
+    assert "No material new news" not in res["messages"][0]
