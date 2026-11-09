@@ -112,6 +112,24 @@ with a holder-focused prompt.
 - **Settings:** `holdings_news` in `config.yaml` (lookback, neutral items on/off, "no news" message on/off).
 - **Try it:** `python holdings_news.py --no-notify` prints the digest without sending or remembering anything.
 
+### Who is buying: shareholding and bulk/block deals
+
+`scanner/ownership.py` reads two NSE sources (settings: `ownership` and `deals` in `config.yaml`):
+
+- **Shareholding, each quarter:** promoter, FII, DII and mutual-fund holding plus the share of promoter
+  holding that is pledged, from the shareholding-pattern XBRL filings (cached in `data/ownership/`).
+  Promoter, FII or MF holding rising (or the pledge falling) by more than the thresholds is **positive**;
+  the reverse is **negative**; both directions at once is **mixed** and not flagged. Promoter and pledge
+  changes count double.
+- **Bulk and block deals:** netted per client and valued in ₹ crore. A client who bought and sold about
+  the same quantity is treated as intraday churn and ignored.
+
+Where they show up:
+- **Holdings digest:** `🟢 SYMBOL · Ownership: FII 10.00% → 12.00% (+2.00pp)` and
+  `🔴 SYMBOL · Deals: Net selling ₹250 cr …`, sent once per new quarter or new set of deals.
+- **Daily scan:** picks get green flags `ownership_up` / `deals_buying` or red flags `ownership_down` /
+  `deals_selling` (deals over the last 30 days). Flags only: they never add or remove a pick.
+
 ### Quarterly results
 
 `scanner/results.py` reads results straight from NSE's official filings, from GitHub:

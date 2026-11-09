@@ -18,8 +18,13 @@ from pathlib import Path
 
 import pandas as pd
 
+from datetime import timedelta
+from urllib.parse import quote
+
 from .enrich import fetch_news
 from .news import _parse, bse_announcements, bse_code_map, gemini_text, groq_text, keyword_verdict
+from .ownership import deals_by_symbol, fetch_deals, score_deals, score_ownership, shareholding
+from .results import NSEClient
 
 log = logging.getLogger(__name__)
 ICON = {"negative": "🔴", "positive": "🟢", "neutral": "⚪"}
@@ -145,24 +150,28 @@ def format_message(results: list[dict], when: datetime, hours: float, include_ne
         blocks.append(f"\n<b>{ICON[v]} {title}</b>")
         for r in groups[v]:
             src = f' <a href="{e(r["link"], quote=True)}">source</a>' if r.get("link") else ""
-            line = f"{ICON[v]} <b>{e(r['symbol'])}</b>: {e(r['reason'])}"
+            tag = f" · {e(r['label'])}" if r.get("label") else ""
+            line = f"{ICON[v]} <b>{e(r['symbol'])}</b>{tag}: {e(r['reason'])}"
             if r.get("headline"):
                 line += f"\n   <i>{e(r['headline'][:160])}</i>{src}"
             if r.get("keyword_alert"):
                 line += "\n   🟠 risk words in the headlines, worth a look"
             blocks.append(line)
     n_flag = len(groups["negative"]) + len(groups["positive"])
-    failed = [r["symbol"] for r in results if "error" in str(r.get("sources", {}).get("google", ""))]
-    if failed and len(failed) == len(results):
+    news_rows = [r for r in results if not r.get("label")]
+    failed = [r["symbol"] for r in news_rows if "error" in str(r.get("sources", {}).get("google", ""))]
+    if failed and len(failed) == len(news_rows):
         blocks.append("\n⚠️ Couldn't fetch any news this run (news source unreachable). Will retry next run.")
     elif not n_flag and not (include_neutral and groups["neutral"]):
         blocks.append("\nNo material new news on your holdings.")
-    if failed and len(failed) < len(results):
+    if failed and len(failed) < len(news_rows):
         blocks.append(f"\n⚠️ News fetch failed for: {e(', '.join(sorted(failed)))}")
     if not include_neutral and groups["neutral"]:
         quiet += [r["symbol"] for r in groups["neutral"]]
+    flagged = {r["symbol"] for v in ("negative", "positive") for r in groups[v]}
+    quiet = sorted(set(quiet) - flagged)
     if quiet and n_flag:
-        blocks.append(f"\n<i>No new material news: {e(', '.join(sorted(quiet)))}</i>")
+        blocks.append(f"\n<i>No new material news: {e(', '.join(quiet))}</i>")
     msgs, cur = [], "\n".join(head)
     for b in blocks:
         if len(cur) + len(b) + 1 > 3900:
@@ -172,6 +181,59 @@ def format_message(results: list[dict], when: datetime, hours: float, include_ne
             cur += "\n" + b
     msgs.append(cur)
     return msgs
+
+
+# ----------------------------------------------------------------------------- ownership + deals
+def _quote_url(symbol: str) -> str:
+    return f"https://www.nseindia.com/get-quotes/equity?symbol={quote(symbol)}"
+
+
+def ownership_items(holdings: list[dict], cfg: dict, now: datetime, sent: dict, client=None) -> list[dict]:
+    """Shareholding changes and bulk/block deals as positive/negative digest entries (stocks only)."""
+    oc, dc = cfg.get("ownership", {}), cfg.get("deals", {})
+    stocks = [h for h in holdings if h["kind"] == "stock"]
+    if not stocks or not (oc.get("enabled") or dc.get("enabled")):
+        return []
+    client = client or NSEClient(delay=oc.get("request_delay_sec", 1.0))
+    out, errors = [], []
+
+    def add(h, label, verdict, reason, detail, fp_key):
+        fp = _fingerprint(h["symbol"], f"{label}|{verdict}", fp_key)
+        out.append({"symbol": h["symbol"], "company": h["company"], "label": label, "verdict": verdict,
+                    "reason": reason, "headline": detail, "link": _quote_url(h["symbol"]),
+                    "method": "nse", "keyword_alert": False, "items": 0, "sources": {},
+                    "already_sent": fp in sent.get(h["symbol"], []), "fingerprint": fp})
+
+    if oc.get("enabled"):
+        for h in stocks:
+            try:
+                sh = shareholding(client, h["symbol"], oc.get("cache_dir", "data/ownership"))
+            except Exception as ex:  # noqa: BLE001 - one stock failing must not stop the digest
+                errors.append(h["symbol"])
+                log.warning("shareholding %s failed: %s", h["symbol"], ex)
+                continue
+            s = score_ownership(sh, cfg)
+            if s["verdict"] in ("positive", "negative"):
+                add(h, "Ownership", s["verdict"], "; ".join(s["reasons"]),
+                    f"Shareholding {s['prev_quarter']} → {s['quarter']}", s["quarter"])
+    if dc.get("enabled"):
+        days = dc.get("holdings_lookback_days", 3) + (1 if now.weekday() == 0 else 0)
+        try:
+            by = deals_by_symbol(fetch_deals(client, (now - timedelta(days=days)).date(), now.date()))
+        except Exception as ex:  # noqa: BLE001
+            log.warning("deals fetch failed: %s", ex)
+            by, errors = {}, errors + ["deals"]
+        for h in stocks:
+            rows = by.get(h["symbol"].upper(), [])
+            d = score_deals(rows, cfg)
+            if d["verdict"] in ("positive", "negative"):
+                key = "|".join(sorted(f"{r['date']}{r['client']}{r['side']}{r['qty']:.0f}" for r in rows))
+                add(h, "Deals", d["verdict"],
+                    f"Net {'buying' if d['net_cr'] > 0 else 'selling'} ₹{abs(d['net_cr']):,.1f} cr "
+                    f"in bulk/block deals ({', '.join(d['dates'])})", "; ".join(d["lines"]), key)
+    if errors:
+        log.warning("ownership/deals unavailable for: %s", ", ".join(errors))
+    return out
 
 
 # ----------------------------------------------------------------------------- run
@@ -206,6 +268,7 @@ def run(cfg: dict, now: datetime, send=None) -> dict:
                         "already_sent": fp in sent.get(h["symbol"], []), "fingerprint": fp,
                         **({"llm_errors": v["llm_errors"]} if v.get("llm_errors") else {})})
 
+    results += ownership_items(holdings, cfg, now, sent)
     msgs = format_message(results, now, hours, hc.get("include_neutral", False))
     fresh = [r for r in results if r["verdict"] in ("positive", "negative") and not r["already_sent"]]
     should_send = bool(fresh) or hc.get("send_when_empty", True)

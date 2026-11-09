@@ -153,6 +153,22 @@ news:                         # news veto on the final candidates (see scanner/n
     groq_model: llama-3.3-70b-versatile   # env GROQ_API_KEY
     timeout: 30
 
+ownership:                    # quarterly shareholding changes (scanner/ownership.py)
+  enabled: true               # holdings digest: 🟢/🔴 entries; scan: ownership_up / ownership_down flags
+  promoter_change_pp: 0.25    # promoter holding change (percentage points) that counts
+  fii_change_pp: 0.5          # foreign institutions
+  mf_change_pp: 0.5           # mutual funds
+  pledge_change_pp: 1.0       # share of promoter holding that is pledged (rise = negative)
+  cache_dir: data/ownership   # parsed filings, so each quarter is downloaded once
+  request_delay_sec: 1.0
+
+deals:                        # NSE bulk and block deals
+  enabled: true               # holdings digest: 🟢/🔴 entries; scan: deals_buying / deals_selling flags
+  holdings_lookback_days: 3   # deals this recent for the holdings digest (repeats are filtered out)
+  scan_lookback_days: 30      # window for flagging scan picks
+  min_net_value_cr: 1.0       # net buying/selling (₹ crore) that counts
+  churn_ratio: 0.8            # a client who bought and sold within 80% of each other is trading, ignored
+
 holdings_news:                # news digest for what you already hold (holdings_news.py)
   enabled: true
   file: data/holdings.csv     # symbol, company, kind (stock|etf), optional custom search query

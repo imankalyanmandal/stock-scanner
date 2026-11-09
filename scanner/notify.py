@@ -12,6 +12,8 @@ from pathlib import Path
 
 import requests
 
+from .ownership import GOOD_FLAGS
+
 log = logging.getLogger(__name__)
 API = "https://api.telegram.org/bot{token}/{method}"
 LAST: dict[str, str] = {}  # method -> "ok" / error text from the most recent calls
@@ -67,11 +69,13 @@ def format_summary(result: dict, max_picks: int = 5, report_url: str | None = No
     lines.append(f"\n<b>{len(picks)} picks</b> ({result.get('passed_gates', '–')} passed gates, "
                  f"{result.get('evaluated', '–')} scanned)")
     for i, p in enumerate(picks[:max_picks], 1):
-        flags = [f for f in p.get("flags", []) if f != "blue_sky"]
+        good = [f for f in p.get("flags", []) if f in GOOD_FLAGS]
+        flags = [f for f in p.get("flags", []) if f != "blue_sky" and f not in GOOD_FLAGS]
         lines.append(
             f"\n{i}. <b>{e(p['symbol'])}</b> · {p['setup']} · score {p['score']} · RS {p.get('rs_rank', 0):.0f}\n"
             f"   Buy &gt; {p['trigger']:.2f} (skip &gt; {p['max_entry']:.2f})\n"
             f"   SL {p['stop']:.2f} | T1 {p['t1']:.2f} | Qty {p.get('qty', '–')}"
+            + (f"\n   🟢 {e(', '.join(good))}" if good else "")
             + (f"\n   🚩 {e(', '.join(flags))}" if flags else ""))
         nw = p.get("news") or {}
         icon = {"positive": "🟢", "neutral": "⚪", "none": "⚪", "negative": "🔴"}.get(nw.get("verdict"), "")

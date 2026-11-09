@@ -293,6 +293,8 @@ def _cfg(tmp_path):
     cfg["news"]["enabled"] = False
     cfg["results"]["cache_dir"] = str(tmp_path / "results")
     cfg["results"]["enabled"] = False    # network; tested separately with mocks
+    cfg["ownership"]["enabled"] = cfg["deals"]["enabled"] = False   # network; tested with FakeNSE
+    cfg["ownership"]["cache_dir"] = str(tmp_path / "ownership")
     return cfg
 
 
@@ -1002,6 +1004,7 @@ def _holdings_cfg(tmp_path):
                  'BADCO,Bad Co,stock,\nQUIET,Quiet Ltd,stock,\nSILV,Silver price,etf,"silver price"\n')
     cfg["holdings_news"].update(file=str(f), state_path=str(tmp_path / "state.json"))
     cfg["news"]["sources"]["bse"] = False
+    cfg["ownership"]["enabled"] = cfg["deals"]["enabled"] = False
     return cfg
 
 
@@ -1095,3 +1098,195 @@ def test_holdings_news_reports_fetch_failure(monkeypatch, tmp_path):
     res = H.run(cfg, datetime(2026, 11, 10, 7, 35), send=None)
     assert "Couldn't fetch any news" in res["messages"][0]
     assert "No material new news" not in res["messages"][0]
+
+
+# ------------------------------------------------------------------ ownership + deals
+def _shp_xml(promoter, fii, dii, mf, pledge=None):
+    """Minimal shareholding-pattern XBRL in NSE's real tag/context format (fractions of 1)."""
+    t = lambda tag, ctx, v: f'<in-bse-shp:{tag} contextRef="{ctx}" unitRef="pure" decimals="4">{v}</in-bse-shp:{tag}>'
+    P = "ShareholdingAsAPercentageOfTotalNumberOfShares"
+    body = [t(P, "ShareholdingOfPromoterAndPromoterGroup_ContextI", promoter / 100),
+            t(P, "InstitutionsForeign_ContextI", fii / 100), t(P, "InstitutionsDomestic_ContextI", dii / 100),
+            t(P, "MutualFundsOrUTI_ContextI", mf / 100), t(P, "MutualFundsOrUTI_Context15", 0.0146)]
+    if pledge is not None:
+        body.append(t("EncumberedShareUnderPledgedAsPercentageOfTotalNumberOfShares",
+                      "ShareholdingOfPromoterAndPromoterGroup_ContextI", pledge / 100))
+    return "<xbrli:xbrl>" + "".join(body) + "</xbrli:xbrl>"
+
+
+class FakeNSE:
+    """Stands in for NSEClient: shareholding master + XBRL files + deals API."""
+    def __init__(self, filings, deals=None):
+        self.filings, self.deals, self.xbrl_gets = filings, deals or {}, 0
+
+    def json(self, path):
+        if "share-holdings-master" in path:
+            from urllib.parse import unquote
+            raw = path.split("symbol=")[1]
+            assert "&" not in raw, "symbol must be URL-encoded (M&M)"
+            sym = unquote(raw)
+            return [{"date": d, "broadcastDate": b, "xbrl": f"https://x/{sym}_{d}_{b}.xml", "pr_and_prgrp": "1"}
+                    for d, b, _ in self.filings.get(sym, [])]
+        if "bulk-block-short-deals" in path:
+            return {"data": self.deals.get("block" if "block_deals" in path else "bulk", [])}
+        raise AssertionError(path)
+
+    def get(self, url):
+        self.xbrl_gets += 1
+        for sym, rows in self.filings.items():
+            for d, b, xml in rows:
+                if url == f"https://x/{sym}_{d}_{b}.xml":
+                    return type("R", (), {"text": xml})()
+        raise AssertionError(url)
+
+
+def _deal(sym, client, side, qty, price, day="06-NOV-2026"):
+    return {"BD_DT_DATE": day, "BD_SYMBOL": sym, "BD_CLIENT_NAME": client, "BD_BUY_SELL": side,
+            "BD_QTY_TRD": qty, "BD_TP_WATP": price}
+
+
+def test_parse_shp_xbrl_reads_holdings_and_pledge():
+    from scanner.ownership import parse_shp_xbrl
+    r = parse_shp_xbrl(_shp_xml(40.17, 19.43, 27.17, 21.4, pledge=16.47))
+    assert r == {"promoter": 40.17, "fii": 19.43, "dii": 27.17, "mf": 21.4, "pledge": 16.47}
+    assert parse_shp_xbrl(_shp_xml(40, 19, 27, 21))["pledge"] == 0.0    # no pledge tag -> 0
+
+
+def test_shareholding_uses_latest_revision_and_caches(tmp_path):
+    from scanner.ownership import shareholding
+    fake = FakeNSE({"ACME": [
+        ("30-JUN-2026", "17-JUL-2026 15:05:32", _shp_xml(50.0, 10.0, 20.0, 8.0)),
+        ("30-SEP-2026", "08-OCT-2026 17:07:27", _shp_xml(49.0, 11.0, 20.0, 9.0)),
+        ("30-SEP-2026", "20-OCT-2026 10:00:00", _shp_xml(51.0, 12.0, 20.0, 9.5)),   # revised filing
+        ("31-MAR-2026", "15-APR-2026 10:00:00", _shp_xml(52.0, 9.0, 20.0, 7.0))]})
+    sh = shareholding(fake, "ACME", str(tmp_path))
+    assert (sh["quarter"], sh["prev_quarter"]) == ("Q2 FY27", "Q1 FY27")
+    assert sh["latest"]["promoter"] == 51.0 and sh["change"]["fii"] == 2.0 and sh["change"]["mf"] == 1.5
+    n = fake.xbrl_gets
+    shareholding(fake, "ACME", str(tmp_path))
+    assert fake.xbrl_gets == n                                            # second run reads the cache
+
+
+def test_score_ownership_directions():
+    from scanner.ownership import score_ownership
+    cfg = copy.deepcopy(CFG)
+    def sh(prev, latest):
+        keys = ("promoter", "fii", "dii", "mf", "pledge")
+        p, l = dict(zip(keys, prev)), dict(zip(keys, latest))
+        return {"quarter": "Q2 FY27", "prev_quarter": "Q1 FY27", "prev": p, "latest": l,
+                "change": {k: round(l[k] - p[k], 2) for k in keys}}
+    up = score_ownership(sh((40, 18, 25, 20, 0), (41, 19, 25, 21, 0)), cfg)
+    assert up["verdict"] == "positive" and any("Promoter" in r for r in up["reasons"])
+    down = score_ownership(sh((40, 18, 25, 20, 0), (40, 16, 25, 18, 0)), cfg)
+    assert down["verdict"] == "negative" and len(down["reasons"]) == 2
+    pledged = score_ownership(sh((40, 18, 25, 20, 5), (40, 18, 25, 20, 12)), cfg)
+    assert pledged["verdict"] == "negative" and "pledge" in pledged["reasons"][0]
+    released = score_ownership(sh((40, 18, 25, 20, 12), (40, 18, 25, 20, 5)), cfg)
+    assert released["verdict"] == "positive"
+    tiny = score_ownership(sh((40, 18, 25, 20, 0), (40.1, 18.2, 25, 20.3, 0)), cfg)
+    assert tiny["verdict"] == "neutral" and not tiny["reasons"]
+    assert score_ownership({"error": "x"}, cfg)["verdict"] == "none"
+
+
+def test_score_deals_nets_clients_and_ignores_churn():
+    from scanner.ownership import fetch_deals, score_deals
+    fake = FakeNSE({}, {"bulk": [_deal("ACME", "TRADER ONE", "BUY", 189020, 40.9),
+                                 _deal("ACME", "TRADER ONE", "SELL", 189020, 39.1),      # churn
+                                 _deal("ACME", "BIG FUND", "BUY", 500000, 500)],          # ₹25 cr
+                        "block": [_deal("BADCO", "PROMOTER CO", "SELL", 5000000, 501),   # ₹250 cr
+                                  _deal("BADCO", "SOME MF", "BUY", 100000, 501),
+                                  _deal("SMALL", "X", "BUY", 1000, 100)]})
+    from datetime import date
+    rows = fetch_deals(fake, date(2026, 11, 1), date(2026, 11, 7))
+    assert len(rows) == 6 and rows[0]["date"] == "2026-11-06"
+    by = {}
+    for r in rows:
+        by.setdefault(r["symbol"], []).append(r)
+    cfg = copy.deepcopy(CFG)
+    acme = score_deals(by["ACME"], cfg)
+    assert acme["verdict"] == "positive" and acme["net_cr"] == 25.0
+    assert len(acme["lines"]) == 1 and "Big Fund bought" in acme["lines"][0]
+    bad = score_deals(by["BADCO"], cfg)
+    assert bad["verdict"] == "negative" and bad["net_cr"] < -200
+    assert score_deals(by["SMALL"], cfg)["verdict"] == "neutral"            # ₹0.01 cr, below threshold
+    assert score_deals([], cfg)["verdict"] == "none"
+
+
+def test_holdings_digest_includes_ownership_and_deals(monkeypatch, tmp_path):
+    from scanner import holdings as H
+    cfg = _holdings_cfg(tmp_path)
+    cfg["ownership"].update(enabled=True, cache_dir=str(tmp_path / "own"))
+    cfg["deals"]["enabled"] = True
+    _fake_news(monkeypatch)
+    fake = FakeNSE({"ACME": [("30-JUN-2026", "17-JUL-2026 10:00:00", _shp_xml(50, 10, 20, 8)),
+                             ("30-SEP-2026", "08-OCT-2026 10:00:00", _shp_xml(50, 12, 20, 9))],
+                    "BADCO": [("30-JUN-2026", "17-JUL-2026 10:00:00", _shp_xml(60, 10, 20, 8, pledge=2)),
+                              ("30-SEP-2026", "08-OCT-2026 10:00:00", _shp_xml(58, 10, 20, 8, pledge=9))]},
+                   {"block": [_deal("BADCO", "PROMOTER CO", "SELL", 5000000, 501)]})
+    monkeypatch.setattr(H, "NSEClient", lambda **k: fake)
+    sent = []
+    now = datetime(2026, 11, 10, 7, 35)
+    res = H.run(cfg, now, send=lambda t: sent.append(t) or True)
+    rows = {(r["symbol"], r.get("label")): r for r in res["results"]}
+    assert rows[("ACME", "Ownership")]["verdict"] == "positive"
+    assert rows[("BADCO", "Ownership")]["verdict"] == "negative"
+    assert rows[("BADCO", "Deals")]["verdict"] == "negative"
+    text = "\n".join(sent)
+    assert "🟢 <b>ACME</b> · Ownership: FII 10.00% → 12.00% (+2.00pp)" in text
+    assert "🔴 <b>BADCO</b> · Deals: Net selling ₹250.5 cr" in text
+    assert "Promoter pledge 2.0% → 9.0%" in text
+    sent.clear()                                         # same quarter, same deals -> not repeated
+    res2 = H.run(cfg, now, send=lambda t: sent.append(t) or True)
+    assert all(r["already_sent"] for r in res2["results"] if r.get("label"))
+    assert "Ownership" not in sent[0] and "Deals" not in sent[0]
+
+
+def test_scan_annotate_flags_and_rendering(tmp_path):
+    from datetime import date
+    from scanner import notify, report
+    from scanner.ownership import annotate
+    cfg = copy.deepcopy(CFG)
+    cfg["ownership"]["cache_dir"] = str(tmp_path)
+    fake = FakeNSE({"ACME": [("30-JUN-2026", "17-JUL-2026 10:00:00", _shp_xml(50, 10, 20, 8)),
+                             ("30-SEP-2026", "08-OCT-2026 10:00:00", _shp_xml(51, 12, 20, 9))]},
+                   {"bulk": [_deal("ACME", "BIG FUND", "BUY", 500000, 500)]})
+    p = {"symbol": "ACME", "flags": ["earnings_soon"]}
+    annotate([p], fake, cfg, date(2026, 11, 9))
+    assert {"ownership_up", "deals_buying", "earnings_soon"} <= set(p["flags"])
+    assert p["ownership"]["verdict"] == "positive" and p["deals"]["net_cr"] == 25.0
+    fake.filings["M&M"] = fake.filings["ACME"]
+    mm = {"symbol": "M&M", "flags": []}
+    annotate([mm], fake, cfg, date(2026, 11, 9))           # '&' must be encoded in the URL
+    assert mm["ownership"]["verdict"] == "positive"
+    broken = {"symbol": "NOPE", "flags": []}
+    annotate([broken], fake, cfg, date(2026, 11, 9))       # unknown symbol: no crash, no flags
+    assert broken["flags"] == []
+    from scanner.ownership import GOOD_FLAGS
+    assert {"ownership_up", "deals_buying"} == GOOD_FLAGS
+
+
+def test_pipeline_flags_ownership_green_in_telegram_and_report(monkeypatch, tmp_path):
+    syms, uni = _universe(30)
+    data = _market(syms)
+    monkeypatch.setattr(pipeline, "load_universe", lambda *a, **k: uni)
+    monkeypatch.setattr(pipeline, "download_prices", lambda s, **k: {x: data[x] for x in s if x in data})
+    monkeypatch.setattr(pipeline, "fetch_delivery", lambda d: {})
+    monkeypatch.setattr(pipeline, "upcoming_events", lambda *a: [])
+    base = pipeline.run(_cfg(tmp_path / "base"), with_news=False)
+    first = base["picks"][0]["symbol"]
+    cfg = _cfg(tmp_path)
+    cfg["ownership"]["enabled"] = cfg["deals"]["enabled"] = True
+    fake = FakeNSE({first: [("30-JUN-2026", "17-JUL-2026 10:00:00", _shp_xml(50, 10, 20, 8)),
+                            ("30-SEP-2026", "08-OCT-2026 10:00:00", _shp_xml(51, 12, 20, 9))]},
+                   {"bulk": [_deal(first, "BIG FUND", "BUY", 500000, 500)]})
+    monkeypatch.setattr(pipeline, "NSEClient", lambda **k: fake)
+    res = pipeline.run(cfg, with_news=True)
+    p = next(x for x in res["picks"] if x["symbol"] == first)
+    assert {"ownership_up", "deals_buying"} <= set(p["flags"])
+    assert [x["symbol"] for x in res["picks"]] == [x["symbol"] for x in base["picks"]]   # flags only
+    from scanner import notify
+    text = notify.format_summary(res, max_picks=10)
+    assert "🟢 ownership_up, deals_buying" in text
+    html_out = (tmp_path / "reports").rglob("*.html")
+    page = "".join(f.read_text() for f in html_out)
+    assert "class='flag good'>ownership_up" in page and "Big Fund bought" in page
