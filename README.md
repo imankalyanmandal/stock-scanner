@@ -111,6 +111,21 @@ with a holder-focused prompt.
   evening run doesn't repeat the morning's. Monday morning looks back over the weekend.
 - **Settings:** `holdings_news` in `config.yaml` (lookback, neutral items on/off, "no news" message on/off).
 - **Try it:** `python holdings_news.py --no-notify` prints the digest without sending or remembering anything.
+- **No repeats:** only headlines not seen in an earlier digest go to the AI; earlier ones are passed along
+  as "already covered", so the same story under another outlet's headline is not flagged twice.
+- **On time:** GitHub often starts scheduled jobs late, so each digest has a backup schedule, and an
+  outside scheduler can start it on time (below). Automatic runs skip a morning/midday/evening digest that
+  already went out; a manual run always sends.
+
+#### Starting it on time from cron-job.org (free)
+
+1. GitHub → Settings → Developer settings → Fine-grained tokens → new token, only this repository,
+   permission **Contents: Read and write** (needed for repository_dispatch). Copy it.
+2. cron-job.org → Create cronjob, two jobs (7:35 Mon–Sat and 6:05 Mon–Fri, time zone Asia/Kolkata):
+   - URL `https://api.github.com/repos/imankalyanmandal/stock-scanner/dispatches`, method **POST**
+   - Headers `Authorization: Bearer <token>`, `Accept: application/vnd.github+json`
+   - Body `{"event_type": "holdings-news"}`
+3. A 204 response means it started. The GitHub schedules stay on as a fallback.
 
 ### Who is buying: shareholding and bulk/block deals
 

@@ -1,10 +1,23 @@
 name: Holdings news
 
+# GitHub starts scheduled runs late (sometimes by hours), so each digest has a backup schedule and can
+# also be started on time from outside (repository_dispatch, type "holdings-news", e.g. cron-job.org).
+# Automatic runs use --slot-guard: whichever arrives first sends, the rest stand down.
+# A manual "Run workflow" always sends.
 on:
   schedule:
     - cron: "5 2 * * 1-6"     # 7:35 AM IST Mon-Sat: overnight news and results, before the open
+    - cron: "35 2 * * 1-6"    # 8:05 AM IST backup
     - cron: "35 12 * * 1-5"   # 6:05 PM IST Mon-Fri: after-market results and filings
-  workflow_dispatch: {}
+    - cron: "5 13 * * 1-5"    # 6:35 PM IST backup
+  repository_dispatch:
+    types: [holdings-news]
+  workflow_dispatch:
+    inputs:
+      baseline:
+        description: "Only remember current headlines as seen (send nothing)"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -30,7 +43,14 @@ jobs:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-        run: python holdings_news.py
+        run: |
+          if [ "${{ inputs.baseline }}" = "true" ]; then
+            python holdings_news.py --baseline
+          elif [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            python holdings_news.py
+          else
+            python holdings_news.py --slot-guard
+          fi
       - name: Commit sent-news memory
         run: |
           git config user.name "github-actions[bot]"

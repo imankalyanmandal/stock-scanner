@@ -1290,3 +1290,88 @@ def test_pipeline_flags_ownership_green_in_telegram_and_report(monkeypatch, tmp_
     html_out = (tmp_path / "reports").rglob("*.html")
     page = "".join(f.read_text() for f in html_out)
     assert "class='flag good'>ownership_up" in page and "Big Fund bought" in page
+
+
+# ------------------------------------------------------------------ holdings news robustness
+def test_holdings_news_only_new_headlines_reach_the_llm(monkeypatch, tmp_path):
+    from scanner import holdings as H
+    cfg = _holdings_cfg(tmp_path)
+    titles = {"Acme Industries": ["Acme profit jumps 40% - Mint"]}
+    prompts = []
+
+    def fake_fetch(company, symbol, days, fresh, max_items, query=None):
+        return {"items": [{"title": t, "source": "T", "link": f"https://e.com/{k}", "published": "",
+                           "age_hours": 2.0} for k, t in enumerate(titles.get(company, []))]}
+
+    def fake_llm(prompt, cfg):
+        prompts.append(prompt)
+        repeat = "Already covered" in prompt
+        return json.dumps({"verdict": "neutral" if repeat else "positive", "reason": "r",
+                           "key_headline": "Acme profit jumps 40% - Mint"})
+    monkeypatch.setattr(H, "fetch_news", fake_fetch)
+    monkeypatch.setattr(H, "gemini_text", fake_llm)
+    send = lambda t: True
+    r1 = H.run(cfg, datetime(2026, 11, 10, 7, 35), send=send)
+    assert {r["symbol"]: r["verdict"] for r in r1["results"]}["ACME"] == "positive"
+
+    # evening: same story, now also under another outlet's headline -> only the new line is numbered,
+    # the old one is passed as "already covered", and the story is not flagged again
+    titles["Acme Industries"] = ["Acme profit jumps 40% - Economic Times",        # same title, new outlet
+                                 "Acme Q2: profit up 40% on record orders - Moneycontrol"]
+    prompts.clear()
+    r2 = H.run(cfg, datetime(2026, 11, 10, 18, 5), send=send)
+    acme = next(r for r in r2["results"] if r["symbol"] == "ACME")
+    assert acme["new_items"] == 1 and acme["verdict"] == "neutral"
+    assert "1. [T, 2.0h ago] Acme Q2: profit up 40%" in prompts[0]
+    assert "- Acme profit jumps 40% - Economic Times" in prompts[0] and "2. [" not in prompts[0]
+
+    # next morning: nothing new at all -> no LLM call, nothing flagged
+    prompts.clear()
+    r3 = H.run(cfg, datetime(2026, 11, 11, 7, 35), send=send)
+    assert not prompts and all(r["verdict"] == "none" for r in r3["results"])
+
+
+def test_holdings_news_slot_guard(monkeypatch, tmp_path):
+    from scanner import holdings as H
+    cfg = _holdings_cfg(tmp_path)
+    _fake_news(monkeypatch)
+    sent = []
+    send = lambda t: sent.append(t) or True
+    assert H._slot(datetime(2026, 11, 10, 7, 35)).endswith("-am")
+    assert H._slot(datetime(2026, 11, 10, 15, 19)).endswith("-mid")      # a very late morning run
+    assert H._slot(datetime(2026, 11, 10, 18, 5)).endswith("-pm")
+    H.run(cfg, datetime(2026, 11, 10, 18, 5), send=send, slot_guard=True)
+    n = len(sent)
+    backup = H.run(cfg, datetime(2026, 11, 10, 18, 35), send=send, slot_guard=True)   # backup schedule
+    assert backup["skipped"] and len(sent) == n
+    manual = H.run(cfg, datetime(2026, 11, 10, 18, 40), send=send)                   # manual run: always
+    assert not manual["skipped"] and len(sent) > n
+    nxt = H.run(cfg, datetime(2026, 11, 11, 7, 35), send=send, slot_guard=True)      # next slot runs
+    assert not nxt["skipped"]
+    # a failed send does not mark the slot, so the backup retries
+    (tmp_path / "f").mkdir()
+    cfg2 = _holdings_cfg(tmp_path / "f")
+    H.run(cfg2, datetime(2026, 11, 10, 7, 35), send=lambda t: False, slot_guard=True)
+    assert not H.run(cfg2, datetime(2026, 11, 10, 8, 5), send=send, slot_guard=True)["skipped"]
+
+
+def test_holdings_state_reads_old_format(tmp_path):
+    from scanner.holdings import load_state
+    p = tmp_path / "s.json"
+    p.write_text(json.dumps({"ACME": ["abc123"]}))
+    st = load_state(p)
+    assert st == {"sent": {"ACME": ["abc123"]}, "seen": {}, "slots": {}}
+    assert load_state(tmp_path / "missing.json") == {"sent": {}, "seen": {}, "slots": {}}
+
+
+def test_holdings_baseline_marks_seen_without_sending(monkeypatch, tmp_path):
+    from scanner import holdings as H
+    cfg = _holdings_cfg(tmp_path)
+    _fake_news(monkeypatch)
+    calls = []
+    monkeypatch.setattr(H, "gemini_text", lambda p, c: calls.append(p) or "{}")
+    b = H.baseline(cfg, datetime(2026, 11, 10, 18, 50))
+    assert b["slot"].endswith("-pm") and b["seen_added"]["ACME"] == 1 and not calls
+    assert H.run(cfg, datetime(2026, 11, 10, 19, 5), send=lambda t: True, slot_guard=True)["skipped"]
+    res = H.run(cfg, datetime(2026, 11, 11, 7, 35), send=lambda t: True)
+    assert not calls and all(r["verdict"] == "none" for r in res["results"])
