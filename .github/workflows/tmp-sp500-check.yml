@@ -1,0 +1,13 @@
+name: tmp sp500 check
+on:
+  push:
+    branches: [tmp-sp500-check]
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: pip install yfinance pandas
+      - run: python sp500_check.py
