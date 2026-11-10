@@ -290,6 +290,7 @@ def _cfg(tmp_path):
     cfg["journal"] = {"path": str(tmp_path / "journal.csv"), "state_path": str(tmp_path / "state.json")}
     cfg["universe"]["exclude_file"] = str(tmp_path / "none.csv")
     cfg["macro"]["enabled"] = False      # network; tested separately with mocks
+    cfg["data"]["nse_mcp"]["enabled"] = False   # network; tested in test_nse_official.py
     cfg["news"]["enabled"] = False
     cfg["results"]["cache_dir"] = str(tmp_path / "results")
     cfg["results"]["enabled"] = False    # network; tested separately with mocks

@@ -20,6 +20,18 @@ schedule:
 
 data:
   period: 2y                  # 200 DMA, 52-week high and 12-month RS need > 1 year
+  # NSE's official MCP server, used lightly (~20-30 calls per scan; see scanner/nse_official.py).
+  # yfinance still supplies the bulk adjusted history: NSE's firewall blocks heavy use.
+  # NSE labels MCP data informational/educational: personal use only.
+  nse_mcp:
+    enabled: true
+    benchmarks: true          # Nifty 50 / Nifty 500 / India VIX history from NSE
+    official_close: true      # latest session's OHLCV from NSE: corrects Yahoo, or appends if Yahoo is late
+    close_tolerance_pct: 0.5  # replace Yahoo's last bar only when it differs by more than this
+    dividends: true           # ex-dividend dates for survivors from NSE's corporate actions
+    bulk_chunk: 50            # symbols per bulk-quote call
+    request_delay_sec: 1.0    # pause between calls
+    max_calls: 60             # hard cap per run; a 403 also stops all further calls
 
 market:
   benchmarks:
