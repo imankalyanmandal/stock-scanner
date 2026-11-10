@@ -1,5 +1,6 @@
 {
-  "session": "2026-11-05",
-  "at": "2026-11-07T07:53:20",
-  "sendMessage": "skipped: data still behind (2026-11-05 < 2026-11-06), already warned"
+  "session": "2026-11-09",
+  "at": "2026-11-10T03:45:50",
+  "sendMessage": "ok",
+  "sendDocument": "ok"
 }
