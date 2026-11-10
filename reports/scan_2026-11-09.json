@@ -2,7 +2,7 @@
   "session": "2026-11-09",
   "regime": {
     "regime": "neutral",
-    "breadth_pct": 52.2,
+    "breadth_pct": 52.4,
     "vix": 17.420000076293945,
     "benchmarks": {
       "nifty50": {
@@ -42,8 +42,8 @@
         "count": 13
       },
       "Construction Materials": {
-        "breadth_pct": 90.0,
-        "count": 10
+        "breadth_pct": 90.9090909090909,
+        "count": 11
       },
       "Consumer Durables": {
         "breadth_pct": 75.0,
@@ -66,8 +66,8 @@
         "count": 97
       },
       "Healthcare": {
-        "breadth_pct": 63.63636363636363,
-        "count": 44
+        "breadth_pct": 65.11627906976744,
+        "count": 43
       },
       "Information Technology": {
         "breadth_pct": 70.83333333333334,
@@ -263,8 +263,7 @@
       "reasons": [
         "below_50dma",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -279,8 +278,7 @@
       "reasons": [
         "50dma_not_rising",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -299,8 +297,7 @@
         "base_too_deep",
         "breakout_low_volume",
         "stretched_from_20dma",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -315,8 +312,7 @@
       "reasons": [
         "50dma_not_rising",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -409,10 +405,7 @@
     {
       "symbol": "AJANTPHARM",
       "reasons": [
-        "below_50dma",
-        "50dma_not_rising",
-        "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "no_data_or_short_history"
       ]
     },
     {
@@ -446,7 +439,14 @@
     {
       "symbol": "AMBUJACEM",
       "reasons": [
-        "no_data_or_short_history"
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -1267,8 +1267,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -3169,8 +3168,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -3208,8 +3206,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -3944,8 +3941,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -4039,8 +4035,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -4066,8 +4061,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -4108,8 +4102,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "breakout_low_volume",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -4123,8 +4116,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -4168,7 +4160,6 @@
       "reasons": [
         "below_50dma",
         "50dma_not_rising",
-        "weak_rs_rank",
         "no_setup:pullbacks_disabled",
         "resistance_too_close"
       ]
@@ -4469,8 +4460,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -4693,8 +4683,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -4965,8 +4954,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -5248,8 +5236,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -5491,8 +5478,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -5927,43 +5913,43 @@
   "evaluated": 485,
   "passed_gates": 0,
   "min_score": 40,
-  "duplicate": false,
-  "note": "",
+  "duplicate": true,
+  "note": "Same session as the previous run; picks were not added to the journal again.",
   "macro": {
     "risk": "elevated",
-    "summary": "Global markets rallied strongly, led by tech, while crude oil prices plunged due to easing geopolitical tensions. Rupee strengthened, creating a favorable environment.",
+    "summary": "Global markets rally, oil prices falling, US indices up, no major geopolitical shock; favorable for new longs.",
     "sector_impacts": [
-      {
-        "sector": "Oil Gas & Consumable Fuels",
-        "direction": "negative",
-        "reason": "Global crude oil prices plunged significantly due to easing geopolitical tensions."
-      },
       {
         "sector": "Automobile and Auto Components",
         "direction": "positive",
-        "reason": "Lower crude oil prices reduce input costs and potentially boost consumer spending."
+        "reason": "lower fuel costs boost demand"
       },
       {
-        "sector": "Chemicals",
+        "sector": "Fast Moving Consumer Goods",
         "direction": "positive",
-        "reason": "Lower crude oil prices reduce feedstock costs for chemical production."
+        "reason": "reduced logistics costs"
       },
       {
         "sector": "Information Technology",
         "direction": "positive",
-        "reason": "Strong global tech rally and strengthening rupee benefit export-oriented firms."
+        "reason": "tech rally on Wall Street lifts sentiment"
       },
       {
-        "sector": "Power",
+        "sector": "Oil Gas & Consumable Fuels",
         "direction": "negative",
-        "reason": "US slammed 233% tariffs on Indian solar products."
+        "reason": "crude price decline hurts earnings"
+      },
+      {
+        "sector": "Financial Services",
+        "direction": "positive",
+        "reason": "FII inflows likely as risk appetite improves"
       }
     ],
-    "method": "gemini",
+    "method": "groq",
     "llm_risk": "low",
     "rule_risk": "elevated",
     "rule_reasons": [
-      "8 shock headlines"
+      "5 shock headlines"
     ],
     "moves": {
       "sp500": {
@@ -5974,25 +5960,25 @@
         "date": "2026-11-09"
       },
       "nasdaq": {
-        "close": 25253.139,
+        "close": 25253.141,
         "chg1_pct": 2.74,
         "chg5_pct": 0.35,
-        "chg1_abs": 673.709,
+        "chg1_abs": 673.711,
         "date": "2026-11-09"
       },
       "brent": {
-        "close": 91.72,
-        "chg1_pct": -6.71,
-        "chg5_pct": -12.46,
-        "chg1_abs": -6.6,
-        "date": "2026-11-09"
+        "close": 91.51,
+        "chg1_pct": -1.15,
+        "chg5_pct": -11.67,
+        "chg1_abs": -1.06,
+        "date": "2026-11-10"
       },
       "usdinr": {
-        "close": 93.903,
-        "chg1_pct": -0.59,
-        "chg5_pct": -1.06,
-        "chg1_abs": -0.556,
-        "date": "2026-11-09"
+        "close": 93.918,
+        "chg1_pct": 0.02,
+        "chg5_pct": -0.85,
+        "chg1_abs": 0.015,
+        "date": "2026-11-10"
       },
       "us10y": {
         "close": 4.864,
@@ -6002,45 +5988,45 @@
         "date": "2026-11-09"
       },
       "dxy": {
-        "close": 101.679,
-        "chg1_pct": -0.61,
-        "chg5_pct": -0.07,
-        "chg1_abs": -0.621,
-        "date": "2026-11-09"
+        "close": 101.58,
+        "chg1_pct": -0.07,
+        "chg5_pct": -0.28,
+        "chg1_abs": -0.07,
+        "date": "2026-11-10"
       },
       "nikkei": {
-        "close": 60330.41,
-        "chg1_pct": 2.65,
-        "chg5_pct": -4.36,
-        "chg1_abs": 1554.91,
+        "close": 60459.578,
+        "chg1_pct": 2.87,
+        "chg5_pct": -4.16,
+        "chg1_abs": 1684.078,
         "date": "2026-11-10"
       },
       "hangseng": {
-        "close": 24540.98,
-        "chg1_pct": 0.38,
-        "chg5_pct": 4.31,
-        "chg1_abs": 92.031,
+        "close": 24561.99,
+        "chg1_pct": 0.46,
+        "chg5_pct": 4.4,
+        "chg1_abs": 113.041,
         "date": "2026-11-10"
       }
     },
     "headline_count": 40,
     "query_status": {
-      "Federal Reserve interest rates": 39,
-      "Wall Street stocks": 55,
+      "Federal Reserve interest rates": 42,
+      "Wall Street stocks": 53,
       "crude oil prices": 100,
-      "US tariffs India": 24,
-      "war geopolitical tensions": 15,
-      "FII outflows India": 6,
-      "rupee dollar": 53,
-      "China economy": 36,
-      "global recession": 10
+      "US tariffs India": 25,
+      "war geopolitical tensions": 17,
+      "FII outflows India": 7,
+      "rupee dollar": 61,
+      "China economy": 41,
+      "global recession": 11
     },
     "top_headlines": [
-      "China's trade surplus surpasses $1 trillion for a 2nd straight year, as exports surge 35% - The Washington Post",
-      "AI Investment Boom Weighs on Economic Trajectory as Fed Officials Carefully Assess Rate Hike Pace - NAI500",
-      "Japan's Nikkei surges nearly 3% as AI stocks extend rebound; SoftBank jumps 14% - The Economic Times",
-      "Petrol price may ease as crude oil nears $90 per barrel - The Guardian Nigeria News",
-      "Global climate talks open with big questions, smaller goals - The Economic Times"
+      "Crude Oil prices fall to $91 a barrel as Trump signals pause in further military strikes on Iran - Moneycontrol.com",
+      "Asian stocks rise after technology shares advance on Wall Street ahead of US inflation data - Ottumwa Courier",
+      "PSX surges 4,540 points as Iran war fears ease - Profit by Pakistan Today",
+      "China's trade surplus soars past $1 trillion as AI boom powers exports - Reuters",
+      "FIIs Sold Almost Everything In India. These Sectors Still Made The Cut - NDTV Profit"
     ]
   },
   "stale": null,
