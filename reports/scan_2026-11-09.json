@@ -2,7 +2,7 @@
   "session": "2026-11-09",
   "regime": {
     "regime": "neutral",
-    "breadth_pct": 52.4,
+    "breadth_pct": 52.3,
     "vix": 17.420000076293945,
     "benchmarks": {
       "nifty50": {
@@ -66,8 +66,8 @@
         "count": 97
       },
       "Healthcare": {
-        "breadth_pct": 65.11627906976744,
-        "count": 43
+        "breadth_pct": 63.63636363636363,
+        "count": 44
       },
       "Information Technology": {
         "breadth_pct": 70.83333333333334,
@@ -405,7 +405,10 @@
     {
       "symbol": "AJANTPHARM",
       "reasons": [
-        "no_data_or_short_history"
+        "below_50dma",
+        "50dma_not_rising",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -5910,46 +5913,46 @@
     }
   ],
   "universe_size": 496,
-  "evaluated": 485,
+  "evaluated": 486,
   "passed_gates": 0,
   "min_score": 40,
   "duplicate": true,
   "note": "Same session as the previous run; picks were not added to the journal again.",
   "macro": {
     "risk": "elevated",
-    "summary": "Global markets rally, oil prices falling, US indices up, no major geopolitical shock; favorable for new longs.",
+    "summary": "Global sentiment improves: easing Middle East tensions, falling oil, strong US equity gains; no major shocks, low risk for new longs.",
     "sector_impacts": [
+      {
+        "sector": "Oil Gas & Consumable Fuels",
+        "direction": "negative",
+        "reason": "Oil price drop cuts margins for Indian oil firms"
+      },
       {
         "sector": "Automobile and Auto Components",
         "direction": "positive",
-        "reason": "lower fuel costs boost demand"
+        "reason": "Lower fuel costs boost demand and margins"
       },
       {
         "sector": "Fast Moving Consumer Goods",
         "direction": "positive",
-        "reason": "reduced logistics costs"
+        "reason": "Reduced input costs improve profitability"
       },
       {
         "sector": "Information Technology",
         "direction": "positive",
-        "reason": "tech rally on Wall Street lifts sentiment"
-      },
-      {
-        "sector": "Oil Gas & Consumable Fuels",
-        "direction": "negative",
-        "reason": "crude price decline hurts earnings"
+        "reason": "Global risk appetite supports IT export growth"
       },
       {
         "sector": "Financial Services",
         "direction": "positive",
-        "reason": "FII inflows likely as risk appetite improves"
+        "reason": "Potential FII inflows and stable rupee aid sector"
       }
     ],
     "method": "groq",
     "llm_risk": "low",
     "rule_risk": "elevated",
     "rule_reasons": [
-      "5 shock headlines"
+      "9 shock headlines"
     ],
     "moves": {
       "sp500": {
@@ -5967,10 +5970,10 @@
         "date": "2026-11-09"
       },
       "brent": {
-        "close": 91.51,
-        "chg1_pct": -1.15,
-        "chg5_pct": -11.67,
-        "chg1_abs": -1.06,
+        "close": 90.75,
+        "chg1_pct": -1.97,
+        "chg5_pct": -12.4,
+        "chg1_abs": -1.82,
         "date": "2026-11-10"
       },
       "usdinr": {
@@ -5988,10 +5991,10 @@
         "date": "2026-11-09"
       },
       "dxy": {
-        "close": 101.58,
-        "chg1_pct": -0.07,
-        "chg5_pct": -0.28,
-        "chg1_abs": -0.07,
+        "close": 101.507,
+        "chg1_pct": -0.14,
+        "chg5_pct": -0.36,
+        "chg1_abs": -0.143,
         "date": "2026-11-10"
       },
       "nikkei": {
@@ -6002,31 +6005,31 @@
         "date": "2026-11-10"
       },
       "hangseng": {
-        "close": 24561.99,
-        "chg1_pct": 0.46,
-        "chg5_pct": 4.4,
-        "chg1_abs": 113.041,
+        "close": 24557.039,
+        "chg1_pct": 0.44,
+        "chg5_pct": 4.38,
+        "chg1_abs": 108.09,
         "date": "2026-11-10"
       }
     },
     "headline_count": 40,
     "query_status": {
-      "Federal Reserve interest rates": 42,
-      "Wall Street stocks": 53,
+      "Federal Reserve interest rates": 40,
+      "Wall Street stocks": 51,
       "crude oil prices": 100,
       "US tariffs India": 25,
       "war geopolitical tensions": 17,
-      "FII outflows India": 7,
-      "rupee dollar": 61,
-      "China economy": 41,
-      "global recession": 11
+      "FII outflows India": 8,
+      "rupee dollar": 62,
+      "China economy": 46,
+      "global recession": 10
     },
     "top_headlines": [
-      "Crude Oil prices fall to $91 a barrel as Trump signals pause in further military strikes on Iran - Moneycontrol.com",
-      "Asian stocks rise after technology shares advance on Wall Street ahead of US inflation data - Ottumwa Courier",
-      "PSX surges 4,540 points as Iran war fears ease - Profit by Pakistan Today",
-      "China's trade surplus soars past $1 trillion as AI boom powers exports - Reuters",
-      "FIIs Sold Almost Everything In India. These Sectors Still Made The Cut - NDTV Profit"
+      "Trump: Iran War 'Effectively Over' as US Keeps 'Status Quo' - The Chenab Times",
+      "Gold prices fall ahead of key US inflation data - Profit by Pakistan Today",
+      "Middle East flights: Air France and ITA Airways extend suspensions - The National",
+      "Overseas Research Daily 1110 | UBS Group: The Federal Reserve is expected to raise interest rates twice more, but this is unlikely to end the rally in U.S. stocks. - \u5bcc\u9014\u725b\u725b",
+      "Oil prices extend losses as fears of Middle East escalation ease - \u0633\u0627\u0646\u0627"
     ]
   },
   "stale": null,
