@@ -28,6 +28,39 @@ def market_symbols(cfg: dict) -> list[str]:
     return list(mk["benchmarks"].values()) + ([mk["vix_symbol"]] if mk.get("vix_symbol") else [])
 
 
+def apply_nse_official(cfg: dict, prices: dict, symbols: list[str], session):
+    """Swaps in NSE's official benchmarks and latest-session bars (light MCP use, see
+    scanner/nse_official.py). Mutates prices. Returns (budget or None, stats)."""
+    ncfg = cfg.get("data", {}).get("nse_mcp", {})
+    if not ncfg.get("enabled"):
+        return None, {"enabled": False}
+    from . import nse_official as NO
+    b = NO.Budget(cfg)
+    stats: dict = {"enabled": True}
+    try:
+        if ncfg.get("benchmarks", True):
+            got = NO.benchmarks(b, market_symbols(cfg), cfg["data"]["period"])
+            prices.update(got)
+            stats["benchmarks_from_nse"] = sorted(got)
+        if ncfg.get("official_close", True) and not b.blocked:
+            bars = NO.official_bars(b, [s for s in symbols if s in prices],
+                                    chunk=int(ncfg.get("bulk_chunk", 50)))
+            stats["official_close"] = NO.patch_last_bar(
+                prices, bars,
+                pd.Timestamp(session).date() if session is not None else None,
+                float(ncfg.get("close_tolerance_pct", 0.5)))
+    except Exception as e:      # never let NSE break the scan; yfinance data stays in place
+        log.exception("NSE MCP step failed")
+        stats["error"] = f"{type(e).__name__}: {e}"
+    stats.update({"calls": b.calls, "blocked": b.blocked})
+    oc = stats.get("official_close", {})
+    log.info("NSE MCP: %d calls, benchmarks %s, close checked %s, corrected %d, appended %d%s",
+             b.calls, stats.get("benchmarks_from_nse"), oc.get("checked"),
+             len(oc.get("corrected", [])), len(oc.get("appended", [])),
+             " (BLOCKED)" if b.blocked else "")
+    return (None if b.blocked else b), stats
+
+
 def load_market_data(cfg: dict, symbols: list[str], period: str, prices: dict | None = None,
                      liquidity: dict | None = None, cutoff=None):
     """Download prices (unless given) and build features. Returns (feats, benchmarks, vix_close).
@@ -94,7 +127,9 @@ def run(cfg: dict, with_news: bool = True, limit: int | None = None, force: bool
     log.info("Universe: %d stocks (%d on the exclusion list)", len(symbols), len(excluded))
 
     expected = expected_session(cfg)     # last session that is complete right now
-    feats, benchmarks, vix = load_market_data(cfg, symbols, cfg["data"]["period"],
+    prices = download_prices(symbols + market_symbols(cfg), period=cfg["data"]["period"])
+    nse_budget, nse_stats = apply_nse_official(cfg, prices, symbols, expected)
+    feats, benchmarks, vix = load_market_data(cfg, symbols, cfg["data"]["period"], prices,
                                               liquidity=liquidity_requirements(universe, cfg),
                                               cutoff=expected)
     if not feats:
@@ -180,7 +215,9 @@ def run(cfg: dict, with_news: bool = True, limit: int | None = None, force: bool
     survivors = []
     for p in passed:
         p["events"] = upcoming_events(p["symbol"], ref,
-                                      max(ecfg["earnings_window_days"], ecfg["dividend_flag_days"]))
+                                      max(ecfg["earnings_window_days"], ecfg["dividend_flag_days"]),
+                                      nse_budget if cfg["data"].get("nse_mcp", {}).get("dividends", True)
+                                      else None, nse_cal is None)
         if nse_cal is not None:
             p["events"] = [e for e in p["events"] if e["type"] != "earnings"] + [
                 {"type": "earnings", "date": d, "source": "nse"}
@@ -283,6 +320,7 @@ def run(cfg: dict, with_news: bool = True, limit: int | None = None, force: bool
         notes.append("Same session as the previous run; picks were not added to the journal again.")
 
     result = {"session": session, "regime": regime, "picks": picks, "watchlist": watchlist,
+              "nse_mcp": nse_stats,
               "rejected": rejected, "universe_size": len(symbols), "evaluated": len(current),
               "passed_gates": len(passed), "min_score": cfg["selection"]["min_score"],
               "duplicate": duplicate, "note": " ".join(notes), "macro": gm,

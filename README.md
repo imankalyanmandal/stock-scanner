@@ -255,11 +255,26 @@ global gate.
 
 ## Data sources
 
-- Prices: Yahoo Finance via `yfinance` (`.NS` tickers, adjusted). It's free and unofficial, so
-  occasional gaps happen and missing symbols are logged. For production, swap `data.py` to
-  Kite/Upstox.
+- Prices: Yahoo Finance via `yfinance` (`.NS` tickers, split/bonus/dividend adjusted) for the
+  full history. It's free and unofficial, so occasional gaps happen and missing symbols are
+  logged. For production, swap `data.py` to Kite/Upstox.
+- **NSE's official MCP server** (`data.nse_mcp` in `config.yaml`, `scanner/nse_official.py`),
+  used lightly, about 20-30 calls per scan:
+  - Nifty 50, Nifty 500 and India VIX history come from NSE instead of Yahoo.
+  - The latest session's OHLCV for every stock comes from NSE's bulk quotes. If Yahoo's last
+    close differs by more than 0.5% it is replaced; if Yahoo hasn't published the session yet,
+    NSE's bar is appended, so a late Yahoo feed no longer makes the scan stale.
+  - Ex-dividend dates for the stocks that pass the gates come from NSE's corporate actions.
+
+  Bulk history is deliberately *not* taken from NSE: its firewall returns HTTP 403 after a few
+  hundred rapid calls, and its prices are unadjusted. Every run is capped (`max_calls`) and stops
+  calling NSE after the first 403; on any failure the Yahoo data is used unchanged. The scan
+  report's `nse_mcp` field shows what NSE supplied. NSE labels this data informational and
+  educational, so keep it to personal use. The **NSE MCP probe** workflow (manual) lists the
+  server's current tools and sample responses if NSE changes something.
 - Delivery %: NSE full bhavcopy for the session date. If unavailable, the delivery score is set
   to neutral and a warning is logged.
-- India VIX: `^INDIAVIX` on Yahoo. If it's missing, the VIX rule is skipped.
+- India VIX: from NSE (above), falling back to `^INDIAVIX` on Yahoo. If both are missing, the
+  VIX rule is skipped.
 
 Screening output only, not investment advice. Entry, stop and target are mechanical estimates.

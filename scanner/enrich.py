@@ -14,11 +14,31 @@ from .data import to_yf
 log = logging.getLogger(__name__)
 
 
-def upcoming_events(symbol: str, today: date, lookahead_days: int) -> list[dict]:
-    """Earnings / dividend dates within the window (best effort via yfinance).
+def upcoming_events(symbol: str, today: date, lookahead_days: int, nse=None,
+                    need_earnings: bool = True) -> list[dict]:
+    """Earnings / dividend dates within the window.
+
+    nse: an nse_official.Budget. When given, ex-dividend dates come from NSE's corporate-action
+    list and yfinance is asked only for earnings dates, and only when need_earnings (the pipeline
+    already has NSE's board-meeting calendar otherwise). Any NSE failure falls back to yfinance.
 
     Returns [{"type": "earnings" | "ex_dividend" | "dividend", "date": "YYYY-MM-DD"}].
     """
+    if nse is not None:
+        from .nse_official import ex_dividends
+        try:
+            found = ex_dividends(nse, symbol, today, lookahead_days)
+        except Exception as e:
+            log.debug("NSE corporate actions %s failed: %s", symbol, e)
+        else:
+            if need_earnings:
+                found += [e for e in _yf_events(symbol, today, lookahead_days)
+                          if e["type"] == "earnings"]
+            return found
+    return _yf_events(symbol, today, lookahead_days)
+
+
+def _yf_events(symbol: str, today: date, lookahead_days: int) -> list[dict]:
     found = []
     try:
         cal = yf.Ticker(to_yf(symbol)).calendar or {}
