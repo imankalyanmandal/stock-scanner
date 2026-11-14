@@ -1,106 +1,21 @@
 {
-  "at": "2026-11-14T01:29:02+05:30",
-  "slot": "2026-11-14-am",
+  "at": "2026-11-14T14:14:42+05:30",
+  "slot": "2026-11-14-mid",
   "skipped": false,
   "lookback_hours": 26,
   "sent": true,
   "messages": [
-    "📰 <b>Holdings news</b> · Sat 14 Nov, 01:29 IST\nNew since the last 26h. 🔴 negative · 🟢 positive\n\n<b>🔴 Negative</b>\n🔴 <b>WAAREEENER</b>: US trade probe scrutiny may hurt Waaree&#x27;s exports\n   <i>Waaree’s US import disclosure deepens scrutiny of solar trade probe</i> <a href=\"https://news.google.com/rss/articles/CBMi6gFBVV95cUxNclg1X2QzVVNYdktxTktrZ2FkV2JyX1c2b1JFM2dpcHhoSWpuS1BkdEl6TjhmR3pKb0ZlTWQ2UEsxWFZGWFlVRlVFYnJ4NjJKbVUzMEgzenlKRV9EMDdSVlBCLVZVMUhJMUl1YlZlYldhNy1zUkk0ZGgzTnhpZHQ4Ujc2c3FwcDVhTlo3RUpCRTVqcTFBUnpiZVZvdEE5WW5kZV9wQU5XcUR2c2RiWFVTUzEwNnhUUldUS0d5Q1A3TFZCYlVyVlRGLVlFeXdPay00emx5THI3M0kwVTFjQzZaQzR4RTdVcEdTNmc?oc=5\">source</a>\n🔴 <b>MAFANG</b>: Key FANG+ component Nvidia faces severe leadership issues and a spy scandal.\n   <i>Nvidia Stock Braces For AI Chipmaker&#x27;s First Report Without Jensen Huang</i> <a href=\"https://news.google.com/rss/articles/CBMinAFBVV95cUxQb09Wd1BaSUZ6eXR5c3B3Si11cjE4NXNmV0pvT21JREtGZ21fUFhUZlNiTGJXc1AyMHJKUnZFLWFucnJoVFRMWGFWVnptcUJ3RXJ4eHN2ZlJ0STQzd1JTZG1oS2pxT3dfekdhdTlMeVZyenZ3cVNKbEFNdDA2emh3ZHlNV0oxV21nYkVZeEtaR1pVeVVoRWdyQk5nTks?oc=5\">source</a>\n🔴 <b>MON100</b>: Nasdaq plunged due to tech sector weakness (Nvidia) and rising Treasury yields, negatively impacting the ETF.\n   <i>Stock Market Midday, Nov. 13: Nasdaq Plunges as Nvidia Turmoil Deepens and Treasury Yields Hit 5% - Yahoo Finance</i> <a href=\"https://news.google.com/rss/articles/CBMilgFBVV95cUxNeU1MbkhnZll4OHpIdGV2VlI1ZVFhWGhKX1F1bnZvWVRGWnVkYnBfcmRIaG1PRzcyN1pTUFJzY2VWVzRMN2VqNjQ1Tkwyb3E5bGpQN1NOcTFnTVFQVmdPRjdZX2h3LTh2d2F1Y1F6SW5JWTVPWmRwXzBsVlpIbGNEWTBZLUhaRnFIWTVIY1gxSVc0T2J0blE?oc=5\">source</a>\n🔴 <b>SILVERBEES/SILVERIETF</b>: Silver futures fell, showing price decline\n   <i>Silver Prices Drop in Futures Trade: Rs 722 Fall on MCX</i> <a href=\"https://news.google.com/rss/articles/CBMiqgFBVV95cUxOSWZPOGdSNVluTFNzSkM2QXk0LVVTUVBSQm1CeTJzZGl4RFgtRDBuTnZXVDVnbFF6S2NHOE93bkRORHhCbDBRODV2a05oNWlOVlBPZjJiNU55QmtDc1NnMEVXbFptQW9UOGtFNWt6cHdUb0NWN1hwelpfZVFHTUx6QUNwNFNFQkVUbFJsaWdvOTJRRzEyN2RObkNZaXRjTU9MNFF2eUFCaEQ0Z9IBrwFBVV95cUxOQTdIeVlreEV6eE5HMDVPT0VDckJ5ek50VE15SHJZRHNGUG9FQllpclpnNkhVc2dTY29fcU9hUVJGQTZKeFoyRUxYSzM3MV94X0VlOGtvdk5XNmtPLWdoWGczLUJNLTFIWDJ4OU01aDIwZ1A1Sk9KaUxRZTNuYV9jdlJKaUxvQTltWWFFQWVIQzRtd3BjZ3ZOVUtzTjZiT1EzNWxWZU9HOGdWMkxlQlp3?oc=5\">source</a>\n\n<b>🟢 Positive</b>\n🟢 <b>ADANIPOWER</b>: Adani Group&#x27;s Adani Energy acquires a smart metering player, expanding its power sector footprint.\n   <i>Adani Energy acquires smart metering player IntelliSmart for ₹3,050 crore - Business Standard</i> <a href=\"https://news.google.com/rss/articles/CBMi2wFBVV95cUxNc3J2OFpoNm4zX3pVZkVCYWlMWTdlTTNzTXU0bE9qRVVabjZrdF9CZzJIM09uN1VsTXdCN2NudmxyUVZIWHNXeDNnbWRMVEQxWklaeHhNWGhIbkNLWFpmWTNTY2pGeVEyb1BTUkszNUpmcDVFT29maVBwNnhGRlZiSzBiRXYzaWhMbWVrVy1uQ2x1cm5TeXNhaEYyTU9YcHJOQVFRcFlabUlHb21rYkEzblk1ZzE1MTY5MWltZzJwNUlvRnR3dDNVZlBEYWwwbG5aeGcxVWYzczF2REXSAeABQVVfeXFMUC1lNDRQRU8waFV3bVVLeHJTak8yekgzaU1TYnNwelhOa3dXaUNKVS1Ea2tRWEpkOENySlh4TkFfaHJUd2ItX0k3OHgwdG5Hb0toMHhUWWtnRFVOLUFlUlRDYXlWU3I3a2xSMFF0VTBBRzgxU3h4aERNaHM1WWdRN2V5djNIb1hIajdBWWpWQXd2cE1QZTZDR2pzWGRuazdfZEY0a1VfcHFfVlR5ZVFWczcwT3l3Y3NQRGtMUlJYd3dSeUMtcVprZmhCZm5kWEZyRk96MDNpSnRFajlFdU9fNno?oc=5\">source</a>\n🟢 <b>BSE</b>: New company listing on BSE indicates increased business and revenue for the exchange.\n   <i>Sedemac Mechatronics gets NSE, BSE nod for 1.21 lakh share listing - scanx.trade</i> <a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxNNFVtNHA5Zjl2VzFCaEx4T1VubFhOb0JmMWlKWFJxRzJzTlFJSml3OGRuMTNSZUF5RWZLb19PT1JsSjZvWnBFb1R5T3dwQkROR2pGQklYRkxxQVNRQXB3S0Q1TExBMWhCWk5kUklfLXR6Vmpka3RVb0hCSXdZVjdTVWNheGx0ZnJ0WnZWZDZ5UEVFbkdQTlR6ZTJrQnJYOERFNkZQU0d0RHBzaWdkWGgxSGYtTkRUU2IxVFE?oc=5\">source</a>",
-    "🟢 <b>TATAPOWER</b>: Q2 profit increase and stable FY27 targets indicate strong performance\n   <i>Tata Power Q2 Profit Rises as FY27 Targets Hold - Kalkine India</i> <a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxQcTA5R2lrRENKVVZsUXV5M29HZ1Rrdng5LV9FYmpTdmdSdXNwR3VrRVBCRTcyVmxVampBWkx4NzVRVHl0UEU2ZVBzZW9SdFdGeUtxUGpscTBtMkNrSmRHcmN5SlAtUnhfSGVmMGtWQXZfWjBfX1hvQUFQeDY1SVpLRXdwbTRyTkpNWEd2aW1DamY2NnR3eHVGVzhaTjZiV3RKNi1ka1k3ZUZqblQ0SkNwVVBNZGFXMDdYQ2c?oc=5\">source</a>\n🟢 <b>JIOPLATFORMS</b>: Reliance Industries, Jio&#x27;s parent, saw a strong 15% share rebound, adding significant market value.\n   <i>Reliance Industries shares rebound 15% in November, add Rs.2.38 lakh crore in market value; what&#x27;s changed? - TradingView</i> <a href=\"https://news.google.com/rss/articles/CBMi8gFBVV95cUxPdUVhZUxhc3A2MktHY09YZDVJbHlCTjJOcnh3ZEQ3QVRDMnZHTG5vMDFIVklGS3hld0NHbzlWSkptU05VbTVtZFJURjhLTkQyTWNFYVNPQkN1V2hmS3RYWFFFUDQwc3Y5cnVVb1cxMkF3WXdIVGJqcmpOX0NWNHdqSEdxdDk0OTk0QnJJREJuY2ItdXVlVGVocXVzcnVxZGRrb1NUeDg2NWRfQ1I5R1ZPQm1iTU5RSHBZTERWS3ZfNnVNamdWbFRLd2UyRmZOSXBaLXpJaWh0TWg1SVB5RzlIdUQ1bVFhcV81RTdVaUdwS1cwUQ?oc=5\">source</a>\n\n<i>No new material news: GOKULAGRO, HBLENGINE, HSCL, M&amp;M, NH, RADICO, SHRIPISTON, TI, VIJAYA</i>"
+    "📰 <b>Holdings news</b> · Sat 14 Nov, 14:14 IST\nNew since the last 26h. 🔴 negative · 🟢 positive\n\n<b>🔴 Negative</b>\n🔴 <b>ADANIPOWER</b>: Fund trimmed exposure in Adani Energy, potentially impacting group sentiment.\n   <i>JioBlackRock Flexi Cap Fund exits ITC, BSE, MCX, TCS and 17 more, trim exposure in HDFC Bank, Adani Energy - The Economic Times</i> <a href=\"https://news.google.com/rss/articles/CBMijgJBVV95cUxNdGhQMGs5SHVGenJSUlRKYU5ZLXNqdExjTERmVWJmcWUzRVh4T2stUXh4a0hfUnlWZWhSZFdtcG10Q0lVUXRESXdteThCUEpIWmMtUXgxS2RWcWZqX25iRF9YQ3NIZkh1MENPaHl1cklRNzJqdTZuTWZaTzF1RHVzWFdEZmR5aTgxV2VaQzR3YUlwODJfcjhSRF8yeDcyMGthc0NZNEoxN0RHVWdDRzZzX1hGckViVFdQWnZ1WGNUZnVSdlNsanZ2SktpbUtJRy1JNlJoTWdoZy1iUS1rSzh5d3V6YndFdmYwUU5NLXZhOXJ4YnFTTHNTa3FOMVo4RHEwdUh3SkpzRXgtTjJjT2fSAZMCQVVfeXFMT25zNWtuZ1Rfd1VNdXhwTzdjWDFqUjVvc0pIM0RHRzFvWkxKMGo0MW1DSkF1Wm5ST0g5b3gzUXcteW81R0VqRWc4XzAxV3dVUThta1hRSlNqOGp3Z1BZMzhOTkctWW9kVFVFdVFYdjhVMUYtYXpDOWdaMWFiX2hzTmFTaUxxVHV5ZDRONlhCMmFXSU5XTFF3NVRjX09hNGRPSHgwTzQ3MHduRHBhalV6QWctQnRmTi1BQnppb1dfT0xFV0M0dkNQVHMwcmN3WldnWkxaOHNEdno5MUtvSG9KUE5xZjJTTU5reDNTSmV5RGFwWjJGVnpVUjBaWEpnNkxWMV9ZR3pUOUFFQ3VyUFNGTVlkWVU?oc=5\">source</a>\n🔴 <b>BSE</b>: JioBlackRock Flexi Cap Fund exited its holding in BSE Ltd.\n   <i>JioBlackRock Flexi Cap Fund exits ITC, BSE, MCX, TCS and 17 more, trim exposure in HDFC Bank, Adani Energy - The Economic Times</i> <a href=\"https://news.google.com/rss/articles/CBMijgJBVV95cUxNdGhQMGs5SHVGenJSUlRKYU5ZLXNqdExjTERmVWJmcWUzRVh4T2stUXh4a0hfUnlWZWhSZFdtcG10Q0lVUXRESXdteThCUEpIWmMtUXgxS2RWcWZqX25iRF9YQ3NIZkh1MENPaHl1cklRNzJqdTZuTWZaTzF1RHVzWFdEZmR5aTgxV2VaQzR3YUlwODJfcjhSRF8yeDcyMGthc0NZNEoxN0RHVWdDRzZzX1hGckViVFdQWnZ1WGNUZnVSdlNsanZ2SktpbUtJRy1JNlJoTWdoZy1iUS1rSzh5d3V6YndFdmYwUU5NLXZhOXJ4YnFTTHNTa3FOMVo4RHEwdUh3SkpzRXgtTjJjT2fSAZMCQVVfeXFMT25zNWtuZ1Rfd1VNdXhwTzdjWDFqUjVvc0pIM0RHRzFvWkxKMGo0MW1DSkF1Wm5ST0g5b3gzUXcteW81R0VqRWc4XzAxV3dVUThta1hRSlNqOGp3Z1BZMzhOTkctWW9kVFVFdVFYdjhVMUYtYXpDOWdaMWFiX2hzTmFTaUxxVHV5ZDRONlhCMmFXSU5XTFF3NVRjX09hNGRPSHgwTzQ3MHduRHBhalV6QWctQnRmTi1BQnppb1dfT0xFV0M0dkNQVHMwcmN3WldnWkxaOHNEdno5MUtvSG9KUE5xZjJTTU5reDNTSmV5RGFwWjJGVnpVUjBaWEpnNkxWMV9ZR3pUOUFFQ3VyUFNGTVlkWVU?oc=5\">source</a>\n🔴 <b>TATAPOWER</b>: Potential $260M arbitration payout and internal leadership uncertainty outweigh earnings beat.\n   <i>Meet Omni Bridgeway, the litigation funder eyeing up to a $260 million windfall from Tata Power arbitration award - TradingView</i> <a href=\"https://news.google.com/rss/articles/CBMi_AFBVV95cUxOalBielQtbDZDSFNmd0FHRVNYR0laOU1VWTNSYjlRdkc5bG9ZeUY1cVZCU2prUExJNHVqenhGbV81Q2RNOS1QdHFJMnJpaVZiVUN2alBZelB2eV9vTVNkMkVjMTRSbGRoc2NuS2o5WDZwb3laZVFQMlAwbEN1dzA5ZFUyOUxSclNkZGxKdkJ6NXA1T280ZDZXLVRhaGJ4RGhLYUNhYW9oZm1TV1ltMW1KeWVfRWZWQjN2VmNwRlctNlBSYjVsQVBjNk5YdHAxMkpCNkI3WnBMQUdzVjF0cU1yVklxX0tIaXRmbm9FRm1FU0h2UFkyU1dXbFZaX24?oc=5\">source</a>\n🔴 <b>WAAREEENER</b>: Misreporting import origin triggers US regulatory scrutiny, hurting export strategy\n   <i>Waaree admitted misreporting solar import origin in submission to US trade commission</i> <a href=\"https://news.google.com/rss/articles/CBMi2gFBVV95cUxOTlZ1R1hLUnFiR0Nta2xleTNoS19yQVlHc1dXLXhBQm1ZVHgzdGNlSldCTmJDeF9MODFNZWtMSmwtRGItcDRKWkJhdHhIRUtMREdxR3hmS3VSWXhINDdDUjlLTXktdFdhUWo0clg1SUlJcXVWbFBVSnd1OHluSEplUG0yNDY2UkVpdjAyRmIwVGF5dnJkeXRuaGw2MGNBN1Fidy1QSzZWNW1PUDFwUjllcTl1RG5iVVM4cC1HM0Y0ZWVvYngyeDgxc0I4eFVscGx6Y2hYd3hicnY2Z9IB3wFBVV95cUxPSmxjcnF4WlFvWjZUdTZWMHJwSXhmWWN1UXhNZFJSN1JEY1BfZ1E5Z3FKalFxdVZQYi1wV1I2VzlUd0prMWVkTU1sM1NKT2dXNVVObTA3by1qVlBwM2tBbjRNTm9ZQzhDTW40V19MQVdETUxJN245d3RFTlp6c2hLM2c4dlNKUlRVcHJpT21Va05QTVhGaFYtNDhvYjM5alZ2RDkzcmpmMmQyTkI3T1psM2N6aG5WUVhaRHp3bWFtMktZUDhRLWswb1kxQUlwaW9GRWpzaERNcm9aeGs1TEFN?oc=5\">source</a>",
+    "🔴 <b>MAFANG</b>: Nvidia-led tech selloff weighs on Wall Street, causing declines in tech stocks relevant to the FANG+ ETF.\n   <i>Wall Street Ends Mixed As Nvidia-Led Tech Selloff Weighs On S&amp;P 500, Nasdaq - BusinessToday Malaysia</i> <a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxNS1d4VkJuZ1VfS2tJTFB2SlRYY1Y5Mnd2al8yeUZoUG1mRDFxaDVYeTIzVnU1VXZJRXp1TjV2U3I2aVcxWm5Sd3V3OFVGdmY3eW4tUEVKVzFoSmMwMllneUlGZXdRemREb2RWTDkxM1ByQ1Q2UVJwV3pBR2lKM2U4Q1YzZ1AzTkdKNkE4MW1jRzN2ODdRSUw2TFpNYTM1R0c4bGhydksxczNzUTR3Mnh3VTY2VWtZdTkzSVE?oc=5\">source</a>\n🔴 <b>MON100</b>: Nvidia uncertainty drags down tech stocks, pulling Nasdaq 100 lower\n   <i>S&amp;P 500, Nasdaq fall as Nvidia jitters drag down tech stocks</i> <a href=\"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5vRVJTMVNHamxmYjhLY2d6YnJMTnh4dlV2NHJkSWR2YnZVN0F1UThrdm1FZVRMMXVOcjJJcHhBRjFNWE5IMExUa3lZVXk5cnMtX2hvMmlJSUx3dlY5SUNoeFlvTjFDQ1k?oc=5\">source</a>\n\n<b>🟢 Positive</b>\n🟢 <b>RADICO</b>: Target price raised to Rs.5150, indicating bullish outlook\n   <i>1. [Investment Guru India, 24.0h ago] Chart of The Week - Radico Khaitan Ltd Target Rs.5150.00 - Jainam - Investment Guru India</i> <a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxNcFFvOFY2UkRvVU1HNFRnamFLWUVQYy11Mmp0X1VnUmNPeS1JQzdSazRDX1VucXhKRzlCVk1KMUxISDJBZ3B1TnctVHIzOHFubkZGQ0hCYUtzaHZaWF9jVm9JWEUtR2xuUjlFS0xHYlFONkFsaXhmcFlWV1lzbGRDS2lvc25COVowOW5hQ1lZZmdqa0ZFTmZ4aEc5RVlMcTJyXzczSTR0b1FlMDFpSHRWVUMxSFo?oc=5\">source</a>\n🟢 <b>SILVERBEES/SILVERIETF</b>: Silver prices reported rising across Indian cities, indicating upward price movement\n   <i>Gold and silver rates today 14 Nov surged in Bengaluru and Chennai, check gold prices of 18K, 22K, 24K</i> <a href=\"https://news.google.com/rss/articles/CBMi8gFBVV95cUxQYk0zR1k1SWgwUEpsNkVKeS1UQUtXYmM3U3RRNTVoTC1DNkNzY0Vpejc2WEZCR25RRkFfSHdxcGNsek9aTW92T25TczJQLUtWWE16V2dvTzdyeU9lM3N4VmQ2aWxXVHA4UWhXcFkxLTBQMkNPREJNbzR0TnJ4TjBBLWxZREMzWXY1T1M4bWpIb3VULW9JRHpaTDA3dW1kTl9hLV9ReDdRbVcyYWFBX1VJdzlWVE5oUHg4VXJET1lIZTlKdTA1NTNRUnlXTXRIQjctLTFVOVlTaVJKY3FpX2pjbVhjMkRwVkpvVGNadGZNWmM3Z9IB9wFBVV95cUxNUHpaTEt6UEsxYTBNUHQzXy1DSE9za3IxSTlFU3VvNW9FMjdDVzc3M3V5ZkkxYzg1V1RMZ05nZlhGb2lfRkdGX096ZkR3V0p2ZnNycldJVk5zeUVqaTBUMlpwMlFIaDNyU2JrOVA1bHp6YzhQSzZ1NTlFc0JHVFRUdTVOUDhYR000M0ZKeHN5dHFJVEZjN3VhSWUzdUFrajBMYm81NDRXdVZWdFdNcjNISjN0cElYWThOT0daQXlrdll1UnAtdEozZ1ZSNVExeG9SdUhtVVVrLWhEeTdvdWhQOWZ1dUpydEI1SjhDT1BuZ2lSVDVvd0Q0?oc=5\">source</a>\n   🟠 risk words in the headlines, worth a look\n\n<i>No new material news: GOKULAGRO, HBLENGINE, HSCL, JIOPLATFORMS, M&amp;M, NH, SHRIPISTON, TI, VIJAYA</i>"
   ],
   "results": [
     {
       "symbol": "ADANIPOWER",
       "company": "Adani Power",
-      "verdict": "positive",
-      "reason": "Adani Group's Adani Energy acquires a smart metering player, expanding its power sector footprint.",
-      "headline": "Adani Energy acquires smart metering player IntelliSmart for ₹3,050 crore - Business Standard",
-      "link": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxNc3J2OFpoNm4zX3pVZkVCYWlMWTdlTTNzTXU0bE9qRVVabjZrdF9CZzJIM09uN1VsTXdCN2NudmxyUVZIWHNXeDNnbWRMVEQxWklaeHhNWGhIbkNLWFpmWTNTY2pGeVEyb1BTUkszNUpmcDVFT29maVBwNnhGRlZiSzBiRXYzaWhMbWVrVy1uQ2x1cm5TeXNhaEYyTU9YcHJOQVFRcFlabUlHb21rYkEzblk1ZzE1MTY5MWltZzJwNUlvRnR3dDNVZlBEYWwwbG5aeGcxVWYzczF2REXSAeABQVVfeXFMUC1lNDRQRU8waFV3bVVLeHJTak8yekgzaU1TYnNwelhOa3dXaUNKVS1Ea2tRWEpkOENySlh4TkFfaHJUd2ItX0k3OHgwdG5Hb0toMHhUWWtnRFVOLUFlUlRDYXlWU3I3a2xSMFF0VTBBRzgxU3h4aERNaHM1WWdRN2V5djNIb1hIajdBWWpWQXd2cE1QZTZDR2pzWGRuazdfZEY0a1VfcHFfVlR5ZVFWczcwT3l3Y3NQRGtMUlJYd3dSeUMtcVprZmhCZm5kWEZyRk96MDNpSnRFajlFdU9fNno?oc=5",
-      "method": "gemini",
-      "keyword_alert": false,
-      "items": 8,
-      "new_items": 6,
-      "sources": {
-        "google": "ok (8)"
-      },
-      "already_sent": false,
-      "fingerprint": "b6b22044191812bf"
-    },
-    {
-      "symbol": "BSE",
-      "company": "BSE Ltd",
-      "verdict": "positive",
-      "reason": "New company listing on BSE indicates increased business and revenue for the exchange.",
-      "headline": "Sedemac Mechatronics gets NSE, BSE nod for 1.21 lakh share listing - scanx.trade",
-      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNNFVtNHA5Zjl2VzFCaEx4T1VubFhOb0JmMWlKWFJxRzJzTlFJSml3OGRuMTNSZUF5RWZLb19PT1JsSjZvWnBFb1R5T3dwQkROR2pGQklYRkxxQVNRQXB3S0Q1TExBMWhCWk5kUklfLXR6Vmpka3RVb0hCSXdZVjdTVWNheGx0ZnJ0WnZWZDZ5UEVFbkdQTlR6ZTJrQnJYOERFNkZQU0d0RHBzaWdkWGgxSGYtTkRUU2IxVFE?oc=5",
-      "method": "gemini",
-      "keyword_alert": false,
-      "items": 8,
-      "new_items": 5,
-      "sources": {
-        "google": "ok (8)"
-      },
-      "already_sent": false,
-      "fingerprint": "b7d5f0c2bea10204"
-    },
-    {
-      "symbol": "GOKULAGRO",
-      "company": "Gokul Agro Resources",
-      "verdict": "neutral",
-      "reason": "No news found for Gokul Agro Resources; the headline is about a different company.",
-      "headline": "CIAN Agro Industries & Infrastructure Limited (CIANAGRO.BO) stock price, news, quote and history - Yahoo Finance UK",
-      "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFB6Rnk2WjJXdmk1VW5WTkNIZG01N0szSGRMeUJFOWNmQU00U3cxVm90YmdKeGV4cUl5TjBSQm9sVzhXNkdBdW5DZWpZb1FocEJXRXNCUjN3R0JKaHc?oc=5",
-      "method": "gemini",
-      "keyword_alert": false,
-      "items": 4,
-      "new_items": 1,
-      "sources": {
-        "google": "ok (6)"
-      },
-      "already_sent": false,
-      "fingerprint": "f85dadfce087c5c1"
-    },
-    {
-      "symbol": "HBLENGINE",
-      "company": "HBL Engineering",
-      "verdict": "none",
-      "reason": "no new headlines",
-      "headline": "",
-      "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQWkt1NU1pYnNNNUQ5dzhRQXBlY2R2ejg5Mmg0UXl2M0xEcmFCNWNPZFFseHlhYjk1TnREcWVVMThDOWc3Rks4U3dKN1JNdTRSbXFFTzVldEJDQ05DX2swb3BPcTVOTmZxYVo2U2tidGpHOUxkVXNKR0h0WV9MNEp0enlsQUJnOWVQaEJUM0dobXBuQ1pmOWZjVVZVV1FoSTd6VWRERHFYb1cyZnNDZGhkQ0Y1UUpDZmJQSGMtRmhIbjJmS2t3TDlEU3F3?oc=5",
-      "method": "-",
-      "keyword_alert": false,
-      "items": 1,
-      "new_items": 0,
-      "sources": {
-        "google": "ok (1)"
-      },
-      "already_sent": false,
-      "fingerprint": "7d35447f02711d97"
-    },
-    {
-      "symbol": "HSCL",
-      "company": "Himadri Speciality Chemical",
-      "verdict": "none",
-      "reason": "no new headlines",
-      "headline": "",
-      "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPVGdFZFhpaFkweTJIZkp6MVhnbkFLLTJ6dDcyXzh2b3JoeHNxOTQ3UTE3czZsdm40MWZNamFscmVhN1o1UTItVTc2OW9DY0I0UHk4aEdyRTNjbUFHSEZ3bXpzUHd0WWpVeldPemJWVHVicnJpYVVmN0c2SjMtVEVQTDlsVDR4NG1qV0Y2SndKNmh4SE1CV2c?oc=5",
-      "method": "-",
-      "keyword_alert": false,
-      "items": 4,
-      "new_items": 0,
-      "sources": {
-        "google": "ok (8)"
-      },
-      "already_sent": false,
-      "fingerprint": "8543ebde1e1f9264"
-    },
-    {
-      "symbol": "M&M",
-      "company": "Mahindra & Mahindra",
-      "verdict": "neutral",
-      "reason": "M&M appointed a new marketing chief; broader market fell; other news is for Tech Mahindra.",
-      "headline": "M&M names former Unilever executive as automotive marketing chief - Business Today",
-      "link": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxPT3VEd0ItU1A5TzM2cVpNd0k0Z29RY3VicUMtMWVtZVZUVVFFdHA4T2U5ekRqWUl3azllcXpubm9jUU50UTB6RHkyY0pRQzRIUnZaaXhGTFJ0cEQ0bXRmdkpTbnBlVTJpRy1qSkZXckRLQ2pZY2Y2cTlkOVFoQW1KVWZ4enY5NnhYWXA3WWk0ZzlqcU01MDlPa1VWSjhLX2lvMDJUNnloWndNQ1BTRW5LamJlYmY5czVfMk9GeUFTaGdhcHI3SzhTdzAteUcyc3JBUEVCTkFURlZScEoyR0RmbndUdGN1c3hf0gHuAUFVX3lxTE5GSVczQkdWWG12cmlEcEFDdGxhUW9JQUxBc1BQMGtDRE1EbmZfbGxYSEFITmR6VTdpbE5keTd3eDVoMzJYYlRjYnJLMnh0Q1dzVWtSM09aWkktR29DdVpNaDRGOEVqejlDcHd1NkVadnZPSzdwTHNaUG9MYTIzSVNZSktNOThZaWE1TEhfVEwtanNYUWJ6dlRjbGRnWE1CNURZYTZQTGJoQURNT2NQbGVrcW4tT1VqbUF6dUdPd3QwdnB3QmNIVjRwOXhLTE5CM1JRRWRrSlNEdlhQSkRVQjFJN1BVaDJDYkQxOUZwRkE?oc=5",
+      "verdict": "negative",
+      "reason": "Fund trimmed exposure in Adani Energy, potentially impacting group sentiment.",
+      "headline": "JioBlackRock Flexi Cap Fund exits ITC, BSE, MCX, TCS and 17 more, trim exposure in HDFC Bank, Adani Energy - The Economic Times",
+      "link": "https://news.google.com/rss/articles/CBMijgJBVV95cUxNdGhQMGs5SHVGenJSUlRKYU5ZLXNqdExjTERmVWJmcWUzRVh4T2stUXh4a0hfUnlWZWhSZFdtcG10Q0lVUXRESXdteThCUEpIWmMtUXgxS2RWcWZqX25iRF9YQ3NIZkh1MENPaHl1cklRNzJqdTZuTWZaTzF1RHVzWFdEZmR5aTgxV2VaQzR3YUlwODJfcjhSRF8yeDcyMGthc0NZNEoxN0RHVWdDRzZzX1hGckViVFdQWnZ1WGNUZnVSdlNsanZ2SktpbUtJRy1JNlJoTWdoZy1iUS1rSzh5d3V6YndFdmYwUU5NLXZhOXJ4YnFTTHNTa3FOMVo4RHEwdUh3SkpzRXgtTjJjT2fSAZMCQVVfeXFMT25zNWtuZ1Rfd1VNdXhwTzdjWDFqUjVvc0pIM0RHRzFvWkxKMGo0MW1DSkF1Wm5ST0g5b3gzUXcteW81R0VqRWc4XzAxV3dVUThta1hRSlNqOGp3Z1BZMzhOTkctWW9kVFVFdVFYdjhVMUYtYXpDOWdaMWFiX2hzTmFTaUxxVHV5ZDRONlhCMmFXSU5XTFF3NVRjX09hNGRPSHgwTzQ3MHduRHBhalV6QWctQnRmTi1BQnppb1dfT0xFV0M0dkNQVHMwcmN3WldnWkxaOHNEdno5MUtvSG9KUE5xZjJTTU5reDNTSmV5RGFwWjJGVnpVUjBaWEpnNkxWMV9ZR3pUOUFFQ3VyUFNGTVlkWVU?oc=5",
       "method": "gemini",
       "keyword_alert": false,
       "items": 8,
@@ -109,41 +24,126 @@
         "google": "ok (8)"
       },
       "already_sent": false,
-      "fingerprint": "8522ae09e25b510b"
+      "fingerprint": "35b21a190126bdf7"
     },
     {
-      "symbol": "NH",
-      "company": "Narayana Hrudayalaya",
+      "symbol": "BSE",
+      "company": "BSE Ltd",
+      "verdict": "negative",
+      "reason": "JioBlackRock Flexi Cap Fund exited its holding in BSE Ltd.",
+      "headline": "JioBlackRock Flexi Cap Fund exits ITC, BSE, MCX, TCS and 17 more, trim exposure in HDFC Bank, Adani Energy - The Economic Times",
+      "link": "https://news.google.com/rss/articles/CBMijgJBVV95cUxNdGhQMGs5SHVGenJSUlRKYU5ZLXNqdExjTERmVWJmcWUzRVh4T2stUXh4a0hfUnlWZWhSZFdtcG10Q0lVUXRESXdteThCUEpIWmMtUXgxS2RWcWZqX25iRF9YQ3NIZkh1MENPaHl1cklRNzJqdTZuTWZaTzF1RHVzWFdEZmR5aTgxV2VaQzR3YUlwODJfcjhSRF8yeDcyMGthc0NZNEoxN0RHVWdDRzZzX1hGckViVFdQWnZ1WGNUZnVSdlNsanZ2SktpbUtJRy1JNlJoTWdoZy1iUS1rSzh5d3V6YndFdmYwUU5NLXZhOXJ4YnFTTHNTa3FOMVo4RHEwdUh3SkpzRXgtTjJjT2fSAZMCQVVfeXFMT25zNWtuZ1Rfd1VNdXhwTzdjWDFqUjVvc0pIM0RHRzFvWkxKMGo0MW1DSkF1Wm5ST0g5b3gzUXcteW81R0VqRWc4XzAxV3dVUThta1hRSlNqOGp3Z1BZMzhOTkctWW9kVFVFdVFYdjhVMUYtYXpDOWdaMWFiX2hzTmFTaUxxVHV5ZDRONlhCMmFXSU5XTFF3NVRjX09hNGRPSHgwTzQ3MHduRHBhalV6QWctQnRmTi1BQnppb1dfT0xFV0M0dkNQVHMwcmN3WldnWkxaOHNEdno5MUtvSG9KUE5xZjJTTU5reDNTSmV5RGFwWjJGVnpVUjBaWEpnNkxWMV9ZR3pUOUFFQ3VyUFNGTVlkWVU?oc=5",
+      "method": "gemini",
+      "keyword_alert": false,
+      "items": 8,
+      "new_items": 4,
+      "sources": {
+        "google": "ok (8)"
+      },
+      "already_sent": false,
+      "fingerprint": "38fd27e183d2524a"
+    },
+    {
+      "symbol": "GOKULAGRO",
+      "company": "Gokul Agro Resources",
       "verdict": "neutral",
-      "reason": "Generic market list, not specific to Narayana Hrudayalaya.",
-      "headline": "[Univest, 12.5h ago] Under Rs 2325 Stocks to Buy in Nov 2026: Top 5 Picks - Univest",
-      "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9UYVI1cFhKVm11ZWs3Ym5maGFmclVrTGNCbmR6S0d4c214bnVacTY2QTRoSzBSRG1xTjlCSWpvT2ZaVzVRY1BWcVdweEdReWQzcXk5elRjUE5WbFJ5b2tXcnJ3?oc=5",
+      "reason": "Headline is about a generic seasonal returns chart, not a material event for the company.",
+      "headline": "Gokul Agro Resources Limited (GOKULAGRO.BO) Seasonal Returns Chart - Yahoo Finance - Yahoo! Finance Canada",
+      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1JRkxXMU1mdnA1UTFGNHNrbHFnN2dDazRSZ1JsMGtDNFFjQW1KZ1RYV2ljdDZjclJTODRKVW40TUtfOGdwd2Q2UVhpdTBQUEk4RDRqYjdkYW1idzdkQ2gwMEUzVU1KYlNfbjhwOQ?oc=5",
       "method": "gemini",
       "keyword_alert": false,
       "items": 2,
       "new_items": 1,
       "sources": {
-        "google": "ok (5)"
+        "google": "ok (8)"
       },
       "already_sent": false,
-      "fingerprint": "70aec1872838992b"
+      "fingerprint": "3ceed4713b8e65c0"
+    },
+    {
+      "symbol": "HBLENGINE",
+      "company": "HBL Engineering",
+      "verdict": "neutral",
+      "reason": "Generic market article, not specific to HBL Engineering.",
+      "headline": "Tenbaggers on Dalal Street! These 17 stocks delivered over 1,000% returns in 5 years. What Peter Lynch’s r - The Economic Times",
+      "link": "https://news.google.com/rss/articles/CBMipwJBVV95cUxPSG5yaTU4OXN1V2hwWUJHTmxDakNyU1k0T09BZWlKblJaVFRpOU9zdndUbTBjaEMtQXJOdlhrV2ctdEc2VFA5dmJUTWZ3XzJsQjNnT2pJRFdRaXNkNjhGb2x0RmV4ZVpqY2pGaTFGX1IydVRZYjJDWnRPMnZiam1WMTlNNWoybHhVa05hNWRwWXF1Nl9JbkhmZmFuQy03VWxBUHBPQTFkZjFkN29ORlllYXItUTI0eU91NVhUcVQxUEVhWDJjVTNKdTV3QjJXdzdjRjBQRjJNNFJkam1BdTRYNXBhT0lzWGxfT2wxcHBYTzJYWWxjN2xVYW0zbXlDRkxFbUZpS25JTkNHVTU5ZWhHWVhfNEdZNzRKdTcwaFB6TzdNenJRLTRv0gGsAkFVX3lxTE15dW00TEE3MFJWQ2J3S1RERXpkWnBvQWl2VklUaUh6Z29XRmlKMWNQd2FUOEJSSXFVeVJmdk52TmVJeGkwbHhIZnpwSF8xeG0wa2N4VlNncHdUNGwxazB1SGkwN0hfbGhodTZ3ZEl5WkpYQjJTU0tDbXpUTjVnbnVhbzA4dTdUYkpVWUpSb1RFSmxsN1NjNDRyQzIzcEtIQ0RIdVRGS1ZUZzA5dlBrMklla21COGxZYXl3RkI1SVR2dWZ1QWNoMVZhdzFwakJnU2V6bUN0cVhEbDd3a204RlpQV3VOMXpZaE9RZlR0Z25JNVU0UGZ5c3U5QlFmOXdmc1ROUjEwODNodzFubEpWQmlmY2pVUkJVbG5fSHRaX2I4UU1FMngtbk94aktaTw?oc=5",
+      "method": "gemini",
+      "keyword_alert": false,
+      "items": 1,
+      "new_items": 1,
+      "sources": {
+        "google": "ok (2)"
+      },
+      "already_sent": false,
+      "fingerprint": "6184277cd9d6d683"
+    },
+    {
+      "symbol": "HSCL",
+      "company": "Himadri Speciality Chemical",
+      "verdict": "neutral",
+      "reason": "Headline is about a different company (Navin Fluorine International), not Himadri Speciality Chemical.",
+      "headline": "[scanx.trade, 6.1h ago] NAVINFLUOR Share Price Today - Navin Fluorine International on NSE/BSE - scanx.trade",
+      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5KVkRzcU5uaGJqRnktQVNCenZKQ1NlZERDM2duMTh3ZVBRWGRheFQxdkdZdzJoZHozc2dpcFhmUUl3Mmg1M1IwY3diN3hNMjBnVTVyRG1VOVdzOEdlVzlaY2taamYyRnYtNTJoQQ?oc=5",
+      "method": "gemini",
+      "keyword_alert": false,
+      "items": 2,
+      "new_items": 1,
+      "sources": {
+        "google": "ok (8)"
+      },
+      "already_sent": false,
+      "fingerprint": "9dc5a21ceae3bdea"
+    },
+    {
+      "symbol": "M&M",
+      "company": "Mahindra & Mahindra",
+      "verdict": "neutral",
+      "reason": "News items are about other companies, broader market, or generic stock comparisons.",
+      "headline": "Maruti vs M&M vs Hyundai vs Tata Motors PV: Which stock offers growth at a better price? - The Financial Express",
+      "link": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxNZExtc3d3emlYMk1BR1J4TzRLRjVhd29hRnJXaVMwa1AwYW1tdWpFbFR1eGpOMmh5eEZ3M2luNmljRmNWREszVUFFTzVSMnhlRUlRTlJzWGNWQ2JGd21WOGNFbU1rNmdBZjgzT1B4VWRVTEh3UVpvZ0RRYWRSRm1lMTFRa1VsbUtfeVVXOFdDejNiUE9SUWtFMVpQR0NqQXBMSWpTOFVveDlwVC1nNW52RTh0RDZrQTM1V2FkdzVRMmZIZ2N4WWVfRnc2RXlEd2Y1QmY0ZEZEQ0NfamxyZ2w4VkhlMNIB6gFBVV95cUxQYkdiUm45NmVXM1UwZDUtNHpaRTdSV3p4UjVUVWd4S1dEdnctSm4wVF9GOV9XUU85dGx0Z0xMZXB4QWRzQTE4Q3luTXdWelRlQUZSUVhDUmpYczBGZmdFTjMzMU02WVJnb0FnTHJxbnR6dzMyWmw0SEFHVDJFM1h1bV95TXBKM0lpZ2pIeVNId2dsQkpIZzlXYnBvT3k5SWl5ZmltMHBDZHdoRXFKSFBBcUEtekZqdXVKWEhwX2ZpM1lZcVJMN1lMZWMwWnYwSFl1QVRhUzVnZXRBQ25qcUFxTFZrV2RVSllZUFE?oc=5",
+      "method": "gemini",
+      "keyword_alert": false,
+      "items": 6,
+      "new_items": 4,
+      "sources": {
+        "google": "ok (8)"
+      },
+      "already_sent": false,
+      "fingerprint": "3428834028fba9a7"
+    },
+    {
+      "symbol": "NH",
+      "company": "Narayana Hrudayalaya",
+      "verdict": "none",
+      "reason": "no new headlines",
+      "headline": "",
+      "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9UYVI1cFhKVm11ZWs3Ym5maGFmclVrTGNCbmR6S0d4c214bnVacTY2QTRoSzBSRG1xTjlCSWpvT2ZaVzVRY1BWcVdweEdReWQzcXk5elRjUE5WbFJ5b2tXcnJ3?oc=5",
+      "method": "-",
+      "keyword_alert": false,
+      "items": 1,
+      "new_items": 0,
+      "sources": {
+        "google": "ok (4)"
+      },
+      "already_sent": false,
+      "fingerprint": "9baf2d3e28d4424b"
     },
     {
       "symbol": "RADICO",
       "company": "Radico Khaitan",
-      "verdict": "neutral",
-      "reason": "Generic stock recommendation lists, not specific to Radico Khaitan or its operations.",
-      "headline": "[Univest, 12.6h ago] Under Rs 4900 Stocks to Buy in Nov 2026: Top 5 Picks - Univest",
-      "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE80VTNnajhCWTNNcHJVaklJbVhOa0w2eG1FdU5RS3BiYW80WkYxYmVNTHdWbEl1X3BqRnVGTHdlMk1NQ3c5blUtZjhTMXluS3ZCMHRjN3didzBpLU1sTUU1dW1R?oc=5",
-      "method": "gemini",
+      "verdict": "positive",
+      "reason": "Target price raised to Rs.5150, indicating bullish outlook",
+      "headline": "1. [Investment Guru India, 24.0h ago] Chart of The Week - Radico Khaitan Ltd Target Rs.5150.00 - Jainam - Investment Guru India",
+      "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNcFFvOFY2UkRvVU1HNFRnamFLWUVQYy11Mmp0X1VnUmNPeS1JQzdSazRDX1VucXhKRzlCVk1KMUxISDJBZ3B1TnctVHIzOHFubkZGQ0hCYUtzaHZaWF9jVm9JWEUtR2xuUjlFS0xHYlFONkFsaXhmcFlWV1lzbGRDS2lvc25COVowOW5hQ1lZZmdqa0ZFTmZ4aEc5RVlMcTJyXzczSTR0b1FlMDFpSHRWVUMxSFo?oc=5",
+      "method": "groq",
       "keyword_alert": false,
-      "items": 5,
-      "new_items": 2,
+      "items": 2,
+      "new_items": 1,
       "sources": {
         "google": "ok (6)"
       },
       "already_sent": false,
-      "fingerprint": "afef04051affae9c"
+      "fingerprint": "a59f8523b02f517a"
     },
     {
       "symbol": "SHRIPISTON",
@@ -165,95 +165,95 @@
     {
       "symbol": "TATAPOWER",
       "company": "Tata Power",
-      "verdict": "positive",
-      "reason": "Q2 profit increase and stable FY27 targets indicate strong performance",
-      "headline": "Tata Power Q2 Profit Rises as FY27 Targets Hold - Kalkine India",
-      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQcTA5R2lrRENKVVZsUXV5M29HZ1Rrdng5LV9FYmpTdmdSdXNwR3VrRVBCRTcyVmxVampBWkx4NzVRVHl0UEU2ZVBzZW9SdFdGeUtxUGpscTBtMkNrSmRHcmN5SlAtUnhfSGVmMGtWQXZfWjBfX1hvQUFQeDY1SVpLRXdwbTRyTkpNWEd2aW1DamY2NnR3eHVGVzhaTjZiV3RKNi1ka1k3ZUZqblQ0SkNwVVBNZGFXMDdYQ2c?oc=5",
-      "method": "groq",
+      "verdict": "negative",
+      "reason": "Potential $260M arbitration payout and internal leadership uncertainty outweigh earnings beat.",
+      "headline": "Meet Omni Bridgeway, the litigation funder eyeing up to a $260 million windfall from Tata Power arbitration award - TradingView",
+      "link": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxOalBielQtbDZDSFNmd0FHRVNYR0laOU1VWTNSYjlRdkc5bG9ZeUY1cVZCU2prUExJNHVqenhGbV81Q2RNOS1QdHFJMnJpaVZiVUN2alBZelB2eV9vTVNkMkVjMTRSbGRoc2NuS2o5WDZwb3laZVFQMlAwbEN1dzA5ZFUyOUxSclNkZGxKdkJ6NXA1T280ZDZXLVRhaGJ4RGhLYUNhYW9oZm1TV1ltMW1KeWVfRWZWQjN2VmNwRlctNlBSYjVsQVBjNk5YdHAxMkpCNkI3WnBMQUdzVjF0cU1yVklxX0tIaXRmbm9FRm1FU0h2UFkyU1dXbFZaX24?oc=5",
+      "method": "gemini",
       "keyword_alert": false,
-      "items": 4,
-      "new_items": 1,
+      "items": 8,
+      "new_items": 5,
       "sources": {
         "google": "ok (8)"
       },
       "already_sent": false,
-      "fingerprint": "c903d713b6d4de26"
+      "fingerprint": "d060283043794711"
     },
     {
       "symbol": "TI",
       "company": "Tilaknagar Industries",
-      "verdict": "neutral",
-      "reason": "News is about Jagatjit Industries, not Tilaknagar Industries (TI).",
-      "headline": "[The Economic Times, 8.5h ago] Jagatjit Industries Q2 net loss narrows to Rs 4 cr, revenue rises 90% - The Economic Times",
+      "verdict": "none",
+      "reason": "no new headlines",
+      "headline": "",
       "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxNdUt4ajNrRGZVOXBYZ2tBTWhlT3lpMkp2UnY4OGlRS2ZVU0xLczJZSk4yLWtLdUxzMEtZOFNYMllSbGZHMmNaMjBCYXVLWURUeFFtOWpjSmVBalhHd2tYZkNuU1ExYjU4OUVDOU4zQU1HeEV6MWJCb0Iwd2V0OElEZFZfNzdvdXlsYkJvbk1zQXV0U1VLeDU1WFdXTktyRnhuRnFvMzZlcnFtMjQ0SE0wdF90YzBtcnh2VU9ubG9fbF9YOXpRUW9MMWJrcUw0UlFiQl9RMlhuSlV3SFpFQXfSAeMBQVVfeXFMUGI3X2NsUmphUEMwWlJBUTFjVEU0bkF1SFVMMkJmcUI0NS1kTmFvTzFMM2k0Y2E5czZmZE55UEQyMklTUXVHUUNKZ1NtUHhzMDZTcEVRM181RDJxM0Zkd2p1dEZ6M21FbERIbkR0R21sNHllZUpvcFpIeTk0WDF4bzhJbWRqdjdWR3RzVFpEM0h6cEpqZDR0amRIdGI2T2lMZFJQdHZzeDBGanhvc1o5OVpQeWk4QWFYUk1hbUJscWdQdnhSZVJnbWlpeFBfbXU0UmJpTVpCclpLcjJuN3ZnY3lNRVU?oc=5",
-      "method": "gemini",
-      "keyword_alert": true,
+      "method": "-",
+      "keyword_alert": false,
       "items": 1,
-      "new_items": 1,
+      "new_items": 0,
       "sources": {
         "google": "ok (1)"
       },
       "already_sent": false,
-      "fingerprint": "738e91eda4de014e"
+      "fingerprint": "f9fa855ec658948a"
     },
     {
       "symbol": "VIJAYA",
       "company": "Vijaya Diagnostic Centre",
       "verdict": "neutral",
-      "reason": "News repeats Q2 2027 earnings call highlights, already covered in previous alerts.",
-      "headline": "[Yahoo Finance, 18.9h ago] Vijaya Diagnostic Centre Ltd (BOM:543350) (Q2 2027) Earnings Call Highlights: 44% EBITDA ... - Yahoo Finance",
-      "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPRzBFWHF3dkF4MTQ0dFVXMVRrT04xQ19md0NBa2NHME9ibnNKOTJYb3VMS0Ita2RhbFlCR3JaNEdiQVAtTmVXWG5mQUhDeGhqTnFuOUg2bU5tZnNuQU1kNW9sYTRIcmRxT2FmYmlNYUhYUTg4WUpRMXhRYTRtSk83Z1JHZEY4THBpalRDRXFxVWRXeWlBTUQteQ?oc=5",
+      "reason": "Generic market list, not specific to Vijaya Diagnostic Centre.",
+      "headline": "25 Per Cent Margin Promoter Backed Five-Year Winner Stocks at a Glance: Price, Market Cap, PE and ROE - Univest",
+      "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQN0ZLV0dYam5HWFU1OHg2NWFYTExvSXNVazNwd2dXRGN4OHg1Qjh4Z3FsT2VzU1FmYUFrek43SFRhb3JNdUdNenFVT0JVZE5BZnFjSFdSREN6d1R0UHBWRnJ0UFdBdVFlUFlTNDY0SWdRV05BeU1NelN6UGZ4cDA1eUVBN3NzRC05Q2hTV3JLaFVqSEJ2Mkw5ZjVWaWZVRlBXc0Q0M3h3bk5kc0Fib3dPVDNyUVNRVHM3NjhYSDF1Ul8?oc=5",
       "method": "gemini",
       "keyword_alert": false,
-      "items": 2,
+      "items": 1,
       "new_items": 1,
       "sources": {
         "google": "ok (5)"
       },
       "already_sent": false,
-      "fingerprint": "06c64b5c75ae45db"
+      "fingerprint": "2407258589528dfa"
     },
     {
       "symbol": "WAAREEENER",
       "company": "Waaree Energies",
       "verdict": "negative",
-      "reason": "US trade probe scrutiny may hurt Waaree's exports",
-      "headline": "Waaree’s US import disclosure deepens scrutiny of solar trade probe",
-      "link": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxNclg1X2QzVVNYdktxTktrZ2FkV2JyX1c2b1JFM2dpcHhoSWpuS1BkdEl6TjhmR3pKb0ZlTWQ2UEsxWFZGWFlVRlVFYnJ4NjJKbVUzMEgzenlKRV9EMDdSVlBCLVZVMUhJMUl1YlZlYldhNy1zUkk0ZGgzTnhpZHQ4Ujc2c3FwcDVhTlo3RUpCRTVqcTFBUnpiZVZvdEE5WW5kZV9wQU5XcUR2c2RiWFVTUzEwNnhUUldUS0d5Q1A3TFZCYlVyVlRGLVlFeXdPay00emx5THI3M0kwVTFjQzZaQzR4RTdVcEdTNmc?oc=5",
+      "reason": "Misreporting import origin triggers US regulatory scrutiny, hurting export strategy",
+      "headline": "Waaree admitted misreporting solar import origin in submission to US trade commission",
+      "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxOTlZ1R1hLUnFiR0Nta2xleTNoS19yQVlHc1dXLXhBQm1ZVHgzdGNlSldCTmJDeF9MODFNZWtMSmwtRGItcDRKWkJhdHhIRUtMREdxR3hmS3VSWXhINDdDUjlLTXktdFdhUWo0clg1SUlJcXVWbFBVSnd1OHluSEplUG0yNDY2UkVpdjAyRmIwVGF5dnJkeXRuaGw2MGNBN1Fidy1QSzZWNW1PUDFwUjllcTl1RG5iVVM4cC1HM0Y0ZWVvYngyeDgxc0I4eFVscGx6Y2hYd3hicnY2Z9IB3wFBVV95cUxPSmxjcnF4WlFvWjZUdTZWMHJwSXhmWWN1UXhNZFJSN1JEY1BfZ1E5Z3FKalFxdVZQYi1wV1I2VzlUd0prMWVkTU1sM1NKT2dXNVVObTA3by1qVlBwM2tBbjRNTm9ZQzhDTW40V19MQVdETUxJN245d3RFTlp6c2hLM2c4dlNKUlRVcHJpT21Va05QTVhGaFYtNDhvYjM5alZ2RDkzcmpmMmQyTkI3T1psM2N6aG5WUVhaRHp3bWFtMktZUDhRLWswb1kxQUlwaW9GRWpzaERNcm9aeGs1TEFN?oc=5",
       "method": "groq",
       "keyword_alert": false,
-      "items": 5,
+      "items": 4,
       "new_items": 2,
       "sources": {
         "google": "ok (8)"
       },
       "already_sent": false,
-      "fingerprint": "8c21346a4a5d582e"
+      "fingerprint": "c09cba72a5826d91"
     },
     {
       "symbol": "JIOPLATFORMS",
       "company": "Jio Platforms",
-      "verdict": "positive",
-      "reason": "Reliance Industries, Jio's parent, saw a strong 15% share rebound, adding significant market value.",
-      "headline": "Reliance Industries shares rebound 15% in November, add Rs.2.38 lakh crore in market value; what's changed? - TradingView",
-      "link": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxPdUVhZUxhc3A2MktHY09YZDVJbHlCTjJOcnh3ZEQ3QVRDMnZHTG5vMDFIVklGS3hld0NHbzlWSkptU05VbTVtZFJURjhLTkQyTWNFYVNPQkN1V2hmS3RYWFFFUDQwc3Y5cnVVb1cxMkF3WXdIVGJqcmpOX0NWNHdqSEdxdDk0OTk0QnJJREJuY2ItdXVlVGVocXVzcnVxZGRrb1NUeDg2NWRfQ1I5R1ZPQm1iTU5RSHBZTERWS3ZfNnVNamdWbFRLd2UyRmZOSXBaLXpJaWh0TWg1SVB5RzlIdUQ1bVFhcV81RTdVaUdwS1cwUQ?oc=5",
+      "verdict": "neutral",
+      "reason": "No direct news impacting Jio Platforms; headlines concern other companies or macroeconomics.",
+      "headline": "Jio Financial Services Allots 250 Million Shares at ₹306.50 Premium to Promoter Group - scanx.trade",
+      "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxQQUlEZ0xLMXB2dVY2THNrRHlhX21nUGZFRFpfNUFNWEQ5YWU2em9hOFNQSS1yck00SDgwbEdpbXFJTjF5a25OR1ZYNFFwblZodXRpNWdlb2NLdDBOY3RTSUQ1cDFoT18yeGtFSVNDRTAtUFF5RjdDQlk5YTF4RDB3R050Y3J3cEZDdHFidDUxTzlfT2dkeElDbVoxeTh1NTRXNU9zMFU2VW9Rajh0eXBpTXRLLWFBYngwaTZfb1Z3bUJ5emkzZFJBRFNKcDlnRnVWbV81eFhIamQ?oc=5",
       "method": "gemini",
       "keyword_alert": false,
       "items": 8,
-      "new_items": 6,
+      "new_items": 3,
       "sources": {
         "google": "ok (8)"
       },
       "already_sent": false,
-      "fingerprint": "995d8ea782eef23b"
+      "fingerprint": "7ddd3de541492fd5"
     },
     {
       "symbol": "MAFANG",
       "company": "NYSE FANG+ big tech stocks (Mirae Asset FANG+ ETF)",
       "verdict": "negative",
-      "reason": "Key FANG+ component Nvidia faces severe leadership issues and a spy scandal.",
-      "headline": "Nvidia Stock Braces For AI Chipmaker's First Report Without Jensen Huang",
-      "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQb09Wd1BaSUZ6eXR5c3B3Si11cjE4NXNmV0pvT21JREtGZ21fUFhUZlNiTGJXc1AyMHJKUnZFLWFucnJoVFRMWGFWVnptcUJ3RXJ4eHN2ZlJ0STQzd1JTZG1oS2pxT3dfekdhdTlMeVZyenZ3cVNKbEFNdDA2emh3ZHlNV0oxV21nYkVZeEtaR1pVeVVoRWdyQk5nTks?oc=5",
+      "reason": "Nvidia-led tech selloff weighs on Wall Street, causing declines in tech stocks relevant to the FANG+ ETF.",
+      "headline": "Wall Street Ends Mixed As Nvidia-Led Tech Selloff Weighs On S&P 500, Nasdaq - BusinessToday Malaysia",
+      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNS1d4VkJuZ1VfS2tJTFB2SlRYY1Y5Mnd2al8yeUZoUG1mRDFxaDVYeTIzVnU1VXZJRXp1TjV2U3I2aVcxWm5Sd3V3OFVGdmY3eW4tUEVKVzFoSmMwMllneUlGZXdRemREb2RWTDkxM1ByQ1Q2UVJwV3pBR2lKM2U4Q1YzZ1AzTkdKNkE4MW1jRzN2ODdRSUw2TFpNYTM1R0c4bGhydksxczNzUTR3Mnh3VTY2VWtZdTkzSVE?oc=5",
       "method": "gemini",
       "keyword_alert": false,
       "items": 8,
@@ -262,16 +262,16 @@
         "google": "ok (8)"
       },
       "already_sent": false,
-      "fingerprint": "cba18edb86262d3d"
+      "fingerprint": "a1daf9a7b3aa19c3"
     },
     {
       "symbol": "MON100",
       "company": "Nasdaq 100 (Motilal Oswal Nasdaq 100 ETF)",
       "verdict": "negative",
-      "reason": "Nasdaq plunged due to tech sector weakness (Nvidia) and rising Treasury yields, negatively impacting the ETF.",
-      "headline": "Stock Market Midday, Nov. 13: Nasdaq Plunges as Nvidia Turmoil Deepens and Treasury Yields Hit 5% - Yahoo Finance",
-      "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNeU1MbkhnZll4OHpIdGV2VlI1ZVFhWGhKX1F1bnZvWVRGWnVkYnBfcmRIaG1PRzcyN1pTUFJzY2VWVzRMN2VqNjQ1Tkwyb3E5bGpQN1NOcTFnTVFQVmdPRjdZX2h3LTh2d2F1Y1F6SW5JWTVPWmRwXzBsVlpIbGNEWTBZLUhaRnFIWTVIY1gxSVc0T2J0blE?oc=5",
-      "method": "gemini",
+      "reason": "Nvidia uncertainty drags down tech stocks, pulling Nasdaq 100 lower",
+      "headline": "S&P 500, Nasdaq fall as Nvidia jitters drag down tech stocks",
+      "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5vRVJTMVNHamxmYjhLY2d6YnJMTnh4dlV2NHJkSWR2YnZVN0F1UThrdm1FZVRMMXVOcjJJcHhBRjFNWE5IMExUa3lZVXk5cnMtX2hvMmlJSUx3dlY5SUNoeFlvTjFDQ1k?oc=5",
+      "method": "groq",
       "keyword_alert": false,
       "items": 8,
       "new_items": 7,
@@ -279,24 +279,24 @@
         "google": "ok (8)"
       },
       "already_sent": false,
-      "fingerprint": "4ae44be4e37e327b"
+      "fingerprint": "56de0126044885e3"
     },
     {
       "symbol": "SILVERBEES/SILVERIETF",
       "company": "Silver price (silver ETFs)",
-      "verdict": "negative",
-      "reason": "Silver futures fell, showing price decline",
-      "headline": "Silver Prices Drop in Futures Trade: Rs 722 Fall on MCX",
-      "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOSWZPOGdSNVluTFNzSkM2QXk0LVVTUVBSQm1CeTJzZGl4RFgtRDBuTnZXVDVnbFF6S2NHOE93bkRORHhCbDBRODV2a05oNWlOVlBPZjJiNU55QmtDc1NnMEVXbFptQW9UOGtFNWt6cHdUb0NWN1hwelpfZVFHTUx6QUNwNFNFQkVUbFJsaWdvOTJRRzEyN2RObkNZaXRjTU9MNFF2eUFCaEQ0Z9IBrwFBVV95cUxOQTdIeVlreEV6eE5HMDVPT0VDckJ5ek50VE15SHJZRHNGUG9FQllpclpnNkhVc2dTY29fcU9hUVJGQTZKeFoyRUxYSzM3MV94X0VlOGtvdk5XNmtPLWdoWGczLUJNLTFIWDJ4OU01aDIwZ1A1Sk9KaUxRZTNuYV9jdlJKaUxvQTltWWFFQWVIQzRtd3BjZ3ZOVUtzTjZiT1EzNWxWZU9HOGdWMkxlQlp3?oc=5",
+      "verdict": "positive",
+      "reason": "Silver prices reported rising across Indian cities, indicating upward price movement",
+      "headline": "Gold and silver rates today 14 Nov surged in Bengaluru and Chennai, check gold prices of 18K, 22K, 24K",
+      "link": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxQYk0zR1k1SWgwUEpsNkVKeS1UQUtXYmM3U3RRNTVoTC1DNkNzY0Vpejc2WEZCR25RRkFfSHdxcGNsek9aTW92T25TczJQLUtWWE16V2dvTzdyeU9lM3N4VmQ2aWxXVHA4UWhXcFkxLTBQMkNPREJNbzR0TnJ4TjBBLWxZREMzWXY1T1M4bWpIb3VULW9JRHpaTDA3dW1kTl9hLV9ReDdRbVcyYWFBX1VJdzlWVE5oUHg4VXJET1lIZTlKdTA1NTNRUnlXTXRIQjctLTFVOVlTaVJKY3FpX2pjbVhjMkRwVkpvVGNadGZNWmM3Z9IB9wFBVV95cUxNUHpaTEt6UEsxYTBNUHQzXy1DSE9za3IxSTlFU3VvNW9FMjdDVzc3M3V5ZkkxYzg1V1RMZ05nZlhGb2lfRkdGX096ZkR3V0p2ZnNycldJVk5zeUVqaTBUMlpwMlFIaDNyU2JrOVA1bHp6YzhQSzZ1NTlFc0JHVFRUdTVOUDhYR000M0ZKeHN5dHFJVEZjN3VhSWUzdUFrajBMYm81NDRXdVZWdFdNcjNISjN0cElYWThOT0daQXlrdll1UnAtdEozZ1ZSNVExeG9SdUhtVVVrLWhEeTdvdWhQOWZ1dUpydEI1SjhDT1BuZ2lSVDVvd0Q0?oc=5",
       "method": "groq",
-      "keyword_alert": false,
+      "keyword_alert": true,
       "items": 8,
-      "new_items": 5,
+      "new_items": 8,
       "sources": {
         "google": "ok (8)"
       },
       "already_sent": false,
-      "fingerprint": "0a33b25a59a9b13c"
+      "fingerprint": "f6f112cc686860ca"
     },
     {
       "symbol": "ADANIPOWER",
