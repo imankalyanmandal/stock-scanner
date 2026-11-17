@@ -1,5 +1,6 @@
 {
-  "session": "2026-11-13",
-  "at": "2026-11-14T08:11:26",
-  "sendMessage": "skipped: session already alerted (run with --force to resend)"
+  "session": "2026-11-16",
+  "at": "2026-11-17T04:08:34",
+  "sendMessage": "ok",
+  "sendDocument": "ok"
 }
