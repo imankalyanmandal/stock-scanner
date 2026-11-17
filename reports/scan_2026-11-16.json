@@ -20,10 +20,10 @@
         "above_50": true
       }
     },
-    "size_mult": 0.0,
-    "allow_new_longs": false,
-    "block_reason": "global risk high: Global equity sell\u2011off, falling oil and modest USD strength create headwinds; no major shock, but caution advised.",
-    "macro_risk": "high",
+    "size_mult": 0.25,
+    "allow_new_longs": true,
+    "block_reason": "",
+    "macro_risk": "elevated",
     "sectors": {
       "Automobile and Auto Components": {
         "breadth_pct": 54.166666666666664,
@@ -252,8 +252,7 @@
         "below_50dma",
         "50dma_not_rising",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -262,8 +261,7 @@
         "low_turnover",
         "50dma_not_rising",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -1087,8 +1085,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -1568,8 +1565,7 @@
       "reasons": [
         "no_setup:pullbacks_disabled",
         "stretched_from_20dma",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -1910,8 +1906,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -2080,8 +2075,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "breakout_low_volume",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -2224,8 +2218,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -2967,8 +2960,7 @@
       "symbol": "MRPL",
       "reasons": [
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -3254,8 +3246,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -3292,8 +3283,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -3364,8 +3354,7 @@
       "reasons": [
         "no_setup:pullbacks_disabled",
         "stretched_from_20dma",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -3650,8 +3639,7 @@
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
         "stretched_from_20dma",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -4703,40 +4691,44 @@
   "evaluated": 288,
   "passed_gates": 0,
   "min_score": 40,
-  "duplicate": false,
-  "note": "No new longs today (global risk high: Global equity sell\u2011off, falling oil and modest USD strength create headwinds; no major shock, but caution advised.). Setups shown as a watchlist only.",
+  "duplicate": true,
+  "note": "Same session as the previous run; picks were not added to the journal again.",
   "macro": {
-    "risk": "high",
-    "summary": "Global equity sell\u2011off, falling oil and modest USD strength create headwinds; no major shock, but caution advised.",
+    "risk": "elevated",
+    "summary": "Global equity sell\u2011off and falling oil prices create headwinds, but no major shock; risk to open longs is elevated.",
     "sector_impacts": [
       {
         "sector": "Oil Gas & Consumable Fuels",
-        "direction": "negative",
-        "reason": "Falling crude prices compress margins for Indian oil majors."
-      },
-      {
-        "sector": "Automobile and Auto Components",
         "direction": "positive",
-        "reason": "Lower fuel costs boost vehicle demand."
+        "reason": "Falling crude lowers input costs and boosts margins"
       },
       {
         "sector": "Fast Moving Consumer Goods",
         "direction": "positive",
-        "reason": "Reduced input costs improve profit outlook."
+        "reason": "Lower oil reduces transportation costs, supporting margins"
       },
       {
-        "sector": "Capital Goods",
+        "sector": "Automobile and Auto Components",
         "direction": "positive",
-        "reason": "Lower energy costs support capital equipment demand."
+        "reason": "Cheaper fuel improves demand and operating costs"
+      },
+      {
+        "sector": "Metals & Mining",
+        "direction": "positive",
+        "reason": "Energy cost decline improves profitability"
+      },
+      {
+        "sector": "Information Technology",
+        "direction": "positive",
+        "reason": "Weaker rupee enhances export competitiveness"
       }
     ],
     "method": "groq",
     "llm_risk": "elevated",
-    "rule_risk": "high",
+    "rule_risk": "elevated",
     "rule_reasons": [
       "S&P 500 -1.9%",
-      "Nasdaq -2.5%",
-      "7 shock headlines"
+      "Nasdaq -2.5%"
     ],
     "moves": {
       "sp500": {
@@ -4747,24 +4739,24 @@
         "date": "2026-11-16"
       },
       "nasdaq": {
-        "close": 24509.758,
+        "close": 24509.76,
         "chg1_pct": -2.49,
         "chg5_pct": -2.94,
-        "chg1_abs": -626.512,
+        "chg1_abs": -626.51,
         "date": "2026-11-16"
       },
       "brent": {
-        "close": 91.59,
-        "chg1_pct": -4.43,
-        "chg5_pct": -1.06,
-        "chg1_abs": -4.25,
-        "date": "2026-11-16"
+        "close": 91.83,
+        "chg1_pct": -0.66,
+        "chg5_pct": 0.37,
+        "chg1_abs": -0.61,
+        "date": "2026-11-17"
       },
       "usdinr": {
-        "close": 93.692,
-        "chg1_pct": -0.58,
-        "chg5_pct": -0.27,
-        "chg1_abs": -0.546,
+        "close": 93.515,
+        "chg1_pct": -0.77,
+        "chg5_pct": -0.46,
+        "chg1_abs": -0.723,
         "date": "2026-11-17"
       },
       "us10y": {
@@ -4775,45 +4767,45 @@
         "date": "2026-11-16"
       },
       "dxy": {
-        "close": 103.504,
-        "chg1_pct": 0.09,
-        "chg5_pct": 1.82,
-        "chg1_abs": 0.094,
-        "date": "2026-11-16"
+        "close": 103.588,
+        "chg1_pct": 0.04,
+        "chg5_pct": 1.33,
+        "chg1_abs": 0.038,
+        "date": "2026-11-17"
       },
       "nikkei": {
-        "close": 59023.77,
-        "chg1_pct": -1.07,
-        "chg5_pct": -2.37,
-        "chg1_abs": -638.25,
+        "close": 58860.43,
+        "chg1_pct": -1.34,
+        "chg5_pct": -2.64,
+        "chg1_abs": -801.59,
         "date": "2026-11-17"
       },
       "hangseng": {
-        "close": 23567.32,
-        "chg1_pct": -0.79,
-        "chg5_pct": -4.03,
-        "chg1_abs": -186.52,
+        "close": 23545.141,
+        "chg1_pct": -0.88,
+        "chg5_pct": -4.12,
+        "chg1_abs": -208.699,
         "date": "2026-11-17"
       }
     },
     "headline_count": 40,
     "query_status": {
-      "Federal Reserve interest rates": 63,
-      "Wall Street stocks": "error: HTTPError",
+      "Federal Reserve interest rates": "error: HTTPError",
+      "Wall Street stocks": 40,
       "crude oil prices": 100,
-      "US tariffs India": "error: HTTPError",
-      "war geopolitical tensions": 27,
-      "FII outflows India": 6,
-      "rupee dollar": 70,
-      "China economy": "error: HTTPError",
+      "US tariffs India": 37,
+      "war geopolitical tensions": 20,
+      "FII outflows India": "error: HTTPError",
+      "rupee dollar": 83,
+      "China economy": 75,
       "global recession": "error: HTTPError"
     },
     "top_headlines": [
-      "Crude Oil Falls As Restored Middle East Shipments Fuel Global Surplus Concerns By Kedia Advisory - Investing.com India",
-      "Indian rupee opens stronger at 93.72 against the US dollar - NewsBytes",
-      "Oil Price Forecast: Brent and WTI Slide on Supply Surplus Outlook - FXEmpire",
-      "Bitcoin Price Remains Under Pressure, US$1.9 Billion Exits ETFs as Investors Await Fed Decision - Aktualita.co",
-      "Govt hikes windfall gains tax on diesel, ATF exports - The New Indian Express"
+      "Top Wall Street Forecasters Revamp Energizer Expectations Ahead Of Q4 Earnings - Benzinga",
+      "Oil Prices Continue to Fall as Global Supply Surplus Weighs - WSJ",
+      "Oil Prices Decline Over Shift In Global Demand, Supply Narrative - MarketForces Africa",
+      "Oil prices fall as global supply surplus expectations strengthen - Anadolu Ajans\u0131",
+      "CBSL rates: Rupee depreciates against US Dollar today - Newswire"
     ]
   },
   "stale": null,
