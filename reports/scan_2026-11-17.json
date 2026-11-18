@@ -849,7 +849,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -979,7 +980,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -1069,7 +1071,8 @@
       "reasons": [
         "below_50dma",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -1142,7 +1145,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -1665,7 +1669,8 @@
       "reasons": [
         "no_setup:pullbacks_disabled",
         "stretched_from_20dma",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -2020,7 +2025,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -2213,7 +2219,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "breakout_low_volume",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -2366,7 +2373,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -3089,7 +3097,8 @@
       "reasons": [
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -3370,7 +3379,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -3407,7 +3417,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -3779,7 +3790,8 @@
         "weak_rs_rank",
         "breakout_low_volume",
         "stretched_from_20dma",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -4854,38 +4866,43 @@
   "evaluated": 328,
   "passed_gates": 0,
   "min_score": 40,
-  "duplicate": false,
-  "note": "",
+  "duplicate": true,
+  "note": "Same session as the previous run; picks were not added to the journal again.",
   "macro": {
     "risk": "elevated",
-    "summary": "Global equities are weak, US yields/dollar are strong, but Indian Rupee is strengthening. This creates mixed signals, leaning cautious for new long positions.",
+    "summary": "Global markets are weak with US rate hike fears, but falling crude oil prices and a strengthening Rupee provide significant tailwinds for Indian equities.",
     "sector_impacts": [
+      {
+        "sector": "Oil Gas & Consumable Fuels",
+        "direction": "negative",
+        "reason": "Falling crude oil prices reduce producer realizations."
+      },
       {
         "sector": "Information Technology",
         "direction": "negative",
-        "reason": "Stronger Rupee reduces export earnings for IT services."
-      },
-      {
-        "sector": "Oil Gas & Consumable Fuels",
-        "direction": "positive",
-        "reason": "Rising Brent crude prices benefit upstream oil and gas producers."
+        "reason": "Strengthening Rupee and US market weakness impact exports."
       },
       {
         "sector": "Automobile and Auto Components",
         "direction": "positive",
-        "reason": "Stronger Rupee lowers cost of imported components and raw materials."
+        "reason": "Lower fuel costs and reduced input costs benefit demand."
+      },
+      {
+        "sector": "Chemicals",
+        "direction": "positive",
+        "reason": "Reduced crude oil prices lower raw material costs."
       },
       {
         "sector": "Fast Moving Consumer Goods",
         "direction": "positive",
-        "reason": "Stronger Rupee reduces input costs for imported commodities."
+        "reason": "Lower crude oil prices reduce logistics and input costs."
       }
     ],
     "method": "gemini",
     "llm_risk": "elevated",
     "rule_risk": "elevated",
     "rule_reasons": [
-      "4 shock headlines"
+      "5 shock headlines"
     ],
     "moves": {
       "sp500": {
@@ -4896,24 +4913,24 @@
         "date": "2026-11-17"
       },
       "nasdaq": {
-        "close": 24328.383,
+        "close": 24328.381,
         "chg1_pct": -0.74,
         "chg5_pct": -2.94,
-        "chg1_abs": -181.377,
+        "chg1_abs": -181.379,
         "date": "2026-11-17"
       },
       "brent": {
-        "close": 92.67,
-        "chg1_pct": 0.25,
-        "chg5_pct": 1.29,
-        "chg1_abs": 0.23,
-        "date": "2026-11-17"
+        "close": 91.78,
+        "chg1_pct": -1.46,
+        "chg5_pct": -1.06,
+        "chg1_abs": -1.36,
+        "date": "2026-11-18"
       },
       "usdinr": {
-        "close": 93.46,
-        "chg1_pct": -0.54,
-        "chg5_pct": -0.5,
-        "chg1_abs": -0.503,
+        "close": 93.49,
+        "chg1_pct": -0.5,
+        "chg5_pct": -0.46,
+        "chg1_abs": -0.473,
         "date": "2026-11-18"
       },
       "us10y": {
@@ -4924,45 +4941,45 @@
         "date": "2026-11-17"
       },
       "dxy": {
-        "close": 103.603,
-        "chg1_pct": 0.05,
-        "chg5_pct": 1.34,
-        "chg1_abs": 0.053,
-        "date": "2026-11-17"
+        "close": 103.737,
+        "chg1_pct": 0.24,
+        "chg5_pct": 0.8,
+        "chg1_abs": 0.247,
+        "date": "2026-11-18"
       },
       "nikkei": {
-        "close": 58696.539,
-        "chg1_pct": -0.28,
-        "chg5_pct": -4.17,
-        "chg1_abs": -163.891,
+        "close": 59024.281,
+        "chg1_pct": 0.28,
+        "chg5_pct": -3.63,
+        "chg1_abs": 163.852,
         "date": "2026-11-18"
       },
       "hangseng": {
-        "close": 23305.99,
-        "chg1_pct": -0.86,
-        "chg5_pct": -4.15,
-        "chg1_abs": -202.18,
+        "close": 23279.369,
+        "chg1_pct": -0.97,
+        "chg5_pct": -4.26,
+        "chg1_abs": -228.801,
         "date": "2026-11-18"
       }
     },
     "headline_count": 40,
     "query_status": {
-      "Federal Reserve interest rates": 77,
-      "Wall Street stocks": "error: HTTPError",
+      "Federal Reserve interest rates": 80,
+      "Wall Street stocks": 22,
       "crude oil prices": 100,
-      "US tariffs India": "error: HTTPError",
-      "war geopolitical tensions": 25,
+      "US tariffs India": 22,
+      "war geopolitical tensions": 28,
       "FII outflows India": 6,
-      "rupee dollar": 97,
-      "China economy": "error: HTTPError",
-      "global recession": "error: HTTPError"
+      "rupee dollar": 94,
+      "China economy": 68,
+      "global recession": 27
     },
     "top_headlines": [
-      "Oil prices fall as higher US crude stocks temper supply risks - KLSE Screener",
-      "Rupee Forwards Turn More Bullish Than Currency Forecasters - Bloomberg.com",
-      "Oil prices fall as higher US crude stocks temper supply risks - Reuters",
-      "Oil prices edge lower as markets parse M.East tensions, U.S. inventory build - Investing.com Australia",
-      "Oil prices fall as higher US crude stocks temper supply risks - CNA"
+      "Palm oil prices continue to fall amid record Malaysian stocks and declining crude oil prices - UkrAgroConsult",
+      "Gold falls despite Middle East war. Is the Fed a bigger threat than geopolitics? \ud83e\ude99 - XTB.com",
+      "SIP investment: Are retail investors helping FIIs exit Indian stocks? 4 myths explained - The Economic Times",
+      "Oil prices fall on US inventory rise, supply glut concerns - Anadolu Ajans\u0131",
+      "Rupee Forwards Turn More Bullish Than Currency Forecasters - Bloomberg"
     ]
   },
   "stale": null,
