@@ -1,0 +1,4998 @@
+{
+  "session": "2026-11-18",
+  "regime": {
+    "regime": "neutral",
+    "breadth_pct": 52.2,
+    "vix": 15.569999694824219,
+    "benchmarks": {
+      "nifty50": {
+        "close": 25227.94921875,
+        "sma20": 23985.982421875,
+        "sma50": 23413.046875,
+        "above_20": true,
+        "above_50": true
+      },
+      "nifty500": {
+        "close": 23630.25,
+        "sma20": 22711.72001953125,
+        "sma50": 22544.0380078125,
+        "above_20": true,
+        "above_50": true
+      }
+    },
+    "size_mult": 0.25,
+    "allow_new_longs": true,
+    "block_reason": "",
+    "macro_risk": "elevated",
+    "sectors": {
+      "Automobile and Auto Components": {
+        "breadth_pct": 56.52173913043478,
+        "count": 23
+      },
+      "Capital Goods": {
+        "breadth_pct": 30.0,
+        "count": 50
+      },
+      "Chemicals": {
+        "breadth_pct": 46.666666666666664,
+        "count": 15
+      },
+      "Construction": {
+        "breadth_pct": 30.0,
+        "count": 10
+      },
+      "Construction Materials": {
+        "breadth_pct": 75.0,
+        "count": 4
+      },
+      "Consumer Durables": {
+        "breadth_pct": 54.54545454545454,
+        "count": 11
+      },
+      "Consumer Services": {
+        "breadth_pct": 55.55555555555556,
+        "count": 18
+      },
+      "Fast Moving Consumer Goods": {
+        "breadth_pct": 69.23076923076923,
+        "count": 13
+      },
+      "Financial Services": {
+        "breadth_pct": 61.19402985074627,
+        "count": 67
+      },
+      "Healthcare": {
+        "breadth_pct": 81.81818181818183,
+        "count": 22
+      },
+      "Information Technology": {
+        "breadth_pct": 62.5,
+        "count": 16
+      },
+      "Media Entertainment & Publication": {
+        "breadth_pct": 50.0,
+        "count": 4
+      },
+      "Metals & Mining": {
+        "breadth_pct": 7.6923076923076925,
+        "count": 13
+      },
+      "Oil Gas & Consumable Fuels": {
+        "breadth_pct": 66.66666666666666,
+        "count": 12
+      },
+      "Power": {
+        "breadth_pct": 35.714285714285715,
+        "count": 14
+      },
+      "Realty": {
+        "breadth_pct": 80.0,
+        "count": 5
+      },
+      "Services": {
+        "breadth_pct": 40.0,
+        "count": 10
+      },
+      "Telecommunication": {
+        "breadth_pct": 66.66666666666666,
+        "count": 6
+      },
+      "Textiles": {
+        "breadth_pct": 60.0,
+        "count": 5
+      }
+    }
+  },
+  "picks": [],
+  "watchlist": [],
+  "rejected": [
+    {
+      "symbol": "360ONE",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "AADHARHFC",
+      "reasons": [
+        "low_turnover",
+        "low_volume",
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "AARTIIND",
+      "reasons": [
+        "below_50dma",
+        "50dma_not_rising",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "AAVAS",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "ABB",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "ABBOTINDIA",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "ABCAPITAL",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "ABDL",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "ABREL",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "ABSLAMC",
+      "reasons": [
+        "low_turnover",
+        "low_volume",
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "ACC",
+      "reasons": [
+        "low_turnover",
+        "low_volume",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "ACE",
+      "reasons": [
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "ACMESOLAR",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "ACUTAAS",
+      "reasons": [
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "ADANIENSOL",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "ADANIENT",
+      "reasons": [
+        "below_50dma",
+        "50dma_not_rising",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "ADANIGREEN",
+      "reasons": [
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "ADANIPORTS",
+      "reasons": [
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "ADANIPOWER",
+      "reasons": [
+        "50dma_not_rising",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "AEGISLOG",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "AEGISVOPAK",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "AETHER",
+      "reasons": [
+        "50dma_not_rising",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "AFCONS",
+      "reasons": [
+        "low_turnover",
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "AFFLE",
+      "reasons": [
+        "low_turnover",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "AIAENG",
+      "reasons": [
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "AIIL",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "AJANTPHARM",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "ALKEM",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "AMBER",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "AMBUJACEM",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "ANANDRATHI",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "ANANTRAJ",
+      "reasons": [
+        "below_50dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "ANGELONE",
+      "reasons": [
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "ANTHEM",
+      "reasons": [
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "ANURAS",
+      "reasons": [
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "no_setup:pullbacks_disabled",
+        "stretched_from_20dma",
+        "stop_too_wide",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "APARINDS",
+      "reasons": [
+        "below_50dma",
+        "50dma_not_rising",
+        "far_from_52w_high",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "APLAPOLLO",
+      "reasons": [
+        "below_50dma",
+        "too_close_to_52w_low",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "APOLLOHOSP",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "APOLLOTYRE",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "APTUS",
+      "reasons": [
+        "no_data_or_short_history"
+      ]
+    },
+    {
+      "symbol": "ARE&M",
+      "reasons": [
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "ASAHIINDIA",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "ASHOKLEY",
+      "reasons": [
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "ASIANPAINT",
+      "reasons": [
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "ASTERDM",
+      "reasons": [
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "ASTRAL",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "ATGL",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "ATHERENERG",
+      "reasons": [
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "ATUL",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "AUBANK",
+      "reasons": [
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "AUROPHARMA",
+      "reasons": [
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "AVANTIFEED",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "AWL",
+      "reasons": [
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "AXISBANK",
+      "reasons": [
+        "50dma_below_200dma",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "no_setup:pullbacks_disabled",
+        "stretched_from_20dma",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "AZAD",
+      "reasons": [
+        "below_50dma",
+        "50dma_not_rising",
+        "far_from_52w_high",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "BAJAJ-AUTO",
+      "reasons": [
+        "below_50dma",
+        "50dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "BAJAJFINSV",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "BAJAJHFL",
+      "reasons": [
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "BAJAJHLDNG",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "BAJFINANCE",
+      "reasons": [
+        "no_setup:pullbacks_disabled",
+        "stretched_from_20dma",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "BALKRISIND",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "BALRAMCHIN",
+      "reasons": [
+        "below_50dma",
+        "50dma_not_rising",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "BANDHANBNK",
+      "reasons": [
+        "50dma_below_200dma",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "BANKBARODA",
+      "reasons": [
+        "50dma_below_200dma",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "stretched_from_20dma",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "BANKINDIA",
+      "reasons": [
+        "50dma_below_200dma",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "base_too_deep",
+        "stretched_from_20dma",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "BATAINDIA",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "BBOX",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "BDL",
+      "reasons": [
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "BEL",
+      "reasons": [
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "BELRISE",
+      "reasons": [
+        "50dma_not_rising",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "BEML",
+      "reasons": [
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "BERGEPAINT",
+      "reasons": [
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "BHARATCOAL",
+      "reasons": [
+        "no_data_or_short_history"
+      ]
+    },
+    {
+      "symbol": "BHARATFORG",
+      "reasons": [
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "BHARTIARTL",
+      "reasons": [
+        "too_close_to_52w_low",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "BHARTIHEXA",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "BHEL",
+      "reasons": [
+        "below_50dma",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "BIOCON",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "BLS",
+      "reasons": [
+        "low_turnover",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "BLUESTARCO",
+      "reasons": [
+        "50dma_below_200dma",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "BOSCHLTD",
+      "reasons": [
+        "low_volume",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "BPCL",
+      "reasons": [
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "BRIGADE",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "BRITANNIA",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "BSE",
+      "reasons": [
+        "50dma_below_200dma",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "BSOFT",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "CAMS",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "CANBK",
+      "reasons": [
+        "50dma_below_200dma",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "stretched_from_20dma",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "CANFINHOME",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "CANHLIFE",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "CAPLIPOINT",
+      "reasons": [
+        "low_turnover",
+        "low_volume",
+        "below_50dma",
+        "50dma_not_rising",
+        "far_from_52w_high",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "CARBORUNIV",
+      "reasons": [
+        "low_turnover",
+        "low_volume",
+        "below_50dma",
+        "50dma_not_rising",
+        "far_from_52w_high",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "CARTRADE",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "CASTROLIND",
+      "reasons": [
+        "below_50dma",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "CCL",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "CDSL",
+      "reasons": [
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "CEATLTD",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "CEMPRO",
+      "reasons": [
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "CENTRALBK",
+      "reasons": [
+        "price<50",
+        "low_turnover",
+        "50dma_below_200dma",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "stretched_from_20dma",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "CESC",
+      "reasons": [
+        "low_turnover",
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "CGCL",
+      "reasons": [
+        "below_50dma",
+        "50dma_not_rising",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "CGPOWER",
+      "reasons": [
+        "below_50dma",
+        "50dma_not_rising",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "CHAMBLFERT",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "CHENNPETRO",
+      "reasons": [
+        "below_50dma",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "CHOICEIN",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "CHOLAFIN",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "CHOLAHLDNG",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "CIEINDIA",
+      "reasons": [
+        "low_turnover",
+        "low_volume",
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "CIPLA",
+      "reasons": [
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "CLEAN",
+      "reasons": [
+        "low_turnover",
+        "low_volume",
+        "below_50dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "CLEANMAX",
+      "reasons": [
+        "no_data_or_short_history"
+      ]
+    },
+    {
+      "symbol": "CMPDI",
+      "reasons": [
+        "no_data_or_short_history"
+      ]
+    },
+    {
+      "symbol": "COALINDIA",
+      "reasons": [
+        "below_50dma",
+        "50dma_below_200dma",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "COCHINSHIP",
+      "reasons": [
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "COFORGE",
+      "reasons": [
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "COHANCE",
+      "reasons": [
+        "low_turnover",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "COLPAL",
+      "reasons": [
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "CONCOR",
+      "reasons": [
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "CONCORDBIO",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "COROMANDEL",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "CPPLUS",
+      "reasons": [
+        "low_volume",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "CRAFTSMAN",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "CREDITACC",
+      "reasons": [
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "CRISIL",
+      "reasons": [
+        "low_volume",
+        "below_50dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "CROMPTON",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "CUB",
+      "reasons": [
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "CUMMINSIND",
+      "reasons": [
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "CUPID",
+      "reasons": [
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "CYIENT",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "DABUR",
+      "reasons": [
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "DALBHARAT",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "DATAPATTNS",
+      "reasons": [
+        "below_50dma",
+        "50dma_not_rising",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "DEEPAKFERT",
+      "reasons": [
+        "50dma_not_rising",
+        "base_too_deep",
+        "stretched_from_20dma",
+        "extended_2day_gain",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "DEEPAKNTR",
+      "reasons": [
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "DELHIVERY",
+      "reasons": [
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "base_too_deep",
+        "breakout_weak_close",
+        "stretched_from_20dma",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "DEVYANI",
+      "reasons": [
+        "low_turnover",
+        "below_50dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "DIVISLAB",
+      "reasons": [
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "DIXON",
+      "reasons": [
+        "below_50dma",
+        "50dma_not_rising",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "DLF",
+      "reasons": [
+        "no_setup:pullbacks_disabled",
+        "stretched_from_20dma",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "DMART",
+      "reasons": [
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "DOMS",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "DRREDDY",
+      "reasons": [
+        "too_close_to_52w_low",
+        "no_setup:pullbacks_disabled"
+      ]
+    },
+    {
+      "symbol": "DUMMYHEG",
+      "reasons": [
+        "no_data_or_short_history"
+      ]
+    },
+    {
+      "symbol": "ECLERX",
+      "reasons": [
+        "low_volume",
+        "below_50dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "EICHERMOT",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "EIDPARRY",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "EIHOTEL",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "ELECON",
+      "reasons": [
+        "low_turnover",
+        "50dma_below_200dma",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "ELGIEQUIP",
+      "reasons": [
+        "low_turnover",
+        "below_50dma",
+        "50dma_not_rising",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "EMAMILTD",
+      "reasons": [
+        "low_turnover",
+        "50dma_below_200dma",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "EMCURE",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "EMMVEE",
+      "reasons": [
+        "below_50dma",
+        "50dma_not_rising",
+        "far_from_52w_high",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "ENDURANCE",
+      "reasons": [
+        "low_volume",
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "ENGINERSIN",
+      "reasons": [
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "ENRIN",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "ESCORTS",
+      "reasons": [
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "ETERNAL",
+      "reasons": [
+        "no_setup:pullbacks_disabled"
+      ]
+    },
+    {
+      "symbol": "EXIDEIND",
+      "reasons": [
+        "50dma_not_rising",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "FACT",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "FEDERALBNK",
+      "reasons": [
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "FINCABLES",
+      "reasons": [
+        "below_50dma",
+        "50dma_not_rising",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "FIRSTCRY",
+      "reasons": [
+        "low_turnover",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "extended_2day_gain",
+        "stop_too_wide",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "FIVESTAR",
+      "reasons": [
+        "below_50dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "FLUOROCHEM",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "FORCEMOT",
+      "reasons": [
+        "low_volume",
+        "50dma_below_200dma",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "stretched_from_20dma",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "FORTIS",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "FRACTAL",
+      "reasons": [
+        "no_data_or_short_history"
+      ]
+    },
+    {
+      "symbol": "FSL",
+      "reasons": [
+        "below_50dma",
+        "200dma_not_rising",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "GABRIEL",
+      "reasons": [
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "GAIL",
+      "reasons": [
+        "base_too_deep",
+        "stretched_from_20dma",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "GALLANTT",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "GESHIP",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "GICRE",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "GILLETTE",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "GLAND",
+      "reasons": [
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "GLAXO",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "GLENMARK",
+      "reasons": [
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "GMDCLTD",
+      "reasons": [
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "GMRAIRPORT",
+      "reasons": [
+        "50dma_below_200dma",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "stretched_from_20dma",
+        "stop_too_wide",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "GODFRYPHLP",
+      "reasons": [
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "GODREJCP",
+      "reasons": [
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "breakout_low_volume",
+        "breakout_weak_close",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "GODREJIND",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "GODREJPROP",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "GPIL",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "GRANULES",
+      "reasons": [
+        "below_50dma",
+        "50dma_not_rising",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "GRAPHITE",
+      "reasons": [
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "GRASIM",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "GRAVITA",
+      "reasons": [
+        "low_turnover",
+        "low_volume",
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "GROWW",
+      "reasons": [
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "GRSE",
+      "reasons": [
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "GVT&D",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "HAL",
+      "reasons": [
+        "below_50dma",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "HAVELLS",
+      "reasons": [
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "HBLENGINE",
+      "reasons": [
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "HCLTECH",
+      "reasons": [
+        "200dma_not_rising",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "HDBFS",
+      "reasons": [
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "HDFCAMC",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "HDFCBANK",
+      "reasons": [
+        "50dma_below_200dma",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "stretched_from_20dma",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "HDFCLIFE",
+      "reasons": [
+        "50dma_below_200dma",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "HEGAM",
+      "reasons": [
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "HEROMOTOCO",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "HEXT",
+      "reasons": [
+        "below_50dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "HINDALCO",
+      "reasons": [
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "HINDCOPPER",
+      "reasons": [
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "HINDPETRO",
+      "reasons": [
+        "50dma_below_200dma",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "HINDUNILVR",
+      "reasons": [
+        "50dma_below_200dma",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "HINDZINC",
+      "reasons": [
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "HOMEFIRST",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "HONASA",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "HONAUT",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "HSCL",
+      "reasons": [
+        "below_50dma",
+        "50dma_not_rising",
+        "far_from_52w_high",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "HUDCO",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "HYUNDAI",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "ICICIAMC",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "ICICIBANK",
+      "reasons": [
+        "no_setup:pullbacks_disabled",
+        "overbought_rsi",
+        "stretched_from_20dma",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "ICICIGI",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "ICICILIFE",
+      "reasons": [
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "IDBI",
+      "reasons": [
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "IDEA",
+      "reasons": [
+        "price<50",
+        "below_50dma",
+        "50dma_not_rising",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "IDFCFIRSTB",
+      "reasons": [
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "weak_rs_rank",
+        "base_too_deep",
+        "breakout_low_volume",
+        "stretched_from_20dma",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "IEX",
+      "reasons": [
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "IFCI",
+      "reasons": [
+        "below_50dma",
+        "50dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "IGIL",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "IGL",
+      "reasons": [
+        "low_turnover",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "base_too_deep",
+        "breakout_low_volume",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "IIFL",
+      "reasons": [
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "IKS",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "INDHOTEL",
+      "reasons": [
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "INDIACEM",
+      "reasons": [
+        "low_turnover",
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "INDIAMART",
+      "reasons": [
+        "low_turnover",
+        "low_volume",
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "INDIANB",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "INDIGO",
+      "reasons": [
+        "no_setup:pullbacks_disabled",
+        "stretched_from_20dma",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "INDUSINDBK",
+      "reasons": [
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "INDUSTOWER",
+      "reasons": [
+        "50dma_below_200dma",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "INFY",
+      "reasons": [
+        "50dma_below_200dma",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "INOXINDIA",
+      "reasons": [
+        "low_volume",
+        "50dma_not_rising",
+        "extended_2day_gain",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "INOXWIND",
+      "reasons": [
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "INTELLECT",
+      "reasons": [
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "IOB",
+      "reasons": [
+        "price<50",
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "IOC",
+      "reasons": [
+        "50dma_below_200dma",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "IPCALAB",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "IRB",
+      "reasons": [
+        "price<50",
+        "low_turnover",
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "IRCON",
+      "reasons": [
+        "low_turnover",
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "IRCTC",
+      "reasons": [
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "IREDA",
+      "reasons": [
+        "50dma_below_200dma",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "stretched_from_20dma",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "IRFC",
+      "reasons": [
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "ITC",
+      "reasons": [
+        "50dma_below_200dma",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "stretched_from_20dma",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "ITCHOTELS",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "ITI",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "J&KBANK",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "JAINREC",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "JBMA",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "JINDALSAW",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "JINDALSTEL",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "JIOFIN",
+      "reasons": [
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "JKCEMENT",
+      "reasons": [
+        "low_volume",
+        "50dma_below_200dma",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "JKTYRE",
+      "reasons": [
+        "low_turnover",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "JMFINANCIL",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "JPPOWER",
+      "reasons": [
+        "price<50",
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "JSL",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "JSWCEMENT",
+      "reasons": [
+        "low_turnover",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "JSWENERGY",
+      "reasons": [
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "JSWINFRA",
+      "reasons": [
+        "below_50dma",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "JSWSTEEL",
+      "reasons": [
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "JUBLFOOD",
+      "reasons": [
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "JUBLINGREA",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "JWL",
+      "reasons": [
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "JYOTICNC",
+      "reasons": [
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "KAJARIACER",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "KALYANKJIL",
+      "reasons": [
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "KARURVYSYA",
+      "reasons": [
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "KAYNES",
+      "reasons": [
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "KEC",
+      "reasons": [
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "KEI",
+      "reasons": [
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "KFINTECH",
+      "reasons": [
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "KIMS",
+      "reasons": [
+        "50dma_not_rising",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "KIRLOSBROS",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "KIRLOSENG",
+      "reasons": [
+        "below_50dma",
+        "50dma_not_rising",
+        "far_from_52w_high",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "KOTAKBANK",
+      "reasons": [
+        "no_setup:pullbacks_disabled",
+        "stretched_from_20dma",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "KPIL",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "KPITTECH",
+      "reasons": [
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "KPRMILL",
+      "reasons": [
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "KSB",
+      "reasons": [
+        "low_turnover",
+        "low_volume",
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "LALPATHLAB",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "LAURUSLABS",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "LEMONTREE",
+      "reasons": [
+        "50dma_below_200dma",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "LENSKART",
+      "reasons": [
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "LGEINDIA",
+      "reasons": [
+        "below_50dma",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "LICHSGFIN",
+      "reasons": [
+        "no_setup:pullbacks_disabled",
+        "stretched_from_20dma",
+        "stop_too_wide",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "LICI",
+      "reasons": [
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "LINDEINDIA",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "LLOYDSME",
+      "reasons": [
+        "below_50dma",
+        "50dma_not_rising",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "LODHA",
+      "reasons": [
+        "50dma_not_rising",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "LT",
+      "reasons": [
+        "50dma_below_200dma",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "stretched_from_20dma",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "LTF",
+      "reasons": [
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "LTFOODS",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "LTM",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "LTTS",
+      "reasons": [
+        "200dma_not_rising",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "LUPIN",
+      "reasons": [
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "M&M",
+      "reasons": [
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "stretched_from_20dma",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "M&MFIN",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "MAHABANK",
+      "reasons": [
+        "base_too_deep",
+        "overbought_rsi",
+        "stretched_from_20dma",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "MANAPPURAM",
+      "reasons": [
+        "below_50dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "MANKIND",
+      "reasons": [
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "MARICO",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "MARUTI",
+      "reasons": [
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "MAXHEALTH",
+      "reasons": [
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "stretched_from_20dma",
+        "stop_too_wide",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "MAZDOCK",
+      "reasons": [
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "MCX",
+      "reasons": [
+        "no_setup:pullbacks_disabled",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "MEDANTA",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "MEESHO",
+      "reasons": [
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "MFSL",
+      "reasons": [
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "stretched_from_20dma",
+        "stop_too_wide",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "MGL",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "MINDACORP",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "MMTC",
+      "reasons": [
+        "low_turnover",
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "MOTHERSON",
+      "reasons": [
+        "below_50dma",
+        "50dma_not_rising",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "MOTILALOFS",
+      "reasons": [
+        "no_setup:pullbacks_disabled",
+        "stretched_from_20dma",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "MPHASIS",
+      "reasons": [
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "MRF",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "MRPL",
+      "reasons": [
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "MSUMI",
+      "reasons": [
+        "price<50",
+        "low_turnover",
+        "50dma_below_200dma",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "MTARTECH",
+      "reasons": [
+        "low_volume",
+        "circuit_history",
+        "below_50dma",
+        "50dma_not_rising",
+        "far_from_52w_high",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "MUTHOOTFIN",
+      "reasons": [
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "NAM-INDIA",
+      "reasons": [
+        "below_50dma",
+        "50dma_not_rising",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "NATCOPHARM",
+      "reasons": [
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "NATIONALUM",
+      "reasons": [
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "NAUKRI",
+      "reasons": [
+        "below_50dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "NAVA",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "NAVINFLUOR",
+      "reasons": [
+        "low_volume",
+        "base_too_deep",
+        "stretched_from_20dma"
+      ]
+    },
+    {
+      "symbol": "NBCC",
+      "reasons": [
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "NCC",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "NESTLEIND",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "NETWEB",
+      "reasons": [
+        "below_50dma",
+        "50dma_not_rising",
+        "far_from_52w_high",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "NEULANDLAB",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "NH",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "NHPC",
+      "reasons": [
+        "below_50dma",
+        "50dma_below_200dma",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "NIACL",
+      "reasons": [
+        "low_turnover",
+        "below_50dma",
+        "50dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "NLCINDIA",
+      "reasons": [
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "NMDC",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "NSLNISP",
+      "reasons": [
+        "price<50",
+        "low_turnover",
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "NTPC",
+      "reasons": [
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "NTPCGREEN",
+      "reasons": [
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "NUVAMA",
+      "reasons": [
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "NUVOCO",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "NYKAA",
+      "reasons": [
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "OBEROIRLTY",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "OFSS",
+      "reasons": [
+        "below_50dma",
+        "50dma_not_rising",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "OIL",
+      "reasons": [
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "OLAELEC",
+      "reasons": [
+        "price<50",
+        "below_50dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "OLECTRA",
+      "reasons": [
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "ONESOURCE",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "ONGC",
+      "reasons": [
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "PAGEIND",
+      "reasons": [
+        "low_volume",
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "PARADEEP",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "PATANJALI",
+      "reasons": [
+        "50dma_below_200dma",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "PAYTM",
+      "reasons": [
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "PCBL",
+      "reasons": [
+        "low_turnover",
+        "below_50dma",
+        "50dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "PERSISTENT",
+      "reasons": [
+        "200dma_not_rising",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "PETRONET",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "PFC",
+      "reasons": [
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "PFOCUS",
+      "reasons": [
+        "below_50dma",
+        "50dma_not_rising",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "PGEL",
+      "reasons": [
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "PHOENIXLTD",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "PIDILITIND",
+      "reasons": [
+        "50dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "PIIND",
+      "reasons": [
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "PINELABS",
+      "reasons": [
+        "below_50dma",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "PIRAMALFIN",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "PNB",
+      "reasons": [
+        "base_too_deep",
+        "overbought_rsi",
+        "stretched_from_20dma",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "PNBHOUSING",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "POLICYBZR",
+      "reasons": [
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "POLYCAB",
+      "reasons": [
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "POLYMED",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "POONAWALLA",
+      "reasons": [
+        "200dma_not_rising",
+        "base_too_deep",
+        "breakout_low_volume",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "POWERGRID",
+      "reasons": [
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "POWERINDIA",
+      "reasons": [
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "PPLPHARMA",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "PREMIERENE",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "PRESTIGE",
+      "reasons": [
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "PRIVISCL",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "PTCIL",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "PVRINOX",
+      "reasons": [
+        "base_too_deep",
+        "breakout_low_volume",
+        "overbought_rsi",
+        "stretched_from_20dma"
+      ]
+    },
+    {
+      "symbol": "PWL",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "RADICO",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "RAILTEL",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "RAINBOW",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "RAMCOCEM",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "RBLBANK",
+      "reasons": [
+        "below_50dma",
+        "50dma_not_rising",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "RECLTD",
+      "reasons": [
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "REDINGTON",
+      "reasons": [
+        "below_50dma",
+        "50dma_not_rising",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "RELIANCE",
+      "reasons": [
+        "50dma_below_200dma",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "breakout_low_volume",
+        "stretched_from_20dma",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "RHIM",
+      "reasons": [
+        "low_turnover",
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "RITES",
+      "reasons": [
+        "low_turnover",
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "RKFORGE",
+      "reasons": [
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "RPOWER",
+      "reasons": [
+        "price<50",
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "RRKABEL",
+      "reasons": [
+        "below_50dma",
+        "50dma_not_rising",
+        "far_from_52w_high",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "RUBICON",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "RVNL",
+      "reasons": [
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "SAGILITY",
+      "reasons": [
+        "price<50",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "SAIL",
+      "reasons": [
+        "below_50dma",
+        "50dma_not_rising",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "SAILIFE",
+      "reasons": [
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "SAMMAANCAP",
+      "reasons": [
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "SANSERA",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "SARDAEN",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "SBICARD",
+      "reasons": [
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "SBILIFE",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "SBIN",
+      "reasons": [
+        "50dma_below_200dma",
+        "too_close_to_52w_low",
+        "breakout_low_volume",
+        "overbought_rsi",
+        "stretched_from_20dma",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "SCHAEFFLER",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "SCHNEIDER",
+      "reasons": [
+        "low_turnover",
+        "low_volume",
+        "below_50dma",
+        "50dma_not_rising",
+        "far_from_52w_high",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "SCI",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "SHREECEM",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "SHRIPISTON",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "SHRIRAMFIN",
+      "reasons": [
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "SHYAMMETL",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "SIEMENS",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "SIGNATURE",
+      "reasons": [
+        "low_turnover",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "stretched_from_20dma",
+        "extended_2day_gain",
+        "stop_too_wide",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "SJVN",
+      "reasons": [
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "SOBHA",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "SOLARINDS",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "SONACOMS",
+      "reasons": [
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "SRF",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "STARHEALTH",
+      "reasons": [
+        "low_turnover",
+        "50dma_not_rising",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "SUMICHEM",
+      "reasons": [
+        "low_turnover",
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "SUNDARMFIN",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "SUNPHARMA",
+      "reasons": [
+        "50dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "SUNTV",
+      "reasons": [
+        "low_turnover",
+        "base_too_deep",
+        "stretched_from_20dma"
+      ]
+    },
+    {
+      "symbol": "SUPREMEIND",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "SUZLON",
+      "reasons": [
+        "price<50",
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "SWANCORP",
+      "reasons": [
+        "low_turnover",
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "SWIGGY",
+      "reasons": [
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "SYNGENE",
+      "reasons": [
+        "50dma_below_200dma",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "SYRMA",
+      "reasons": [
+        "below_50dma",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "TARIL",
+      "reasons": [
+        "50dma_below_200dma",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "TATACAP",
+      "reasons": [
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "TATACHEM",
+      "reasons": [
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "TATACOMM",
+      "reasons": [
+        "200dma_not_rising",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "TATACONSUM",
+      "reasons": [
+        "50dma_below_200dma",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "base_too_deep",
+        "breakout_low_volume",
+        "stretched_from_20dma",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "TATAELXSI",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "TATAINVEST",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "TATAPOWER",
+      "reasons": [
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "TATASTEEL",
+      "reasons": [
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "TATATECH",
+      "reasons": [
+        "below_50dma",
+        "50dma_not_rising",
+        "far_from_52w_high",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "TBOTEK",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "TCS",
+      "reasons": [
+        "50dma_below_200dma",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "TDPOWERSYS",
+      "reasons": [
+        "below_50dma",
+        "50dma_not_rising",
+        "far_from_52w_high",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "TECHM",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "TECHNOE",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "TEGA",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "TEJASNET",
+      "reasons": [
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "far_from_52w_high",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "TENNIND",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "THANGAMAYL",
+      "reasons": [
+        "low_turnover",
+        "low_volume",
+        "below_50dma",
+        "50dma_not_rising",
+        "far_from_52w_high",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "THERMAX",
+      "reasons": [
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "TIINDIA",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "TIMKEN",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "TITAGARH",
+      "reasons": [
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "TITAN",
+      "reasons": [
+        "below_50dma",
+        "50dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "TMCV",
+      "reasons": [
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "TMPV",
+      "reasons": [
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "TORNTPHARM",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "TORNTPOWER",
+      "reasons": [
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "TRENT",
+      "reasons": [
+        "far_from_52w_high",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "TRIDENT",
+      "reasons": [
+        "price<50",
+        "low_turnover",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "TRITURBINE",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "TTML",
+      "reasons": [
+        "price<50",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "TVSMOTOR",
+      "reasons": [
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "UBL",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "UCOBANK",
+      "reasons": [
+        "price<50",
+        "low_turnover",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "ULTRACEMCO",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "UNIONBANK",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "UNITDSPR",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "UNOMINDA",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "UPL",
+      "reasons": [
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "URBANCO",
+      "reasons": [
+        "50dma_not_rising",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "USHAMART",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "UTIAMC",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "VAML",
+      "reasons": [
+        "no_data_or_short_history"
+      ]
+    },
+    {
+      "symbol": "VBL",
+      "reasons": [
+        "50dma_below_200dma",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "VEDL",
+      "reasons": [
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "VEDPOWER",
+      "reasons": [
+        "no_data_or_short_history"
+      ]
+    },
+    {
+      "symbol": "VIJAYA",
+      "reasons": [
+        "low_turnover",
+        "low_volume",
+        "50dma_not_rising",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "VISL",
+      "reasons": [
+        "no_data_or_short_history"
+      ]
+    },
+    {
+      "symbol": "VMM",
+      "reasons": [
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "VOGL",
+      "reasons": [
+        "no_data_or_short_history"
+      ]
+    },
+    {
+      "symbol": "VOLTAS",
+      "reasons": [
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "VTL",
+      "reasons": [
+        "low_turnover",
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "WAAREEENER",
+      "reasons": [
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "WELCORP",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "WELSPUNLIV",
+      "reasons": [
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "WHIRLPOOL",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "WIPRO",
+      "reasons": [
+        "50dma_below_200dma",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "WOCKPHARMA",
+      "reasons": [
+        "below_50dma",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "YESBANK",
+      "reasons": [
+        "price<50",
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close",
+        "global_sector_headwind"
+      ]
+    },
+    {
+      "symbol": "ZEEL",
+      "reasons": [
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "ZENSARTECH",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "ZENTEC",
+      "reasons": [
+        "50dma_not_rising",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "ZFCVINDIA",
+      "reasons": [
+        "low_turnover",
+        "low_volume",
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
+      ]
+    },
+    {
+      "symbol": "ZYDUSLIFE",
+      "reasons": [
+        "stale_data"
+      ]
+    },
+    {
+      "symbol": "ZYDUSWELL",
+      "reasons": [
+        "stale_data"
+      ]
+    }
+  ],
+  "universe_size": 496,
+  "evaluated": 318,
+  "passed_gates": 0,
+  "min_score": 40,
+  "duplicate": false,
+  "note": "",
+  "macro": {
+    "risk": "elevated",
+    "summary": "Hawkish Fed minutes signal higher global rates and FII outflow risk. However, falling crude oil prices and a stable INR offer some relief.",
+    "sector_impacts": [
+      {
+        "sector": "Oil Gas & Consumable Fuels",
+        "direction": "negative",
+        "reason": "Falling crude prices reduce profitability for oil producers and refiners."
+      },
+      {
+        "sector": "Automobile and Auto Components",
+        "direction": "positive",
+        "reason": "Lower crude prices reduce input costs and fuel expenses for consumers."
+      },
+      {
+        "sector": "Fast Moving Consumer Goods",
+        "direction": "positive",
+        "reason": "Lower crude prices reduce input costs and potentially boost consumer spending."
+      },
+      {
+        "sector": "Financial Services",
+        "direction": "negative",
+        "reason": "Hawkish Fed implies FII outflows and higher borrowing costs."
+      },
+      {
+        "sector": "Information Technology",
+        "direction": "negative",
+        "reason": "Stronger USD and global slowdown concerns impact export earnings."
+      }
+    ],
+    "method": "gemini",
+    "llm_risk": "elevated",
+    "rule_risk": "elevated",
+    "rule_reasons": [
+      "7 shock headlines"
+    ],
+    "moves": {
+      "sp500": {
+        "close": 7323.63,
+        "chg1_pct": -0.23,
+        "chg5_pct": -3.88,
+        "chg1_abs": -16.9,
+        "date": "2026-11-18"
+      },
+      "nasdaq": {
+        "close": 24429.885,
+        "chg1_pct": 0.42,
+        "chg5_pct": -4.07,
+        "chg1_abs": 101.504,
+        "date": "2026-11-18"
+      },
+      "brent": {
+        "close": 89.37,
+        "chg1_pct": -4.05,
+        "chg5_pct": -3.65,
+        "chg1_abs": -3.77,
+        "date": "2026-11-18"
+      },
+      "usdinr": {
+        "close": 93.44,
+        "chg1_pct": -0.04,
+        "chg5_pct": -0.28,
+        "chg1_abs": -0.035,
+        "date": "2026-11-19"
+      },
+      "us10y": {
+        "close": 5.066,
+        "chg1_pct": -0.73,
+        "chg5_pct": 1.36,
+        "chg1_abs": -0.037,
+        "date": "2026-11-18"
+      },
+      "dxy": {
+        "close": 103.879,
+        "chg1_pct": 0.38,
+        "chg5_pct": 0.94,
+        "chg1_abs": 0.389,
+        "date": "2026-11-18"
+      },
+      "nikkei": {
+        "close": 59140.871,
+        "chg1_pct": 0.2,
+        "chg5_pct": -2.76,
+        "chg1_abs": 116.59,
+        "date": "2026-11-19"
+      },
+      "hangseng": {
+        "close": 22901.75,
+        "chg1_pct": -1.69,
+        "chg5_pct": -4.61,
+        "chg1_abs": -393.0,
+        "date": "2026-11-19"
+      }
+    },
+    "headline_count": 40,
+    "query_status": {
+      "Federal Reserve interest rates": 81,
+      "Wall Street stocks": 32,
+      "crude oil prices": 100,
+      "US tariffs India": 35,
+      "war geopolitical tensions": 30,
+      "FII outflows India": 3,
+      "rupee dollar": 98,
+      "China economy": 76,
+      "global recession": 27
+    },
+    "top_headlines": [
+      "Anthropic to debut on Wall Street with a $1.5 trillion valuation in the biggest IPO of all time - Yahoo! Finance Canada",
+      "Indian shares set to open lower as hawkish Fed minutes weigh - Livemint",
+      "Oil prices rise as report says Trump considering more Iran strikes - Investing.com UK",
+      "UK seeks urgent resolution of Scotch whisky tariff dispute with India - Business Standard",
+      "Unemployment rising faster than RBA projections - ACOSS"
+    ]
+  },
+  "stale": null,
+  "news_vetoed": [],
+  "journal": {
+    "overall": {
+      "trades": 0
+    },
+    "by_setup": {},
+    "counts": {}
+  }
+}
