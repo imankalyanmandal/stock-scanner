@@ -2,7 +2,7 @@
   "session": "2026-11-23",
   "regime": {
     "regime": "neutral",
-    "breadth_pct": 54.2,
+    "breadth_pct": 56.5,
     "vix": 17.700000762939453,
     "benchmarks": {
       "nifty50": {
@@ -20,94 +20,295 @@
         "above_50": true
       }
     },
-    "size_mult": 0.0,
-    "allow_new_longs": false,
-    "block_reason": "global risk high: War broke out in Iran, a major geopolitical shock, despite US/Asian market rallies and falling crude prices.",
-    "macro_risk": "high",
+    "size_mult": 0.5,
+    "allow_new_longs": true,
+    "block_reason": "",
+    "macro_risk": "low",
     "sectors": {
       "Automobile and Auto Components": {
-        "breadth_pct": 63.63636363636363,
-        "count": 22
+        "breadth_pct": 67.5,
+        "count": 40
       },
       "Capital Goods": {
         "breadth_pct": 26.08695652173913,
-        "count": 46
+        "count": 69
       },
       "Chemicals": {
         "breadth_pct": 46.15384615384615,
-        "count": 13
+        "count": 26
       },
       "Construction": {
-        "breadth_pct": 60.0,
-        "count": 10
+        "breadth_pct": 46.15384615384615,
+        "count": 13
       },
       "Construction Materials": {
-        "breadth_pct": 66.66666666666666,
-        "count": 3
+        "breadth_pct": 72.72727272727273,
+        "count": 11
       },
       "Consumer Durables": {
-        "breadth_pct": 88.88888888888889,
-        "count": 9
+        "breadth_pct": 75.0,
+        "count": 16
       },
       "Consumer Services": {
-        "breadth_pct": 53.333333333333336,
-        "count": 15
+        "breadth_pct": 47.82608695652174,
+        "count": 23
       },
       "Diversified": {
         "breadth_pct": 100.0,
         "count": 1
       },
       "Fast Moving Consumer Goods": {
-        "breadth_pct": 76.92307692307693,
-        "count": 13
+        "breadth_pct": 71.42857142857143,
+        "count": 28
       },
       "Financial Services": {
-        "breadth_pct": 59.42028985507246,
-        "count": 69
+        "breadth_pct": 61.224489795918366,
+        "count": 98
       },
       "Healthcare": {
-        "breadth_pct": 81.81818181818183,
-        "count": 22
+        "breadth_pct": 77.27272727272727,
+        "count": 44
       },
       "Information Technology": {
-        "breadth_pct": 72.72727272727273,
-        "count": 22
+        "breadth_pct": 75.0,
+        "count": 24
       },
       "Media Entertainment & Publication": {
-        "breadth_pct": 33.33333333333333,
-        "count": 3
+        "breadth_pct": 50.0,
+        "count": 4
       },
       "Metals & Mining": {
-        "breadth_pct": 14.285714285714285,
-        "count": 14
+        "breadth_pct": 16.666666666666664,
+        "count": 18
       },
       "Oil Gas & Consumable Fuels": {
-        "breadth_pct": 50.0,
-        "count": 12
+        "breadth_pct": 64.70588235294117,
+        "count": 17
       },
       "Power": {
-        "breadth_pct": 40.0,
-        "count": 15
+        "breadth_pct": 41.17647058823529,
+        "count": 17
       },
       "Realty": {
-        "breadth_pct": 100.0,
-        "count": 2
+        "breadth_pct": 90.9090909090909,
+        "count": 11
       },
       "Services": {
-        "breadth_pct": 66.66666666666666,
-        "count": 6
+        "breadth_pct": 61.53846153846154,
+        "count": 13
       },
       "Telecommunication": {
-        "breadth_pct": 16.666666666666664,
-        "count": 6
+        "breadth_pct": 44.44444444444444,
+        "count": 9
       },
       "Textiles": {
-        "breadth_pct": 66.66666666666666,
-        "count": 3
+        "breadth_pct": 60.0,
+        "count": 5
       }
     }
   },
-  "picks": [],
+  "picks": [
+    {
+      "symbol": "CUB",
+      "company": "City Union Bank Ltd.",
+      "industry": "Financial Services",
+      "indexes": "niftysmallcap250",
+      "last_date": "2026-11-23",
+      "close": 245.5399932861328,
+      "open": 251.14999389648438,
+      "high": 253.99000549316406,
+      "low": 241.0,
+      "atr": 9.368185135326211,
+      "atr_pct": 3.8153398189635332,
+      "rsi": 64.00785572415371,
+      "sma20": 224.82699813842774,
+      "sma50": 226.04720001220704,
+      "sma200": 209.20402603149415,
+      "ext_atr": 2.210993361947882,
+      "gain_2d_pct": 4.8599203305636385,
+      "gap_pct": 0.9445300707000781,
+      "close_location": 0.3494989504447835,
+      "vol_ratio": 2.3113596154221625,
+      "avg_volume20": 4718979.25,
+      "median_turnover_cr": 72.19724444187011,
+      "req_turnover_cr": 25.0,
+      "req_avg_volume": 300000.0,
+      "locked_20": 0,
+      "below_high_pct": 3.326907368116372,
+      "above_low_pct": 45.92792858664809,
+      "close_above_sma50": true,
+      "sma50_above_sma200": true,
+      "sma50_rising": true,
+      "sma200_rising": true,
+      "setup": "breakout",
+      "setup_fail": "",
+      "bo_day": 2,
+      "base_high": 239.0,
+      "base_depth_pct": 13.63598173133499,
+      "contraction": 0.7471619772845813,
+      "base_vol_ratio": 1.0796957328587191,
+      "base_undercut": false,
+      "setup_vol_ratio": 7.0036858378408,
+      "setup_close_loc": 0.8944845897253126,
+      "setup_low": 230.14999389648438,
+      "trigger_base": 253.99000549316406,
+      "trigger": 254.2439954986572,
+      "max_entry": 258.05765543113705,
+      "stop": 229.21317538295176,
+      "risk_per_share": 25.03082011570544,
+      "stop_atr": 2.671896397661641,
+      "t1": 304.30563573006805,
+      "resistance": null,
+      "room_r": Infinity,
+      "ret21": 0.08516369226947162,
+      "ret63": 0.11939816026381878,
+      "bench_ret21": 0.09455879093685149,
+      "bench_ret63": 0.010003048519640512,
+      "rs_rank": 84.02489626556017,
+      "mom_rank": 70.0,
+      "macd_bull": true,
+      "supertrend_up": true,
+      "adx": 19.380117108947857,
+      "bb_squeeze": false,
+      "rejected": false,
+      "reject_reasons": [],
+      "flags": [
+        "blue_sky",
+        "news_keyword_alert",
+        "positive_news"
+      ],
+      "score": 63.4,
+      "components": {
+        "rs_rank": 0.47,
+        "volume": 1.0,
+        "tightness": 0.11,
+        "close_location": 0.99,
+        "near_high": 0.87,
+        "beats_benchmark": 0.5,
+        "room": 1.0,
+        "delivery": 0.32
+      },
+      "delivery_pct": 34.74,
+      "events": [],
+      "news": {
+        "verdict": "positive",
+        "reason": "CUB is on a 52-week high streak, indicating strong momentum despite general market weakness.",
+        "key_headline": "City Union Bank Ltd. 52 Week High Streak: CUB Near Peak - Univest",
+        "method": "gemini",
+        "items": [
+          {
+            "title": "Markets snap winning streak, Sensex loses over 1400 pts - The Statesman",
+            "source": "The Statesman",
+            "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOVmo0elhGNU1QUDAzcWVzSUhqbW5RMWdHYlgtcFNRcHRtUFZjSzl4aXhIU3YyTnFtbG4xdkg0b0FZbGtVM1RRY3FaUXRWVmVoRS1qMXFEMm01Qkw5ZmhtV1B6azJyWFFJNDFKaHFubVlmbC14ZkFsdHIyeVRoMTF6YzBvc1A2ZnNHMndzOFl4NHNPVTFTSl8yUkRnMElPSEh0REtkX1UxSVloZ09I0gGyAUFVX3lxTE5vQzJoY3ZJUGlJUjZpR011eHpNWll1SXhoUUJVazExQ2J2Z25LM0Y0cDNmT2s0SHlvdW1XYlZUV0VPTmhwNUdBUjJ5eGdHX2J4Y3BWei1sYVFRd1RMQzhXUktsOTNQMVROR001ZFVmVURDdVVTUFdpdnoySlJXdnF1VlE0SmdKbVBhdVpzNVEzNnJ2Rkh4MnJWRHM2d0JJNWdwb2VnajAwMl9IMkZUcE5OSHc?oc=5",
+            "published": "2026-11-23T15:13:00+00:00",
+            "age_hours": 19.0
+          },
+          {
+            "title": "Taking Stock: Markets snap 2-day gains; Sensex sheds 1,484 pts, Nifty below 25,350 - Moneycontrol.com",
+            "source": "Moneycontrol.com",
+            "link": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxNcUFkdlJZZGNhSVRsZHNwZm1GQnhJUkMxZWl5S09VSUtLVGNzVU9rVUtaT0FzVDhWZGJJYTJ1MGZ2bXNoM2NnZGpVSGtwU04yRzhWR1ppMjViYVEwSjlTaDd1b0d5cVk1LXNBdXBsNWplX1MtX0d6REpDR3kxS2l6dHFTTm9YVWFlOHZhaTU2THZJZjJkSHpfS3ROX3I0bzFlQWNYdjhRS0RIM1J0dWNOZUUwb3pOSWx3ejBOWUxvVXB6VmI5QmRveWU4MUlRQTg5VnR6UXV2SjJodXPSAeABQVVfeXFMUGdZMW5XTlh2ZmRmQW1CZXRRSjlQd25oS1pLeEtvNVlHbWw1eldiNkMzLTJPdy1qYkg3MjIxeGNMc1dyWi1QUkJVRkVXUmlDWVkxUldRZGx0LWtURC1Vc2E0Q1p3SFJjZ0hGbmZoSTVUb0xxR25HeWxrVnlWZDE3ZW15SjlZUThTa2M1eF92b25lMUxQOWlDTkNyVjFqU3p3SXNiRnZLcmJNaXNUSVhHS3lENDNLM2FWcjZuY3oyNWx6MlFMTzVwOXdGeTh2TERMMzAtVlNINkk2OUhXWGJUdTg?oc=5",
+            "published": "2026-11-23T10:43:22+00:00",
+            "age_hours": 23.5
+          },
+          {
+            "title": "\u20b910 Lakh Invested 10 Years Ago Grows to \u20b963.48 Lakh: Quant vs SBI Small Cap Fund - Which Performed Better? - Trade Brains",
+            "source": "Trade Brains",
+            "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPNkNGd21TaE11cUZCS0stN3paY1V0TnFsU252TjZyNFpOT3dyT3FzZ2F6VFhJeW9MXzVibC1JR2lXT3dpOWVZN3I3bzhMNkFkbGJVdDFMeGdZMVRJU2lnbV9JdTN1d3oxZXZJNHA5bXE5YWNpeEFtZmdRZGtGclJTeDVpWWZHaUZTUHVnc0JVTVZiZjRYTFlWZG05QXVuT2ZUYkRsOGpZdndyMXd2T2RBT2tZMGczVjhWa0tLazNBOXlVeE51bHYyNTVkb0lSVGNrakVJ?oc=5",
+            "published": "2026-11-23T09:43:57+00:00",
+            "age_hours": 24.5
+          },
+          {
+            "title": "Why Stock Market Is Falling Today? Sensex Crashes 1,600 Points From Day's High, Nifty 50 Slips Below 25,600. Key Reasons Explained - NDTV Profit",
+            "source": "NDTV Profit",
+            "link": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxPZHZwYVd1UktqWGdHa09yMDJWSGU3VGhkZmNNdUwyeHUtYWhZMnhISndNM042N0h5N3VYcDRsc3ViT1N1amlnOVlUbjFhTU9YQ1R4YVZXRXd2UDNzOGdJVWR0emdYenRTc09Ka2hKTVNpSDUwUVdBWlV3RGU1NFkzMjl5T2FncFNtY0x2UmZsS2UtWUY2U1RITEI5dDFHY3Z0SkNkSm9WMEJwMXdURjlmTzlSZTlLbHhWenVIOTRXbXRZU054TndTNERZYjY1RDA0NVdPdHYtQmNIdUFiUjRrcGxPelVrVTB5VFlzNDFON2lTSmp3dERBMWJuN3pTS2fSAYcCQVVfeXFMT3FWNXhqR05kV2IxNlJHY0RTZVhpOVdxaTVENTdxY2gzdy1HejVzZnBfSzNhRFdxZUdGV2dVNDdYYXltRWhoU0JrVVNUd1BMUW9XbFRhN0RyLVhzVDV0NVl0QW1EdDF3bVpMaDM2b3Z5U0o4aGtwV0E2cTlEX2t1cEJSYlRFajlRdW5uXzlVbHJUTEZJWGxtVG56S0pmemFBRHhqSVBPVEhITUVKUC1sb2M1c3h6TFpTY19yZlpodDJmdlhTZ1ZsdUhFNjJDM0dXWUU0Q1JFcS13OGRuNWkzSzA1cTFYUVJaeTlneG1yV2RhbnRGLVpLWFFCaHQwNHJ3d3JzbVgxV0k?oc=5",
+            "published": "2026-11-23T05:43:21+00:00",
+            "age_hours": 28.5
+          },
+          {
+            "title": "City Union Bank Ltd. 52 Week High Streak: CUB Near Peak - Univest",
+            "source": "Univest",
+            "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOR0xmQmJzZUdtMTZiZTZpakM1LUROQzBGMXlmMXhuTHEwVkxFWlhkVGhfd0lSemY5MWxmMDdqby1IcDJmdjJqMHQzOVppV0NLLVBxRmJudDJBQjBCNGxWU2RhRUUwWURXQjJSdnY1UnlCX1lwekhpS1VnWEcybnkwbmZia3ZiZVR2bHVaVHU5MlZhV2M?oc=5",
+            "published": "2026-11-23T05:27:00+00:00",
+            "age_hours": 28.8
+          },
+          {
+            "title": "Momentum Stocks: Tata Steel, Inspire Films, Blue Coast under pressure, down 3-5% - Moneycontrol.com",
+            "source": "Moneycontrol.com",
+            "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNX1VSR3R1bVN0ZUZkZlUtTTBrMEFTeGQtLXBsbWw4Ql96RXFJaTJlTzJwNXBVSTh2Zk9HbU9xZDgwY01zbkQ5VGQxWnpnOE91UEttWkVCWk8xSTJFX2FRVmt6Q1dzMDBRV3lkWUxINzRycVdwZHpGNENIOTRRT0xVdmlJNXRDSzdpWnFBNXdoZ2pNS2ItaFNZc21qZERTTVVZUTJzWEx1ak0wRndJZk1udGZ6b01hU3hGMmpyUGFxTktoTE5lenExTnA0OER5aVJXbTRGbHpn0gHbAUFVX3lxTE50RkQ2aWFoN2R4SGZrVVJSNVozck1jMGh1bXVFX0JVZENwSE10a09rMUhpTU1UVXNVelplQjJjX3pCaGVGMlJrS05xV0lDQ1VCaWlOQU54Y3dlVXo2bG5HamVfVTItd3VjNU5pUzZFYlAzcDM3MWthNkZaZjdWNzlnTVNwdW52XzhNemFsT2Z0OE5YeUhVNE12NXpoUGM3S0FUbW1mZV9mNGMtblVJUGRzTUJHZERaNTMzUkhRMEpuYWRoQUxTLXJpLXdZdUR1MXc5b1hpanpEejR5OA?oc=5",
+            "published": "2026-11-23T04:39:43+00:00",
+            "age_hours": 29.6
+          },
+          {
+            "title": "13.2% inclusion error in PM Garib Kalyan Anna Yojana ineligible: Govt study - CNBC TV18",
+            "source": "CNBC TV18",
+            "link": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxQRElJNVdUMS0wTWwzX1dpenhyTGU3UkJHR0ZNU0JGS0J2SXI0R2NDemdvcFFieC1aVGctZ2lxS0xsbTRLNmg4aWMzTUFTWjVjY043NFAxUjVwUUttMXNEaGFvX254TGp0LXhpbXBnXzdnaGpqUDR1QnlGNXBXRE1zNjFNTkw1bXlmd2VBV2dHby0xdEFsVFFfNm40aUxGSGdxc1BOakpVQTVvTElEczhYQVJYa1VrQmZCcVNDLWtfYVFkTFhPT29JTGM2dUlzRWhWelVXQnpGeF9uR012WGROZk1lZ9IB4wFBVV95cUxQRElJNVdUMS0wTWwzX1dpenhyTGU3UkJHR0ZNU0JGS0J2SXI0R2NDemdvcFFieC1aVGctZ2lxS0xsbTRLNmg4aWMzTUFTWjVjY043NFAxUjVwUUttMXNEaGFvX254TGp0LXhpbXBnXzdnaGpqUDR1QnlGNXBXRE1zNjFNTkw1bXlmd2VBV2dHby0xdEFsVFFfNm40aUxGSGdxc1BOakpVQTVvTElEczhYQVJYa1VrQmZCcVNDLWtfYVFkTFhPT29JTGM2dUlzRWhWelVXQnpGeF9uR012WGROZk1lZw?oc=5",
+            "published": "2026-11-23T03:58:22+00:00",
+            "age_hours": 30.2
+          },
+          {
+            "title": "South Korea education minister resigns after AI cheating curbs disrupt college entrance exam - CNBC TV18",
+            "source": "CNBC TV18",
+            "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQWW9FX01EeXdaakhjRU9UbTZjSHZ5N1NJUGNZY1BnNUwwWXd4SXRlc2tMRzY2WGpJTkdPU2VQeGdjbzRyRDdaYlNqVTExQ2VsMDdEV1hhRTd6VU9OeDNuemlZTVVjR2pGSjZOUUd4ZGRZZ2hSRGxPU19ycHZoUWtMSnlDZkpRamNSdjZlbUpFdXl4MWpEaVhtVGMzRGZfTE1YMExEc3d30gGmAUFVX3lxTFBZb0VfTUR5d1pqSGNFT1RtNmNIdnk3U0lQY1ljUGc1TDBZd3hJdGVza0xHNjZYaklOR09TZVB4Z2NvNHJEN1piU2pVMTFDZWwwN0RXWGFFN3pVT054M256aVlNVWNHakZKNk5RR3hkZFlnaFJEbE9TX3JwdmhRa0xKeUNmSlFqY1J2NmVtSkV1eXgxakRpWG1UYzNEZl9MTVgwTERzd3c?oc=5",
+            "published": "2026-11-23T03:56:01+00:00",
+            "age_hours": 30.3
+          }
+        ],
+        "sources": {
+          "google": "ok (8)"
+        },
+        "keyword_alert": true
+      },
+      "qty": 199,
+      "position_value": 50594.56,
+      "risk_amount": 4981.13,
+      "size_mult": 0.5,
+      "capped": false,
+      "exit_plan": "Buy-stop 254.24 (skip if it opens above 258.06). Stop 229.21. Book 50% at 304.31 (2R), move stop to entry, trail the rest on a close below EMA20. Exit if not +1R after 7 sessions.",
+      "results": {
+        "version": 3,
+        "source": "nse",
+        "bank": true,
+        "symbol": "CUB",
+        "seq": "205676",
+        "xbrl": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_BANKING_1748004_28102026061141_WEB.xml",
+        "basis": "standalone",
+        "quarter": "Q2 FY27",
+        "period_end": "2026-09-30",
+        "filed": "2026-10-28",
+        "audited": "Un-Audited",
+        "revenue_cr": 2092.3,
+        "net_profit_cr": 415.9,
+        "eps": 4.2,
+        "revenue_yoy_pct": 26.6,
+        "profit_yoy_pct": 26.6,
+        "revenue_qoq_pct": 5.4,
+        "profit_qoq_pct": 8.7,
+        "op_margin_pct": null,
+        "op_margin_year_ago_pct": null,
+        "loss": false,
+        "missing": [],
+        "tags_seen": []
+      },
+      "results_line": "Q2 FY27 \u00b7 Rev +27% YoY \u00b7 PAT +27% YoY \u00b7 filed 2026-10-28",
+      "next_results": null,
+      "ownership": {
+        "verdict": "mixed",
+        "score": 0,
+        "reasons": [
+          "MF 34.24% \u2192 37.32% (+3.08pp)",
+          "FII 18.65% \u2192 17.40% (-1.25pp)"
+        ],
+        "quarter": "Q2 FY27",
+        "prev_quarter": "Q1 FY27"
+      },
+      "deals": {
+        "verdict": "none",
+        "net_cr": 0.0,
+        "lines": [],
+        "deals": 0
+      }
+    }
+  ],
   "watchlist": [],
   "rejected": [
     {
@@ -117,14 +318,22 @@
         "200dma_not_rising",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "stretched_from_20dma",
-        "global_sector_headwind"
+        "stretched_from_20dma"
       ]
     },
     {
       "symbol": "AADHARHFC",
       "reasons": [
-        "stale_data"
+        "low_turnover",
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -151,8 +360,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -167,55 +375,93 @@
     {
       "symbol": "ABBOTINDIA",
       "reasons": [
-        "stale_data"
+        "low_volume",
+        "below_50dma",
+        "50dma_below_200dma",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "ABCAPITAL",
       "reasons": [
-        "stale_data"
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "ABDL",
       "reasons": [
-        "stale_data"
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "ABREL",
       "reasons": [
-        "stale_data"
+        "low_turnover",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "stretched_from_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "ABSLAMC",
       "reasons": [
-        "stale_data"
+        "low_turnover",
+        "low_volume",
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "ACC",
       "reasons": [
-        "stale_data"
+        "low_turnover",
+        "low_volume",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "ACE",
       "reasons": [
-        "stale_data"
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "ACMESOLAR",
       "reasons": [
-        "stale_data"
+        "below_50dma",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "ACUTAAS",
       "reasons": [
-        "stale_data"
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -269,19 +515,35 @@
     {
       "symbol": "AEGISVOPAK",
       "reasons": [
-        "stale_data"
+        "low_turnover",
+        "50dma_not_rising",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
       "symbol": "AETHER",
       "reasons": [
-        "stale_data"
+        "below_50dma",
+        "50dma_not_rising",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "AFCONS",
       "reasons": [
-        "stale_data"
+        "low_turnover",
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -299,19 +561,35 @@
     {
       "symbol": "AIAENG",
       "reasons": [
-        "stale_data"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "AIIL",
       "reasons": [
-        "stale_data"
+        "low_turnover",
+        "200dma_not_rising",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "AJANTPHARM",
       "reasons": [
-        "stale_data"
+        "below_50dma",
+        "50dma_not_rising",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -330,7 +608,12 @@
     {
       "symbol": "AMBER",
       "reasons": [
-        "stale_data"
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -349,39 +632,59 @@
     {
       "symbol": "ANANDRATHI",
       "reasons": [
-        "stale_data"
+        "low_volume",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "ANANTRAJ",
       "reasons": [
-        "stale_data"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "ANGELONE",
       "reasons": [
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "ANTHEM",
       "reasons": [
-        "stale_data"
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "ANURAS",
       "reasons": [
-        "stale_data"
+        "50dma_below_200dma",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "stretched_from_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "APARINDS",
       "reasons": [
-        "no_data_or_short_history"
+        "below_50dma",
+        "50dma_not_rising",
+        "far_from_52w_high",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -421,7 +724,15 @@
     {
       "symbol": "APTUS",
       "reasons": [
-        "stale_data"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -441,7 +752,12 @@
     {
       "symbol": "ASAHIINDIA",
       "reasons": [
-        "stale_data"
+        "low_turnover",
+        "low_volume",
+        "no_setup:pullbacks_disabled",
+        "overbought_rsi",
+        "stretched_from_20dma",
+        "resistance_too_close"
       ]
     },
     {
@@ -480,7 +796,15 @@
     {
       "symbol": "ASTRAL",
       "reasons": [
-        "stale_data"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -507,25 +831,51 @@
     {
       "symbol": "ATUL",
       "reasons": [
-        "stale_data"
+        "low_turnover",
+        "low_volume",
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "AUBANK",
       "reasons": [
-        "stale_data"
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "AUROPHARMA",
       "reasons": [
-        "stale_data"
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "AVANTIFEED",
       "reasons": [
-        "stale_data"
+        "low_turnover",
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -549,8 +899,7 @@
         "too_close_to_52w_low",
         "no_setup:pullbacks_disabled",
         "stretched_from_20dma",
-        "stop_too_wide",
-        "global_sector_headwind"
+        "stop_too_wide"
       ]
     },
     {
@@ -583,8 +932,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -598,14 +946,15 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "BAJAJHLDNG",
       "reasons": [
-        "stale_data"
+        "low_volume",
+        "weak_rs_rank",
+        "breakout_low_volume"
       ]
     },
     {
@@ -613,26 +962,37 @@
       "reasons": [
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "BALKRISIND",
       "reasons": [
-        "stale_data"
+        "50dma_below_200dma",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "BALRAMCHIN",
       "reasons": [
-        "stale_data"
+        "below_50dma",
+        "50dma_not_rising",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "BANDHANBNK",
       "reasons": [
-        "stale_data"
+        "50dma_below_200dma",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -643,8 +1003,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -655,14 +1014,23 @@
         "too_close_to_52w_low",
         "no_setup:pullbacks_disabled",
         "stretched_from_20dma",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "BATAINDIA",
       "reasons": [
-        "stale_data"
+        "low_turnover",
+        "low_volume",
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -717,7 +1085,14 @@
     {
       "symbol": "BERGEPAINT",
       "reasons": [
-        "stale_data"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -729,19 +1104,29 @@
     {
       "symbol": "BHARATFORG",
       "reasons": [
-        "stale_data"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "BHARTIARTL",
       "reasons": [
-        "stale_data"
+        "too_close_to_52w_low",
+        "no_setup:pullbacks_disabled"
       ]
     },
     {
       "symbol": "BHARTIHEXA",
       "reasons": [
-        "stale_data"
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -768,13 +1153,29 @@
     {
       "symbol": "BLS",
       "reasons": [
-        "stale_data"
+        "low_turnover",
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "BLUESTARCO",
       "reasons": [
-        "stale_data"
+        "50dma_below_200dma",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "stretched_from_20dma",
+        "stop_too_wide",
+        "resistance_too_close"
       ]
     },
     {
@@ -788,13 +1189,25 @@
     {
       "symbol": "BPCL",
       "reasons": [
-        "stale_data"
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
       "symbol": "BRIGADE",
       "reasons": [
-        "stale_data"
+        "low_turnover",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "resistance_too_close"
       ]
     },
     {
@@ -814,8 +1227,7 @@
       "reasons": [
         "50dma_below_200dma",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -833,7 +1245,13 @@
     {
       "symbol": "CAMS",
       "reasons": [
-        "stale_data"
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -844,8 +1262,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -859,8 +1276,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -875,14 +1291,20 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "CAPLIPOINT",
       "reasons": [
-        "stale_data"
+        "low_turnover",
+        "low_volume",
+        "below_50dma",
+        "50dma_not_rising",
+        "far_from_52w_high",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -901,7 +1323,11 @@
     {
       "symbol": "CARTRADE",
       "reasons": [
-        "stale_data"
+        "below_50dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -936,14 +1362,20 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "CEATLTD",
       "reasons": [
-        "stale_data"
+        "low_turnover",
+        "low_volume",
+        "50dma_below_200dma",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -966,8 +1398,7 @@
         "no_setup:pullbacks_disabled",
         "stretched_from_20dma",
         "stop_too_wide",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -990,8 +1421,7 @@
         "below_50dma",
         "50dma_not_rising",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -1030,7 +1460,11 @@
     {
       "symbol": "CHOICEIN",
       "reasons": [
-        "stale_data"
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -1038,32 +1472,65 @@
       "reasons": [
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "CHOLAHLDNG",
       "reasons": [
-        "stale_data"
+        "low_turnover",
+        "low_volume",
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "CIEINDIA",
       "reasons": [
-        "stale_data"
+        "low_turnover",
+        "low_volume",
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "CIPLA",
       "reasons": [
-        "stale_data"
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "CLEAN",
       "reasons": [
-        "stale_data"
+        "low_turnover",
+        "low_volume",
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -1149,7 +1616,15 @@
     {
       "symbol": "CONCORDBIO",
       "reasons": [
-        "stale_data"
+        "low_turnover",
+        "below_50dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -1174,7 +1649,9 @@
     {
       "symbol": "CRAFTSMAN",
       "reasons": [
-        "stale_data"
+        "low_volume",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -1188,26 +1665,33 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "CRISIL",
       "reasons": [
-        "stale_data"
+        "low_volume",
+        "below_50dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "CROMPTON",
       "reasons": [
-        "stale_data"
-      ]
-    },
-    {
-      "symbol": "CUB",
-      "reasons": [
-        "global_sector_headwind"
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -1233,7 +1717,9 @@
     {
       "symbol": "CYIENT",
       "reasons": [
-        "stale_data"
+        "200dma_not_rising",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -1264,13 +1750,19 @@
     {
       "symbol": "DATAPATTNS",
       "reasons": [
-        "stale_data"
+        "50dma_not_rising",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "DEEPAKFERT",
       "reasons": [
-        "stale_data"
+        "50dma_not_rising",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "stretched_from_20dma",
+        "resistance_too_close"
       ]
     },
     {
@@ -1289,7 +1781,12 @@
     {
       "symbol": "DELHIVERY",
       "reasons": [
-        "stale_data"
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -1349,7 +1846,15 @@
     {
       "symbol": "DOMS",
       "reasons": [
-        "stale_data"
+        "low_turnover",
+        "low_volume",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -1369,7 +1874,15 @@
     {
       "symbol": "ECLERX",
       "reasons": [
-        "stale_data"
+        "low_volume",
+        "below_50dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -1385,7 +1898,17 @@
     {
       "symbol": "EIDPARRY",
       "reasons": [
-        "stale_data"
+        "low_turnover",
+        "low_volume",
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -1414,19 +1937,31 @@
     {
       "symbol": "ELGIEQUIP",
       "reasons": [
-        "stale_data"
+        "low_turnover",
+        "below_50dma",
+        "50dma_not_rising",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "EMAMILTD",
       "reasons": [
-        "stale_data"
+        "low_turnover",
+        "50dma_below_200dma",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "EMCURE",
       "reasons": [
-        "stale_data"
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -1442,7 +1977,13 @@
     {
       "symbol": "ENDURANCE",
       "reasons": [
-        "stale_data"
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -1455,13 +1996,25 @@
     {
       "symbol": "ENRIN",
       "reasons": [
-        "stale_data"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "ESCORTS",
       "reasons": [
-        "stale_data"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled"
       ]
     },
     {
@@ -1484,14 +2037,21 @@
     {
       "symbol": "FACT",
       "reasons": [
-        "stale_data"
+        "low_turnover",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "FEDERALBNK",
       "reasons": [
-        "no_setup:pullbacks_disabled",
-        "global_sector_headwind"
+        "no_setup:pullbacks_disabled"
       ]
     },
     {
@@ -1528,8 +2088,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -1572,13 +2131,17 @@
     {
       "symbol": "FSL",
       "reasons": [
-        "stale_data"
+        "200dma_not_rising",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "GABRIEL",
       "reasons": [
-        "stale_data"
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -1592,7 +2155,16 @@
     {
       "symbol": "GALLANTT",
       "reasons": [
-        "stale_data"
+        "low_turnover",
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -1605,13 +2177,28 @@
     {
       "symbol": "GICRE",
       "reasons": [
-        "stale_data"
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "GILLETTE",
       "reasons": [
-        "stale_data"
+        "low_turnover",
+        "low_volume",
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -1624,7 +2211,11 @@
     {
       "symbol": "GLAXO",
       "reasons": [
-        "stale_data"
+        "50dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -1662,7 +2253,15 @@
     {
       "symbol": "GODFRYPHLP",
       "reasons": [
-        "stale_data"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -1692,7 +2291,14 @@
     {
       "symbol": "GODREJPROP",
       "reasons": [
-        "stale_data"
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "weak_rs_rank",
+        "base_too_deep",
+        "breakout_low_volume",
+        "stretched_from_20dma",
+        "resistance_too_close"
       ]
     },
     {
@@ -1711,7 +2317,9 @@
     {
       "symbol": "GRANULES",
       "reasons": [
-        "stale_data"
+        "50dma_not_rising",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -1734,15 +2342,23 @@
     {
       "symbol": "GRAVITA",
       "reasons": [
-        "stale_data"
+        "low_turnover",
+        "low_volume",
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "GROWW",
       "reasons": [
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -1762,7 +2378,11 @@
     {
       "symbol": "GVT&D",
       "reasons": [
-        "stale_data"
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "far_from_52w_high",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -1811,7 +2431,14 @@
     {
       "symbol": "HDBFS",
       "reasons": [
-        "stale_data"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled"
       ]
     },
     {
@@ -1821,8 +2448,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -1833,14 +2459,19 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "stretched_from_20dma",
-        "global_sector_headwind"
+        "stretched_from_20dma"
       ]
     },
     {
       "symbol": "HDFCLIFE",
       "reasons": [
-        "stale_data"
+        "50dma_below_200dma",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -1858,7 +2489,12 @@
     {
       "symbol": "HEROMOTOCO",
       "reasons": [
-        "stale_data"
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -1915,7 +2551,12 @@
     {
       "symbol": "HINDUNILVR",
       "reasons": [
-        "stale_data"
+        "50dma_below_200dma",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -1944,14 +2585,15 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "HONASA",
       "reasons": [
-        "stale_data"
+        "base_too_deep",
+        "breakout_low_volume",
+        "stretched_from_20dma"
       ]
     },
     {
@@ -1992,8 +2634,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -2014,27 +2655,37 @@
         "50dma_not_rising",
         "too_close_to_52w_low",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "ICICIBANK",
       "reasons": [
-        "no_setup:pullbacks_disabled",
-        "global_sector_headwind"
+        "no_setup:pullbacks_disabled"
       ]
     },
     {
       "symbol": "ICICIGI",
       "reasons": [
-        "stale_data"
+        "50dma_below_200dma",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "breakout_low_volume",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "ICICILIFE",
       "reasons": [
-        "stale_data"
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -2048,8 +2699,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -2072,8 +2722,7 @@
         "no_setup:pullbacks_disabled",
         "stretched_from_20dma",
         "stop_too_wide",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -2087,8 +2736,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -2101,20 +2749,29 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "IGIL",
       "reasons": [
-        "stale_data"
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "IGL",
       "reasons": [
-        "stale_data"
+        "low_turnover",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -2123,8 +2780,7 @@
         "50dma_not_rising",
         "200dma_not_rising",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -2143,19 +2799,38 @@
     {
       "symbol": "INDHOTEL",
       "reasons": [
-        "stale_data"
+        "no_setup:pullbacks_disabled"
       ]
     },
     {
       "symbol": "INDIACEM",
       "reasons": [
-        "stale_data"
+        "low_turnover",
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "INDIAMART",
       "reasons": [
-        "stale_data"
+        "low_turnover",
+        "low_volume",
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -2164,14 +2839,14 @@
         "50dma_below_200dma",
         "too_close_to_52w_low",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "INDIGO",
       "reasons": [
-        "stale_data"
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -2183,8 +2858,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "stop_too_wide",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -2214,7 +2888,9 @@
     {
       "symbol": "INOXINDIA",
       "reasons": [
-        "stale_data"
+        "50dma_not_rising",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -2255,8 +2931,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -2274,7 +2949,10 @@
     {
       "symbol": "IPCALAB",
       "reasons": [
-        "stale_data"
+        "below_50dma",
+        "50dma_not_rising",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -2331,8 +3009,7 @@
         "overbought_rsi",
         "stretched_from_20dma",
         "stop_too_wide",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -2344,8 +3021,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -2388,7 +3064,13 @@
     {
       "symbol": "J&KBANK",
       "reasons": [
-        "stale_data"
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "far_from_52w_high",
+        "no_setup:pullbacks_disabled",
+        "stretched_from_20dma",
+        "stop_too_wide",
+        "resistance_too_close"
       ]
     },
     {
@@ -2408,13 +3090,25 @@
     {
       "symbol": "JBMA",
       "reasons": [
-        "stale_data"
+        "low_turnover",
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "JINDALSAW",
       "reasons": [
-        "stale_data"
+        "below_50dma",
+        "50dma_not_rising",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -2439,20 +3133,33 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "JKCEMENT",
       "reasons": [
-        "stale_data"
+        "low_volume",
+        "50dma_below_200dma",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "breakout_weak_close",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "JKTYRE",
       "reasons": [
-        "stale_data"
+        "low_turnover",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -2467,8 +3174,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -2489,13 +3195,24 @@
     {
       "symbol": "JSL",
       "reasons": [
-        "stale_data"
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "JSWCEMENT",
       "reasons": [
-        "stale_data"
+        "low_turnover",
+        "50dma_below_200dma",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -2542,13 +3259,31 @@
     {
       "symbol": "JUBLINGREA",
       "reasons": [
-        "stale_data"
+        "low_turnover",
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "JWL",
       "reasons": [
-        "stale_data"
+        "low_turnover",
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -2561,7 +3296,9 @@
     {
       "symbol": "KAJARIACER",
       "reasons": [
-        "stale_data"
+        "50dma_not_rising",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -2574,7 +3311,8 @@
     {
       "symbol": "KARURVYSYA",
       "reasons": [
-        "stale_data"
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -2628,20 +3366,33 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "KIMS",
       "reasons": [
-        "stale_data"
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "weak_rs_rank",
+        "base_too_deep",
+        "stretched_from_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "KIRLOSBROS",
       "reasons": [
-        "stale_data"
+        "low_turnover",
+        "low_volume",
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -2657,14 +3408,19 @@
     {
       "symbol": "KOTAKBANK",
       "reasons": [
-        "no_setup:pullbacks_disabled",
-        "global_sector_headwind"
+        "no_setup:pullbacks_disabled"
       ]
     },
     {
       "symbol": "KPIL",
       "reasons": [
-        "stale_data"
+        "low_turnover",
+        "low_volume",
+        "below_50dma",
+        "50dma_not_rising",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -2684,19 +3440,31 @@
     {
       "symbol": "KPRMILL",
       "reasons": [
-        "stale_data"
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "KSB",
       "reasons": [
-        "stale_data"
+        "low_turnover",
+        "low_volume",
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "LALPATHLAB",
       "reasons": [
-        "stale_data"
+        "low_volume",
+        "no_setup:pullbacks_disabled"
       ]
     },
     {
@@ -2709,13 +3477,20 @@
     {
       "symbol": "LEMONTREE",
       "reasons": [
-        "stale_data"
+        "50dma_below_200dma",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "base_too_deep",
+        "stretched_from_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "LENSKART",
       "reasons": [
-        "stale_data"
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -2728,7 +3503,9 @@
     {
       "symbol": "LICHSGFIN",
       "reasons": [
-        "stale_data"
+        "no_setup:pullbacks_disabled",
+        "stretched_from_20dma",
+        "resistance_too_close"
       ]
     },
     {
@@ -2740,8 +3517,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -2758,7 +3534,10 @@
     {
       "symbol": "LLOYDSME",
       "reasons": [
-        "stale_data"
+        "below_50dma",
+        "50dma_not_rising",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -2788,14 +3567,18 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "LTFOODS",
       "reasons": [
-        "stale_data"
+        "low_turnover",
+        "50dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -2834,7 +3617,13 @@
     {
       "symbol": "M&M",
       "reasons": [
-        "stale_data"
+        "50dma_below_200dma",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "stretched_from_20dma",
+        "resistance_too_close"
       ]
     },
     {
@@ -2848,8 +3637,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -2857,8 +3645,7 @@
       "reasons": [
         "no_setup:pullbacks_disabled",
         "stretched_from_20dma",
-        "stop_too_wide",
-        "global_sector_headwind"
+        "stop_too_wide"
       ]
     },
     {
@@ -2871,14 +3658,14 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "MANKIND",
       "reasons": [
-        "stale_data"
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -2934,8 +3721,7 @@
       "symbol": "MCX",
       "reasons": [
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -2963,14 +3749,20 @@
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
         "stretched_from_20dma",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "MGL",
       "reasons": [
-        "stale_data"
+        "low_turnover",
+        "low_volume",
+        "50dma_below_200dma",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -2984,7 +3776,16 @@
     {
       "symbol": "MMTC",
       "reasons": [
-        "stale_data"
+        "low_turnover",
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -3000,8 +3801,7 @@
       "reasons": [
         "no_setup:pullbacks_disabled",
         "stretched_from_20dma",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -3018,19 +3818,38 @@
     {
       "symbol": "MRF",
       "reasons": [
-        "stale_data"
+        "low_volume",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "breakout_low_volume",
+        "stretched_from_20dma",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "MRPL",
       "reasons": [
-        "stale_data"
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
       "symbol": "MSUMI",
       "reasons": [
-        "stale_data"
+        "price<50",
+        "50dma_below_200dma",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "stretched_from_20dma",
+        "stop_too_wide",
+        "resistance_too_close"
       ]
     },
     {
@@ -3056,14 +3875,17 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "NAM-INDIA",
       "reasons": [
-        "stale_data"
+        "below_50dma",
+        "50dma_not_rising",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -3096,19 +3918,34 @@
     {
       "symbol": "NAUKRI",
       "reasons": [
-        "stale_data"
+        "below_50dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "NAVA",
       "reasons": [
-        "stale_data"
+        "low_turnover",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "NAVINFLUOR",
       "reasons": [
-        "stale_data"
+        "low_volume",
+        "no_setup:pullbacks_disabled",
+        "stretched_from_20dma",
+        "resistance_too_close"
       ]
     },
     {
@@ -3141,7 +3978,13 @@
     {
       "symbol": "NESTLEIND",
       "reasons": [
-        "stale_data"
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -3158,7 +4001,11 @@
     {
       "symbol": "NEULANDLAB",
       "reasons": [
-        "stale_data"
+        "low_volume",
+        "below_50dma",
+        "50dma_not_rising",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -3195,8 +4042,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -3273,13 +4119,20 @@
     {
       "symbol": "NUVAMA",
       "reasons": [
-        "stale_data"
+        "below_50dma",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "NUVOCO",
       "reasons": [
-        "stale_data"
+        "low_turnover",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "breakout_weak_close",
+        "resistance_too_close"
       ]
     },
     {
@@ -3292,7 +4145,11 @@
     {
       "symbol": "OBEROIRLTY",
       "reasons": [
-        "stale_data"
+        "50dma_not_rising",
+        "weak_rs_rank",
+        "breakout_low_volume",
+        "stretched_from_20dma",
+        "resistance_too_close"
       ]
     },
     {
@@ -3349,7 +4206,11 @@
     {
       "symbol": "ONESOURCE",
       "reasons": [
-        "stale_data"
+        "50dma_below_200dma",
+        "200dma_not_rising",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -3383,13 +4244,25 @@
     {
       "symbol": "PARADEEP",
       "reasons": [
-        "stale_data"
+        "low_turnover",
+        "below_50dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "PATANJALI",
       "reasons": [
-        "stale_data"
+        "50dma_below_200dma",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -3397,14 +4270,20 @@
       "reasons": [
         "below_50dma",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "PCBL",
       "reasons": [
-        "stale_data"
+        "low_turnover",
+        "below_50dma",
+        "50dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -3434,8 +4313,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -3463,7 +4341,7 @@
     {
       "symbol": "PHOENIXLTD",
       "reasons": [
-        "stale_data"
+        "no_setup:pullbacks_disabled"
       ]
     },
     {
@@ -3500,8 +4378,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -3511,8 +4388,7 @@
         "50dma_not_rising",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -3520,14 +4396,15 @@
       "reasons": [
         "no_setup:pullbacks_disabled",
         "stretched_from_20dma",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "PNBHOUSING",
       "reasons": [
-        "stale_data"
+        "50dma_not_rising",
+        "breakout_low_volume",
+        "resistance_too_close"
       ]
     },
     {
@@ -3541,27 +4418,38 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "POLYCAB",
       "reasons": [
-        "stale_data"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "POLYMED",
       "reasons": [
-        "stale_data"
+        "low_turnover",
+        "low_volume",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "POONAWALLA",
       "reasons": [
-        "no_setup:pullbacks_disabled",
-        "global_sector_headwind"
+        "no_setup:pullbacks_disabled"
       ]
     },
     {
@@ -3607,7 +4495,8 @@
     {
       "symbol": "PRESTIGE",
       "reasons": [
-        "stale_data"
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -3621,7 +4510,9 @@
     {
       "symbol": "PTCIL",
       "reasons": [
-        "stale_data"
+        "low_volume",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -3678,7 +4569,17 @@
     {
       "symbol": "RAMCOCEM",
       "reasons": [
-        "stale_data"
+        "low_turnover",
+        "low_volume",
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -3686,8 +4587,7 @@
       "reasons": [
         "50dma_not_rising",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -3700,14 +4600,16 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "REDINGTON",
       "reasons": [
-        "stale_data"
+        "below_50dma",
+        "50dma_not_rising",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -3725,7 +4627,16 @@
     {
       "symbol": "RHIM",
       "reasons": [
-        "stale_data"
+        "low_turnover",
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -3746,7 +4657,8 @@
     {
       "symbol": "RKFORGE",
       "reasons": [
-        "stale_data"
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -3778,7 +4690,10 @@
     {
       "symbol": "RUBICON",
       "reasons": [
-        "stale_data"
+        "low_volume",
+        "50dma_not_rising",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -3820,7 +4735,8 @@
     {
       "symbol": "SAILIFE",
       "reasons": [
-        "stale_data"
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -3834,8 +4750,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -3848,7 +4763,17 @@
     {
       "symbol": "SARDAEN",
       "reasons": [
-        "stale_data"
+        "low_turnover",
+        "low_volume",
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -3862,14 +4787,18 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "SBILIFE",
       "reasons": [
-        "stale_data"
+        "50dma_below_200dma",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -3880,8 +4809,7 @@
         "no_setup:pullbacks_disabled",
         "stretched_from_20dma",
         "stop_too_wide",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -3926,13 +4854,24 @@
     {
       "symbol": "SHREECEM",
       "reasons": [
-        "stale_data"
+        "low_volume",
+        "50dma_below_200dma",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "SHRIPISTON",
       "reasons": [
-        "stale_data"
+        "low_turnover",
+        "low_volume",
+        "below_50dma",
+        "50dma_not_rising",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -3944,8 +4883,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -3969,7 +4907,16 @@
     {
       "symbol": "SIGNATURE",
       "reasons": [
-        "stale_data"
+        "50dma_below_200dma",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "overbought_rsi",
+        "stretched_from_20dma",
+        "stop_too_wide",
+        "resistance_too_close"
       ]
     },
     {
@@ -3990,7 +4937,14 @@
     {
       "symbol": "SOBHA",
       "reasons": [
-        "stale_data"
+        "low_turnover",
+        "low_volume",
+        "50dma_below_200dma",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -4012,13 +4966,23 @@
     {
       "symbol": "SRF",
       "reasons": [
-        "stale_data"
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "STARHEALTH",
       "reasons": [
-        "stale_data"
+        "low_turnover",
+        "50dma_not_rising",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -4039,19 +5003,33 @@
     {
       "symbol": "SUNDARMFIN",
       "reasons": [
-        "stale_data"
+        "low_volume",
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "SUNPHARMA",
       "reasons": [
-        "stale_data"
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "SUNTV",
       "reasons": [
-        "stale_data"
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -4085,7 +5063,16 @@
     {
       "symbol": "SWANCORP",
       "reasons": [
-        "stale_data"
+        "low_turnover",
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -4137,7 +5124,13 @@
     {
       "symbol": "TATACAP",
       "reasons": [
-        "stale_data"
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -4155,7 +5148,9 @@
     {
       "symbol": "TATACOMM",
       "reasons": [
-        "stale_data"
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -4193,8 +5188,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -4238,7 +5232,13 @@
     {
       "symbol": "TBOTEK",
       "reasons": [
-        "stale_data"
+        "low_turnover",
+        "low_volume",
+        "below_50dma",
+        "50dma_not_rising",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -4272,13 +5272,29 @@
     {
       "symbol": "TECHNOE",
       "reasons": [
-        "stale_data"
+        "low_turnover",
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "TEGA",
       "reasons": [
-        "stale_data"
+        "low_volume",
+        "below_50dma",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -4322,19 +5338,42 @@
     {
       "symbol": "THERMAX",
       "reasons": [
-        "stale_data"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "TIINDIA",
       "reasons": [
-        "stale_data"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "TIMKEN",
       "reasons": [
-        "stale_data"
+        "low_turnover",
+        "low_volume",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -4433,7 +5472,16 @@
     {
       "symbol": "TRITURBINE",
       "reasons": [
-        "stale_data"
+        "low_turnover",
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -4482,39 +5530,53 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "ULTRACEMCO",
       "reasons": [
-        "stale_data"
+        "50dma_below_200dma",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "no_setup:pullbacks_disabled"
       ]
     },
     {
       "symbol": "UNIONBANK",
       "reasons": [
-        "no_setup:pullbacks_disabled",
-        "global_sector_headwind"
+        "no_setup:pullbacks_disabled"
       ]
     },
     {
       "symbol": "UNITDSPR",
       "reasons": [
-        "stale_data"
+        "50dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "stop_too_wide",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "UNOMINDA",
       "reasons": [
-        "stale_data"
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "UPL",
       "reasons": [
-        "stale_data"
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -4528,13 +5590,29 @@
     {
       "symbol": "USHAMART",
       "reasons": [
-        "stale_data"
+        "low_turnover",
+        "below_50dma",
+        "50dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
       "symbol": "UTIAMC",
       "reasons": [
-        "stale_data"
+        "low_turnover",
+        "low_volume",
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -4546,7 +5624,12 @@
     {
       "symbol": "VBL",
       "reasons": [
-        "stale_data"
+        "50dma_below_200dma",
+        "200dma_not_rising",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -4572,7 +5655,9 @@
     {
       "symbol": "VIJAYA",
       "reasons": [
-        "stale_data"
+        "low_turnover",
+        "low_volume",
+        "50dma_not_rising"
       ]
     },
     {
@@ -4617,7 +5702,13 @@
     {
       "symbol": "VTL",
       "reasons": [
-        "stale_data"
+        "low_turnover",
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -4653,7 +5744,14 @@
     {
       "symbol": "WHIRLPOOL",
       "reasons": [
-        "stale_data"
+        "low_turnover",
+        "below_50dma",
+        "50dma_below_200dma",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -4686,8 +5784,7 @@
         "far_from_52w_high",
         "too_close_to_52w_low",
         "weak_rs_rank",
-        "no_setup:pullbacks_disabled",
-        "global_sector_headwind"
+        "no_setup:pullbacks_disabled"
       ]
     },
     {
@@ -4707,7 +5804,13 @@
     {
       "symbol": "ZENSARTECH",
       "reasons": [
-        "stale_data"
+        "50dma_below_200dma",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -4757,47 +5860,45 @@
     }
   ],
   "universe_size": 496,
-  "evaluated": 306,
-  "passed_gates": 0,
+  "evaluated": 487,
+  "passed_gates": 1,
   "min_score": 40,
-  "duplicate": false,
-  "note": "No new longs today (global risk high: War broke out in Iran, a major geopolitical shock, despite US/Asian market rallies and falling crude prices.). Setups shown as a watchlist only.",
+  "duplicate": true,
+  "note": "Same session as the previous run; picks were not added to the journal again.",
   "macro": {
-    "risk": "high",
-    "summary": "War broke out in Iran, a major geopolitical shock, despite US/Asian market rallies and falling crude prices.",
+    "risk": "low",
+    "summary": "Global equities rebounded strongly, and crude oil prices hit three-month lows due to supply surplus, a significant positive for India.",
     "sector_impacts": [
       {
         "sector": "Oil Gas & Consumable Fuels",
         "direction": "negative",
-        "reason": "Global supply glut fears are driving oil prices to 3-month lows."
+        "reason": "Falling crude oil prices directly reduce profitability for upstream oil companies."
       },
       {
         "sector": "Automobile and Auto Components",
         "direction": "positive",
-        "reason": "Falling crude prices reduce input costs and fuel expenses for consumers."
+        "reason": "Lower crude oil prices reduce fuel costs for consumers and input costs for manufacturers."
       },
       {
-        "sector": "Consumer Durables",
+        "sector": "Fast Moving Consumer Goods",
         "direction": "positive",
-        "reason": "Lower crude prices can lead to reduced manufacturing costs."
+        "reason": "Reduced crude oil prices lower packaging, logistics, and raw material costs, boosting margins."
+      },
+      {
+        "sector": "Chemicals",
+        "direction": "positive",
+        "reason": "Crude oil is a key feedstock for many chemical products; lower prices reduce input costs."
       },
       {
         "sector": "Information Technology",
         "direction": "positive",
-        "reason": "Strong US tech market rebound and Nvidia rally boost sentiment."
-      },
-      {
-        "sector": "Financial Services",
-        "direction": "negative",
-        "reason": "Geopolitical instability from Iran war could lead to FII outflows."
+        "reason": "Strong rebound in US tech stocks and global risk appetite is positive for Indian IT."
       }
     ],
     "method": "gemini",
-    "llm_risk": "high",
-    "rule_risk": "elevated",
-    "rule_reasons": [
-      "4 shock headlines"
-    ],
+    "llm_risk": "low",
+    "rule_risk": "low",
+    "rule_reasons": [],
     "moves": {
       "sp500": {
         "close": 7237.17,
@@ -4814,10 +5915,10 @@
         "date": "2026-11-23"
       },
       "brent": {
-        "close": 85.96,
-        "chg1_pct": -3.82,
-        "chg5_pct": -7.71,
-        "chg1_abs": -3.41,
+        "close": 86.72,
+        "chg1_pct": -2.97,
+        "chg5_pct": -6.89,
+        "chg1_abs": -2.65,
         "date": "2026-11-24"
       },
       "usdinr": {
@@ -4835,24 +5936,24 @@
         "date": "2026-11-23"
       },
       "dxy": {
-        "close": 104.305,
-        "chg1_pct": -0.01,
-        "chg5_pct": 0.79,
-        "chg1_abs": -0.015,
+        "close": 104.19,
+        "chg1_pct": -0.12,
+        "chg5_pct": 0.68,
+        "chg1_abs": -0.13,
         "date": "2026-11-24"
       },
       "nikkei": {
-        "close": 58648.781,
-        "chg1_pct": 3.92,
-        "chg5_pct": -1.7,
-        "chg1_abs": 2212.133,
+        "close": 58644.629,
+        "chg1_pct": 3.91,
+        "chg5_pct": -1.71,
+        "chg1_abs": 2207.98,
         "date": "2026-11-24"
       },
       "hangseng": {
-        "close": 22298.789,
-        "chg1_pct": -0.38,
-        "chg5_pct": -5.14,
-        "chg1_abs": -84.951,
+        "close": 22219.65,
+        "chg1_pct": -0.73,
+        "chg5_pct": -5.48,
+        "chg1_abs": -164.09,
         "date": "2026-11-24"
       }
     },
@@ -4861,19 +5962,19 @@
       "Federal Reserve interest rates": 78,
       "Wall Street stocks": 100,
       "crude oil prices": 100,
-      "US tariffs India": 55,
-      "war geopolitical tensions": 22,
-      "FII outflows India": 5,
-      "rupee dollar": 60,
-      "China economy": 31,
-      "global recession": 23
+      "US tariffs India": 23,
+      "war geopolitical tensions": 25,
+      "FII outflows India": 9,
+      "rupee dollar": 57,
+      "China economy": 51,
+      "global recession": 57
     },
     "top_headlines": [
-      "2 years ago, Saudi Arabia quietly canceled the \u2018petrodollar\u2019 deal with America that wired the world economy for 50 years. Then war broke out in Iran - Fortune",
-      "Oil extends falls amid growing supply; US crude at below $80/barrel - ICIS",
-      "Oil prices near three-month lows as rising supply offsets Hormuz threat - Yahoo Finance",
-      "Australia\u2019s economy may already be in recession - MacroBusiness",
-      "Oil prices hover near 3-month low on global supply glut fears - Mettis Global"
+      "Diamonds Vs Gold: Why One Holds Value While The Other Loses It - https://ascendants.in/",
+      "World stocks are mixed after Wall Street's rebound as Jensen Huang returns as Nvidia\u2019s CEO - The Bakersfield Californian",
+      "Oil touches three-month lows as rising supply offsets Hormuz threat By Reuters - Investing.com",
+      "Why Saturn Oil & Gas Inc. (TSX:SOIL) eased on the TSX as crude oil moved lower and energy was the only sector to decline - kalkine.ca",
+      "Why Strathcona Resources Ltd. (TSX:SCR) eased on the S&P/TSX Composite as oil prices moved lower and energy lagged a broad rally - kalkine.ca"
     ]
   },
   "stale": null,
