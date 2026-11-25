@@ -2,7 +2,7 @@
   "session": "2026-11-23",
   "regime": {
     "regime": "neutral",
-    "breadth_pct": 56.6,
+    "breadth_pct": 56.5,
     "vix": 17.700000762939453,
     "benchmarks": {
       "nifty50": {
@@ -20,18 +20,18 @@
         "above_50": true
       }
     },
-    "size_mult": 0.5,
+    "size_mult": 0.25,
     "allow_new_longs": true,
     "block_reason": "",
-    "macro_risk": "low",
+    "macro_risk": "elevated",
     "sectors": {
       "Automobile and Auto Components": {
         "breadth_pct": 67.5,
         "count": 40
       },
       "Capital Goods": {
-        "breadth_pct": 26.47058823529412,
-        "count": 68
+        "breadth_pct": 26.08695652173913,
+        "count": 69
       },
       "Chemicals": {
         "breadth_pct": 46.15384615384615,
@@ -164,7 +164,7 @@
       "ret63": 0.11939816026381878,
       "bench_ret21": 0.09455879093685149,
       "bench_ret63": 0.010003048519640512,
-      "rs_rank": 83.991683991684,
+      "rs_rank": 84.02489626556017,
       "mom_rank": 70.0,
       "macd_bull": true,
       "supertrend_up": true,
@@ -174,7 +174,7 @@
       "reject_reasons": [],
       "flags": [
         "blue_sky",
-        "news_keyword_alert",
+        "global_sector_tailwind",
         "positive_news"
       ],
       "score": 63.4,
@@ -192,76 +192,76 @@
       "events": [],
       "news": {
         "verdict": "positive",
-        "reason": "CUB is on a 52-week high streak, indicating strong individual stock performance despite broader market weakness.",
-        "key_headline": "City Union Bank Ltd. 52 Week High Streak: CUB Near Peak - Univest",
-        "method": "gemini",
+        "reason": "Bullish momentum and near 52\u2011week high suggest upside",
+        "key_headline": "City Union Bank Ltd. 52 Week High Streak: CUB Near Peak",
+        "method": "groq",
         "items": [
           {
-            "title": "Only Sellers BSE: Check Out the Lower Circuit Stocks in BSE Today - Livemint",
-            "source": "Livemint",
-            "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9VNW5rZDRqSUxPYmVlbDRnVi1BTFA3WUlaaGZMTFFHLUl5Z2lORE92U21razNoa2c0dGZDc1J1QS1CVzhJWlVyRDFiTDE3NENfUzAtaHlfdTdvTmx5?oc=5",
-            "published": "2026-11-24T10:18:10+00:00",
-            "age_hours": 1.4
+            "title": "City Union Bank Stock: Trading, Earnings and Momentum - Kalkine India",
+            "source": "Kalkine India",
+            "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxOZnFmV2tWZ0VuRkJSWGhKTXdHT3Y3aUtDbkpydVE2NGh1U1lpNFRoSlZ2cGdKQnlxMks3LXI1X0dmb3JNNC1YNUIzdFBsUFoyWUtfQjl2b0c4X1hBMDJuamZRWnJXVHhGNXg2SkZCY0J4ZloyT1Z5TWFFbzVMRzdYZGk1Q3BiLVBseVNXMjUzcko4UVBMVEtNOHhNWXlHMWo3emlEYUhVd1ZLUmxOV3d3ekpBeVd2VXo1T2pDYlQ1TmVCNVpQWjN4SFpQSkdWdklsLUFQOFQxNjVHdUhiMWRZ?oc=5",
+            "published": "2026-11-24T12:45:00+00:00",
+            "age_hours": 15.8
+          },
+          {
+            "title": "City Union Bank Ltd. Technical Momentum Shifts to Bullish Amid Strong Price Gains - MarketsMojo",
+            "source": "MarketsMojo",
+            "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPNFV4eHlxeEdkRWdvV2pqaTBDSGN1ZUh4QVRPMmZNU0NGZC1iVW4tS1lVa2lvWEtoMnk0UGFBYXc1Y2Y0eGExZGNNdHM2NWZlOUIwbFZ6NkVXM0RJSUh5NE9XVkR2ZjRjNG5NcllqVnlLTC1SV1dzdkJOSnNFQWVSdFNZZXdNX0NpVW1NaHpGZnFpWExPOWQ2bXd5N1hwTVY0aktsbTB1LUd4dks0ZmExX050VEpHRmdpV3hWN3otV2paQzhpblRoaFlKUmJaOFo0QlZXRw?oc=5",
+            "published": "2026-11-24T11:47:27+00:00",
+            "age_hours": 16.7
           },
           {
             "title": "Markets snap winning streak, Sensex loses over 1400 pts - The Statesman",
             "source": "The Statesman",
             "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOVmo0elhGNU1QUDAzcWVzSUhqbW5RMWdHYlgtcFNRcHRtUFZjSzl4aXhIU3YyTnFtbG4xdkg0b0FZbGtVM1RRY3FaUXRWVmVoRS1qMXFEMm01Qkw5ZmhtV1B6azJyWFFJNDFKaHFubVlmbC14ZkFsdHIyeVRoMTF6YzBvc1A2ZnNHMndzOFl4NHNPVTFTSl8yUkRnMElPSEh0REtkX1UxSVloZ09I0gGyAUFVX3lxTE5vQzJoY3ZJUGlJUjZpR011eHpNWll1SXhoUUJVazExQ2J2Z25LM0Y0cDNmT2s0SHlvdW1XYlZUV0VPTmhwNUdBUjJ5eGdHX2J4Y3BWei1sYVFRd1RMQzhXUktsOTNQMVROR001ZFVmVURDdVVTUFdpdnoySlJXdnF1VlE0SmdKbVBhdVpzNVEzNnJ2Rkh4MnJWRHM2d0JJNWdwb2VnajAwMl9IMkZUcE5OSHc?oc=5",
             "published": "2026-11-23T15:13:00+00:00",
-            "age_hours": 20.5
+            "age_hours": 37.3
           },
           {
             "title": "Taking Stock: Markets snap 2-day gains; Sensex sheds 1,484 pts, Nifty below 25,350 - Moneycontrol.com",
             "source": "Moneycontrol.com",
             "link": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxNcUFkdlJZZGNhSVRsZHNwZm1GQnhJUkMxZWl5S09VSUtLVGNzVU9rVUtaT0FzVDhWZGJJYTJ1MGZ2bXNoM2NnZGpVSGtwU04yRzhWR1ppMjViYVEwSjlTaDd1b0d5cVk1LXNBdXBsNWplX1MtX0d6REpDR3kxS2l6dHFTTm9YVWFlOHZhaTU2THZJZjJkSHpfS3ROX3I0bzFlQWNYdjhRS0RIM1J0dWNOZUUwb3pOSWx3ejBOWUxvVXB6VmI5QmRveWU4MUlRQTg5VnR6UXV2SjJodXPSAeABQVVfeXFMUGdZMW5XTlh2ZmRmQW1CZXRRSjlQd25oS1pLeEtvNVlHbWw1eldiNkMzLTJPdy1qYkg3MjIxeGNMc1dyWi1QUkJVRkVXUmlDWVkxUldRZGx0LWtURC1Vc2E0Q1p3SFJjZ0hGbmZoSTVUb0xxR25HeWxrVnlWZDE3ZW15SjlZUThTa2M1eF92b25lMUxQOWlDTkNyVjFqU3p3SXNiRnZLcmJNaXNUSVhHS3lENDNLM2FWcjZuY3oyNWx6MlFMTzVwOXdGeTh2TERMMzAtVlNINkk2OUhXWGJUdTg?oc=5",
             "published": "2026-11-23T10:43:22+00:00",
-            "age_hours": 25.0
+            "age_hours": 41.8
           },
           {
             "title": "\u20b910 Lakh Invested 10 Years Ago Grows to \u20b963.48 Lakh: Quant vs SBI Small Cap Fund - Which Performed Better? - Trade Brains",
             "source": "Trade Brains",
             "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPNkNGd21TaE11cUZCS0stN3paY1V0TnFsU252TjZyNFpOT3dyT3FzZ2F6VFhJeW9MXzVibC1JR2lXT3dpOWVZN3I3bzhMNkFkbGJVdDFMeGdZMVRJU2lnbV9JdTN1d3oxZXZJNHA5bXE5YWNpeEFtZmdRZGtGclJTeDVpWWZHaUZTUHVnc0JVTVZiZjRYTFlWZG05QXVuT2ZUYkRsOGpZdndyMXd2T2RBT2tZMGczVjhWa0tLazNBOXlVeE51bHYyNTVkb0lSVGNrakVJ?oc=5",
             "published": "2026-11-23T09:43:57+00:00",
-            "age_hours": 26.0
-          },
-          {
-            "title": "Rs 56,87,09,59,00,000 Wiped Out: Sensex Sheds Over 1,200 Points, Nifty Falls Near 25,400 - NDTV Profit",
-            "source": "NDTV Profit",
-            "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPOHpZNmw3Mzd6R2liWDJhb05iWDBZTXRWd0k1QkpyRkRKTWZoVVZvSU5teXI0VzJzZVBXZXJORWVQQ1g5ejFOcV9CVXZ6VUYzYmc5OXIyMWdUU244MGJ0dzJfeXEzVk42R0dNOG5vOVg5T0Q3ZzhPR25KRHREbEViaWZxczlMcEZwTUg1cWREWVU1Z1hSd2RTOU9UbXJhTUY5OWtDMFJzdi1nRFAwTU9XX1ZramF1U3FHODQ2M0pIXzZQYlFjMGFkYXdR0gHSAUFVX3lxTE12WFJVQi02RUh0MUU1bkUzRVd0M1ZlY2JicU5FMHFDS1RYN1FoaURzVGRBMFF6Q0lROHdxT2dRZk5rUVRnTGZYODZXUlpZeUtMRS10Q3JFZjc5UTJsWnZrUTBCWXRXbTBxOGJ2YjQtWmZZT3lXOGdSZkFTclRCRTRQSlZTWjhNV0hCMzlDUk1OS2VHRDVtQmUtQ2JxZzAxM3RMcG9yako5SjR0ZE1pdFNpMXpjdUJ6VXZabVlQOXRYaTVlYjZPd29tNXk5dUM1UERtUQ?oc=5",
-            "published": "2026-11-23T09:04:14+00:00",
-            "age_hours": 26.6
-          },
-          {
-            "title": "Why Stock Market Is Falling Today? Sensex Crashes 1,600 Points From Day's High, Nifty 50 Slips Below 25,600. Key Reasons Explained - NDTV Profit",
-            "source": "NDTV Profit",
-            "link": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxPZHZwYVd1UktqWGdHa09yMDJWSGU3VGhkZmNNdUwyeHUtYWhZMnhISndNM042N0h5N3VYcDRsc3ViT1N1amlnOVlUbjFhTU9YQ1R4YVZXRXd2UDNzOGdJVWR0emdYenRTc09Ka2hKTVNpSDUwUVdBWlV3RGU1NFkzMjl5T2FncFNtY0x2UmZsS2UtWUY2U1RITEI5dDFHY3Z0SkNkSm9WMEJwMXdURjlmTzlSZTlLbHhWenVIOTRXbXRZU054TndTNERZYjY1RDA0NVdPdHYtQmNIdUFiUjRrcGxPelVrVTB5VFlzNDFON2lTSmp3dERBMWJuN3pTS2fSAYcCQVVfeXFMT3FWNXhqR05kV2IxNlJHY0RTZVhpOVdxaTVENTdxY2gzdy1HejVzZnBfSzNhRFdxZUdGV2dVNDdYYXltRWhoU0JrVVNUd1BMUW9XbFRhN0RyLVhzVDV0NVl0QW1EdDF3bVpMaDM2b3Z5U0o4aGtwV0E2cTlEX2t1cEJSYlRFajlRdW5uXzlVbHJUTEZJWGxtVG56S0pmemFBRHhqSVBPVEhITUVKUC1sb2M1c3h6TFpTY19yZlpodDJmdlhTZ1ZsdUhFNjJDM0dXWUU0Q1JFcS13OGRuNWkzSzA1cTFYUVJaeTlneG1yV2RhbnRGLVpLWFFCaHQwNHJ3d3JzbVgxV0k?oc=5",
-            "published": "2026-11-23T05:43:21+00:00",
-            "age_hours": 30.0
+            "age_hours": 42.8
           },
           {
             "title": "City Union Bank Ltd. 52 Week High Streak: CUB Near Peak - Univest",
             "source": "Univest",
             "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOR0xmQmJzZUdtMTZiZTZpakM1LUROQzBGMXlmMXhuTHEwVkxFWlhkVGhfd0lSemY5MWxmMDdqby1IcDJmdjJqMHQzOVppV0NLLVBxRmJudDJBQjBCNGxWU2RhRUUwWURXQjJSdnY1UnlCX1lwekhpS1VnWEcybnkwbmZia3ZiZVR2bHVaVHU5MlZhV2M?oc=5",
             "published": "2026-11-23T05:27:00+00:00",
-            "age_hours": 30.3
+            "age_hours": 47.1
           },
           {
             "title": "Momentum Stocks: Tata Steel, Inspire Films, Blue Coast under pressure, down 3-5% - Moneycontrol.com",
             "source": "Moneycontrol.com",
             "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNX1VSR3R1bVN0ZUZkZlUtTTBrMEFTeGQtLXBsbWw4Ql96RXFJaTJlTzJwNXBVSTh2Zk9HbU9xZDgwY01zbkQ5VGQxWnpnOE91UEttWkVCWk8xSTJFX2FRVmt6Q1dzMDBRV3lkWUxINzRycVdwZHpGNENIOTRRT0xVdmlJNXRDSzdpWnFBNXdoZ2pNS2ItaFNZc21qZERTTVVZUTJzWEx1ak0wRndJZk1udGZ6b01hU3hGMmpyUGFxTktoTE5lenExTnA0OER5aVJXbTRGbHpn0gHbAUFVX3lxTE50RkQ2aWFoN2R4SGZrVVJSNVozck1jMGh1bXVFX0JVZENwSE10a09rMUhpTU1UVXNVelplQjJjX3pCaGVGMlJrS05xV0lDQ1VCaWlOQU54Y3dlVXo2bG5HamVfVTItd3VjNU5pUzZFYlAzcDM3MWthNkZaZjdWNzlnTVNwdW52XzhNemFsT2Z0OE5YeUhVNE12NXpoUGM3S0FUbW1mZV9mNGMtblVJUGRzTUJHZERaNTMzUkhRMEpuYWRoQUxTLXJpLXdZdUR1MXc5b1hpanpEejR5OA?oc=5",
             "published": "2026-11-23T04:39:43+00:00",
-            "age_hours": 31.1
+            "age_hours": 47.9
+          },
+          {
+            "title": "Mitessh Thakkar\u2019s stock picks: BPCL, City Union Bank, Ambuja Cements and Crompton Greaves Consumer - CNBC TV18",
+            "source": "CNBC TV18",
+            "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPMzNGN0I0blVIaTE2S1lWNDVYejZfZ2N3dzRZN0JnS1k0d0JBaGFHRE9CMlN6ejhuOUFPY0dUaGYxR2dlcXd4SmkxenJoSUtWNG8tWk84bkVVM2tObmliMUg0bVFGeG1JeHZ5cUdELUdfV2c2MVZ5QUZfaEtWOGlManoyeVR4amRaaS1lOFowLXRTcW80UWhLZVVCbk5XZWstWV9BRmU0NXhQVlRFdmFSampGWkt1QVQxY093YTZsX3h2ejM4VFpJdmxFd29WNF9ETENzY1R30gHbAUFVX3lxTFAweWt3RlZudmVSNlJWbVI5c25yaUpGT3RsU1FwVjhKM2FMdlBRcWwwUW82ZHJsaGVxYl9sbFk0UVFXc2RQWEQ3UXRfSmY0Q1VORTdEVFBGdVN6WmpicVBVN2N5a3pKVTI2N1U4MTZQbEFNc2Y3R2RsRktrVll0T2JvWTZzS2RwZ25WWlhrTkVlMDR6TFhxZUJkNFJHTzdaUVFfcnhmNjlkaU5QS3A3OTRYN3VkcHNlaWNMcWEyeFgzRG81eVJQQngxUm13NHN1bEJvT0N2WFo3dTN5TQ?oc=5",
+            "published": "2026-11-23T03:40:29+00:00",
+            "age_hours": 48.9
           }
         ],
         "sources": {
           "google": "ok (8)"
         },
-        "keyword_alert": true
+        "keyword_alert": false
       },
-      "qty": 199,
-      "position_value": 50594.56,
-      "risk_amount": 4981.13,
-      "size_mult": 0.5,
+      "qty": 99,
+      "position_value": 25170.16,
+      "risk_amount": 2478.05,
+      "size_mult": 0.25,
       "capped": false,
       "exit_plan": "Buy-stop 254.24 (skip if it opens above 258.06). Stop 229.21. Book 50% at 304.31 (2R), move stop to entry, trail the rest on a close below EMA20. Exit if not +1R after 7 sessions.",
       "results": {
@@ -508,8 +508,7 @@
         "below_50dma",
         "50dma_not_rising",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -518,8 +517,7 @@
         "low_turnover",
         "50dma_not_rising",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -555,7 +553,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -796,7 +795,15 @@
     {
       "symbol": "ASTRAL",
       "reasons": [
-        "no_data_or_short_history"
+        "below_50dma",
+        "50dma_below_200dma",
+        "50dma_not_rising",
+        "200dma_not_rising",
+        "far_from_52w_high",
+        "too_close_to_52w_low",
+        "weak_rs_rank",
+        "no_setup:pullbacks_disabled",
+        "resistance_too_close"
       ]
     },
     {
@@ -809,8 +816,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -1029,7 +1035,8 @@
       "symbol": "BBOX",
       "reasons": [
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -1187,8 +1194,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -1231,7 +1237,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -1329,8 +1336,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -1445,8 +1451,7 @@
       "reasons": [
         "below_50dma",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -1547,8 +1552,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -1569,7 +1573,8 @@
       "symbol": "COFORGE",
       "reasons": [
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -1711,7 +1716,8 @@
       "reasons": [
         "200dma_not_rising",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -2140,8 +2146,7 @@
       "symbol": "GAIL",
       "reasons": [
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -2417,7 +2422,8 @@
         "200dma_not_rising",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -2499,7 +2505,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -2536,8 +2543,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -2762,8 +2768,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -2785,7 +2790,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -2874,7 +2880,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -2910,7 +2917,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -2934,8 +2942,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -3426,7 +3433,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -3583,14 +3591,16 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
       "symbol": "LTTS",
       "reasons": [
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -3753,8 +3763,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -3804,7 +3813,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -3826,8 +3836,7 @@
       "reasons": [
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -3987,7 +3996,8 @@
         "far_from_52w_high",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -4151,7 +4161,8 @@
         "50dma_not_rising",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -4163,8 +4174,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -4214,8 +4224,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -4283,15 +4292,15 @@
       "reasons": [
         "200dma_not_rising",
         "breakout_weak_close",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
       "symbol": "PETRONET",
       "reasons": [
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -4612,8 +4621,7 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close",
-        "global_sector_headwind"
+        "resistance_too_close"
       ]
     },
     {
@@ -4711,7 +4719,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -5166,7 +5175,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -5218,7 +5228,8 @@
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
         "stop_too_wide",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -5241,7 +5252,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -5258,7 +5270,8 @@
       "symbol": "TECHM",
       "reasons": [
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -5755,7 +5768,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -5802,7 +5816,8 @@
         "too_close_to_52w_low",
         "weak_rs_rank",
         "no_setup:pullbacks_disabled",
-        "resistance_too_close"
+        "resistance_too_close",
+        "global_sector_headwind"
       ]
     },
     {
@@ -5852,121 +5867,124 @@
     }
   ],
   "universe_size": 496,
-  "evaluated": 486,
+  "evaluated": 487,
   "passed_gates": 1,
   "min_score": 40,
   "duplicate": true,
   "note": "Same session as the previous run; picks were not added to the journal again.",
   "macro": {
-    "risk": "low",
-    "summary": "Global oil prices are significantly down, easing inflation concerns and strengthening INR. US equities rebounded strongly. These factors create a favorable environment.",
+    "risk": "elevated",
+    "summary": "Markets modestly down, oil prices falling and rupee strengthening; no major shocks, conditions favorable for new longs.",
     "sector_impacts": [
       {
         "sector": "Oil Gas & Consumable Fuels",
+        "direction": "positive",
+        "reason": "Crude price decline improves margins"
+      },
+      {
+        "sector": "Financial Services",
+        "direction": "positive",
+        "reason": "Lower yields support loan growth"
+      },
+      {
+        "sector": "Consumer Durables",
+        "direction": "positive",
+        "reason": "Reduced input costs boost demand"
+      },
+      {
+        "sector": "Information Technology",
         "direction": "negative",
-        "reason": "Falling crude oil prices directly reduce revenue and profitability for upstream companies."
-      },
-      {
-        "sector": "Automobile and Auto Components",
-        "direction": "positive",
-        "reason": "Lower fuel costs for consumers may boost demand; reduced input costs for manufacturers."
-      },
-      {
-        "sector": "Chemicals",
-        "direction": "positive",
-        "reason": "Many chemical feedstocks are crude oil derivatives, leading to lower raw material costs."
+        "reason": "AI selloff pressures tech valuations"
       },
       {
         "sector": "Fast Moving Consumer Goods",
         "direction": "positive",
-        "reason": "Reduced logistics and packaging costs; potentially boosting consumer disposable income."
-      },
-      {
-        "sector": "Power",
-        "direction": "positive",
-        "reason": "Lower fuel costs for some generation; overall energy cost reduction benefits sector."
+        "reason": "Lower inflation supports consumer spending"
       }
     ],
-    "method": "gemini",
+    "method": "groq",
     "llm_risk": "low",
-    "rule_risk": "low",
-    "rule_reasons": [],
+    "rule_risk": "elevated",
+    "rule_reasons": [
+      "Nikkei -2.6%",
+      "6 shock headlines"
+    ],
     "moves": {
       "sp500": {
-        "close": 7237.17,
-        "chg1_pct": 4.73,
-        "chg5_pct": -2.42,
-        "chg1_abs": 326.78,
-        "date": "2026-11-23"
+        "close": 7201.09,
+        "chg1_pct": -0.5,
+        "chg5_pct": -1.9,
+        "chg1_abs": -36.08,
+        "date": "2026-11-24"
       },
       "nasdaq": {
-        "close": 24089.561,
-        "chg1_pct": 6.51,
-        "chg5_pct": -1.71,
-        "chg1_abs": 1471.83,
-        "date": "2026-11-23"
+        "close": 23733.535,
+        "chg1_pct": -1.48,
+        "chg5_pct": -2.45,
+        "chg1_abs": -356.025,
+        "date": "2026-11-24"
       },
       "brent": {
-        "close": 87.16,
-        "chg1_pct": -2.47,
-        "chg5_pct": -6.42,
-        "chg1_abs": -2.21,
+        "close": 87.56,
+        "chg1_pct": -2.03,
+        "chg5_pct": -5.99,
+        "chg1_abs": -1.81,
         "date": "2026-11-24"
       },
       "usdinr": {
-        "close": 92.9,
-        "chg1_pct": 0.24,
-        "chg5_pct": -1.13,
-        "chg1_abs": 0.227,
-        "date": "2026-11-24"
+        "close": 92.555,
+        "chg1_pct": -0.39,
+        "chg5_pct": -0.98,
+        "chg1_abs": -0.36,
+        "date": "2026-11-25"
       },
       "us10y": {
-        "close": 4.918,
-        "chg1_pct": 0.12,
-        "chg5_pct": -3.96,
-        "chg1_abs": 0.006,
-        "date": "2026-11-23"
+        "close": 4.904,
+        "chg1_pct": -0.28,
+        "chg5_pct": -3.9,
+        "chg1_abs": -0.014,
+        "date": "2026-11-24"
       },
       "dxy": {
-        "close": 104.016,
-        "chg1_pct": -0.29,
-        "chg5_pct": 0.51,
-        "chg1_abs": -0.304,
+        "close": 103.973,
+        "chg1_pct": -0.33,
+        "chg5_pct": 0.47,
+        "chg1_abs": -0.347,
         "date": "2026-11-24"
       },
       "nikkei": {
-        "close": 58644.629,
-        "chg1_pct": 3.91,
-        "chg5_pct": -1.71,
-        "chg1_abs": 2207.98,
-        "date": "2026-11-24"
+        "close": 57134.871,
+        "chg1_pct": -2.57,
+        "chg5_pct": -2.93,
+        "chg1_abs": -1509.758,
+        "date": "2026-11-25"
       },
       "hangseng": {
-        "close": 22219.65,
-        "chg1_pct": -0.73,
-        "chg5_pct": -5.48,
-        "chg1_abs": -164.09,
-        "date": "2026-11-24"
+        "close": 22265.68,
+        "chg1_pct": 0.21,
+        "chg5_pct": -4.42,
+        "chg1_abs": 46.029,
+        "date": "2026-11-25"
       }
     },
     "headline_count": 40,
     "query_status": {
-      "Federal Reserve interest rates": 84,
-      "Wall Street stocks": 100,
+      "Federal Reserve interest rates": 55,
+      "Wall Street stocks": 99,
       "crude oil prices": 100,
-      "US tariffs India": 49,
-      "war geopolitical tensions": 47,
-      "FII outflows India": 9,
-      "rupee dollar": 57,
-      "China economy": 50,
-      "global recession": 23
+      "US tariffs India": "error: HTTPError",
+      "war geopolitical tensions": 54,
+      "FII outflows India": 19,
+      "rupee dollar": 82,
+      "China economy": 38,
+      "global recession": 56
     },
     "top_headlines": [
-      "Oil Prices Drop as Libyan Pipeline Restarts, Easing Middle East Supply Concerns - Pipeline Technology Journal",
-      "3-year PH T-bond rate slides on lower oil prices - Philippine News Agency",
-      "Rupee registers gain against US dollar - Business Recorder",
-      "US Treasury yields hold steady as investors await Fed rate decision, 5-year bond auction and inflation data | Hindustan Times - Hindustan Times",
-      "HKUST Launches China Economic Development Institute With EY Support - Mirage News"
+      "Rupee jumps 23 paise to 92.62 against US dollar in early trade - The New Indian Express",
+      "Treasury Yields Hold Steady as Investors Await Inflation Data - cwibc.co.id",
+      "China stocks fall as Wall Street losses revive trade tension concerns - The Economic Times",
+      "Asian stocks mostly decline as AI shares fall following a retreat on Wall Street - WKMG",
+      "Indian stocks rebound as AI selloff deepens across Asia - PRESS Insider"
     ]
   },
   "stale": null,
