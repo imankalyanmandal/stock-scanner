@@ -1,7 +1,6 @@
 {
  "sent": {
   "ADANIPOWER": [
-   "757315c7f5f70a8c",
    "368470c87bbee51f",
    "ea04ebe327ac3dff",
    "d9fd016161e968f9",
@@ -30,10 +29,10 @@
    "f7aee0d18154f138",
    "c483d27fbe986f1a",
    "bb01c987afe98b19",
+   "70d0b2898c1ae812",
    "f9a8cd225831fe09"
   ],
   "BSE": [
-   "b849730ba3722c89",
    "404ebda41753b9ec",
    "bd1bfaf3672adf01",
    "e5f09a0140351e45",
@@ -62,7 +61,8 @@
    "584c0dd4a6d34e90",
    "34c7e8c2ee780264",
    "f411224bcc452366",
-   "ca6484709c3da545"
+   "ca6484709c3da545",
+   "6e78f37f94c40a1e"
   ],
   "GOKULAGRO": [
    "81a9af77019d7fa0",
@@ -117,7 +117,6 @@
    "8770312515ef427f"
   ],
   "M&M": [
-   "c9fbaa7c405f403b",
    "9559a359e94b0b59",
    "cfd5d22a3ce2be3b",
    "33dd54ea823d686f",
@@ -146,7 +145,8 @@
    "494b1b7cdf56dc2c",
    "0c9c51f002e46f9b",
    "66d44fbd38c060c4",
-   "35a8147fb27bbf9c"
+   "35a8147fb27bbf9c",
+   "337594c55ad29001"
   ],
   "NH": [
    "4cde1ad583795be7",
@@ -170,6 +170,7 @@
    "502c42a0bfd5222c",
    "59bc6f6e47f00e5d",
    "82c59323d1de5053",
+   "10a1645e12b7942e",
    "766b9fb5a33ab9e0"
   ],
   "RADICO": [
@@ -198,7 +199,8 @@
    "0599d28100e1917f",
    "b9d3bc1b7e473f94",
    "ae2eac2ae6bbf5e5",
-   "49a369743ce79a8e"
+   "49a369743ce79a8e",
+   "b4d5df207c135501"
   ],
   "SHRIPISTON": [
    "43bbfed7cddb60da",
@@ -210,7 +212,6 @@
    "dd467165bd921cfe"
   ],
   "TATAPOWER": [
-   "e693f611a23e4cc7",
    "7773ae5f4803670c",
    "26cc4201db7acb5b",
    "d5dad8f48c6fd3af",
@@ -239,7 +240,8 @@
    "273861c4a7ca7e1e",
    "04acf36349685aea",
    "a7b0d35583537871",
-   "508450c1fbba8ef6"
+   "508450c1fbba8ef6",
+   "d064e0f0e32fb2a4"
   ],
   "TI": [
    "24e0e8bf1c25a452",
@@ -284,7 +286,6 @@
    "a968f403f7946b34"
   ],
   "WAAREEENER": [
-   "1173182194c93a17",
    "04b1e44e945c2ba6",
    "4d7cce321eb263c8",
    "110bac9f2ec7a17e",
@@ -313,10 +314,10 @@
    "95c4dea3d0041e7a",
    "39e3f3ec18031bf0",
    "7214dd67d885d480",
-   "11587a761d3c97b3"
+   "11587a761d3c97b3",
+   "db831c7257dd9f62"
   ],
   "JIOPLATFORMS": [
-   "519045d77b4ddfc9",
    "359a06df4363f177",
    "8ae460f638a770b2",
    "d911594489098a46",
@@ -345,10 +346,10 @@
    "61a0faab4daf3c7d",
    "d5d7e67fd623e60e",
    "0aa6b820717cd120",
-   "ec82df2b37264fca"
+   "ec82df2b37264fca",
+   "bd6ba9fe3242f28e"
   ],
   "MAFANG": [
-   "d17c67c59fa1d5dd",
    "bfc88ac0845b84cf",
    "d79fa0fa5c983353",
    "2e1621380da01a40",
@@ -377,10 +378,10 @@
    "fc09788c390c312f",
    "f51eef5689438cf5",
    "7cdb10507cd37393",
-   "5f6d915d83591821"
+   "5f6d915d83591821",
+   "4c0cae91a7eaa679"
   ],
   "MON100": [
-   "7e19d5512c39f2a5",
    "c9d7cae5280f6347",
    "0d6bb8daf66a5863",
    "e454d4db55a11851",
@@ -409,10 +410,10 @@
    "3f2b4b533ccff7eb",
    "267950f705b42b42",
    "b65a788b41dede29",
-   "a2970b599ca7fd71"
+   "a2970b599ca7fd71",
+   "8ef6392dae6df9b7"
   ],
   "SILVERBEES/SILVERIETF": [
-   "0b773ba15a40fa43",
    "dea9df0943ea7e31",
    "9d3a1df571f37578",
    "cf0d7246eb5b5b46",
@@ -441,12 +442,12 @@
    "50ee6a4d4cf7823c",
    "5756e4fc8e980bc4",
    "6f322a1569235c7e",
-   "4eab403fef18b2fd"
+   "4eab403fef18b2fd",
+   "c3cbae624b144535"
   ]
  },
  "seen": {
   "ADANIPOWER": [
-   "adani enterprises to host in-person investor meet on november 25",
    "adani energy solutions secures new power transmission project in bihar",
    "godawari power gets ari dongri tree-felling approval, shares gain 3.28 per cent",
    "brahmaputra infrastructure wins 30-year assam wayside amenities lease, shares gain 2.47 per cent",
@@ -525,11 +526,10 @@
    "why are cyient dlm shares rising over 3% today? the one ems stock jp morgan did not upgrade",
    "why are thomas cook shares falling over 5% today? explained",
    "stocks to watch on friday, november 27: zydus, schaeffler, lg electronics, thomas cook, bse",
-   "adani power stock faces 25-day godda unit overhaul - ad-hoc-news.de"
+   "adani power stock faces 25-day godda unit overhaul - ad-hoc-news.de",
+   "banking sector stocks today, november 27: dhanlaxmi bank gains 4.71%, bank of india jumps 4.31%, idfc first bank up 2.41%"
   ],
   "BSE": [
-   "why is market falling today? sensex crashes 1,900 pts from day’s high, nifty below 25,450. 4 triggers behi",
-   "crystal crop protection ipo allotment: how to check status online on mufg intime india, nse, bse; listing date, time revealed",
    "shriram finance shares rise 4% as nbfc is set to replace trent in sensex from december 21; stock up 21% in november",
    "will bse and nse remain closed on november 24 for guru nanak jayanti?",
    "stock market holiday: are bse, nse closed on november 24 for guru nanak jayanti?",
@@ -607,7 +607,9 @@
    "heg limited lists on bse and nse",
    "nse vs bse vs mcx: which stock should investors bet on? check ratings, targets and growth prospects",
    "heg debuts on bse and nse as it advances ₹650 crore expansion",
-   "heg, formerly known as heg graphite, made a strong debut on dalal street, listing at ₹587 on the nse, a 25.36% premium over its pre-listing price of ₹468.25. th"
+   "heg, formerly known as heg graphite, made a strong debut on dalal street, listing at ₹587 on the nse, a 25.36% premium over its pre-listing price of ₹468.25. th",
+   "sunshine share price today - sunshine pictures limited stock price live nse/bse",
+   "inox india secures bse and nse approval for esop share listing"
   ],
   "GOKULAGRO": [
    "yashhtej industries (india) ltd share price",
@@ -697,7 +699,6 @@
    "ester industries limited (ester.bo) seasonal returns chart - yahoo finance"
   ],
   "M&M": [
-   "stock recommendations for 20 november from marketsmith india",
    "mahindra & mahindra share price - live nse: m&m stock price & chart",
    "tech mahindra share price - live nse: techm stock price & chart",
    "mahindra epc irrigation names amey chitale as reg 30 disclosure officer",
@@ -776,7 +777,8 @@
    "top 5 aditya birla mutual funds that delivered up to 24.18% cagr in 3 years: check returns",
    "stock markets trade marginally higher after us fed rate hike; nse ipo in focus",
    "railway stock jupiter wagons shares fall 7.5% after 29% surge in 2 days post woojin jv: should you buy the multibagger?",
-   "cement price hikes are not sticking everywhere, says kotak, which still names two top picks"
+   "cement price hikes are not sticking everywhere, says kotak, which still names two top picks",
+   "sensex, nifty open with marginal gains amid mixed global cues"
   ],
   "NH": [
    "nh share price today - narayana hrudayalaya on nse/bse",
@@ -840,7 +842,8 @@
    "narayana hrudayalaya nse:nh rta office relocation december 2026",
    "biocon secures approval for biosimilar pertuzumab in brazil through local partner bionovis",
    "indigo shares: goldman sachs stays buy as fare tracker yields run ahead of guidance",
-   "morgan stanley says fmcg demand is cooling while one channel grows 49%"
+   "morgan stanley says fmcg demand is cooling while one channel grows 49%",
+   "exclusive: namma yatri raises rs 27.25 cr led by michael & susan dell foundation"
   ],
   "RADICO": [
    "diwali stock picks 2026: tata steel, bel, hdfc bank - 25 brokerages reveal 187 shares to buy in samvat 2083 | full list",
@@ -916,7 +919,8 @@
    "f&o stocks under rs 10000 to watch: adani ports, supreme industries and radico khaitan",
    "it stocks may regain investor interest as ai trade cools; hcltech, tech mahindra favoured: mofsl",
    "morpheus brandy returns as title partner for red fm’s south side story",
-   "morpheus ‘dare to dream’ title partnership with red fm's south side story for third consecutive year"
+   "morpheus ‘dare to dream’ title partnership with red fm's south side story for third consecutive year",
+   "radico khaitan's luxury bet pays off as sales nearly double"
   ],
   "SHRIPISTON": [
    "spr auto technologies limited (shripiston.ns) seasonal returns chart - yahoo finance",
@@ -932,8 +936,6 @@
    "spr auto technologies shripiston unclaimed dividend iepf notice 2027"
   ],
   "TATAPOWER": [
-   "tata power company limited (nse: tatapower) commissions 419 mw of utility-scale renewables in q2 fy27",
-   "motilal oswal launches nifty commodities and chemicals etfs: reliance, tata steel, pidilite and more stocks to watch",
    "bt closing bell: sensex surges 990 points; nifty reclaims 25,500 for first time since february 26",
    "tata chemicals shares jump 3%, up 10% in november so far as tata sons ipo buzz builds",
    "tata power-ddl issues 4,071 safety notices to remove unauthorized constructions near power infrastructure",
@@ -1011,7 +1013,9 @@
    "igi shares climb over 6% after ₹280 crore block deal; promoter bcp asia plans 1.55% stake sale",
    "beml shares zoom 17% to hit 52-week high; what's driving the surge?",
    "omnitech engineering share price rises 5% on brahmos aerospace order after recent stock correction",
-   "tata trusts challenge chandrasekaran’s reappointment as tata sons chairman amid leadership dispute"
+   "tata trusts challenge chandrasekaran’s reappointment as tata sons chairman amid leadership dispute",
+   "m&m, eicher motors, hyundai: brokerage shares top oem picks; outlook and more",
+   "tata group stocks to watch: tata sons board meet 30 nov"
   ],
   "TI": [
    "stocks to watch, nov 9: amber enterprises, tata steel, tata chemicals, pharma stocks, adani enterprises, bel, bhel",
@@ -1092,7 +1096,6 @@
    "neuberg diagnostics plans to raise usd 200m through ipo"
   ],
   "WAAREEENER": [
-   "waaree energies sees sharp open interest surge amid bullish momentum",
    "waaree energies ltd sees significant open interest surge amid bullish momentum",
    "waaree energies ltd surges 5.52% to day's high of rs 2520 — outperforms sector by 3.97 percentage points",
    "technical stock call : waaree energies ltd and ideaforge technology ltd by bharat k gala, ventura",
@@ -1171,10 +1174,10 @@
    "small-cap, big jump! waaree renewable shares rise 14% on this order win; energy stock still 35% below 52-week high",
    "waaree renewable technologies shares surge 13% after 120 mwp solar project win",
    "waaree renewable technologies shares rally over 12% after securing 120 mwp solar epc order",
-   "stocks to watch: urban company, leela palaces,waaree renewable, kpi green"
+   "stocks to watch: urban company, leela palaces,waaree renewable, kpi green",
+   "zee business. . waaree renewable में 10% का उछाल क्यों waaree renewable में एक्शन? किस खबर से waaree renewable में उछाल? #waareerenewable #renewableenergy #sola"
   ],
   "JIOPLATFORMS": [
-   "ambani, mittal could turbocharge india’s space ambitions",
    "jio platforms shares gain over 26% from ipo price: should investors hold, buy more or book profits? what experts say",
    "jio platforms shares gain over 26% from ipo price: should investors hold, buy more or book profits? what experts say",
    "jio platforms (nsei:jpl) stock looks close to fair value on cash flow",
@@ -1253,12 +1256,10 @@
    "coal india unit mahanadi valued at us$9.7 bil after subdued debut",
    "china, hong kong stocks rise as ai and chip shares lead gains",
    "cheaper ipos, missing retail investors: 5 things investors need to know",
-   "jioastro enters india's $390 million digital astrology market with ai-powered horoscopes and birth chart analysis"
+   "jioastro enters india's $390 million digital astrology market with ai-powered horoscopes and birth chart analysis",
+   "coal india unit mahanadi makes muted debut, valued at $9.6bn"
   ],
   "MAFANG": [
-   "'the bubble already deflated' — has wall street fallen out of love with ai?",
-   "why is nvidia stock soaring 10% after its brutal wall street collapse?",
-   "dow jones and us stock futures surge as nasdaq 100 rebounds 3% after ai selloff",
    "nvidia shares spike 9% pre-market after its worst day in years. is the bottom finally in?",
    "wall street can save the ai trade by getting less bullish",
    "us stock futures rebound as asian stocks tumble. there may be more trouble ahead for the ai trade.",
@@ -1335,14 +1336,12 @@
    "does studio purchase change the bull case for netflix stock (nflx)?",
    "learn why the bull case for nvidia stock could change following ceo reinstatement",
    "nvidia (nvda) stock fair value falls after analysts reassess leadership and regulatory risks",
-   "nvidia (nvda) could be 47% undervalued on its ai infrastructure narrative"
+   "nvidia (nvda) could be 47% undervalued on its ai infrastructure narrative",
+   "wall st week ahead sliding stock market confronts jobs data, rate view as next tests",
+   "dow futures surge 650 points: 5 things to know before wall street opens",
+   "wall street futures climb as technology stocks rebound while ai export controls and middle east tensions remain in focus: dow jones, s&p, nasdaq"
   ],
   "MON100": [
-   "us tech stocks enter bear market as nasdaq 100 nears 20% decline",
-   "nvidia shares plunge as anthropic can't stop the ai selloff",
-   "ai stock sell-off sends s&p 500 into correction, nasdaq negative for year",
-   "stocks fall after anthropic ipo sparks tech selloff",
-   "nasdaq slumps more than 5% as fear gripping ai trade spreads across markets",
    "wall street ends sharply lower as anthropic's debut fails to revive ai fervor",
    "wall street set to rebound after ai stock sell-off",
    "the ai trade was already cracking: anthropic just lit the fuse",
@@ -1417,11 +1416,14 @@
    "nasdaq 100 hasn't swung this hard since april 2025, and a fed hike is next",
    "ai bubble bear market: tech 20% off highs, nvidia 9x",
    "u.s. stock futures rise sharply; nasdaq up 1.7% in holiday-thinned trade",
-   "nasdaq closed for thanksgiving at 23,585.80 after nasdaq 100 touches bear market territory in ai rout"
+   "nasdaq closed for thanksgiving at 23,585.80 after nasdaq 100 touches bear market territory in ai rout",
+   "nasdaq futures jump 3% as ai stocks rebound",
+   "wall street futures climb as technology stocks rebound while ai export controls and middle east tensions remain in focus: dow jones, s&p, nasdaq",
+   "us tech stocks set to rebound as nasdaq futures jump after thanksgiving",
+   "us tech stocks set to jump at open as volatile trading takes hold",
+   "nasdaq futures surge nearly 3%, s&p 500 futures jump 2% as ai stocks set for rebound after..."
   ],
   "SILVERBEES/SILVERIETF": [
-   "gold-silver price today, november 21: gold at ₹1.25 lakh, silver below ₹1.75 lakh; check city-wise rates",
-   "silver rate today in satna 21st november, 2026 : 1 kg, todays silver price in satna",
    "gold rate today in bareilly, check live 22 and 24 carat gold price",
    "silver touches low of rs 146,868/kg on mcx; gold witnesses days’ low of rs 1,21,424/10 gms",
    "silver rate today in nanded 21st november, 2026 : 1 kg, todays silver price in nanded",
@@ -1499,11 +1501,12 @@
    "gold, silver prices today: mcx gold rises 1.63% to ₹1,24,790, silver surges 4.06%; check city-wise latest",
    "why are gold and silver prices rising today?",
    "gold today ₹2,675/10 gm costlier, reaches ₹1.25 lakh/10 gm: silver surges ₹5,928/kg to ₹1.53 lakh/kg",
-   "gold-silver prices today (november 27): gold rises rs 2,675 to rs 1.25 lakh, silver jumps rs 5,928 to rs 1.53 lakh per kg"
+   "gold-silver prices today (november 27): gold rises rs 2,675 to rs 1.25 lakh, silver jumps rs 5,928 to rs 1.53 lakh per kg",
+   "silver rate today 27 november: mcx price 6% upper circuit at ₹1.54 lakh/kg, up ₹8,500 in a day | right time to buy?",
+   "comex gold surges 4% to $3,708, mcx gold crosses ₹1.26 lakh; comex silver futures jumps 10%"
   ]
  },
  "slots": {
-  "2026-11-17-mid": "2026-11-17T15:52:35+05:30",
   "2026-11-18-am": "2026-11-18T02:47:26+05:30",
   "2026-11-18-mid": "2026-11-18T15:23:25+05:30",
   "2026-11-19-am": "2026-11-19T02:21:28+05:30",
@@ -1523,6 +1526,7 @@
   "2026-11-26-mid": "2026-11-26T16:06:02+05:30",
   "2026-11-26-pm": "2026-11-26T16:49:06+05:30",
   "2026-11-27-am": "2026-11-27T03:23:02+05:30",
-  "2026-11-27-mid": "2026-11-27T16:08:50+05:30"
+  "2026-11-27-mid": "2026-11-27T16:08:50+05:30",
+  "2026-11-27-pm": "2026-11-27T16:43:34+05:30"
  }
 }
